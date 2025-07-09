@@ -648,9 +648,6 @@ export default function Home() {
             <p className="text-gray-400 text-sm">
               Links are sourced from the Government of Canada. Last updated: July 9, 2025.
             </p>
-            <p className="text-gray-500 text-xs mt-2">
-              Created by INTEL-GIOLYNX
-            </p>
           </div>
         </div>
       </footer>
