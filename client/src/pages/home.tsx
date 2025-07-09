@@ -648,6 +648,17 @@ export default function Home() {
             <p className="text-gray-400 text-sm">
               Links are sourced from the Government of Canada. Last updated: July 9, 2025.
             </p>
+            <p className="text-gray-500 text-xs mt-2">
+              Created by:{" "}
+              <a 
+                href="http://intel.giolynx.org/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text font-semibold hover:from-blue-400 hover:via-purple-500 hover:to-pink-500 transition-all duration-300"
+              >
+                INTEL-GIOLYNX
+              </a>
+            </p>
           </div>
         </div>
       </footer>
