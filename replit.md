@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a React-based web application called "Canada Access Hub" that serves as a comprehensive directory for Canadian government services. The application provides an organized interface for users to access various government services categorized into seven main areas: Taxes & Benefits, Pensions & Retirement, Employment & Social Development, Immigration & Citizenship, Health & Disability, Legal/Identification, and General Government. Built with modern web technologies, it offers a responsive design with search functionality, favorites management, and user feedback capabilities.
+This is a React-based web application called "Canada Access Hub" that serves as a comprehensive directory for Canadian government services. The application provides an organized interface for users to access various government services categorized into eight main areas: Taxes & Benefits, Pensions & Retirement, Employment & Social Development, Immigration & Citizenship, Health & Disability, Legal/Identification, Banking & Financial Services, and General Government. Built with modern web technologies, it offers a responsive design with search functionality, favorites management, and user feedback capabilities.
 
 ## User Preferences
 

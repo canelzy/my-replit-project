@@ -58,6 +58,18 @@ const linksData: Record<string, LinkItem[]> = {
     { title: "Legal Aid", description: "Legal assistance programs", url: "https://www.canada.ca/en/department-justice/services/legal-aid.html", icon: "fas fa-balance-scale" },
     { title: "Birth Certificate", description: "Vital statistics and certificates", url: "https://www.canada.ca/en/employment-social-development/services/sin.html", icon: "fas fa-certificate" }
   ],
+  "Banking & Financial Services": [
+    { title: "Bank of Canada", description: "Canada's central bank", url: "https://www.bankofcanada.ca/", icon: "fas fa-university" },
+    { title: "Royal Bank of Canada (RBC)", description: "Canada's largest bank", url: "https://www.rbcroyalbank.com/", icon: "fas fa-building" },
+    { title: "Toronto-Dominion Bank (TD)", description: "Personal and business banking", url: "https://www.td.com/ca/en/personal-banking", icon: "fas fa-credit-card" },
+    { title: "Bank of Nova Scotia (Scotiabank)", description: "International banking services", url: "https://www.scotiabank.com/ca/en/personal.html", icon: "fas fa-globe" },
+    { title: "Bank of Montreal (BMO)", description: "Personal and commercial banking", url: "https://www.bmo.com/main/personal", icon: "fas fa-chart-line" },
+    { title: "Canadian Imperial Bank of Commerce (CIBC)", description: "Personal and business banking", url: "https://www.cibc.com/en/personal-banking.html", icon: "fas fa-handshake" },
+    { title: "National Bank of Canada", description: "Quebec-based national bank", url: "https://www.nbc.ca/personal.html", icon: "fas fa-landmark" },
+    { title: "Financial Consumer Agency of Canada (FCAC)", description: "Financial protection and education", url: "https://www.canada.ca/en/financial-consumer-agency.html", icon: "fas fa-shield-alt" },
+    { title: "Canada Deposit Insurance Corporation (CDIC)", description: "Deposit insurance protection", url: "https://www.cdic.ca/", icon: "fas fa-lock" },
+    { title: "Office of the Superintendent of Financial Institutions (OSFI)", description: "Financial institutions regulation", url: "https://www.osfi-bsif.gc.ca/", icon: "fas fa-balance-scale" }
+  ],
   "General Government": [
     { title: "Canada.ca", description: "Official Government of Canada website", url: "https://www.canada.ca/", icon: "fas fa-maple-leaf" },
     { title: "Contact Government", description: "Get in touch with government departments", url: "https://www.canada.ca/en/contact.html", icon: "fas fa-phone" },
@@ -117,6 +129,7 @@ export default function Home() {
     "Immigration & Citizenship": { from: "from-indigo-600", to: "to-indigo-700", icon: "fas fa-passport" },
     "Health & Disability": { from: "from-red-600", to: "to-red-700", icon: "fas fa-heartbeat" },
     "Legal / Identification": { from: "from-yellow-600", to: "to-yellow-700", icon: "fas fa-gavel" },
+    "Banking & Financial Services": { from: "from-emerald-600", to: "to-emerald-700", icon: "fas fa-university" },
     "General Government": { from: "from-gray-600", to: "to-gray-700", icon: "fas fa-landmark" }
   };
 
@@ -160,7 +173,11 @@ export default function Home() {
           <TabsContent value="all">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {Object.entries(linksData).map(([category, links]) => {
-                const gradient = categoryGradients[category as keyof typeof categoryGradients];
+                const gradient = categoryGradients[category as keyof typeof categoryGradients] || { 
+                  from: "from-gray-600", 
+                  to: "to-gray-700", 
+                  icon: "fas fa-cog" 
+                };
                 return (
                   <CategoryCard
                     key={category}
@@ -232,7 +249,11 @@ export default function Home() {
           <TabsContent value="categories">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {Object.entries(linksData).map(([category, links]) => {
-                const gradient = categoryGradients[category as keyof typeof categoryGradients];
+                const gradient = categoryGradients[category as keyof typeof categoryGradients] || { 
+                  from: "from-gray-600", 
+                  to: "to-gray-700", 
+                  icon: "fas fa-cog" 
+                };
                 return (
                   <Card key={category} className="bg-white shadow-md hover:shadow-lg transition-shadow">
                     <CardContent className="p-6">
