@@ -5,6 +5,7 @@ import ContactForm from "@/components/contact-form";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 interface LinkItem {
   title: string;
@@ -12,6 +13,232 @@ interface LinkItem {
   url: string;
   icon?: string;
 }
+
+// Key Official Directories & Databases
+const officialDirectories = [
+  {
+    name: "Canada Revenue Agency (CRA) Charity Listings",
+    url: "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyBscSrch?request_locale=en",
+    description: "Official public database of registered charities in Canada."
+  },
+  {
+    name: "Ontario Not-for-Profit Corporations (ONCA) Registry",
+    url: "https://www.ontario.ca/page/ontario-not-profit-corporations-act",
+    description: "Registry and information for Ontario non-profit corporations."
+  },
+  {
+    name: "CharityVillage Directory",
+    url: "https://charityvillage.com/",
+    description: "Canada's largest directory of charities and non-profits."
+  },
+  {
+    name: "Imagine Canada Directory",
+    url: "https://www.imaginecanada.ca/",
+    description: "National umbrella organization for Canada's charitable sector."
+  }
+];
+
+// Ontario Non-Profit Organizations by Category
+const ontarioNonProfits = {
+  "Health & Disability Support": [
+    {
+      name: "March of Dimes Canada (Ontario)",
+      url: "https://www.marchofdimes.ca/",
+      description: "Support for people with disabilities and rehabilitation services."
+    },
+    {
+      name: "Canadian Mental Health Association - Ontario",
+      url: "https://ontario.cmha.ca/",
+      description: "Mental health services and advocacy across Ontario."
+    },
+    {
+      name: "Ontario Federation for Cerebral Palsy",
+      url: "https://www.ofcp.ca/",
+      description: "Support and advocacy for people with cerebral palsy."
+    },
+    {
+      name: "Canadian Cancer Society - Ontario",
+      url: "https://cancer.ca/en/about-us/locations/ontario",
+      description: "Cancer support, research, and advocacy services."
+    }
+  ],
+  "Immigration & Settlement Services": [
+    {
+      name: "COSTI Immigrant Services",
+      url: "https://www.costi.org/",
+      description: "Settlement services for newcomers to Canada in the GTA."
+    },
+    {
+      name: "Ottawa Community Immigrant Services Organization (OCISO)",
+      url: "https://ociso.org/",
+      description: "Settlement and integration services for immigrants in Ottawa."
+    },
+    {
+      name: "Hamilton Centre for Civic Inclusion",
+      url: "https://www.hcci.ca/",
+      description: "Immigration services and community integration in Hamilton."
+    },
+    {
+      name: "London Cross Cultural Learner Centre",
+      url: "https://www.lcclc.org/",
+      description: "Settlement services for newcomers in London, Ontario."
+    }
+  ],
+  "Housing & Homelessness Assistance": [
+    {
+      name: "Street Health Centre",
+      url: "https://www.streethealth.ca/",
+      description: "Healthcare and support services for homeless individuals in Toronto."
+    },
+    {
+      name: "Habitat for Humanity Ontario",
+      url: "https://habitatontario.ca/",
+      description: "Affordable housing solutions and home ownership programs."
+    },
+    {
+      name: "The Lighthouse",
+      url: "https://www.lighthousemuskoka.com/",
+      description: "Emergency shelter and housing support in Muskoka region."
+    },
+    {
+      name: "Ottawa Inner City Health",
+      url: "https://www.ottawainnercityhealth.ca/",
+      description: "Healthcare services for vulnerable populations in Ottawa."
+    }
+  ],
+  "Financial & Legal Aid": [
+    {
+      name: "Legal Aid Ontario",
+      url: "https://www.legalaid.on.ca/",
+      description: "Legal services for low-income Ontarians."
+    },
+    {
+      name: "Community Legal Education Ontario (CLEO)",
+      url: "https://www.cleo.on.ca/",
+      description: "Legal information and education resources."
+    },
+    {
+      name: "Ontario Human Rights Legal Support Centre",
+      url: "https://www.hrlsc.on.ca/",
+      description: "Legal support for human rights issues."
+    },
+    {
+      name: "Prosper Canada",
+      url: "https://prospercanada.org/",
+      description: "Financial empowerment and poverty reduction programs."
+    }
+  ],
+  "Employment & Training": [
+    {
+      name: "Ontario Works",
+      url: "https://www.ontario.ca/page/ontario-works",
+      description: "Employment assistance and income support."
+    },
+    {
+      name: "ACCES Employment",
+      url: "https://accesemployment.ca/",
+      description: "Employment services for skilled immigrants and refugees."
+    },
+    {
+      name: "WoodGreen Community Services",
+      url: "https://www.woodgreen.org/",
+      description: "Employment, training, and community support services."
+    },
+    {
+      name: "Skills for Change",
+      url: "https://skillsforchange.org/",
+      description: "Employment services for newcomers and racialized communities."
+    }
+  ],
+  "Family & Child Support": [
+    {
+      name: "Children's Aid Society of Ontario",
+      url: "https://www.oacas.org/",
+      description: "Child protection and family support services."
+    },
+    {
+      name: "Ontario Association of Family Resource Programs",
+      url: "https://www.oafrp.ca/",
+      description: "Family support and early childhood development programs."
+    },
+    {
+      name: "Big Brothers Big Sisters of Ontario",
+      url: "https://www.bigbrothersbigsisters.ca/",
+      description: "Youth mentorship and support programs."
+    },
+    {
+      name: "Family Service Ontario",
+      url: "https://familyserviceontario.org/",
+      description: "Network of family service agencies across Ontario."
+    }
+  ],
+  "Senior & Pension Support": [
+    {
+      name: "Ontario Association of Non-Profit Homes and Services for Seniors",
+      url: "https://www.aohss.org/",
+      description: "Advocacy and support for senior housing and services."
+    },
+    {
+      name: "Seniors' Secretariat",
+      url: "https://www.ontario.ca/page/seniors-secretariat",
+      description: "Government support and resources for seniors."
+    },
+    {
+      name: "Elder Abuse Ontario",
+      url: "https://www.elderabuseontario.com/",
+      description: "Prevention and support services for elder abuse."
+    },
+    {
+      name: "Meals on Wheels Ontario",
+      url: "https://www.mealsonwheelsontario.org/",
+      description: "Meal delivery and support services for seniors."
+    }
+  ],
+  "Education & Literacy": [
+    {
+      name: "Literacy and Basic Skills Program",
+      url: "https://www.ontario.ca/page/literacy-and-basic-skills-program",
+      description: "Adult literacy and basic skills training."
+    },
+    {
+      name: "Ontario Library Association",
+      url: "https://www.accessola.org/",
+      description: "Public library services and literacy programs."
+    },
+    {
+      name: "Learning Disabilities Association of Ontario",
+      url: "https://www.ldao.ca/",
+      description: "Support and advocacy for individuals with learning disabilities."
+    },
+    {
+      name: "Frontier College",
+      url: "https://www.frontiercollege.ca/",
+      description: "Literacy and learning programs for marginalized communities."
+    }
+  ],
+  "Environmental & Community Development": [
+    {
+      name: "Ontario Nature",
+      url: "https://ontarionature.org/",
+      description: "Conservation and environmental education programs."
+    },
+    {
+      name: "Environmental Defence Canada",
+      url: "https://environmentaldefence.ca/",
+      description: "Environmental advocacy and protection initiatives."
+    },
+    {
+      name: "Neighbourhood Organization",
+      url: "https://www.theneighbourhoodorganization.org/",
+      description: "Community development and social services in Toronto."
+    },
+    {
+      name: "Ontario Healthy Communities Coalition",
+      url: "https://www.ohcc-ccso.ca/",
+      description: "Community health promotion and development."
+    }
+  ]
+};
 
 const linksData: Record<string, LinkItem[]> = {
   "Taxes & Benefits": [
@@ -84,6 +311,7 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeTab, setActiveTab] = useState("all");
   const [favorites, setFavorites] = useState<string[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   // Load favorites from localStorage on component mount
   useEffect(() => {
@@ -160,8 +388,9 @@ export default function Home() {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 mb-8">
+          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 mb-8">
             <TabsTrigger value="all">All Services</TabsTrigger>
+            <TabsTrigger value="nonprofits">Non-Profits</TabsTrigger>
             <TabsTrigger value="favorites">
               <i className="fas fa-star mr-2"></i>
               Favorites ({favorites.length})
@@ -244,6 +473,107 @@ export default function Home() {
                 </CardContent>
               </Card>
             )}
+          </TabsContent>
+
+          <TabsContent value="nonprofits">
+            <div className="space-y-8">
+              {/* Category Filter */}
+              <Card className="bg-white shadow-md">
+                <CardContent className="p-4">
+                  <div className="flex items-center space-x-4">
+                    <label htmlFor="category-filter" className="text-sm font-medium text-gray-700">
+                      Filter by Category:
+                    </label>
+                    <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                      <SelectTrigger className="w-64">
+                        <SelectValue placeholder="Select category" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">All Categories</SelectItem>
+                        {Object.keys(ontarioNonProfits).map(category => (
+                          <SelectItem key={category} value={category}>{category}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Official Directories Section */}
+              <Card className="bg-white shadow-md">
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i className="fas fa-database text-blue-600 mr-3"></i>
+                    Key Official Directories & Databases
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {officialDirectories.map((directory, index) => (
+                      <div key={index} className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <div className="flex items-start space-x-3">
+                          <i className="fas fa-folder-open text-blue-600 text-lg mt-1"></i>
+                          <div className="flex-1">
+                            <a 
+                              href={directory.url} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="font-semibold text-blue-600 hover:text-blue-800 transition-colors"
+                            >
+                              {directory.name}
+                              <i className="fas fa-external-link-alt ml-2 text-sm"></i>
+                            </a>
+                            <p className="text-gray-600 text-sm mt-1">{directory.description}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Non-Profit Organizations by Category */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {Object.entries(ontarioNonProfits)
+                  .filter(([category]) => selectedCategory === "all" || category === selectedCategory)
+                  .map(([category, organizations]) => (
+                    <Card key={category} className="bg-white shadow-md">
+                      <CardContent className="p-6">
+                        <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                          <i className="fas fa-heart text-red-500 mr-3"></i>
+                          {category}
+                        </h4>
+                        <div className="space-y-3">
+                          {organizations
+                            .filter(org => 
+                              searchTerm === "" || 
+                              org.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                              org.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                              category.toLowerCase().includes(searchTerm.toLowerCase())
+                            )
+                            .map((org, index) => (
+                              <div key={index} className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                <div className="flex items-start space-x-3">
+                                  <i className="fas fa-hands-helping text-green-600 text-sm mt-1"></i>
+                                  <div className="flex-1">
+                                    <a 
+                                      href={org.url} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                      className="font-medium text-blue-600 hover:text-blue-800 transition-colors"
+                                    >
+                                      {org.name}
+                                      <i className="fas fa-external-link-alt ml-2 text-xs"></i>
+                                    </a>
+                                    <p className="text-gray-600 text-sm mt-1">{org.description}</p>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+              </div>
+            </div>
           </TabsContent>
 
           <TabsContent value="categories">
