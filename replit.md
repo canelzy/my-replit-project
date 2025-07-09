@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a React-based web application called "Canada Access Hub" that serves as a comprehensive directory for Canadian government services and Ontario non-profit organizations. The application provides an organized interface for users to access various government services categorized into eight main areas: Taxes & Benefits, Pensions & Retirement, Employment & Social Development, Immigration & Citizenship, Health & Disability, Legal/Identification, Banking & Financial Services, and General Government. Additionally, it features a dedicated Non-Profits section with official directories and categorized Ontario non-profit organizations. Built with modern web technologies, it offers a responsive design with search functionality, favorites management, category filtering, and user feedback capabilities.
+This is a React-based web application called "Canada Access Hub" that serves as a comprehensive directory for Canadian government services and Ontario non-profit organizations. The application provides an organized interface for users to access various government services categorized into nine main areas: Taxes & Benefits, Pensions & Retirement, Employment & Social Development, Immigration & Citizenship, Health & Disability, Legal/Identification, Banking & Financial Services, Non-Profits, and General Government. Additionally, it features a dedicated Non-Profits tab with official directories and categorized Ontario non-profit organizations. Built with modern web technologies, it offers a responsive design with search functionality, favorites management, category filtering, and user feedback capabilities.
 
 ## User Preferences
 
@@ -106,6 +106,6 @@ The application includes curated links to official Canadian government services:
 7. **User Feedback**: Contact form for suggestions and improvements
 8. **Accessibility**: Built with Radix UI for screen reader compatibility
 9. **Performance**: Optimized builds and efficient caching strategies
-10. **Comprehensive Categories**: Eight specialized categories covering all government services
+10. **Comprehensive Categories**: Nine specialized categories covering all government services and non-profits
 11. **Non-Profit Directory**: Official directories and categorized Ontario non-profit organizations
 12. **Category Filtering**: Dropdown filter for quick navigation to specific non-profit categories

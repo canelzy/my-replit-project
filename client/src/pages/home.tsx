@@ -297,6 +297,16 @@ const linksData: Record<string, LinkItem[]> = {
     { title: "Canada Deposit Insurance Corporation (CDIC)", description: "Deposit insurance protection", url: "https://www.cdic.ca/", icon: "fas fa-lock" },
     { title: "Office of the Superintendent of Financial Institutions (OSFI)", description: "Financial institutions regulation", url: "https://www.osfi-bsif.gc.ca/", icon: "fas fa-balance-scale" }
   ],
+  "Non-Profits": [
+    { title: "Canada Revenue Agency (CRA) Charity Listings", description: "Official database of registered charities in Canada", url: "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyBscSrch?request_locale=en", icon: "fas fa-database" },
+    { title: "CharityVillage Directory", description: "Canada's largest directory of charities and non-profits", url: "https://charityvillage.com/", icon: "fas fa-heart" },
+    { title: "Imagine Canada", description: "National umbrella organization for Canada's charitable sector", url: "https://www.imaginecanada.ca/", icon: "fas fa-hands-helping" },
+    { title: "Ontario Not-for-Profit Corporations (ONCA)", description: "Registry for Ontario non-profit corporations", url: "https://www.ontario.ca/page/ontario-not-profit-corporations-act", icon: "fas fa-building" },
+    { title: "Canada Helps", description: "Online donation platform for Canadian charities", url: "https://www.canadahelps.org/", icon: "fas fa-donate" },
+    { title: "Volunteer Canada", description: "National voice for volunteerism in Canada", url: "https://volunteer.ca/", icon: "fas fa-user-friends" },
+    { title: "United Way Canada", description: "Community-based charity network", url: "https://www.unitedway.ca/", icon: "fas fa-community" },
+    { title: "Canadian Red Cross", description: "Humanitarian organization providing emergency assistance", url: "https://www.redcross.ca/", icon: "fas fa-plus-circle" }
+  ],
   "General Government": [
     { title: "Canada.ca", description: "Official Government of Canada website", url: "https://www.canada.ca/", icon: "fas fa-maple-leaf" },
     { title: "Contact Government", description: "Get in touch with government departments", url: "https://www.canada.ca/en/contact.html", icon: "fas fa-phone" },
@@ -358,6 +368,7 @@ export default function Home() {
     "Health & Disability": { from: "from-red-600", to: "to-red-700", icon: "fas fa-heartbeat" },
     "Legal / Identification": { from: "from-yellow-600", to: "to-yellow-700", icon: "fas fa-gavel" },
     "Banking & Financial Services": { from: "from-emerald-600", to: "to-emerald-700", icon: "fas fa-university" },
+    "Non-Profits": { from: "from-pink-600", to: "to-pink-700", icon: "fas fa-heart" },
     "General Government": { from: "from-gray-600", to: "to-gray-700", icon: "fas fa-landmark" }
   };
 
