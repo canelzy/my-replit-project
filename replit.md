@@ -1,8 +1,8 @@
-# Canadian Government Services Directory
+# Canada Access Hub - Government Services Directory
 
 ## Overview
 
-This is a React-based web application that serves as a directory for important Canadian government services. The application provides an organized interface for users to access various government services categorized into Taxes, Benefits, Pensions, and Other Services. Built with modern web technologies, it offers a responsive design with search functionality and user feedback capabilities.
+This is a React-based web application called "Canada Access Hub" that serves as a comprehensive directory for Canadian government services. The application provides an organized interface for users to access various government services categorized into seven main areas: Taxes & Benefits, Pensions & Retirement, Employment & Social Development, Immigration & Citizenship, Health & Disability, Legal/Identification, and General Government. Built with modern web technologies, it offers a responsive design with search functionality, favorites management, and user feedback capabilities.
 
 ## User Preferences
 
@@ -98,8 +98,12 @@ The application includes curated links to official Canadian government services:
 
 ### Key Features
 1. **Responsive Design**: Works on desktop and mobile devices
-2. **Search Functionality**: Real-time filtering of government services
-3. **Collapsible Sections**: Organized navigation with expandable categories
-4. **User Feedback**: Contact form for suggestions and improvements
-5. **Accessibility**: Built with Radix UI for screen reader compatibility
-6. **Performance**: Optimized builds and efficient caching strategies
+2. **Search Functionality**: Real-time filtering of government services across all categories
+3. **Favorites Management**: Users can bookmark services using localStorage for quick access
+4. **Tabbed Navigation**: Four main sections: All Services, Favorites, Categories, and Contact
+5. **Enhanced Service Cards**: Each service includes title, description, icon, and external link
+6. **Collapsible Sections**: Organized navigation with expandable categories
+7. **User Feedback**: Contact form for suggestions and improvements
+8. **Accessibility**: Built with Radix UI for screen reader compatibility
+9. **Performance**: Optimized builds and efficient caching strategies
+10. **Comprehensive Categories**: Seven specialized categories covering all government services

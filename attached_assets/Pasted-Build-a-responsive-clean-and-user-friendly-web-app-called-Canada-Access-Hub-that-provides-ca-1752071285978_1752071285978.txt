@@ -1,0 +1,51 @@
+Build a responsive, clean, and user-friendly web app called **"Canada Access Hub"** that provides categorized links to important Canadian government services.
+
+**Features to include:**
+
+1. **Homepage:**  
+   - Welcome message and app description ("All your government links in one place.")  
+   - Search bar that filters all links across categories dynamically
+
+2. **Categories:**  
+   Display these categories, each expandable/collapsible or on separate pages/tabs:  
+   - Taxes & Benefits  
+   - Pensions & Retirement  
+   - Employment & Social Development  
+   - Immigration & Citizenship  
+   - Health & Disability  
+   - Legal / Identification  
+   - General Government
+
+3. **Links List:**  
+   For each category, show a list of links with:  
+   - Title  
+   - Short description  
+   - Clickable link opening in a new tab  
+   - Optional icon or logo
+
+4. **Bookmark/Favorites:**  
+   Allow users to save their favorite links using browser localStorage and view them in a dedicated "Favorites" section.
+
+5. **Responsive UI:**  
+   Use Tailwind CSS or Bootstrap for styling. The app should work well on desktop and mobile.
+
+6. **Optional:**  
+   - Dark mode toggle  
+   - Bilingual support (English/French)
+
+**Use the following data structure for links:**
+
+```js
+const linksData = {
+  "Taxes & Benefits": [
+    { title: "CRA MyAccount", description: "Manage taxes online", url: "https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" },
+    { title: "Canada Child Benefit", description: "Child benefit info", url: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview.html" },
+    // ... other links
+  ],
+  "Pensions & Retirement": [
+    { title: "Canada Pension Plan (CPP) & OAS", description: "Public pensions", url: "https://www.canada.ca/en/services/benefits/publicpensions.html" },
+    // ... other links
+  ],
+  // Add other categories similarly
+};
+Start with a single-page React app or vanilla JS app, whichever is easier, and make sure code is clean and modular.
