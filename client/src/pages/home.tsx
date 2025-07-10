@@ -1875,7 +1875,38 @@ export default function Home() {
                           <div className="bg-red-50 p-4 rounded-lg">
                             <div className="text-sm text-red-700 text-center">
                               <i className="fas fa-info-circle mr-2"></i>
-                              Complete directory of international embassies and diplomatic missions in Canada
+                              Complete directory of Canadian embassies and diplomatic missions worldwide - 200+ missions across all continents
+                            </div>
+                          </div>
+
+                          {/* Summary Counter */}
+                          <div className="bg-white p-4 rounded-lg border border-red-200">
+                            <div className="text-center">
+                              <h4 className="text-lg font-bold text-red-800 mb-3">
+                                🌍 Global Canadian Diplomatic Presence - 200+ Total Missions
+                              </h4>
+                              <div className="grid grid-cols-2 md:grid-cols-5 gap-2 text-xs">
+                                <div className="bg-red-50 p-2 rounded">
+                                  <div className="font-bold text-red-800">North America</div>
+                                  <div className="text-red-600">20+ missions</div>
+                                </div>
+                                <div className="bg-red-50 p-2 rounded">
+                                  <div className="font-bold text-red-800">Europe</div>
+                                  <div className="text-red-600">80+ missions</div>
+                                </div>
+                                <div className="bg-red-50 p-2 rounded">
+                                  <div className="font-bold text-red-800">Asia</div>
+                                  <div className="text-red-600">60+ missions</div>
+                                </div>
+                                <div className="bg-red-50 p-2 rounded">
+                                  <div className="font-bold text-red-800">Africa</div>
+                                  <div className="text-red-600">30+ missions</div>
+                                </div>
+                                <div className="bg-red-50 p-2 rounded">
+                                  <div className="font-bold text-red-800">Oceania</div>
+                                  <div className="text-red-600">10+ missions</div>
+                                </div>
+                              </div>
                             </div>
                           </div>
 
@@ -1893,15 +1924,21 @@ export default function Home() {
                           {/* Embassy Categories - Accordion Style */}
                           <div className="space-y-4">
                             {Object.entries(canadianEmbassiesData).map(([continent, countries]) => {
-                              const filteredCountries = Object.entries(countries).filter(([country, embassyInfo]) => {
+                              const filteredCountries = countries.filter(countryData => {
                                 const matchesSearch = searchTerm === "" || 
-                                  country.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                  embassyInfo.address.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                  embassyInfo.city.toLowerCase().includes(searchTerm.toLowerCase());
+                                  countryData.country.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                  countryData.missions.some(mission => 
+                                    mission.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                    mission.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                    mission.address.toLowerCase().includes(searchTerm.toLowerCase())
+                                  );
                                 return matchesSearch;
                               });
 
                               if (filteredCountries.length === 0) return null;
+
+                              // Count total missions for this continent
+                              const totalMissions = filteredCountries.reduce((acc, country) => acc + country.missions.length, 0);
 
                               return (
                                 <div key={continent} className="rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300">
@@ -1918,7 +1955,7 @@ export default function Home() {
                                         <i className={`fas ${
                                           continent === "Europe" ? "fa-landmark" : 
                                           continent === "Asia" ? "fa-yin-yang" :
-                                          continent === "Americas" ? "fa-globe-americas" :
+                                          continent === "North America" ? "fa-globe-americas" :
                                           continent === "Africa" ? "fa-sun" :
                                           continent === "Oceania" ? "fa-island-tropical" :
                                           "fa-flag"
@@ -1927,7 +1964,7 @@ export default function Home() {
                                           <h3 className="text-xl font-bold">{continent}</h3>
                                           <p className="text-sm opacity-90">
                                             <span className="bg-white bg-opacity-20 px-2 py-1 rounded-full mr-2">
-                                              {filteredCountries.length} embass{filteredCountries.length !== 1 ? 'ies' : 'y'}
+                                              {totalMissions} mission{totalMissions !== 1 ? 's' : ''} in {filteredCountries.length} countr{filteredCountries.length !== 1 ? 'ies' : 'y'}
                                             </span>
                                             {!isContinentExpanded(continent) && <span className="font-medium animate-pulse">👆 Click to expand and view all embassies</span>}
                                             {isContinentExpanded(continent) && <span className="font-medium">👆 Click to collapse</span>}
@@ -1945,39 +1982,60 @@ export default function Home() {
                                   
                                   {isContinentExpanded(continent) && (
                                     <div className="p-6 bg-white">
-                                      <div className="space-y-4">
-                                        {filteredCountries.map(([country, embassyInfo], index) => (
-                                          <div key={index} className="border-l-4 border-red-800 pl-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                                            <div className="flex items-start justify-between">
-                                              <div className="flex-1">
-                                                <div className="flex items-center space-x-3 mb-2">
-                                                  <h4 className="font-semibold text-red-600">
-                                                    {country}
-                                                  </h4>
-                                                  <span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">
-                                                    {embassyInfo.city}
-                                                  </span>
+                                      <div className="space-y-6">
+                                        {filteredCountries.map((countryData, countryIndex) => (
+                                          <div key={countryIndex} className="border-l-4 border-red-600 pl-4 py-4 bg-red-50 rounded-lg">
+                                            <h4 className="font-bold text-red-700 text-lg mb-3 flex items-center">
+                                              <i className="fas fa-flag mr-2"></i>
+                                              {countryData.country}
+                                              <span className="ml-2 text-xs bg-red-200 text-red-800 px-2 py-1 rounded-full font-normal">
+                                                {countryData.missions.length} mission{countryData.missions.length !== 1 ? 's' : ''}
+                                              </span>
+                                            </h4>
+                                            <div className="space-y-3">
+                                              {countryData.missions.map((mission, missionIndex) => (
+                                                <div key={missionIndex} className="bg-white p-4 rounded-lg border border-red-200 hover:border-red-300 transition-colors">
+                                                  <div className="flex items-start justify-between">
+                                                    <div className="flex-1">
+                                                      <div className="flex items-center space-x-3 mb-2">
+                                                        <h5 className="font-semibold text-red-600">
+                                                          {mission.name}
+                                                        </h5>
+                                                        <span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">
+                                                          {mission.type}
+                                                        </span>
+                                                        <span className="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded-full">
+                                                          {mission.city}
+                                                        </span>
+                                                      </div>
+                                                      <p className="text-gray-600 text-sm mb-2">
+                                                        <i className="fas fa-map-marker-alt mr-1 text-red-500"></i>
+                                                        {mission.address}
+                                                      </p>
+                                                      {mission.phone && (
+                                                        <p className="text-gray-600 text-sm mb-2">
+                                                          <i className="fas fa-phone mr-1 text-blue-500"></i>
+                                                          <a href={`tel:${mission.phone}`} className="hover:text-blue-600 transition-colors">
+                                                            {mission.phone}
+                                                          </a>
+                                                        </p>
+                                                      )}
+                                                      {mission.website && (
+                                                        <a 
+                                                          href={mission.website} 
+                                                          target="_blank" 
+                                                          rel="noopener noreferrer"
+                                                          className="inline-flex items-center text-red-600 hover:text-red-800 transition-colors text-sm font-medium"
+                                                        >
+                                                          <i className="fas fa-globe mr-1"></i>
+                                                          Visit Embassy Website
+                                                          <i className="fas fa-external-link-alt ml-1 text-xs"></i>
+                                                        </a>
+                                                      )}
+                                                    </div>
+                                                  </div>
                                                 </div>
-                                                <p className="text-gray-600 text-sm mb-2">{embassyInfo.address}</p>
-                                                {embassyInfo.phone && (
-                                                  <p className="text-gray-600 text-sm">
-                                                    <i className="fas fa-phone mr-1"></i>
-                                                    {embassyInfo.phone}
-                                                  </p>
-                                                )}
-                                                {embassyInfo.website && (
-                                                  <a 
-                                                    href={embassyInfo.website} 
-                                                    target="_blank" 
-                                                    rel="noopener noreferrer"
-                                                    className="text-red-600 hover:text-red-800 transition-colors text-sm"
-                                                  >
-                                                    <i className="fas fa-globe mr-1"></i>
-                                                    Visit Website
-                                                    <i className="fas fa-external-link-alt ml-1 text-xs"></i>
-                                                  </a>
-                                                )}
-                                              </div>
+                                              ))}
                                             </div>
                                           </div>
                                         ))}
