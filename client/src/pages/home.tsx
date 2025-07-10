@@ -1224,28 +1224,8 @@ export default function Home() {
               <i className="fas fa-home text-sm"></i>
               <span className="text-sm font-medium">All</span>
             </button>
-            <button
-              onClick={() => setActiveTab('embassies')}
-              className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
-                activeTab === 'embassies' 
-                  ? 'bg-gradient-to-r from-red-100 to-red-200 text-red-700 border border-red-300 shadow-lg' 
-                  : 'bg-gradient-to-r from-red-500 to-red-700 text-white hover:from-red-600 hover:to-red-800'
-              }`}
-            >
-              <i className="fas fa-flag text-sm"></i>
-              <span className="text-sm font-medium">Embassies</span>
-            </button>
-            <button
-              onClick={() => setActiveTab('education')}
-              className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
-                activeTab === 'education' 
-                  ? 'bg-gradient-to-r from-green-100 to-green-200 text-green-700 border border-green-300 shadow-lg' 
-                  : 'bg-gradient-to-r from-green-500 to-green-700 text-white hover:from-green-600 hover:to-green-800'
-              }`}
-            >
-              <i className="fas fa-graduation-cap text-sm"></i>
-              <span className="text-sm font-medium">Education</span>
-            </button>
+
+
 
 
             <button
@@ -1321,7 +1301,15 @@ export default function Home() {
                     </div>
                     <h3 className="text-xl font-bold mb-2">{category}</h3>
                     <p className="text-sm opacity-90">
-                      {category === "Police & Security Forces" ? "54" : filteredLinks.length} service{(category === "Police & Security Forces" ? 54 : filteredLinks.length) !== 1 ? 's' : ''} available
+                      {category === "Police & Security Forces" ? "54" : 
+                       category === "Education" ? "50+" :
+                       category === "Embassies" ? "200+" :
+                       filteredLinks.length} service{
+                        (category === "Police & Security Forces" ? 54 : 
+                         category === "Education" ? 50 :
+                         category === "Embassies" ? 200 :
+                         filteredLinks.length) !== 1 ? 's' : ''
+                      } available
                       {!isCategoryExpanded(category) && <span className="ml-2 font-medium">• Click to expand</span>}
                     </p>
                   </button>
@@ -1549,6 +1537,258 @@ export default function Home() {
                             </div>
                           </div>
                         </div>
+                      ) : category === "Education" ? (
+                        <div className="space-y-6">
+                          {/* Info Bar */}
+                          <div className="bg-green-50 p-4 rounded-lg">
+                            <div className="text-sm text-green-700 text-center">
+                              <i className="fas fa-info-circle mr-2"></i>
+                              Comprehensive directory of Canadian educational institutions and resources
+                            </div>
+                          </div>
+
+                          {/* Instructions */}
+                          <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                            <div className="flex items-center space-x-2 mb-2">
+                              <i className="fas fa-graduation-cap text-green-600"></i>
+                              <h4 className="font-bold text-green-800">Browse Educational Institutions:</h4>
+                            </div>
+                            <p className="text-green-700 text-sm">
+                              Click on any category below to view educational institutions and resources.
+                            </p>
+                          </div>
+
+                          {/* Education Categories - Accordion Style */}
+                          <div className="space-y-4">
+                            {Object.entries(canadianEducationData).map(([eduCategory, institutions]) => {
+                              const filteredInstitutions = institutions.filter(institution => {
+                                const matchesSearch = searchTerm === "" || 
+                                  institution.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                  institution.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                  institution.province.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                  institution.type.toLowerCase().includes(searchTerm.toLowerCase());
+                                return matchesSearch;
+                              });
+
+                              if (filteredInstitutions.length === 0) return null;
+
+                              return (
+                                <div key={eduCategory} className="rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300">
+                                  <button
+                                    className={`p-4 sm:p-6 text-white hover:scale-[1.02] active:scale-95 transition-all duration-200 text-left w-full ${
+                                      isEducationCategoryExpanded(eduCategory) 
+                                        ? 'bg-gradient-to-r from-green-700 to-green-800' 
+                                        : 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800'
+                                    }`}
+                                    onClick={() => toggleEducationCategory(eduCategory)}
+                                  >
+                                    <div className="flex items-center justify-between">
+                                      <div className="flex items-center space-x-3">
+                                        <i className={`fas ${
+                                          eduCategory === "Universities" ? "fa-university" : 
+                                          eduCategory === "Colleges" ? "fa-school" :
+                                          eduCategory === "Institutes" ? "fa-building" :
+                                          eduCategory === "Resources" ? "fa-book" :
+                                          "fa-graduation-cap"
+                                        } text-2xl`}></i>
+                                        <div>
+                                          <h3 className="text-xl font-bold">{eduCategory}</h3>
+                                          <p className="text-sm opacity-90">
+                                            <span className="bg-white bg-opacity-20 px-2 py-1 rounded-full mr-2">
+                                              {filteredInstitutions.length} institution{filteredInstitutions.length !== 1 ? 's' : ''}
+                                            </span>
+                                            {!isEducationCategoryExpanded(eduCategory) && <span className="font-medium animate-pulse">👆 Click to expand and view all institutions</span>}
+                                            {isEducationCategoryExpanded(eduCategory) && <span className="font-medium">👆 Click to collapse</span>}
+                                          </p>
+                                        </div>
+                                      </div>
+                                      <div className="flex items-center space-x-2">
+                                        <span className="text-xs opacity-75">
+                                          {isEducationCategoryExpanded(eduCategory) ? 'Expanded' : 'Collapsed'}
+                                        </span>
+                                        <i className={`fas fa-chevron-${isEducationCategoryExpanded(eduCategory) ? 'up' : 'down'} text-lg transition-transform duration-200`}></i>
+                                      </div>
+                                    </div>
+                                  </button>
+                                  
+                                  {isEducationCategoryExpanded(eduCategory) && (
+                                    <div className="p-6 bg-white">
+                                      <div className="space-y-4">
+                                        {filteredInstitutions.map((institution, index) => (
+                                          <div key={index} className="border-l-4 border-green-800 pl-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                            <div className="flex items-start justify-between">
+                                              <div className="flex-1">
+                                                <div className="flex items-center space-x-3 mb-2">
+                                                  <a 
+                                                    href={institution.url} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="font-semibold text-green-600 hover:text-green-800 transition-colors"
+                                                  >
+                                                    {institution.name}
+                                                    <i className="fas fa-external-link-alt ml-2 text-xs"></i>
+                                                  </a>
+                                                  <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                                                    {institution.province}
+                                                  </span>
+                                                  <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+                                                    {institution.type}
+                                                  </span>
+                                                </div>
+                                                <p className="text-gray-600 text-sm">{institution.description}</p>
+                                              </div>
+                                              <button
+                                                onClick={(e) => {
+                                                  e.stopPropagation();
+                                                  const favorites = [...favoriteSchools];
+                                                  const index = favorites.indexOf(institution.url);
+                                                  if (index > -1) {
+                                                    favorites.splice(index, 1);
+                                                  } else {
+                                                    favorites.push(institution.url);
+                                                  }
+                                                  setFavoriteSchools(favorites);
+                                                  localStorage.setItem('favoriteSchools', JSON.stringify(favorites));
+                                                }}
+                                                className={`ml-2 p-2 rounded-full transition-colors ${
+                                                  favoriteSchools.includes(institution.url) 
+                                                    ? 'text-yellow-500 bg-yellow-50 hover:bg-yellow-100' 
+                                                    : 'text-gray-400 hover:text-yellow-500 hover:bg-gray-100'
+                                                }`}
+                                              >
+                                                <i className="fas fa-star text-sm"></i>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      ) : category === "Embassies" ? (
+                        <div className="space-y-6">
+                          {/* Info Bar */}
+                          <div className="bg-red-50 p-4 rounded-lg">
+                            <div className="text-sm text-red-700 text-center">
+                              <i className="fas fa-info-circle mr-2"></i>
+                              Complete directory of international embassies and diplomatic missions in Canada
+                            </div>
+                          </div>
+
+                          {/* Instructions */}
+                          <div className="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                            <div className="flex items-center space-x-2 mb-2">
+                              <i className="fas fa-flag text-red-600"></i>
+                              <h4 className="font-bold text-red-800">Browse Embassies by Continent:</h4>
+                            </div>
+                            <p className="text-red-700 text-sm">
+                              Click on any continent below to view embassies and diplomatic missions.
+                            </p>
+                          </div>
+
+                          {/* Embassy Categories - Accordion Style */}
+                          <div className="space-y-4">
+                            {Object.entries(embassyData).map(([continent, countries]) => {
+                              const filteredCountries = Object.entries(countries).filter(([country, embassyInfo]) => {
+                                const matchesSearch = searchTerm === "" || 
+                                  country.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                  embassyInfo.address.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                  embassyInfo.city.toLowerCase().includes(searchTerm.toLowerCase());
+                                return matchesSearch;
+                              });
+
+                              if (filteredCountries.length === 0) return null;
+
+                              return (
+                                <div key={continent} className="rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300">
+                                  <button
+                                    className={`p-4 sm:p-6 text-white hover:scale-[1.02] active:scale-95 transition-all duration-200 text-left w-full ${
+                                      isContinentExpanded(continent) 
+                                        ? 'bg-gradient-to-r from-red-700 to-red-800' 
+                                        : 'bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800'
+                                    }`}
+                                    onClick={() => toggleContinent(continent)}
+                                  >
+                                    <div className="flex items-center justify-between">
+                                      <div className="flex items-center space-x-3">
+                                        <i className={`fas ${
+                                          continent === "Europe" ? "fa-landmark" : 
+                                          continent === "Asia" ? "fa-yin-yang" :
+                                          continent === "Americas" ? "fa-globe-americas" :
+                                          continent === "Africa" ? "fa-sun" :
+                                          continent === "Oceania" ? "fa-island-tropical" :
+                                          "fa-flag"
+                                        } text-2xl`}></i>
+                                        <div>
+                                          <h3 className="text-xl font-bold">{continent}</h3>
+                                          <p className="text-sm opacity-90">
+                                            <span className="bg-white bg-opacity-20 px-2 py-1 rounded-full mr-2">
+                                              {filteredCountries.length} embass{filteredCountries.length !== 1 ? 'ies' : 'y'}
+                                            </span>
+                                            {!isContinentExpanded(continent) && <span className="font-medium animate-pulse">👆 Click to expand and view all embassies</span>}
+                                            {isContinentExpanded(continent) && <span className="font-medium">👆 Click to collapse</span>}
+                                          </p>
+                                        </div>
+                                      </div>
+                                      <div className="flex items-center space-x-2">
+                                        <span className="text-xs opacity-75">
+                                          {isContinentExpanded(continent) ? 'Expanded' : 'Collapsed'}
+                                        </span>
+                                        <i className={`fas fa-chevron-${isContinentExpanded(continent) ? 'up' : 'down'} text-lg transition-transform duration-200`}></i>
+                                      </div>
+                                    </div>
+                                  </button>
+                                  
+                                  {isContinentExpanded(continent) && (
+                                    <div className="p-6 bg-white">
+                                      <div className="space-y-4">
+                                        {filteredCountries.map(([country, embassyInfo], index) => (
+                                          <div key={index} className="border-l-4 border-red-800 pl-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                            <div className="flex items-start justify-between">
+                                              <div className="flex-1">
+                                                <div className="flex items-center space-x-3 mb-2">
+                                                  <h4 className="font-semibold text-red-600">
+                                                    {country}
+                                                  </h4>
+                                                  <span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">
+                                                    {embassyInfo.city}
+                                                  </span>
+                                                </div>
+                                                <p className="text-gray-600 text-sm mb-2">{embassyInfo.address}</p>
+                                                {embassyInfo.phone && (
+                                                  <p className="text-gray-600 text-sm">
+                                                    <i className="fas fa-phone mr-1"></i>
+                                                    {embassyInfo.phone}
+                                                  </p>
+                                                )}
+                                                {embassyInfo.website && (
+                                                  <a 
+                                                    href={embassyInfo.website} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="text-red-600 hover:text-red-800 transition-colors text-sm"
+                                                  >
+                                                    <i className="fas fa-globe mr-1"></i>
+                                                    Visit Website
+                                                    <i className="fas fa-external-link-alt ml-1 text-xs"></i>
+                                                  </a>
+                                                )}
+                                              </div>
+                                            </div>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
                       ) : (
                         <div className="space-y-3">
                           {filteredLinks.map((link, linkIndex) => (
@@ -1717,8 +1957,8 @@ export default function Home() {
             </div>
         )}
 
-        {/* Education Content */}
-        {activeTab === 'education' && (
+        {/* Old Education content removed - now part of Education category card */}
+        {false && (
             <div className="space-y-4 sm:space-y-6 lg:space-y-8">
               {/* Education Header */}
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-lg">
@@ -1932,8 +2172,8 @@ export default function Home() {
             </div>
         )}
 
-        {/* Embassies Content */}
-        {activeTab === 'embassies' && (
+        {/* Old Embassy content removed - now part of Embassy category card */}
+        {false && (
             <div className="space-y-6">
               {/* Compact Header */}
               <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-6 rounded-lg shadow-md">
