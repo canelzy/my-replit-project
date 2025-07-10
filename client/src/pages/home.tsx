@@ -1113,7 +1113,7 @@ export default function Home() {
               className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
                 activeTab === 'embassies' 
                   ? 'bg-gradient-to-r from-red-500 to-red-700 text-white shadow-lg' 
-                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+                  : 'bg-gradient-to-r from-red-100 to-red-200 text-red-700 border border-red-300 hover:from-red-200 hover:to-red-300'
               }`}
             >
               <i className="fas fa-flag text-sm"></i>
