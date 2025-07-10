@@ -1246,17 +1246,7 @@ export default function Home() {
               <i className="fas fa-graduation-cap text-sm"></i>
               <span className="text-sm font-medium">Education</span>
             </button>
-            <button
-              onClick={() => setActiveTab('police')}
-              className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
-                activeTab === 'police' 
-                  ? 'bg-gradient-to-r from-blue-100 to-blue-200 text-blue-700 border border-blue-300 shadow-lg' 
-                  : 'bg-gradient-to-r from-blue-500 to-blue-700 text-white hover:from-blue-600 hover:to-blue-800'
-              }`}
-            >
-              <i className="fas fa-shield-alt text-sm"></i>
-              <span className="text-sm font-medium">Police</span>
-            </button>
+
 
             <button
               onClick={() => setActiveTab('nonprofits')}
@@ -1331,67 +1321,290 @@ export default function Home() {
                     </div>
                     <h3 className="text-xl font-bold mb-2">{category}</h3>
                     <p className="text-sm opacity-90">
-                      {filteredLinks.length} service{filteredLinks.length !== 1 ? 's' : ''} available
+                      {category === "Police & Security Forces" ? "54" : filteredLinks.length} service{(category === "Police & Security Forces" ? 54 : filteredLinks.length) !== 1 ? 's' : ''} available
                       {!isCategoryExpanded(category) && <span className="ml-2 font-medium">• Click to expand</span>}
                     </p>
                   </button>
                   
                   {isCategoryExpanded(category) && (
                     <div className="p-4 bg-white">
-                      <div className="space-y-3">
-                        {filteredLinks.map((link, linkIndex) => (
-                          <div
-                            key={linkIndex}
-                            className="flex items-start justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                          >
-                            <div className="flex-1">
-                              <a
-                                href={link.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="font-medium text-blue-600 hover:text-blue-800 transition-colors"
-                              >
-                                {searchTerm && link.title.toLowerCase().includes(searchTerm.toLowerCase()) ? (
-                                  <span dangerouslySetInnerHTML={{
-                                    __html: link.title.replace(
-                                      new RegExp(searchTerm, 'gi'),
-                                      '<mark class="search-highlight">$&</mark>'
-                                    )
-                                  }} />
-                                ) : (
-                                  link.title
-                                )}
-                                <i className="fas fa-external-link-alt ml-2 text-xs"></i>
-                              </a>
-                              <p className="text-sm text-gray-600 mt-1">
-                                {searchTerm && link.description.toLowerCase().includes(searchTerm.toLowerCase()) ? (
-                                  <span dangerouslySetInnerHTML={{
-                                    __html: link.description.replace(
-                                      new RegExp(searchTerm, 'gi'),
-                                      '<mark class="search-highlight">$&</mark>'
-                                    )
-                                  }} />
-                                ) : (
-                                  link.description
-                                )}
-                              </p>
+                      {category === "Police & Security Forces" ? (
+                        <div className="space-y-6">
+                          {/* Info Bar */}
+                          <div className="bg-blue-50 p-4 rounded-lg">
+                            <div className="text-sm text-blue-700 text-center">
+                              <i className="fas fa-info-circle mr-2"></i>
+                              54 law enforcement and security agencies across Canada. For emergencies, dial 
+                              <span className="font-bold text-red-600 ml-1 mr-1">911</span>
+                              or contact your local police service.
                             </div>
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleToggleFavorite(link.url);
-                              }}
-                              className={`ml-3 p-2 rounded-full transition-colors ${
-                                favoriteLinks.includes(link.url) 
-                                  ? 'text-yellow-500 bg-yellow-50 hover:bg-yellow-100' 
-                                  : 'text-gray-400 hover:text-yellow-500 hover:bg-gray-100'
-                              }`}
-                            >
-                              <i className="fas fa-star text-sm"></i>
-                            </button>
                           </div>
-                        ))}
-                      </div>
+
+                          {/* Summary Counter */}
+                          <div className="bg-white p-4 rounded-lg border border-blue-200">
+                            <div className="text-center">
+                              <h4 className="text-lg font-bold text-blue-800 mb-3">
+                                📊 Complete Service Breakdown - 54 Total Services
+                              </h4>
+                              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+                                <div className="bg-blue-50 p-2 rounded">
+                                  <div className="font-bold text-blue-800">Federal</div>
+                                  <div className="text-blue-600">8 services</div>
+                                </div>
+                                <div className="bg-blue-50 p-2 rounded">
+                                  <div className="font-bold text-blue-800">Provincial</div>
+                                  <div className="text-blue-600">3 services</div>
+                                </div>
+                                <div className="bg-blue-50 p-2 rounded">
+                                  <div className="font-bold text-blue-800">Municipal</div>
+                                  <div className="text-blue-600">14 services</div>
+                                </div>
+                                <div className="bg-blue-50 p-2 rounded">
+                                  <div className="font-bold text-blue-800">Transit</div>
+                                  <div className="text-blue-600">5 services</div>
+                                </div>
+                                <div className="bg-blue-50 p-2 rounded">
+                                  <div className="font-bold text-blue-800">Indigenous</div>
+                                  <div className="text-blue-600">8 services</div>
+                                </div>
+                                <div className="bg-blue-50 p-2 rounded">
+                                  <div className="font-bold text-blue-800">Conservation</div>
+                                  <div className="text-blue-600">6 services</div>
+                                </div>
+                                <div className="bg-blue-50 p-2 rounded">
+                                  <div className="font-bold text-blue-800">Sheriff</div>
+                                  <div className="text-blue-600">6 services</div>
+                                </div>
+                                <div className="bg-blue-50 p-2 rounded">
+                                  <div className="font-bold text-blue-800">Emergency</div>
+                                  <div className="text-blue-600">4 services</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Instructions */}
+                          <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                            <div className="flex items-center space-x-2 mb-2">
+                              <i className="fas fa-list text-blue-600"></i>
+                              <h4 className="font-bold text-blue-800">How to View All 54 Services:</h4>
+                            </div>
+                            <p className="text-blue-700 text-sm">
+                              Each category below contains multiple police and security services. 
+                              <strong> Click on any category header to expand and see all services within that category.</strong>
+                            </p>
+                          </div>
+
+                          {/* Police & Security Categories - Accordion Style */}
+                          <div className="space-y-4">
+                            {Object.entries(canadianPoliceSecurityData).map(([policeCategory, services]) => {
+                              const filteredServices = services.filter(service => {
+                                const matchesSearch = searchTerm === "" || 
+                                  service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                  service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                  service.type.toLowerCase().includes(searchTerm.toLowerCase());
+                                return matchesSearch;
+                              });
+
+                              if (filteredServices.length === 0) return null;
+
+                              return (
+                                <div key={policeCategory} className="rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300">
+                                  <button
+                                    className={`p-4 sm:p-6 text-white hover:scale-[1.02] active:scale-95 transition-all duration-200 text-left w-full ${
+                                      isPoliceCategoryExpanded(policeCategory) 
+                                        ? 'bg-gradient-to-r from-blue-700 to-blue-800' 
+                                        : 'bg-gradient-to-r from-blue-800 to-blue-900 hover:from-blue-700 hover:to-blue-800'
+                                    }`}
+                                    onClick={() => togglePoliceCategory(policeCategory)}
+                                  >
+                                    <div className="flex items-center justify-between">
+                                      <div className="flex items-center space-x-3">
+                                        <i className={`fas ${
+                                          policeCategory === "Federal Agencies" ? "fa-shield-alt" : 
+                                          policeCategory === "Provincial Police" ? "fa-car-crash" :
+                                          policeCategory === "Major Municipal Police" ? "fa-city" :
+                                          policeCategory === "Transit & Transportation Police" ? "fa-bus" :
+                                          policeCategory === "Indigenous Police Services" ? "fa-feather-alt" :
+                                          policeCategory === "Conservation & Wildlife Enforcement" ? "fa-leaf" :
+                                          policeCategory === "Sheriff & Court Services" ? "fa-gavel" :
+                                          policeCategory === "Emergency Management" ? "fa-exclamation-triangle" :
+                                          "fa-shield"
+                                        } text-2xl`}></i>
+                                        <div>
+                                          <h3 className="text-xl font-bold">{policeCategory}</h3>
+                                          <p className="text-sm opacity-90">
+                                            <span className="bg-white bg-opacity-20 px-2 py-1 rounded-full mr-2">
+                                              {filteredServices.length} service{filteredServices.length !== 1 ? 's' : ''}
+                                            </span>
+                                            {!isPoliceCategoryExpanded(policeCategory) && <span className="font-medium animate-pulse">👆 Click to expand and view all services</span>}
+                                            {isPoliceCategoryExpanded(policeCategory) && <span className="font-medium">👆 Click to collapse</span>}
+                                          </p>
+                                        </div>
+                                      </div>
+                                      <div className="flex items-center space-x-2">
+                                        <span className="text-xs opacity-75">
+                                          {isPoliceCategoryExpanded(policeCategory) ? 'Expanded' : 'Collapsed'}
+                                        </span>
+                                        <i className={`fas fa-chevron-${isPoliceCategoryExpanded(policeCategory) ? 'up' : 'down'} text-lg transition-transform duration-200`}></i>
+                                      </div>
+                                    </div>
+                                  </button>
+                                  
+                                  {isPoliceCategoryExpanded(policeCategory) && (
+                                    <div className="p-6 bg-white">
+                                      <div className="space-y-4">
+                                        {filteredServices.map((service, index) => (
+                                          <div key={index} className="border-l-4 border-blue-800 pl-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                            <div className="flex items-start justify-between">
+                                              <div className="flex-1">
+                                                <div className="flex items-center space-x-3 mb-2">
+                                                  <a 
+                                                    href={service.website} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="font-semibold text-blue-600 hover:text-blue-800 transition-colors"
+                                                  >
+                                                    {service.name}
+                                                    <i className="fas fa-external-link-alt ml-2 text-xs"></i>
+                                                  </a>
+                                                  <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+                                                    {service.type}
+                                                  </span>
+                                                </div>
+                                                <p className="text-gray-600 text-sm">{service.description}</p>
+                                              </div>
+                                              <button
+                                                onClick={(e) => {
+                                                  e.stopPropagation();
+                                                  const favorites = [...favoriteLinks];
+                                                  const index = favorites.indexOf(service.website);
+                                                  if (index > -1) {
+                                                    favorites.splice(index, 1);
+                                                  } else {
+                                                    favorites.push(service.website);
+                                                  }
+                                                  setFavoriteLinks(favorites);
+                                                  localStorage.setItem('favoriteLinks', JSON.stringify(favorites));
+                                                }}
+                                                className={`ml-2 p-2 rounded-full transition-colors ${
+                                                  favoriteLinks.includes(service.website) 
+                                                    ? 'text-yellow-500 bg-yellow-50 hover:bg-yellow-100' 
+                                                    : 'text-gray-400 hover:text-yellow-500 hover:bg-gray-100'
+                                                }`}
+                                              >
+                                                <i className="fas fa-star text-sm"></i>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
+
+                          {/* Emergency Contact Section */}
+                          <div className="bg-red-50 p-6 rounded-lg border border-red-200">
+                            <div className="flex items-center mb-4">
+                              <div className="bg-red-200 p-2 rounded-full mr-3">
+                                <i className="fas fa-phone text-red-700"></i>
+                              </div>
+                              <div>
+                                <h4 className="font-bold text-red-800">Emergency Numbers</h4>
+                                <p className="text-red-700 text-sm">Important emergency and non-emergency contacts</p>
+                              </div>
+                            </div>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                              <a href="tel:911" className="flex items-center p-3 bg-white rounded-lg hover:bg-red-50 transition-colors border border-red-200">
+                                <div className="bg-red-100 p-2 rounded-full mr-3">
+                                  <i className="fas fa-exclamation-triangle text-red-700"></i>
+                                </div>
+                                <div>
+                                  <p className="text-red-800 font-bold text-lg">911</p>
+                                  <p className="text-red-600 text-xs">Emergency Services</p>
+                                </div>
+                              </a>
+                              <a href="tel:311" className="flex items-center p-3 bg-white rounded-lg hover:bg-blue-50 transition-colors border border-blue-200">
+                                <div className="bg-blue-100 p-2 rounded-full mr-3">
+                                  <i className="fas fa-info-circle text-blue-700"></i>
+                                </div>
+                                <div>
+                                  <p className="text-blue-800 font-bold text-lg">311</p>
+                                  <p className="text-blue-600 text-xs">Municipal Services</p>
+                                </div>
+                              </a>
+                              <a href="tel:1-800-222-8477" className="flex items-center p-3 bg-white rounded-lg hover:bg-green-50 transition-colors border border-green-200">
+                                <div className="bg-green-100 p-2 rounded-full mr-3">
+                                  <i className="fas fa-comments text-green-700"></i>
+                                </div>
+                                <div>
+                                  <p className="text-green-800 font-bold text-sm">1-800-222-8477</p>
+                                  <p className="text-green-600 text-xs">Crime Stoppers</p>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="space-y-3">
+                          {filteredLinks.map((link, linkIndex) => (
+                            <div
+                              key={linkIndex}
+                              className="flex items-start justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                            >
+                              <div className="flex-1">
+                                <a
+                                  href={link.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="font-medium text-blue-600 hover:text-blue-800 transition-colors"
+                                >
+                                  {searchTerm && link.title.toLowerCase().includes(searchTerm.toLowerCase()) ? (
+                                    <span dangerouslySetInnerHTML={{
+                                      __html: link.title.replace(
+                                        new RegExp(searchTerm, 'gi'),
+                                        '<mark class="search-highlight">$&</mark>'
+                                      )
+                                    }} />
+                                  ) : (
+                                    link.title
+                                  )}
+                                  <i className="fas fa-external-link-alt ml-2 text-xs"></i>
+                                </a>
+                                <p className="text-sm text-gray-600 mt-1">
+                                  {searchTerm && link.description.toLowerCase().includes(searchTerm.toLowerCase()) ? (
+                                    <span dangerouslySetInnerHTML={{
+                                      __html: link.description.replace(
+                                        new RegExp(searchTerm, 'gi'),
+                                        '<mark class="search-highlight">$&</mark>'
+                                      )
+                                    }} />
+                                  ) : (
+                                    link.description
+                                  )}
+                                </p>
+                              </div>
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleToggleFavorite(link.url);
+                                }}
+                                className={`ml-3 p-2 rounded-full transition-colors ${
+                                  favoriteLinks.includes(link.url) 
+                                    ? 'text-yellow-500 bg-yellow-50 hover:bg-yellow-100' 
+                                    : 'text-gray-400 hover:text-yellow-500 hover:bg-gray-100'
+                                }`}
+                              >
+                                <i className="fas fa-star text-sm"></i>
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
@@ -1880,252 +2093,7 @@ export default function Home() {
             </div>
         )}
 
-        {/* Police & Security Forces Content */}
-        {activeTab === 'police' && (
-            <div className="space-y-6">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-blue-800 to-blue-900 text-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    <div className="bg-white bg-opacity-20 p-2 rounded-full">
-                      <i className="fas fa-shield-alt text-xl"></i>
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold">Police & Security Forces</h3>
-                      <p className="text-blue-100">54 law enforcement and security agencies across Canada</p>
-                      <p className="text-blue-200 text-sm mt-1">
-                        <i className="fas fa-info-circle mr-1"></i>
-                        Click on any category below to view all services
-                      </p>
-                    </div>
-                  </div>
-                  <div className="hidden md:block">
-                    <i className="fas fa-maple-leaf text-4xl text-white opacity-20"></i>
-                  </div>
-                </div>
-              </div>
 
-              {/* Info Bar */}
-              <div className="bg-white p-4 rounded-lg shadow-md">
-                <div className="text-sm text-gray-600 text-center">
-                  <i className="fas fa-info-circle mr-2"></i>
-                  Official law enforcement and security agencies. For emergencies, dial 
-                  <span className="font-bold text-red-600 ml-1 mr-1">911</span>
-                  or contact your local police service.
-                </div>
-              </div>
-
-              {/* Summary Counter */}
-              <div className="bg-white p-4 rounded-lg shadow-md border border-blue-200">
-                <div className="text-center">
-                  <h4 className="text-lg font-bold text-blue-800 mb-3">
-                    📊 Complete Service Breakdown - 54 Total Services
-                  </h4>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Federal</div>
-                      <div className="text-blue-600">8 services</div>
-                    </div>
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Provincial</div>
-                      <div className="text-blue-600">3 services</div>
-                    </div>
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Municipal</div>
-                      <div className="text-blue-600">14 services</div>
-                    </div>
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Transit</div>
-                      <div className="text-blue-600">5 services</div>
-                    </div>
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Indigenous</div>
-                      <div className="text-blue-600">8 services</div>
-                    </div>
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Conservation</div>
-                      <div className="text-blue-600">6 services</div>
-                    </div>
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Sheriff</div>
-                      <div className="text-blue-600">6 services</div>
-                    </div>
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Emergency</div>
-                      <div className="text-blue-600">4 services</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Instructions */}
-              <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
-                <div className="flex items-center space-x-2 mb-2">
-                  <i className="fas fa-list text-blue-600"></i>
-                  <h4 className="font-bold text-blue-800">How to View All 54 Services:</h4>
-                </div>
-                <p className="text-blue-700 text-sm">
-                  Each category below contains multiple police and security services. 
-                  <strong> Click on any category header to expand and see all services within that category.</strong>
-                  The first category (Federal Agencies) is expanded by default to show you how it works.
-                </p>
-              </div>
-
-              {/* Police & Security Categories - Accordion Style */}
-              <div className="space-y-4">
-                {Object.entries(canadianPoliceSecurityData).map(([category, services]) => {
-                  const filteredServices = services.filter(service => {
-                    const matchesSearch = searchTerm === "" || 
-                      service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                      service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                      service.type.toLowerCase().includes(searchTerm.toLowerCase());
-                    return matchesSearch;
-                  });
-
-                  if (filteredServices.length === 0) return null;
-
-                  return (
-                    <div key={category} className="rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300">
-                      <button
-                        className={`p-4 sm:p-6 text-white hover:scale-[1.02] active:scale-95 transition-all duration-200 text-left w-full ${
-                          isPoliceCategoryExpanded(category) 
-                            ? 'bg-gradient-to-r from-blue-700 to-blue-800' 
-                            : 'bg-gradient-to-r from-blue-800 to-blue-900 hover:from-blue-700 hover:to-blue-800'
-                        }`}
-                        onClick={() => togglePoliceCategory(category)}
-                      >
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center space-x-3">
-                            <i className={`fas ${
-                              category === "Federal Agencies" ? "fa-shield-alt" : 
-                              category === "Provincial Police" ? "fa-car-crash" :
-                              category === "Major Municipal Police" ? "fa-city" :
-                              category === "Transit & Transportation Police" ? "fa-bus" :
-                              category === "Indigenous Police Services" ? "fa-feather-alt" :
-                              category === "Conservation & Wildlife Enforcement" ? "fa-leaf" :
-                              category === "Sheriff & Court Services" ? "fa-gavel" :
-                              category === "Emergency Management" ? "fa-exclamation-triangle" :
-                              "fa-shield"
-                            } text-2xl`}></i>
-                            <div>
-                              <h3 className="text-xl font-bold">{category}</h3>
-                              <p className="text-sm opacity-90">
-                                <span className="bg-white bg-opacity-20 px-2 py-1 rounded-full mr-2">
-                                  {filteredServices.length} service{filteredServices.length !== 1 ? 's' : ''}
-                                </span>
-                                {!isPoliceCategoryExpanded(category) && <span className="font-medium animate-pulse">👆 Click to expand and view all services</span>}
-                                {isPoliceCategoryExpanded(category) && <span className="font-medium">👆 Click to collapse</span>}
-                              </p>
-                            </div>
-                          </div>
-                          <div className="flex items-center space-x-2">
-                            <span className="text-xs opacity-75">
-                              {isPoliceCategoryExpanded(category) ? 'Expanded' : 'Collapsed'}
-                            </span>
-                            <i className={`fas fa-chevron-${isPoliceCategoryExpanded(category) ? 'up' : 'down'} text-lg transition-transform duration-200 ${isPoliceCategoryExpanded(category) ? 'rotate-0' : 'rotate-0'}`}></i>
-                          </div>
-                        </div>
-                      </button>
-                      
-                      {isPoliceCategoryExpanded(category) && (
-                        <div className="p-6 bg-white">
-                          <div className="space-y-4">
-                            {filteredServices.map((service, index) => (
-                              <div key={index} className="border-l-4 border-blue-800 pl-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                                <div className="flex items-start justify-between">
-                                  <div className="flex-1">
-                                    <div className="flex items-center space-x-3 mb-2">
-                                      <a 
-                                        href={service.website} 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        className="font-semibold text-blue-600 hover:text-blue-800 transition-colors"
-                                      >
-                                        {service.name}
-                                        <i className="fas fa-external-link-alt ml-2 text-xs"></i>
-                                      </a>
-                                      <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
-                                        {service.type}
-                                      </span>
-                                    </div>
-                                    <p className="text-gray-600 text-sm">{service.description}</p>
-                                  </div>
-                                  <button
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      const favorites = [...favoriteLinks];
-                                      const index = favorites.indexOf(service.website);
-                                      if (index > -1) {
-                                        favorites.splice(index, 1);
-                                      } else {
-                                        favorites.push(service.website);
-                                      }
-                                      setFavoriteLinks(favorites);
-                                      localStorage.setItem('favoriteLinks', JSON.stringify(favorites));
-                                    }}
-                                    className={`ml-2 p-2 rounded-full transition-colors ${
-                                      favoriteLinks.includes(service.website) 
-                                        ? 'text-yellow-500 bg-yellow-50 hover:bg-yellow-100' 
-                                        : 'text-gray-400 hover:text-yellow-500 hover:bg-gray-100'
-                                    }`}
-                                  >
-                                    <i className="fas fa-star text-sm"></i>
-                                  </button>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Emergency Contact Section */}
-              <div className="bg-red-50 p-6 rounded-lg border border-red-200">
-                <div className="flex items-center mb-4">
-                  <div className="bg-red-200 p-2 rounded-full mr-3">
-                    <i className="fas fa-phone text-red-700"></i>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-red-800">Emergency Numbers</h4>
-                    <p className="text-red-700 text-sm">Important emergency and non-emergency contacts</p>
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <a href="tel:911" className="flex items-center p-3 bg-white rounded-lg hover:bg-red-50 transition-colors border border-red-200">
-                    <div className="bg-red-100 p-2 rounded-full mr-3">
-                      <i className="fas fa-exclamation-triangle text-red-700"></i>
-                    </div>
-                    <div>
-                      <p className="text-red-800 font-bold text-lg">911</p>
-                      <p className="text-red-600 text-xs">Emergency Services</p>
-                    </div>
-                  </a>
-                  <a href="tel:311" className="flex items-center p-3 bg-white rounded-lg hover:bg-blue-50 transition-colors border border-blue-200">
-                    <div className="bg-blue-100 p-2 rounded-full mr-3">
-                      <i className="fas fa-info-circle text-blue-700"></i>
-                    </div>
-                    <div>
-                      <p className="text-blue-800 font-bold text-lg">311</p>
-                      <p className="text-blue-600 text-xs">Municipal Services</p>
-                    </div>
-                  </a>
-                  <a href="tel:1-800-222-8477" className="flex items-center p-3 bg-white rounded-lg hover:bg-green-50 transition-colors border border-green-200">
-                    <div className="bg-green-100 p-2 rounded-full mr-3">
-                      <i className="fas fa-comments text-green-700"></i>
-                    </div>
-                    <div>
-                      <p className="text-green-800 font-bold text-sm">1-800-222-8477</p>
-                      <p className="text-green-600 text-xs">Crime Stoppers</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-        )}
 
         {/* Categories Content */}
         {activeTab === 'categories' && (
