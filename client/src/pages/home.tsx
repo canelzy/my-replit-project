@@ -958,8 +958,6 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedProvince, setSelectedProvince] = useState<string>("all");
   const [selectedType, setSelectedType] = useState<string>("all");
-  const [selectedContinent, setSelectedContinent] = useState<string>("all");
-  const [selectedCountry, setSelectedCountry] = useState<string>("all");
   const [expandedContinents, setExpandedContinents] = useState<string[]>([]);
 
   // Load favorites from localStorage on component mount
@@ -1022,24 +1020,11 @@ export default function Home() {
 
 
 
-  const getFilteredCountries = () => {
-    if (selectedContinent === 'all') {
-      return Object.values(canadianEmbassiesData).flat().map(continent => continent.country);
-    }
-    return canadianEmbassiesData[selectedContinent]?.map(country => country.country) || [];
-  };
-
-  const getFilteredEmbassies = () => {
-    const filteredData = Object.entries(canadianEmbassiesData).map(([continent, countries]) => ({
+  const getAllEmbassies = () => {
+    return Object.entries(canadianEmbassiesData).map(([continent, countries]) => ({
       continent,
-      countries: countries.filter(country => {
-        const matchesContinent = selectedContinent === 'all' || continent === selectedContinent;
-        const matchesCountry = selectedCountry === 'all' || country.country === selectedCountry;
-        return matchesContinent && matchesCountry;
-      })
-    })).filter(continent => continent.countries.length > 0);
-    
-    return filteredData;
+      countries
+    }));
   };
 
   const toggleContinent = (continent: string) => {
@@ -1512,99 +1497,40 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Compact Search and Filter */}
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <i className="fas fa-globe-americas mr-2 text-blue-600"></i>
-                      Continent
-                    </label>
-                    <Select value={selectedContinent} onValueChange={setSelectedContinent}>
-                      <SelectTrigger className="h-10">
-                        <SelectValue placeholder="All Continents" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="all">All Continents</SelectItem>
-                        <SelectItem value="North America">🇺🇸 North America</SelectItem>
-                        <SelectItem value="Europe">🇪🇺 Europe</SelectItem>
-                        <SelectItem value="Asia">🌏 Asia</SelectItem>
-                        <SelectItem value="Africa">🌍 Africa</SelectItem>
-                        <SelectItem value="South America">🌎 South America</SelectItem>
-                        <SelectItem value="Oceania">🏝️ Oceania</SelectItem>
-                        <SelectItem value="Middle East">🕌 Middle East</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <i className="fas fa-flag mr-2 text-red-600"></i>
-                      Country
-                    </label>
-                    <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-                      <SelectTrigger className="h-10">
-                        <SelectValue placeholder="All Countries" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="all">All Countries</SelectItem>
-                        {getFilteredCountries().map(country => (
-                          <SelectItem key={country} value={country}>{country}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Actions</label>
-                    <Button 
-                      onClick={() => {
-                        setSelectedContinent('all');
-                        setSelectedCountry('all');
-                      }}
-                      variant="outline"
-                      className="w-full h-10"
-                    >
-                      <i className="fas fa-redo mr-2"></i>
-                      Reset Filters
-                    </Button>
-                  </div>
+              {/* Control Bar */}
+              <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-between">
+                <div className="text-sm text-gray-600">
+                  <i className="fas fa-info-circle mr-2"></i>
+                  Official data from Global Affairs Canada. Visit 
+                  <a href="https://travel.gc.ca/assistance/embassies-consulates" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline ml-1">
+                    Travel.gc.ca
+                  </a> for current information.
                 </div>
-                
-                <div className="flex items-center justify-between">
-                  <div className="text-sm text-gray-600">
-                    <i className="fas fa-info-circle mr-2"></i>
-                    Official data from Global Affairs Canada. Visit 
-                    <a href="https://travel.gc.ca/assistance/embassies-consulates" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline ml-1">
-                      Travel.gc.ca
-                    </a> for current information.
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setExpandedContinents(Object.keys(canadianEmbassiesData))}
-                      className="text-xs"
-                    >
-                      <i className="fas fa-expand-alt mr-1"></i>
-                      Expand All
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setExpandedContinents([])}
-                      className="text-xs"
-                    >
-                      <i className="fas fa-compress-alt mr-1"></i>
-                      Collapse All
-                    </Button>
-                  </div>
+                <div className="flex items-center space-x-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setExpandedContinents(Object.keys(canadianEmbassiesData))}
+                    className="text-xs"
+                  >
+                    <i className="fas fa-expand-alt mr-1"></i>
+                    Expand All
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setExpandedContinents([])}
+                    className="text-xs"
+                  >
+                    <i className="fas fa-compress-alt mr-1"></i>
+                    Collapse All
+                  </Button>
                 </div>
               </div>
 
               {/* Toggleable Embassy Cards */}
               <div className="space-y-4">
-                {getFilteredEmbassies().map((continent, continentIndex) => (
+                {getAllEmbassies().map((continent, continentIndex) => (
                   <div key={continentIndex} className="bg-white rounded-lg shadow-md border border-gray-200">
                     <div 
                       className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition-colors border-b border-gray-100"
