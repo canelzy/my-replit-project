@@ -1497,34 +1497,14 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Control Bar */}
-              <div className="bg-white p-4 rounded-lg shadow-md flex items-center justify-between">
-                <div className="text-sm text-gray-600">
+              {/* Info Bar */}
+              <div className="bg-white p-4 rounded-lg shadow-md">
+                <div className="text-sm text-gray-600 text-center">
                   <i className="fas fa-info-circle mr-2"></i>
                   Official data from Global Affairs Canada. Visit 
                   <a href="https://travel.gc.ca/assistance/embassies-consulates" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline ml-1">
                     Travel.gc.ca
                   </a> for current information.
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => setExpandedContinents(Object.keys(canadianEmbassiesData))}
-                    className="text-xs"
-                  >
-                    <i className="fas fa-expand-alt mr-1"></i>
-                    Expand All
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => setExpandedContinents([])}
-                    className="text-xs"
-                  >
-                    <i className="fas fa-compress-alt mr-1"></i>
-                    Collapse All
-                  </Button>
                 </div>
               </div>
 
