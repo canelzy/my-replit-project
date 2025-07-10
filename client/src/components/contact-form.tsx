@@ -41,13 +41,16 @@ export default function ContactForm() {
 
     try {
       console.log('Submitting contact form data:', formData);
-      const response = await apiRequest("/api/contact", "POST", formData);
+      const response = await apiRequest("POST", "/api/contact", formData);
       console.log('Contact form response:', response);
       
-      if (response.success) {
+      const data = await response.json();
+      console.log('Contact form data:', data);
+      
+      if (data.success) {
         toast({
           title: "Message sent successfully!",
-          description: response.message,
+          description: data.message,
         });
 
         // Reset form
@@ -58,10 +61,10 @@ export default function ContactForm() {
           message: ""
         });
       } else {
-        console.error('Contact form failed:', response);
+        console.error('Contact form failed:', data);
         toast({
           title: "Error sending message",
-          description: response.message || "Unknown error occurred",
+          description: data.message || "Unknown error occurred",
           variant: "destructive"
         });
       }
