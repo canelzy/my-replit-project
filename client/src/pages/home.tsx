@@ -344,6 +344,14 @@ const linksData: Record<string, LinkItem[]> = {
     { title: "Emergency Contact", description: "24/7 emergency line for Canadians abroad", url: "tel:1-888-949-9993", icon: "fas fa-phone" }
   ],
 
+  "Major Transportation": [
+    { title: "Air Canada", description: "Canada's flag carrier airline", url: "https://www.aircanada.com/", icon: "fas fa-plane" },
+    { title: "WestJet Airlines", description: "Canadian low-cost airline", url: "https://www.westjet.com/", icon: "fas fa-plane-departure" },
+    { title: "VIA Rail Canada", description: "National passenger rail service", url: "https://www.viarail.ca/", icon: "fas fa-train" },
+    { title: "Transport Canada", description: "Federal transportation regulations and safety", url: "https://tc.canada.ca/", icon: "fas fa-road" },
+    { title: "BC Ferries", description: "Ferry services in British Columbia", url: "https://www.bcferries.com/", icon: "fas fa-ship" }
+  ],
+
 };
 
 
@@ -1066,6 +1074,7 @@ export default function Home() {
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
   const [expandedEducationCategories, setExpandedEducationCategories] = useState<string[]>([]);
   const [expandedPoliceCategories, setExpandedPoliceCategories] = useState<string[]>([]);
+  const [expandedTransportCategories, setExpandedTransportCategories] = useState<string[]>([]);
   const [isOfficialDirectoriesExpanded, setIsOfficialDirectoriesExpanded] = useState<boolean>(false);
 
 
@@ -1184,6 +1193,18 @@ export default function Home() {
     return expandedEducationCategories.includes(category);
   };
 
+  const isTransportCategoryExpanded = (category: string) => {
+    return expandedTransportCategories.includes(category);
+  };
+
+  const toggleTransportCategory = (category: string) => {
+    setExpandedTransportCategories(prev => 
+      prev.includes(category) 
+        ? [] // Close the current category
+        : [category] // Open only this category, close all others
+    );
+  };
+
   // Initialize expanded continents on mount (start collapsed)
   useEffect(() => {
     setExpandedContinents([]);
@@ -1202,6 +1223,7 @@ export default function Home() {
     "Police & Security Forces": { from: "from-blue-600", to: "to-blue-700", icon: "fas fa-shield-alt", emoji: "🚔" },
     "Education": { from: "from-green-600", to: "to-green-700", icon: "fas fa-graduation-cap", emoji: "🎓" },
     "Embassies": { from: "from-red-600", to: "to-red-700", icon: "fas fa-flag", emoji: "🏛️" },
+    "Major Transportation": { from: "from-orange-600", to: "to-orange-700", icon: "fas fa-plane", emoji: "🚗" },
 
   };
 
@@ -1308,10 +1330,12 @@ export default function Home() {
                       {category === "Police & Security Forces" ? "54" : 
                        category === "Education" ? "50+" :
                        category === "Embassies" ? "200+" :
+                       category === "Major Transportation" ? "50+" :
                        filteredLinks.length} service{
                         (category === "Police & Security Forces" ? 54 : 
                          category === "Education" ? 50 :
                          category === "Embassies" ? 200 :
+                         category === "Major Transportation" ? 50 :
                          filteredLinks.length) !== 1 ? 's' : ''
                       } available
                       {!isCategoryExpanded(category) && <span className="ml-2 font-medium">• Click to expand</span>}
@@ -1320,7 +1344,161 @@ export default function Home() {
                   
                   {isCategoryExpanded(category) && (
                     <div className="p-4 bg-white">
-                      {category === "Police & Security Forces" ? (
+                      {category === "Major Transportation" ? (
+                        <div className="space-y-6">
+                          {/* Info Bar */}
+                          <div className="bg-orange-50 p-4 rounded-lg">
+                            <div className="text-sm text-orange-700 text-center">
+                              <i className="fas fa-info-circle mr-2"></i>
+                              Comprehensive directory of major transportation systems across Canada including airlines, rail, transit, ferries, and northern services.
+                            </div>
+                          </div>
+
+                          {/* Transportation Categories - Accordion Style */}
+                          <div className="space-y-4">
+                            {[
+                              {
+                                name: "🇨🇦 National Systems",
+                                icon: "fas fa-flag",
+                                services: [
+                                  { name: "Air Canada", description: "Canada's flag carrier airline", type: "Airlines" },
+                                  { name: "WestJet", description: "Canadian low-cost airline", type: "Airlines" },
+                                  { name: "Porter Airlines", description: "Regional airline serving Eastern Canada", type: "Airlines" },
+                                  { name: "Flair Airlines", description: "Ultra low-cost airline", type: "Airlines" },
+                                  { name: "Lynx Air", description: "Canadian ultra low-cost carrier", type: "Airlines" },
+                                  { name: "Toronto Pearson (YYZ)", description: "Canada's busiest airport", type: "Airports" },
+                                  { name: "Vancouver International (YVR)", description: "Major Pacific gateway", type: "Airports" },
+                                  { name: "Montreal-Trudeau (YUL)", description: "Quebec's main airport", type: "Airports" },
+                                  { name: "Calgary International (YYC)", description: "Alberta's major airport", type: "Airports" },
+                                  { name: "Edmonton International (YEG)", description: "Northern Alberta gateway", type: "Airports" },
+                                  { name: "Ottawa Macdonald-Cartier (YOW)", description: "National capital airport", type: "Airports" },
+                                  { name: "Halifax Stanfield (YHZ)", description: "Atlantic Canada's major airport", type: "Airports" },
+                                  { name: "VIA Rail", description: "National passenger rail service", type: "Rail" },
+                                  { name: "Rocky Mountaineer", description: "Luxury tourist train through Canadian Rockies", type: "Rail" },
+                                  { name: "CN Rail", description: "Canadian National Railway freight", type: "Freight Rail" },
+                                  { name: "CP Rail", description: "Canadian Pacific Railway freight", type: "Freight Rail" },
+                                  { name: "Rider Express", description: "Intercity bus service in Western Canada", type: "Buses" },
+                                  { name: "Ontario Northland", description: "Bus and train service in Northern Ontario", type: "Buses" },
+                                  { name: "Maritime Bus", description: "Regional bus service in Atlantic Canada", type: "Buses" }
+                                ]
+                              },
+                              {
+                                name: "🏙️ Urban Transit (By Province)",
+                                icon: "fas fa-bus",
+                                services: [
+                                  { name: "TTC (Toronto Transit Commission)", description: "Toronto's public transit system", type: "Ontario" },
+                                  { name: "GO Transit", description: "Greater Toronto Area regional transit", type: "Ontario" },
+                                  { name: "MiWay", description: "Mississauga public transit", type: "Ontario" },
+                                  { name: "OC Transpo", description: "Ottawa public transit", type: "Ontario" },
+                                  { name: "STM (Société de transport de Montréal)", description: "Montreal public transit", type: "Quebec" },
+                                  { name: "Exo", description: "Greater Montreal regional transit", type: "Quebec" },
+                                  { name: "STL (Société de transport de Laval)", description: "Laval public transit", type: "Quebec" },
+                                  { name: "RTL (Réseau de transport de Longueuil)", description: "Longueuil public transit", type: "Quebec" },
+                                  { name: "RTC (Réseau de transport de la Capitale)", description: "Quebec City public transit", type: "Quebec" },
+                                  { name: "TransLink", description: "Vancouver regional transit authority", type: "BC" },
+                                  { name: "BC Transit", description: "Public transit across British Columbia", type: "BC" },
+                                  { name: "ETS (Edmonton Transit Service)", description: "Edmonton public transit", type: "Alberta" },
+                                  { name: "Calgary Transit", description: "Calgary public transit system", type: "Alberta" },
+                                  { name: "Winnipeg Transit", description: "Winnipeg public transit", type: "Others" },
+                                  { name: "Halifax Transit", description: "Halifax regional transit", type: "Others" },
+                                  { name: "Metrobus NL", description: "St. John's public transit", type: "Others" }
+                                ]
+                              },
+                              {
+                                name: "⛴️ Ferries",
+                                icon: "fas fa-ship",
+                                services: [
+                                  { name: "BC Ferries", description: "Ferry services connecting coastal British Columbia", type: "West Coast" },
+                                  { name: "Marine Atlantic", description: "Ferry service between Nova Scotia and Newfoundland", type: "NS ↔ NL" },
+                                  { name: "Northumberland Ferries", description: "Ferry connecting Prince Edward Island and New Brunswick", type: "PEI ↔ NB" },
+                                  { name: "Ontario Ferries", description: "Ferry services within Ontario waters", type: "Ontario & Quebec" },
+                                  { name: "Quebec Ferries", description: "Ferry services within Quebec waters", type: "Ontario & Quebec" }
+                                ]
+                              },
+                              {
+                                name: "❄️ Northern Transportation",
+                                icon: "fas fa-snowflake",
+                                services: [
+                                  { name: "Air North", description: "Regional airline serving Yukon Territory", type: "Yukon" },
+                                  { name: "Canadian North", description: "Northern airline serving Arctic communities", type: "Arctic" },
+                                  { name: "Northwest Territories Highways", description: "Road network in NWT", type: "Roads & Shuttles" },
+                                  { name: "Nunavut Transportation", description: "Air and seasonal road access in Nunavut", type: "Arctic Services" },
+                                  { name: "Territorial Shuttles", description: "Regional shuttle services in northern territories", type: "Shuttle Services" }
+                                ]
+                              }
+                            ].map((transportCategory) => {
+                              const filteredServices = transportCategory.services.filter(service => {
+                                const matchesSearch = searchTerm === "" || 
+                                  service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                  service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                  service.type.toLowerCase().includes(searchTerm.toLowerCase());
+                                return matchesSearch;
+                              });
+
+                              if (filteredServices.length === 0) return null;
+
+                              return (
+                                <div key={transportCategory.name} className="rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300">
+                                  <button
+                                    className={`p-4 sm:p-6 text-white hover:scale-[1.02] active:scale-95 transition-all duration-200 text-left w-full ${
+                                      isTransportCategoryExpanded(transportCategory.name) 
+                                        ? 'bg-gradient-to-r from-orange-700 to-orange-800' 
+                                        : 'bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800'
+                                    }`}
+                                    onClick={() => toggleTransportCategory(transportCategory.name)}
+                                  >
+                                    <div className="flex items-center justify-between">
+                                      <div className="flex items-center space-x-3">
+                                        <i className={`${transportCategory.icon} text-2xl`}></i>
+                                        <div>
+                                          <h3 className="text-xl font-bold">{transportCategory.name}</h3>
+                                          <p className="text-sm opacity-90">
+                                            <span className="bg-white bg-opacity-20 px-2 py-1 rounded-full mr-2">
+                                              {filteredServices.length} service{filteredServices.length !== 1 ? 's' : ''}
+                                            </span>
+                                            {!isTransportCategoryExpanded(transportCategory.name) && <span className="font-medium animate-pulse">👆 Click to expand and view services</span>}
+                                            {isTransportCategoryExpanded(transportCategory.name) && <span className="font-medium">👆 Click to collapse</span>}
+                                          </p>
+                                        </div>
+                                      </div>
+                                      <div className="flex items-center space-x-2">
+                                        <span className="text-xs opacity-75">
+                                          {isTransportCategoryExpanded(transportCategory.name) ? 'Expanded' : 'Collapsed'}
+                                        </span>
+                                        <i className={`fas fa-chevron-${isTransportCategoryExpanded(transportCategory.name) ? 'up' : 'down'} text-lg transition-transform duration-200`}></i>
+                                      </div>
+                                    </div>
+                                  </button>
+                                  
+                                  {isTransportCategoryExpanded(transportCategory.name) && (
+                                    <div className="p-6 bg-white">
+                                      <div className="space-y-4">
+                                        {filteredServices.map((service, index) => (
+                                          <div key={index} className="border-l-4 border-orange-600 pl-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                            <div className="flex items-start justify-between">
+                                              <div className="flex-1">
+                                                <h4 className="font-semibold text-orange-600 mb-1">
+                                                  {service.name}
+                                                </h4>
+                                                <p className="text-gray-600 text-sm mb-2">{service.description}</p>
+                                                <div className="flex items-center space-x-2">
+                                                  <span className="text-xs px-2 py-1 bg-orange-100 text-orange-800 rounded-full font-medium">
+                                                    {service.type}
+                                                  </span>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      ) : category === "Police & Security Forces" ? (
                         <div className="space-y-6">
                           {/* Info Bar */}
                           <div className="bg-blue-50 p-4 rounded-lg">

@@ -101,11 +101,12 @@ The application includes curated links to official Canadian government services:
 2. **Search Functionality**: Real-time filtering of government services and non-profits across all categories
 3. **Favorites Management**: Users can bookmark services using localStorage for quick access
 4. **Streamlined Navigation**: Two main sections: Home and Contact
-5. **Enhanced Category Cards**: Expandable cards with comprehensive data - Police (54 services), Education (50+ institutions), Embassies (200+ diplomatic missions)
+5. **Enhanced Category Cards**: Expandable cards with comprehensive data - Police (54 services), Education (50+ institutions), Embassies (200+ diplomatic missions), Transportation (50+ services)
 6. **Accordion Functionality**: Consistent one-section-open-at-a-time behavior across all category cards
 7. **User Feedback**: Contact form for suggestions and improvements
 8. **Accessibility**: Built with Radix UI for screen reader compatibility
 9. **Performance**: Optimized builds and efficient caching strategies
-10. **Comprehensive Categories**: Nine specialized categories covering all government services with detailed breakdowns
+10. **Comprehensive Categories**: Ten specialized categories covering all government services with detailed breakdowns
 11. **Non-Profit Directory**: Official directories and categorized Ontario non-profit organizations
 12. **Category Filtering**: Dropdown filter for quick navigation to specific non-profit categories
+13. **Major Transportation Systems**: Complete directory of Canadian transportation including airlines, rail, urban transit, ferries, and northern services with nested accordion functionality
