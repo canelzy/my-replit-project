@@ -953,42 +953,30 @@ const canadianEducationData = {
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeTab, setActiveTab] = useState("all");
-  const [favorites, setFavorites] = useState<string[]>([]);
   const [favoriteSchools, setFavoriteSchools] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedProvince, setSelectedProvince] = useState<string>("all");
   const [selectedType, setSelectedType] = useState<string>("all");
   const [expandedContinents, setExpandedContinents] = useState<string[]>([]);
 
-  // Load favorites from localStorage on component mount
+  // Load school favorites from localStorage on component mount
   useEffect(() => {
-    const savedFavorites = localStorage.getItem('canadaAccessHub_favorites');
     const savedSchools = localStorage.getItem('canadaAccessHub_favoriteSchools');
-    if (savedFavorites) {
-      setFavorites(JSON.parse(savedFavorites));
-    }
     if (savedSchools) {
       setFavoriteSchools(JSON.parse(savedSchools));
     }
   }, []);
 
-  // Save favorites to localStorage whenever favorites change
+  // Save school favorites to localStorage whenever favorites change
   useEffect(() => {
-    localStorage.setItem('canadaAccessHub_favorites', JSON.stringify(favorites));
     localStorage.setItem('canadaAccessHub_favoriteSchools', JSON.stringify(favoriteSchools));
-  }, [favorites, favoriteSchools]);
+  }, [favoriteSchools]);
 
   const handleSearch = (term: string) => {
     setSearchTerm(term);
   };
 
-  const handleToggleFavorite = (url: string) => {
-    setFavorites(prev => 
-      prev.includes(url) 
-        ? prev.filter(fav => fav !== url)
-        : [...prev, url]
-    );
-  };
+
 
   const handleToggleSchoolFavorite = (url: string) => {
     setFavoriteSchools(prev => 
@@ -1006,17 +994,7 @@ export default function Home() {
     }
   };
 
-  const getFavoriteLinks = () => {
-    const favoriteLinks: LinkItem[] = [];
-    Object.values(linksData).forEach(categoryLinks => {
-      categoryLinks.forEach(link => {
-        if (favorites.includes(link.url)) {
-          favoriteLinks.push(link);
-        }
-      });
-    });
-    return favoriteLinks;
-  };
+
 
 
 
@@ -1086,7 +1064,7 @@ export default function Home() {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <Tabs defaultValue="all" value={activeTab} onValueChange={handleTabChange} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-7 mb-8 text-lg font-medium bg-gray-100 p-2 rounded-lg gap-2">
+          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-6 mb-8 text-lg font-medium bg-gray-100 p-2 rounded-lg gap-2">
             <TabsTrigger value="all" className="bg-blue-500 text-white data-[state=active]:bg-blue-600 data-[state=active]:text-white hover:bg-blue-400 rounded-md">
               <i className="fas fa-home mr-2"></i>
               All Services
@@ -1102,10 +1080,6 @@ export default function Home() {
             <TabsTrigger value="embassies" className="bg-red-500 text-white data-[state=active]:bg-red-600 data-[state=active]:text-white hover:bg-red-400 rounded-md">
               <i className="fas fa-flag mr-2"></i>
               Embassies
-            </TabsTrigger>
-            <TabsTrigger value="favorites" className="bg-yellow-500 text-white data-[state=active]:bg-yellow-600 data-[state=active]:text-white hover:bg-yellow-400 rounded-md">
-              <i className="fas fa-star mr-2"></i>
-              Favorites ({favorites.length})
             </TabsTrigger>
             <TabsTrigger value="categories" className="bg-purple-500 text-white data-[state=active]:bg-purple-600 data-[state=active]:text-white hover:bg-purple-400 rounded-md">
               <i className="fas fa-th-large mr-2"></i>
@@ -1135,65 +1109,13 @@ export default function Home() {
                     gradientFrom={gradient.from}
                     gradientTo={gradient.to}
                     searchTerm={searchTerm}
-                    favorites={favorites}
-                    onToggleFavorite={handleToggleFavorite}
                   />
                 );
               })}
             </div>
           </TabsContent>
 
-          <TabsContent value="favorites">
-            {favorites.length === 0 ? (
-              <Card className="bg-white shadow-md">
-                <CardContent className="p-8 text-center">
-                  <i className="fas fa-star text-gray-300 text-4xl mb-4"></i>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">No favorites yet</h3>
-                  <p className="text-gray-600">Click the star icon next to any service to add it to your favorites.</p>
-                </CardContent>
-              </Card>
-            ) : (
-              <div className="space-y-6">
-                <Card className="bg-white shadow-md">
-                  <CardContent className="p-6">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                      <i className="fas fa-star text-yellow-500 mr-3"></i>
-                      Your Favorite Services
-                    </h3>
-                    <div className="space-y-4">
-                      {getFavoriteLinks().map((link, index) => (
-                        <div key={index} className="flex items-start justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                          <div className="flex-1">
-                            <div className="flex items-center space-x-3 mb-2">
-                              {link.icon && <i className={`${link.icon} text-blue-600 text-lg`}></i>}
-                              <a 
-                                href={link.url} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="link-item font-semibold text-blue-600 hover:text-blue-800 transition-colors"
-                              >
-                                {link.title}
-                                <i className="fas fa-external-link-alt ml-2 text-sm"></i>
-                              </a>
-                            </div>
-                            <p className="text-gray-600 text-sm ml-6">{link.description}</p>
-                          </div>
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={() => handleToggleFavorite(link.url)}
-                            className="ml-4 text-yellow-500 hover:text-yellow-600"
-                          >
-                            <i className="fas fa-star"></i>
-                          </Button>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            )}
-          </TabsContent>
+
 
           <TabsContent value="nonprofits">
             <div className="space-y-8">
