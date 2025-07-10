@@ -1103,6 +1103,9 @@ export default function Home() {
             </TabsTrigger>
           </TabsList>
 
+          {/* Spacer */}
+          <div className="h-7.5"></div>
+
           <TabsContent value="all" className="mt-6 sm:mt-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
               {Object.entries(linksData).map(([category, links]) => {
