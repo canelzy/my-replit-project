@@ -1247,17 +1247,7 @@ export default function Home() {
 
 
 
-            <button
-              onClick={() => setActiveTab('nonprofits')}
-              className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
-                activeTab === 'nonprofits' 
-                  ? 'bg-gradient-to-r from-pink-500 to-pink-700 text-white shadow-lg' 
-                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
-              }`}
-            >
-              <i className="fas fa-heart text-sm"></i>
-              <span className="text-sm font-medium">Non-Profits</span>
-            </button>
+
 
             <button
               onClick={() => setActiveTab('contact')}
@@ -1701,7 +1691,7 @@ export default function Home() {
 
                           {/* Embassy Categories - Accordion Style */}
                           <div className="space-y-4">
-                            {Object.entries(embassyData).map(([continent, countries]) => {
+                            {Object.entries(canadianEmbassiesData).map(([continent, countries]) => {
                               const filteredCountries = Object.entries(countries).filter(([country, embassyInfo]) => {
                                 const matchesSearch = searchTerm === "" || 
                                   country.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -1798,6 +1788,177 @@ export default function Home() {
                             })}
                           </div>
                         </div>
+                      ) : category === "Non-Profits" ? (
+                        <div className="space-y-6">
+                          {/* Info Bar */}
+                          <div className="bg-pink-50 p-4 rounded-lg">
+                            <div className="text-sm text-pink-700 text-center">
+                              <i className="fas fa-info-circle mr-2"></i>
+                              Complete directory of official government databases and Ontario non-profit organizations
+                            </div>
+                          </div>
+
+                          {/* Official Directories Section */}
+                          <div className="bg-white p-4 rounded-lg border border-pink-200">
+                            <h4 className="text-lg font-bold text-pink-800 mb-3">
+                              🏛️ Official Government Directories
+                            </h4>
+                            <div className="space-y-3">
+                              {filteredLinks.map((link, linkIndex) => (
+                                <div
+                                  key={linkIndex}
+                                  className="flex items-start justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                                >
+                                  <div className="flex-1">
+                                    <a
+                                      href={link.url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="font-medium text-blue-600 hover:text-blue-800 transition-colors"
+                                    >
+                                      {searchTerm && link.title.toLowerCase().includes(searchTerm.toLowerCase()) ? (
+                                        <span dangerouslySetInnerHTML={{
+                                          __html: link.title.replace(
+                                            new RegExp(searchTerm, 'gi'),
+                                            '<mark class="search-highlight">$&</mark>'
+                                          )
+                                        }} />
+                                      ) : (
+                                        link.title
+                                      )}
+                                      <i className="fas fa-external-link-alt ml-2 text-xs"></i>
+                                    </a>
+                                    <p className="text-sm text-gray-600 mt-1">
+                                      {searchTerm && link.description.toLowerCase().includes(searchTerm.toLowerCase()) ? (
+                                        <span dangerouslySetInnerHTML={{
+                                          __html: link.description.replace(
+                                            new RegExp(searchTerm, 'gi'),
+                                            '<mark class="search-highlight">$&</mark>'
+                                          )
+                                        }} />
+                                      ) : (
+                                        link.description
+                                      )}
+                                    </p>
+                                  </div>
+                                  <button
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      handleToggleFavorite(link.url);
+                                    }}
+                                    className={`ml-3 p-2 rounded-full transition-colors ${
+                                      favoriteLinks.includes(link.url) 
+                                        ? 'text-yellow-500 bg-yellow-50 hover:bg-yellow-100' 
+                                        : 'text-gray-400 hover:text-yellow-500 hover:bg-gray-100'
+                                    }`}
+                                  >
+                                    <i className="fas fa-star text-sm"></i>
+                                  </button>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Category Filter */}
+                          <div className="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-500">
+                            <div className="flex items-center space-x-2 mb-2">
+                              <i className="fas fa-filter text-pink-600"></i>
+                              <h4 className="font-bold text-pink-800">Browse Ontario Non-Profits by Category:</h4>
+                            </div>
+                            <p className="text-pink-700 text-sm">
+                              Click on any category below to view non-profit organizations in that area.
+                            </p>
+                          </div>
+
+                          {/* Non-Profit Categories - Accordion Style */}
+                          <div className="space-y-4">
+                            {Object.entries(ontarioNonProfits).map(([nonprofitCategory, organizations]) => {
+                              const filteredOrganizations = organizations.filter(org => {
+                                const matchesSearch = searchTerm === "" || 
+                                  org.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                  org.description.toLowerCase().includes(searchTerm.toLowerCase());
+                                return matchesSearch;
+                              });
+
+                              if (filteredOrganizations.length === 0 && searchTerm !== "") return null;
+
+                              return (
+                                <div key={nonprofitCategory} className="rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300">
+                                  <button
+                                    className={`p-4 sm:p-6 text-white hover:scale-[1.02] active:scale-95 transition-all duration-200 text-left w-full ${
+                                      expandedCategories.includes(nonprofitCategory)
+                                        ? 'bg-gradient-to-r from-pink-700 to-pink-800' 
+                                        : 'bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800'
+                                    }`}
+                                    onClick={() => toggleCategory(nonprofitCategory)}
+                                  >
+                                    <div className="flex items-center justify-between">
+                                      <div className="flex items-center space-x-3">
+                                        <i className={`fas ${
+                                          nonprofitCategory.includes("Health") ? "fa-heartbeat" : 
+                                          nonprofitCategory.includes("Education") ? "fa-graduation-cap" :
+                                          nonprofitCategory.includes("Immigration") ? "fa-globe" :
+                                          nonprofitCategory.includes("Housing") ? "fa-home" :
+                                          nonprofitCategory.includes("Legal") ? "fa-balance-scale" :
+                                          nonprofitCategory.includes("Employment") ? "fa-briefcase" :
+                                          nonprofitCategory.includes("Family") ? "fa-users" :
+                                          nonprofitCategory.includes("Senior") ? "fa-user-clock" :
+                                          nonprofitCategory.includes("Environmental") ? "fa-leaf" :
+                                          "fa-heart"
+                                        } text-2xl`}></i>
+                                        <div>
+                                          <h3 className="text-xl font-bold">{nonprofitCategory}</h3>
+                                          <p className="text-sm opacity-90">
+                                            <span className="bg-white bg-opacity-20 px-2 py-1 rounded-full mr-2">
+                                              {filteredOrganizations.length} organization{filteredOrganizations.length !== 1 ? 's' : ''}
+                                            </span>
+                                            {!expandedCategories.includes(nonprofitCategory) && <span className="font-medium animate-pulse">👆 Click to expand and view organizations</span>}
+                                            {expandedCategories.includes(nonprofitCategory) && <span className="font-medium">👆 Click to collapse</span>}
+                                          </p>
+                                        </div>
+                                      </div>
+                                      <div className="flex items-center space-x-2">
+                                        <span className="text-xs opacity-75">
+                                          {expandedCategories.includes(nonprofitCategory) ? 'Expanded' : 'Collapsed'}
+                                        </span>
+                                        <i className={`fas fa-chevron-${expandedCategories.includes(nonprofitCategory) ? 'up' : 'down'} text-lg transition-transform duration-200`}></i>
+                                      </div>
+                                    </div>
+                                  </button>
+                                  
+                                  {expandedCategories.includes(nonprofitCategory) && (
+                                    <div className="p-6 bg-white">
+                                      <div className="space-y-4">
+                                        {filteredOrganizations.map((org, index) => (
+                                          <div key={index} className="border-l-4 border-pink-600 pl-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                            <div className="flex items-start justify-between">
+                                              <div className="flex-1">
+                                                <h4 className="font-semibold text-pink-600 mb-1">
+                                                  {org.name}
+                                                </h4>
+                                                <p className="text-gray-600 text-sm mb-2">{org.description}</p>
+                                                <a 
+                                                  href={org.url} 
+                                                  target="_blank" 
+                                                  rel="noopener noreferrer"
+                                                  className="text-pink-600 hover:text-pink-800 transition-colors text-sm"
+                                                >
+                                                  <i className="fas fa-globe mr-1"></i>
+                                                  Visit Website
+                                                  <i className="fas fa-external-link-alt ml-1 text-xs"></i>
+                                                </a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
                       ) : (
                         <div className="space-y-3">
                           {filteredLinks.map((link, linkIndex) => (
@@ -1864,107 +2025,7 @@ export default function Home() {
 
 
 
-        {/* Non-Profits Content */}
-        {activeTab === 'nonprofits' && (
-            <div className="space-y-4 sm:space-y-6 lg:space-y-8">
-              {/* Category Filter */}
-              <Card className="bg-white shadow-md">
-                <CardContent className="p-3 sm:p-4">
-                  <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                    <label htmlFor="category-filter" className="text-sm font-medium text-gray-700 whitespace-nowrap">
-                      Filter by Category:
-                    </label>
-                    <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                      <SelectTrigger className="w-full sm:w-64 min-h-12">
-                        <SelectValue placeholder="Select category" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="all">All Categories</SelectItem>
-                        {Object.keys(ontarioNonProfits).map(category => (
-                          <SelectItem key={category} value={category}>{category}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </CardContent>
-              </Card>
 
-              {/* Official Directories Section */}
-              <Card className="bg-white shadow-md">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                    <i className="fas fa-database text-blue-600 mr-3"></i>
-                    Key Official Directories & Databases
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {officialDirectories.map((directory, index) => (
-                      <div key={index} className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                        <div className="flex items-start space-x-3">
-                          <i className="fas fa-folder-open text-blue-600 text-lg mt-1"></i>
-                          <div className="flex-1">
-                            <a 
-                              href={directory.url} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="font-semibold text-blue-600 hover:text-blue-800 transition-colors"
-                            >
-                              {directory.name}
-                              <i className="fas fa-external-link-alt ml-2 text-sm"></i>
-                            </a>
-                            <p className="text-gray-600 text-sm mt-1">{directory.description}</p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Non-Profit Organizations by Category */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {Object.entries(ontarioNonProfits)
-                  .filter(([category]) => selectedCategory === "all" || category === selectedCategory)
-                  .map(([category, organizations]) => (
-                    <Card key={category} className="bg-white shadow-md">
-                      <CardContent className="p-6">
-                        <h4 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                          <i className="fas fa-heart text-red-500 mr-3"></i>
-                          {category}
-                        </h4>
-                        <div className="space-y-3">
-                          {organizations
-                            .filter(org => 
-                              searchTerm === "" || 
-                              org.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                              org.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                              category.toLowerCase().includes(searchTerm.toLowerCase())
-                            )
-                            .map((org, index) => (
-                              <div key={index} className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                                <div className="flex items-start space-x-3">
-                                  <i className="fas fa-hands-helping text-green-600 text-sm mt-1"></i>
-                                  <div className="flex-1">
-                                    <a 
-                                      href={org.url} 
-                                      target="_blank" 
-                                      rel="noopener noreferrer"
-                                      className="font-medium text-blue-600 hover:text-blue-800 transition-colors"
-                                    >
-                                      {org.name}
-                                      <i className="fas fa-external-link-alt ml-2 text-xs"></i>
-                                    </a>
-                                    <p className="text-gray-600 text-sm mt-1">{org.description}</p>
-                                  </div>
-                                </div>
-                              </div>
-                            ))}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-              </div>
-            </div>
-        )}
 
         {/* Old Education content removed - now part of Education category card */}
         {false && (

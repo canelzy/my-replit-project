@@ -100,7 +100,7 @@ The application includes curated links to official Canadian government services:
 1. **Responsive Design**: Works on desktop and mobile devices
 2. **Search Functionality**: Real-time filtering of government services and non-profits across all categories
 3. **Favorites Management**: Users can bookmark services using localStorage for quick access
-4. **Streamlined Navigation**: Three main sections: All Services, Non-Profits, and Contact
+4. **Streamlined Navigation**: Two main sections: All Services and Contact
 5. **Enhanced Category Cards**: Expandable cards with comprehensive data - Police (54 services), Education (50+ institutions), Embassies (200+ diplomatic missions)
 6. **Accordion Functionality**: Consistent one-section-open-at-a-time behavior across all category cards
 7. **User Feedback**: Contact form for suggestions and improvements
