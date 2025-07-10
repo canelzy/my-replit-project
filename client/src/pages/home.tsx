@@ -1361,69 +1361,69 @@ export default function Home() {
                                 name: "🇨🇦 National Systems",
                                 icon: "fas fa-flag",
                                 services: [
-                                  { name: "Air Canada", description: "Canada's flag carrier airline", type: "Airlines" },
-                                  { name: "WestJet", description: "Canadian low-cost airline", type: "Airlines" },
-                                  { name: "Porter Airlines", description: "Regional airline serving Eastern Canada", type: "Airlines" },
-                                  { name: "Flair Airlines", description: "Ultra low-cost airline", type: "Airlines" },
-                                  { name: "Lynx Air", description: "Canadian ultra low-cost carrier", type: "Airlines" },
-                                  { name: "Toronto Pearson (YYZ)", description: "Canada's busiest airport", type: "Airports" },
-                                  { name: "Vancouver International (YVR)", description: "Major Pacific gateway", type: "Airports" },
-                                  { name: "Montreal-Trudeau (YUL)", description: "Quebec's main airport", type: "Airports" },
-                                  { name: "Calgary International (YYC)", description: "Alberta's major airport", type: "Airports" },
-                                  { name: "Edmonton International (YEG)", description: "Northern Alberta gateway", type: "Airports" },
-                                  { name: "Ottawa Macdonald-Cartier (YOW)", description: "National capital airport", type: "Airports" },
-                                  { name: "Halifax Stanfield (YHZ)", description: "Atlantic Canada's major airport", type: "Airports" },
-                                  { name: "VIA Rail", description: "National passenger rail service", type: "Rail" },
-                                  { name: "Rocky Mountaineer", description: "Luxury tourist train through Canadian Rockies", type: "Rail" },
-                                  { name: "CN Rail", description: "Canadian National Railway freight", type: "Freight Rail" },
-                                  { name: "CP Rail", description: "Canadian Pacific Railway freight", type: "Freight Rail" },
-                                  { name: "Rider Express", description: "Intercity bus service in Western Canada", type: "Buses" },
-                                  { name: "Ontario Northland", description: "Bus and train service in Northern Ontario", type: "Buses" },
-                                  { name: "Maritime Bus", description: "Regional bus service in Atlantic Canada", type: "Buses" }
+                                  { name: "Air Canada", description: "Canada's flag carrier airline", type: "Airlines", url: "https://www.aircanada.com/" },
+                                  { name: "WestJet", description: "Canadian low-cost airline", type: "Airlines", url: "https://www.westjet.com/" },
+                                  { name: "Porter Airlines", description: "Regional airline serving Eastern Canada", type: "Airlines", url: "https://www.flyporter.com/" },
+                                  { name: "Flair Airlines", description: "Ultra low-cost airline", type: "Airlines", url: "https://flyflair.com/" },
+                                  { name: "Lynx Air", description: "Canadian ultra low-cost carrier", type: "Airlines", url: "https://lynxair.com/" },
+                                  { name: "Toronto Pearson (YYZ)", description: "Canada's busiest airport", type: "Airports", url: "https://www.torontopearson.com/" },
+                                  { name: "Vancouver International (YVR)", description: "Major Pacific gateway", type: "Airports", url: "https://www.yvr.ca/" },
+                                  { name: "Montreal-Trudeau (YUL)", description: "Quebec's main airport", type: "Airports", url: "https://www.admtl.com/" },
+                                  { name: "Calgary International (YYC)", description: "Alberta's major airport", type: "Airports", url: "https://www.yyc.com/" },
+                                  { name: "Edmonton International (YEG)", description: "Northern Alberta gateway", type: "Airports", url: "https://flyeia.com/" },
+                                  { name: "Ottawa Macdonald-Cartier (YOW)", description: "National capital airport", type: "Airports", url: "https://yow.ca/" },
+                                  { name: "Halifax Stanfield (YHZ)", description: "Atlantic Canada's major airport", type: "Airports", url: "https://hiaa.ca/" },
+                                  { name: "VIA Rail", description: "National passenger rail service", type: "Rail", url: "https://www.viarail.ca/" },
+                                  { name: "Rocky Mountaineer", description: "Luxury tourist train through Canadian Rockies", type: "Rail", url: "https://www.rockymountaineer.com/" },
+                                  { name: "CN Rail", description: "Canadian National Railway freight", type: "Freight Rail", url: "https://www.cn.ca/" },
+                                  { name: "CP Rail", description: "Canadian Pacific Railway freight", type: "Freight Rail", url: "https://www.cpr.ca/" },
+                                  { name: "Rider Express", description: "Intercity bus service in Western Canada", type: "Buses", url: "https://riderexpress.ca/" },
+                                  { name: "Ontario Northland", description: "Bus and train service in Northern Ontario", type: "Buses", url: "https://www.ontarionorthland.ca/" },
+                                  { name: "Maritime Bus", description: "Regional bus service in Atlantic Canada", type: "Buses", url: "https://www.maritimebus.com/" }
                                 ]
                               },
                               {
                                 name: "🏙️ Urban Transit (By Province)",
                                 icon: "fas fa-bus",
                                 services: [
-                                  { name: "TTC (Toronto Transit Commission)", description: "Toronto's public transit system", type: "Ontario" },
-                                  { name: "GO Transit", description: "Greater Toronto Area regional transit", type: "Ontario" },
-                                  { name: "MiWay", description: "Mississauga public transit", type: "Ontario" },
-                                  { name: "OC Transpo", description: "Ottawa public transit", type: "Ontario" },
-                                  { name: "STM (Société de transport de Montréal)", description: "Montreal public transit", type: "Quebec" },
-                                  { name: "Exo", description: "Greater Montreal regional transit", type: "Quebec" },
-                                  { name: "STL (Société de transport de Laval)", description: "Laval public transit", type: "Quebec" },
-                                  { name: "RTL (Réseau de transport de Longueuil)", description: "Longueuil public transit", type: "Quebec" },
-                                  { name: "RTC (Réseau de transport de la Capitale)", description: "Quebec City public transit", type: "Quebec" },
-                                  { name: "TransLink", description: "Vancouver regional transit authority", type: "BC" },
-                                  { name: "BC Transit", description: "Public transit across British Columbia", type: "BC" },
-                                  { name: "ETS (Edmonton Transit Service)", description: "Edmonton public transit", type: "Alberta" },
-                                  { name: "Calgary Transit", description: "Calgary public transit system", type: "Alberta" },
-                                  { name: "Winnipeg Transit", description: "Winnipeg public transit", type: "Others" },
-                                  { name: "Halifax Transit", description: "Halifax regional transit", type: "Others" },
-                                  { name: "Metrobus NL", description: "St. John's public transit", type: "Others" }
+                                  { name: "TTC (Toronto Transit Commission)", description: "Toronto's public transit system", type: "Ontario", url: "https://www.ttc.ca/" },
+                                  { name: "GO Transit", description: "Greater Toronto Area regional transit", type: "Ontario", url: "https://www.gotransit.com/" },
+                                  { name: "MiWay", description: "Mississauga public transit", type: "Ontario", url: "https://www.mississauga.ca/miway/" },
+                                  { name: "OC Transpo", description: "Ottawa public transit", type: "Ontario", url: "https://www.octranspo.com/" },
+                                  { name: "STM (Société de transport de Montréal)", description: "Montreal public transit", type: "Quebec", url: "https://www.stm.info/" },
+                                  { name: "Exo", description: "Greater Montreal regional transit", type: "Quebec", url: "https://exo.quebec/" },
+                                  { name: "STL (Société de transport de Laval)", description: "Laval public transit", type: "Quebec", url: "https://www.stl.laval.qc.ca/" },
+                                  { name: "RTL (Réseau de transport de Longueuil)", description: "Longueuil public transit", type: "Quebec", url: "https://www.rtl-longueuil.qc.ca/" },
+                                  { name: "RTC (Réseau de transport de la Capitale)", description: "Quebec City public transit", type: "Quebec", url: "https://www.rtcquebec.ca/" },
+                                  { name: "TransLink", description: "Vancouver regional transit authority", type: "BC", url: "https://www.translink.ca/" },
+                                  { name: "BC Transit", description: "Public transit across British Columbia", type: "BC", url: "https://www.bctransit.com/" },
+                                  { name: "ETS (Edmonton Transit Service)", description: "Edmonton public transit", type: "Alberta", url: "https://www.edmonton.ca/ets/" },
+                                  { name: "Calgary Transit", description: "Calgary public transit system", type: "Alberta", url: "https://www.calgarytransit.com/" },
+                                  { name: "Winnipeg Transit", description: "Winnipeg public transit", type: "Others", url: "https://winnipegtransit.com/" },
+                                  { name: "Halifax Transit", description: "Halifax regional transit", type: "Others", url: "https://www.halifax.ca/transportation/halifax-transit/" },
+                                  { name: "Metrobus NL", description: "St. John's public transit", type: "Others", url: "https://www.metrobus.com/" }
                                 ]
                               },
                               {
                                 name: "⛴️ Ferries",
                                 icon: "fas fa-ship",
                                 services: [
-                                  { name: "BC Ferries", description: "Ferry services connecting coastal British Columbia", type: "West Coast" },
-                                  { name: "Marine Atlantic", description: "Ferry service between Nova Scotia and Newfoundland", type: "NS ↔ NL" },
-                                  { name: "Northumberland Ferries", description: "Ferry connecting Prince Edward Island and New Brunswick", type: "PEI ↔ NB" },
-                                  { name: "Ontario Ferries", description: "Ferry services within Ontario waters", type: "Ontario & Quebec" },
-                                  { name: "Quebec Ferries", description: "Ferry services within Quebec waters", type: "Ontario & Quebec" }
+                                  { name: "BC Ferries", description: "Ferry services connecting coastal British Columbia", type: "West Coast", url: "https://www.bcferries.com/" },
+                                  { name: "Marine Atlantic", description: "Ferry service between Nova Scotia and Newfoundland", type: "NS ↔ NL", url: "https://www.marineatlantic.ca/" },
+                                  { name: "Northumberland Ferries", description: "Ferry connecting Prince Edward Island and New Brunswick", type: "PEI ↔ NB", url: "https://www.ferries.ca/" },
+                                  { name: "Ontario Ferries", description: "Ferry services within Ontario waters", type: "Ontario & Quebec", url: "https://www.ontario.ca/page/ferry-services" },
+                                  { name: "Quebec Ferries", description: "Ferry services within Quebec waters", type: "Ontario & Quebec", url: "https://www.transports.gouv.qc.ca/fr/entreprises-partenaires/maritime/Pages/traversiers.aspx" }
                                 ]
                               },
                               {
                                 name: "❄️ Northern Transportation",
                                 icon: "fas fa-snowflake",
                                 services: [
-                                  { name: "Air North", description: "Regional airline serving Yukon Territory", type: "Yukon" },
-                                  { name: "Canadian North", description: "Northern airline serving Arctic communities", type: "Arctic" },
-                                  { name: "Northwest Territories Highways", description: "Road network in NWT", type: "Roads & Shuttles" },
-                                  { name: "Nunavut Transportation", description: "Air and seasonal road access in Nunavut", type: "Arctic Services" },
-                                  { name: "Territorial Shuttles", description: "Regional shuttle services in northern territories", type: "Shuttle Services" }
+                                  { name: "Air North", description: "Regional airline serving Yukon Territory", type: "Yukon", url: "https://www.flyairnorth.com/" },
+                                  { name: "Canadian North", description: "Northern airline serving Arctic communities", type: "Arctic", url: "https://www.canadiannorth.com/" },
+                                  { name: "Northwest Territories Highways", description: "Road network in NWT", type: "Roads & Shuttles", url: "https://www.gov.nt.ca/en/services/highways" },
+                                  { name: "Nunavut Transportation", description: "Air and seasonal road access in Nunavut", type: "Arctic Services", url: "https://www.gov.nu.ca/community-and-government-services/information/transportation" },
+                                  { name: "Territorial Shuttles", description: "Regional shuttle services in northern territories", type: "Shuttle Services", url: "https://www.gov.nt.ca/en/services/transportation" }
                                 ]
                               }
                             ].map((transportCategory) => {
@@ -1477,14 +1477,32 @@ export default function Home() {
                                           <div key={index} className="border-l-4 border-orange-600 pl-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                                             <div className="flex items-start justify-between">
                                               <div className="flex-1">
-                                                <h4 className="font-semibold text-orange-600 mb-1">
-                                                  {service.name}
-                                                </h4>
+                                                {service.url ? (
+                                                  <a 
+                                                    href={service.url} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="font-semibold text-orange-600 mb-1 hover:text-orange-700 hover:underline transition-colors inline-flex items-center"
+                                                  >
+                                                    {service.name}
+                                                    <i className="fas fa-external-link-alt ml-1 text-xs"></i>
+                                                  </a>
+                                                ) : (
+                                                  <h4 className="font-semibold text-orange-600 mb-1">
+                                                    {service.name}
+                                                  </h4>
+                                                )}
                                                 <p className="text-gray-600 text-sm mb-2">{service.description}</p>
                                                 <div className="flex items-center space-x-2">
                                                   <span className="text-xs px-2 py-1 bg-orange-100 text-orange-800 rounded-full font-medium">
                                                     {service.type}
                                                   </span>
+                                                  {service.url && (
+                                                    <span className="text-xs text-gray-500">
+                                                      <i className="fas fa-link mr-1"></i>
+                                                      Visit website
+                                                    </span>
+                                                  )}
                                                 </div>
                                               </div>
                                             </div>
