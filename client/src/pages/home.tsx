@@ -1161,6 +1161,8 @@ export default function Home() {
   // Initialize expanded continents on mount (start collapsed)
   useEffect(() => {
     setExpandedContinents([]);
+    // Start with Federal Agencies expanded to show users how it works
+    setExpandedPoliceCategories(["Federal Agencies"]);
   }, []);
 
   const categoryGradients = {
@@ -1909,6 +1911,62 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Summary Counter */}
+              <div className="bg-white p-4 rounded-lg shadow-md border border-blue-200">
+                <div className="text-center">
+                  <h4 className="text-lg font-bold text-blue-800 mb-3">
+                    📊 Complete Service Breakdown - 54 Total Services
+                  </h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+                    <div className="bg-blue-50 p-2 rounded">
+                      <div className="font-bold text-blue-800">Federal</div>
+                      <div className="text-blue-600">8 services</div>
+                    </div>
+                    <div className="bg-blue-50 p-2 rounded">
+                      <div className="font-bold text-blue-800">Provincial</div>
+                      <div className="text-blue-600">3 services</div>
+                    </div>
+                    <div className="bg-blue-50 p-2 rounded">
+                      <div className="font-bold text-blue-800">Municipal</div>
+                      <div className="text-blue-600">14 services</div>
+                    </div>
+                    <div className="bg-blue-50 p-2 rounded">
+                      <div className="font-bold text-blue-800">Transit</div>
+                      <div className="text-blue-600">5 services</div>
+                    </div>
+                    <div className="bg-blue-50 p-2 rounded">
+                      <div className="font-bold text-blue-800">Indigenous</div>
+                      <div className="text-blue-600">8 services</div>
+                    </div>
+                    <div className="bg-blue-50 p-2 rounded">
+                      <div className="font-bold text-blue-800">Conservation</div>
+                      <div className="text-blue-600">6 services</div>
+                    </div>
+                    <div className="bg-blue-50 p-2 rounded">
+                      <div className="font-bold text-blue-800">Sheriff</div>
+                      <div className="text-blue-600">6 services</div>
+                    </div>
+                    <div className="bg-blue-50 p-2 rounded">
+                      <div className="font-bold text-blue-800">Emergency</div>
+                      <div className="text-blue-600">4 services</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Instructions */}
+              <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                <div className="flex items-center space-x-2 mb-2">
+                  <i className="fas fa-list text-blue-600"></i>
+                  <h4 className="font-bold text-blue-800">How to View All 54 Services:</h4>
+                </div>
+                <p className="text-blue-700 text-sm">
+                  Each category below contains multiple police and security services. 
+                  <strong> Click on any category header to expand and see all services within that category.</strong>
+                  The first category (Federal Agencies) is expanded by default to show you how it works.
+                </p>
+              </div>
+
               {/* Police & Security Categories - Accordion Style */}
               <div className="space-y-4">
                 {Object.entries(canadianPoliceSecurityData).map(([category, services]) => {
@@ -1925,7 +1983,11 @@ export default function Home() {
                   return (
                     <div key={category} className="rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300">
                       <button
-                        className="p-4 sm:p-6 bg-gradient-to-r from-blue-800 to-blue-900 text-white hover:scale-[1.02] active:scale-95 transition-transform duration-200 text-left w-full"
+                        className={`p-4 sm:p-6 text-white hover:scale-[1.02] active:scale-95 transition-all duration-200 text-left w-full ${
+                          isPoliceCategoryExpanded(category) 
+                            ? 'bg-gradient-to-r from-blue-700 to-blue-800' 
+                            : 'bg-gradient-to-r from-blue-800 to-blue-900 hover:from-blue-700 hover:to-blue-800'
+                        }`}
                         onClick={() => togglePoliceCategory(category)}
                       >
                         <div className="flex items-center justify-between">
@@ -1944,12 +2006,20 @@ export default function Home() {
                             <div>
                               <h3 className="text-xl font-bold">{category}</h3>
                               <p className="text-sm opacity-90">
-                                {filteredServices.length} service{filteredServices.length !== 1 ? 's' : ''} available
-                                {!isPoliceCategoryExpanded(category) && <span className="ml-2 font-medium animate-pulse">• Click to view all services</span>}
+                                <span className="bg-white bg-opacity-20 px-2 py-1 rounded-full mr-2">
+                                  {filteredServices.length} service{filteredServices.length !== 1 ? 's' : ''}
+                                </span>
+                                {!isPoliceCategoryExpanded(category) && <span className="font-medium animate-pulse">👆 Click to expand and view all services</span>}
+                                {isPoliceCategoryExpanded(category) && <span className="font-medium">👆 Click to collapse</span>}
                               </p>
                             </div>
                           </div>
-                          <i className={`fas fa-chevron-${isPoliceCategoryExpanded(category) ? 'up' : 'down'} text-sm opacity-75 transition-transform`}></i>
+                          <div className="flex items-center space-x-2">
+                            <span className="text-xs opacity-75">
+                              {isPoliceCategoryExpanded(category) ? 'Expanded' : 'Collapsed'}
+                            </span>
+                            <i className={`fas fa-chevron-${isPoliceCategoryExpanded(category) ? 'up' : 'down'} text-lg transition-transform duration-200 ${isPoliceCategoryExpanded(category) ? 'rotate-0' : 'rotate-0'}`}></i>
+                          </div>
                         </div>
                       </button>
                       
