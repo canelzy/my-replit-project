@@ -485,7 +485,7 @@ export default function Home() {
           <TabsList className="grid w-full grid-cols-2 lg:grid-cols-6 mb-8">
             <TabsTrigger value="all">All Services</TabsTrigger>
             <TabsTrigger value="nonprofits">Non-Profits</TabsTrigger>
-            <TabsTrigger value="education">
+            <TabsTrigger value="education" className="education-tab">
               <i className="fas fa-graduation-cap mr-2"></i>
               Education
             </TabsTrigger>

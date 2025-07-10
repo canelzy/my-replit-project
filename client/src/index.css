@@ -231,4 +231,35 @@
     border: 2px solid transparent;
     border-radius: 0.75rem;
   }
+
+  /* Education Tab Special Styling */
+  .education-tab {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
+    border: none !important;
+    transform: scale(1.05) !important;
+    animation: pulse 2s infinite !important;
+  }
+
+  .education-tab:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%) !important;
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4) !important;
+    transform: scale(1.08) !important;
+  }
+
+  .education-tab[data-state="active"] {
+    background: linear-gradient(135deg, #1d4ed8 0%, #6d28d9 100%) !important;
+    color: white !important;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.5);
+    }
+  }
 }
