@@ -1030,8 +1030,8 @@ export default function Home() {
   const toggleContinent = (continent: string) => {
     setExpandedContinents(prev => 
       prev.includes(continent) 
-        ? prev.filter(c => c !== continent)
-        : [...prev, continent]
+        ? [] // Close the current continent
+        : [continent] // Open only this continent, close all others
     );
   };
 
