@@ -2750,78 +2750,34 @@ export default function Home() {
             {/* Contact Form */}
             <ContactForm />
 
-            {/* Contact Information & FAQ */}
+            {/* Additional Resources */}
             <div className="bg-gradient-to-r from-cyan-50 to-blue-50 p-6 rounded-xl border border-blue-200">
-              <div className="text-center mb-6">
+              <div className="text-center">
                 <h3 className="text-xl font-semibold text-gray-800 mb-4">
                   <i className="fas fa-info-circle text-blue-600 mr-2"></i>
-                  How Our Contact System Works
+                  Additional Ways to Help
                 </h3>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div className="bg-white p-4 rounded-lg shadow-sm text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 text-green-600 rounded-full mb-3">
-                    <i className="fas fa-paper-plane text-lg"></i>
-                  </div>
-                  <h4 className="font-medium text-gray-800 mb-2">Submit Form</h4>
-                  <p className="text-sm text-gray-600">
-                    Fill out the contact form above with your message or suggestion.
-                  </p>
-                </div>
-                <div className="bg-white p-4 rounded-lg shadow-sm text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 text-blue-600 rounded-full mb-3">
-                    <i className="fas fa-inbox text-lg"></i>
-                  </div>
-                  <h4 className="font-medium text-gray-800 mb-2">We Receive It</h4>
-                  <p className="text-sm text-gray-600">
-                    Your message is logged and sent to canelzy@yahoo.com for review.
-                  </p>
-                </div>
-                <div className="bg-white p-4 rounded-lg shadow-sm text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-100 text-purple-600 rounded-full mb-3">
-                    <i className="fas fa-reply text-lg"></i>
-                  </div>
-                  <h4 className="font-medium text-gray-800 mb-2">We Respond</h4>
-                  <p className="text-sm text-gray-600">
-                    We'll reply to your email address within 24 hours with updates or answers.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
-                <div className="flex items-start">
-                  <i className="fas fa-lightbulb text-yellow-600 mt-1 mr-3"></i>
-                  <div>
-                    <h4 className="font-medium text-yellow-800 mb-1">Contact Form Status</h4>
-                    <p className="text-sm text-yellow-700">
-                      The contact form is working properly! When you submit a message, you'll see a success notification. 
-                      Your message is immediately logged and will be forwarded to our team for review.
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <h4 className="font-medium text-gray-800 mb-2">
+                      <i className="fas fa-link text-indigo-600 mr-2"></i>
+                      Suggest New Links
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      Know of important government services missing from our directory? 
+                      Let us know and we'll add them to help other Canadians.
                     </p>
                   </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <h4 className="font-medium text-gray-800 mb-2">
-                    <i className="fas fa-link text-indigo-600 mr-2"></i>
-                    Suggest New Links
-                  </h4>
-                  <p className="text-sm text-gray-600">
-                    Know of important government services missing from our directory? 
-                    Let us know and we'll add them to help other Canadians.
-                  </p>
-                </div>
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <h4 className="font-medium text-gray-800 mb-2">
-                    <i className="fas fa-bug text-red-600 mr-2"></i>
-                    Report Issues
-                  </h4>
-                  <p className="text-sm text-gray-600">
-                    Found a broken link or outdated information? 
-                    Report it so we can keep the directory accurate and up-to-date.
-                  </p>
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <h4 className="font-medium text-gray-800 mb-2">
+                      <i className="fas fa-bug text-red-600 mr-2"></i>
+                      Report Issues
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      Found a broken link or outdated information? 
+                      Report it so we can keep the directory accurate and up-to-date.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

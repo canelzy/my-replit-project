@@ -40,12 +40,8 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      console.log('Submitting contact form data:', formData);
       const response = await apiRequest("POST", "/api/contact", formData);
-      console.log('Contact form response:', response);
-      
       const data = await response.json();
-      console.log('Contact form data:', data);
       
       if (data.success) {
         toast({
@@ -61,7 +57,6 @@ export default function ContactForm() {
           message: ""
         });
       } else {
-        console.error('Contact form failed:', data);
         toast({
           title: "Error sending message",
           description: data.message || "Unknown error occurred",
@@ -69,7 +64,6 @@ export default function ContactForm() {
         });
       }
     } catch (error) {
-      console.error('Contact form submission error:', error);
       toast({
         title: "Error sending message",
         description: error instanceof Error ? error.message : "Unable to send your message. Please try again later.",

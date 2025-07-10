@@ -29,12 +29,7 @@ export async function sendContactEmail(data: ContactFormData): Promise<boolean> 
   
   // If no email service is configured, log to console and return success
   if (!transporter) {
-    console.log('\n=== CONTACT FORM SUBMISSION ===');
-    console.log(`From: ${data.name} <${data.email}>`);
-    console.log(`Subject: ${data.subject}`);
-    console.log(`Message: ${data.message}`);
-    console.log(`Submitted: ${new Date().toLocaleString('en-CA', { timeZone: 'America/Toronto' })}`);
-    console.log('=== END SUBMISSION ===\n');
+    console.log(`Contact form submission from ${data.name} <${data.email}>`);
     
     // Also store in a simple log file for backup
     try {
@@ -106,12 +101,7 @@ Submitted on: ${new Date().toLocaleString('en-CA', { timeZone: 'America/Toronto'
     console.error('Error sending contact form email:', error);
     
     // Fallback to console logging if email fails
-    console.log('\n=== EMAIL FAILED - LOGGING TO CONSOLE ===');
-    console.log(`From: ${data.name} <${data.email}>`);
-    console.log(`Subject: ${data.subject}`);
-    console.log(`Message: ${data.message}`);
-    console.log(`Submitted: ${new Date().toLocaleString('en-CA', { timeZone: 'America/Toronto' })}`);
-    console.log('=== END SUBMISSION ===\n');
+    console.log(`Email failed - Contact form submission from ${data.name} <${data.email}>`);
     
     return true; // Still return true so user gets success message
   }
