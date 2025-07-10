@@ -961,6 +961,7 @@ export default function Home() {
   const [selectedContinent, setSelectedContinent] = useState<string>("all");
   const [selectedCountry, setSelectedCountry] = useState<string>("all");
   const [embassyFavorites, setEmbassyFavorites] = useState<string[]>([]);
+  const [expandedContinents, setExpandedContinents] = useState<string[]>([]);
 
   // Load favorites from localStorage on component mount
   useEffect(() => {
@@ -1060,6 +1061,24 @@ export default function Home() {
     
     return filteredData;
   };
+
+  const toggleContinent = (continent: string) => {
+    setExpandedContinents(prev => 
+      prev.includes(continent) 
+        ? prev.filter(c => c !== continent)
+        : [...prev, continent]
+    );
+  };
+
+  const isExpanded = (continent: string) => {
+    return expandedContinents.includes(continent);
+  };
+
+  // Initialize expanded continents on mount
+  useEffect(() => {
+    const allContinents = Object.keys(canadianEmbassiesData);
+    setExpandedContinents(allContinents);
+  }, []);
 
   const categoryGradients = {
     "Taxes & Benefits": { from: "from-green-600", to: "to-green-700", icon: "fas fa-calculator" },
@@ -1573,99 +1592,160 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="text-sm text-gray-600">
-                  <i className="fas fa-info-circle mr-2"></i>
-                  Official data from Global Affairs Canada. Visit 
-                  <a href="https://travel.gc.ca/assistance/embassies-consulates" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline ml-1">
-                    Travel.gc.ca
-                  </a> for current information.
+                <div className="flex items-center justify-between">
+                  <div className="text-sm text-gray-600">
+                    <i className="fas fa-info-circle mr-2"></i>
+                    Official data from Global Affairs Canada. Visit 
+                    <a href="https://travel.gc.ca/assistance/embassies-consulates" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline ml-1">
+                      Travel.gc.ca
+                    </a> for current information.
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setExpandedContinents(Object.keys(canadianEmbassiesData))}
+                      className="text-xs"
+                    >
+                      <i className="fas fa-expand-alt mr-1"></i>
+                      Expand All
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setExpandedContinents([])}
+                      className="text-xs"
+                    >
+                      <i className="fas fa-compress-alt mr-1"></i>
+                      Collapse All
+                    </Button>
+                  </div>
                 </div>
               </div>
 
-              {/* Streamlined Embassy Cards */}
-              <div className="space-y-6">
+              {/* Toggleable Embassy Cards */}
+              <div className="space-y-4">
                 {getFilteredEmbassies().map((continent, continentIndex) => (
-                  <div key={continentIndex}>
-                    <div className="flex items-center space-x-3 mb-4 pb-3 border-b border-gray-200">
-                      <div className="bg-blue-500 p-2 rounded-full">
-                        <i className="fas fa-globe-americas text-white"></i>
+                  <div key={continentIndex} className="bg-white rounded-lg shadow-md border border-gray-200">
+                    <div 
+                      className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition-colors"
+                      onClick={() => toggleContinent(continent.continent)}
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="bg-blue-500 p-2 rounded-full">
+                          <i className="fas fa-globe-americas text-white"></i>
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-bold text-gray-800">{continent.continent}</h4>
+                          <p className="text-sm text-gray-600">{continent.countries.length} {continent.countries.length === 1 ? 'country' : 'countries'}</p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="text-xl font-bold text-gray-800">{continent.continent}</h4>
-                        <p className="text-sm text-gray-600">{continent.countries.length} {continent.countries.length === 1 ? 'country' : 'countries'}</p>
+                      <div className="flex items-center space-x-2">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const allCountries = continent.countries.map(c => c.country);
+                            const allFavorited = allCountries.every(country => embassyFavorites.includes(country));
+                            
+                            if (allFavorited) {
+                              // Remove all from favorites
+                              setEmbassyFavorites(prev => prev.filter(fav => !allCountries.includes(fav)));
+                            } else {
+                              // Add all to favorites
+                              setEmbassyFavorites(prev => [...prev, ...allCountries.filter(country => !prev.includes(country))]);
+                            }
+                          }}
+                          className="text-xs"
+                        >
+                          <i className={`fas fa-star mr-1 ${
+                            continent.countries.every(c => embassyFavorites.includes(c.country)) 
+                              ? 'text-yellow-500' 
+                              : 'text-gray-400'
+                          }`}></i>
+                          {continent.countries.every(c => embassyFavorites.includes(c.country)) ? 'Unfavorite All' : 'Favorite All'}
+                        </Button>
+                        <div className="flex items-center">
+                          <i className={`fas fa-chevron-${isExpanded(continent.continent) ? 'up' : 'down'} text-gray-600 transition-transform`}></i>
+                        </div>
                       </div>
                     </div>
                     
-                    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-                      {continent.countries.map((countryData, countryIndex) => (
-                        <Card key={countryIndex} className="bg-white shadow-md hover:shadow-lg transition-shadow">
-                          <div className="bg-gray-50 p-4 border-b">
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center space-x-2">
-                                <div className="bg-red-100 p-1.5 rounded-full">
-                                  <i className="fas fa-flag text-red-600 text-sm"></i>
-                                </div>
-                                <div>
-                                  <h5 className="font-bold text-gray-800">{countryData.country}</h5>
-                                  <p className="text-xs text-gray-600">{countryData.missions.length} {countryData.missions.length === 1 ? 'mission' : 'missions'}</p>
+                    {isExpanded(continent.continent) && (
+                      <div className="p-4 pt-0 border-t border-gray-100">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+                          {continent.countries.map((countryData, countryIndex) => (
+                            <Card key={countryIndex} className="bg-white shadow-md hover:shadow-lg transition-shadow">
+                              <div className="bg-gray-50 p-4 border-b">
+                                <div className="flex items-center justify-between">
+                                  <div className="flex items-center space-x-2">
+                                    <div className="bg-red-100 p-1.5 rounded-full">
+                                      <i className="fas fa-flag text-red-600 text-sm"></i>
+                                    </div>
+                                    <div>
+                                      <h5 className="font-bold text-gray-800">{countryData.country}</h5>
+                                      <p className="text-xs text-gray-600">{countryData.missions.length} {countryData.missions.length === 1 ? 'mission' : 'missions'}</p>
+                                    </div>
+                                  </div>
+                                  <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    onClick={() => handleToggleEmbassyFavorite(countryData.country)}
+                                    className="p-1"
+                                  >
+                                    <i className={`fas fa-star ${embassyFavorites.includes(countryData.country) ? 'text-yellow-500' : 'text-gray-400'}`}></i>
+                                  </Button>
                                 </div>
                               </div>
-                              <Button
-                                variant="ghost"
-                                size="sm"
-                                onClick={() => handleToggleEmbassyFavorite(countryData.country)}
-                                className="p-1"
-                              >
-                                <i className={`fas fa-star ${embassyFavorites.includes(countryData.country) ? 'text-yellow-500' : 'text-gray-400'}`}></i>
-                              </Button>
-                            </div>
-                          </div>
-                          
-                          <CardContent className="p-4">
-                            <div className="space-y-4">
-                              {countryData.missions.map((mission, missionIndex) => (
-                                <div key={missionIndex} className="border-l-3 border-red-400 pl-3 py-2">
-                                  <div className="flex items-center justify-between mb-2">
-                                    <h6 className="font-semibold text-gray-800 text-sm">{mission.name}</h6>
-                                    <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded">
-                                      {mission.type}
-                                    </span>
-                                  </div>
-                                  <div className="space-y-2 text-sm">
-                                    <div className="flex items-center">
-                                      <i className="fas fa-map-marker-alt text-red-500 w-4 mr-2"></i>
-                                      <span className="font-medium text-gray-700">{mission.city}</span>
+                              
+                              <CardContent className="p-4">
+                                <div className="space-y-4">
+                                  {countryData.missions.map((mission, missionIndex) => (
+                                    <div key={missionIndex} className="border-l-3 border-red-400 pl-3 py-2">
+                                      <div className="flex items-center justify-between mb-2">
+                                        <h6 className="font-semibold text-gray-800 text-sm">{mission.name}</h6>
+                                        <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded">
+                                          {mission.type}
+                                        </span>
+                                      </div>
+                                      <div className="space-y-2 text-sm">
+                                        <div className="flex items-center">
+                                          <i className="fas fa-map-marker-alt text-red-500 w-4 mr-2"></i>
+                                          <span className="font-medium text-gray-700">{mission.city}</span>
+                                        </div>
+                                        <div className="flex items-start">
+                                          <i className="fas fa-building text-gray-500 w-4 mr-2 mt-0.5"></i>
+                                          <span className="text-gray-600 text-xs leading-relaxed">{mission.address}</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                          <i className="fas fa-phone text-green-600 w-4 mr-2"></i>
+                                          <a href={`tel:${mission.phone}`} className="text-blue-600 hover:text-blue-800 font-medium text-xs">
+                                            {mission.phone}
+                                          </a>
+                                        </div>
+                                        <div className="flex items-center">
+                                          <i className="fas fa-globe text-blue-600 w-4 mr-2"></i>
+                                          <a 
+                                            href={mission.website} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            className="text-blue-600 hover:text-blue-800 font-medium text-xs flex items-center"
+                                          >
+                                            Visit Website
+                                            <i className="fas fa-external-link-alt ml-1 text-xs"></i>
+                                          </a>
+                                        </div>
+                                      </div>
                                     </div>
-                                    <div className="flex items-start">
-                                      <i className="fas fa-building text-gray-500 w-4 mr-2 mt-0.5"></i>
-                                      <span className="text-gray-600 text-xs leading-relaxed">{mission.address}</span>
-                                    </div>
-                                    <div className="flex items-center">
-                                      <i className="fas fa-phone text-green-600 w-4 mr-2"></i>
-                                      <a href={`tel:${mission.phone}`} className="text-blue-600 hover:text-blue-800 font-medium text-xs">
-                                        {mission.phone}
-                                      </a>
-                                    </div>
-                                    <div className="flex items-center">
-                                      <i className="fas fa-globe text-blue-600 w-4 mr-2"></i>
-                                      <a 
-                                        href={mission.website} 
-                                        target="_blank" 
-                                        rel="noopener noreferrer" 
-                                        className="text-blue-600 hover:text-blue-800 font-medium text-xs flex items-center"
-                                      >
-                                        Visit Website
-                                        <i className="fas fa-external-link-alt ml-1 text-xs"></i>
-                                      </a>
-                                    </div>
-                                  </div>
+                                  ))}
                                 </div>
-                              ))}
-                            </div>
-                          </CardContent>
-                        </Card>
-                      ))}
-                    </div>
+                              </CardContent>
+                            </Card>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
