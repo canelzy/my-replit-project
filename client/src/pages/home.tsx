@@ -1112,16 +1112,17 @@ export default function Home() {
                   icon: "fas fa-cog" 
                 };
                 return (
-                  <CategoryCard
-                    key={category}
-                    title={category}
-                    description={`${links.length} services available`}
-                    icon={gradient.icon}
-                    links={links}
-                    gradientFrom={gradient.from}
-                    gradientTo={gradient.to}
-                    searchTerm={searchTerm}
-                  />
+                  <div key={category} className={category === "Taxes & Benefits" ? "m-2.5" : ""}>
+                    <CategoryCard
+                      title={category}
+                      description={`${links.length} services available`}
+                      icon={gradient.icon}
+                      links={links}
+                      gradientFrom={gradient.from}
+                      gradientTo={gradient.to}
+                      searchTerm={searchTerm}
+                    />
+                  </div>
                 );
               })}
             </div>
