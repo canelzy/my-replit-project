@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import SearchBar from "@/components/search-bar";
 import CategoryCard from "@/components/category-card";
 import ContactForm from "@/components/contact-form";
+import ShareButton from "@/components/share-button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -385,9 +386,12 @@ export default function Home() {
                 <p className="text-blue-100 mt-1">All your government links in one place.</p>
               </div>
             </div>
-            <div className="hidden md:flex items-center space-x-4">
-              <span className="text-sm">🇨🇦</span>
-              <span className="text-sm font-medium">Official Government Portal</span>
+            <div className="flex items-center space-x-4">
+              <div className="hidden md:flex items-center space-x-4">
+                <span className="text-sm">🇨🇦</span>
+                <span className="text-sm font-medium">Official Government Portal</span>
+              </div>
+              <ShareButton />
             </div>
           </div>
         </div>
