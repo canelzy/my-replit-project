@@ -1062,37 +1062,43 @@ export default function Home() {
       <SearchBar onSearch={handleSearch} />
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-6 sm:py-8">
         <Tabs defaultValue="all" value={activeTab} onValueChange={handleTabChange} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-6 mb-8 text-lg font-medium bg-gray-100 p-2 rounded-lg gap-2">
-            <TabsTrigger value="all" className="bg-blue-500 text-white data-[state=active]:bg-blue-600 data-[state=active]:text-white hover:bg-blue-400 rounded-md">
-              <i className="fas fa-home mr-2"></i>
-              All Services
+          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-6 mb-12 text-base sm:text-lg font-medium bg-gray-100 p-3 sm:p-4 rounded-lg gap-3 sm:gap-4">
+            <TabsTrigger value="all" className="bg-blue-500 text-white data-[state=active]:bg-blue-600 data-[state=active]:text-white hover:bg-blue-400 rounded-md py-3 px-4 sm:py-4 sm:px-6">
+              <i className="fas fa-home mr-1 sm:mr-2"></i>
+              <span className="hidden sm:inline">All Services</span>
+              <span className="sm:hidden">All</span>
             </TabsTrigger>
-            <TabsTrigger value="nonprofits" className="bg-pink-500 text-white data-[state=active]:bg-pink-600 data-[state=active]:text-white hover:bg-pink-400 rounded-md">
-              <i className="fas fa-heart mr-2"></i>
-              Non-Profits
+            <TabsTrigger value="nonprofits" className="bg-pink-500 text-white data-[state=active]:bg-pink-600 data-[state=active]:text-white hover:bg-pink-400 rounded-md py-3 px-4 sm:py-4 sm:px-6">
+              <i className="fas fa-heart mr-1 sm:mr-2"></i>
+              <span className="hidden sm:inline">Non-Profits</span>
+              <span className="sm:hidden">Non-Profits</span>
             </TabsTrigger>
-            <TabsTrigger value="education" className="bg-green-500 text-white data-[state=active]:bg-green-600 data-[state=active]:text-white hover:bg-green-400 rounded-md">
-              <i className="fas fa-graduation-cap mr-2"></i>
-              Education
+            <TabsTrigger value="education" className="bg-green-500 text-white data-[state=active]:bg-green-600 data-[state=active]:text-white hover:bg-green-400 rounded-md py-3 px-4 sm:py-4 sm:px-6">
+              <i className="fas fa-graduation-cap mr-1 sm:mr-2"></i>
+              <span className="hidden sm:inline">Education</span>
+              <span className="sm:hidden">Education</span>
             </TabsTrigger>
-            <TabsTrigger value="embassies" className="bg-red-500 text-white data-[state=active]:bg-red-600 data-[state=active]:text-white hover:bg-red-400 rounded-md">
-              <i className="fas fa-flag mr-2"></i>
-              Embassies
+            <TabsTrigger value="embassies" className="bg-red-500 text-white data-[state=active]:bg-red-600 data-[state=active]:text-white hover:bg-red-400 rounded-md py-3 px-4 sm:py-4 sm:px-6">
+              <i className="fas fa-flag mr-1 sm:mr-2"></i>
+              <span className="hidden sm:inline">Embassies</span>
+              <span className="sm:hidden">Embassies</span>
             </TabsTrigger>
-            <TabsTrigger value="categories" className="bg-purple-500 text-white data-[state=active]:bg-purple-600 data-[state=active]:text-white hover:bg-purple-400 rounded-md">
-              <i className="fas fa-th-large mr-2"></i>
-              Categories
+            <TabsTrigger value="categories" className="bg-purple-500 text-white data-[state=active]:bg-purple-600 data-[state=active]:text-white hover:bg-purple-400 rounded-md py-3 px-4 sm:py-4 sm:px-6">
+              <i className="fas fa-th-large mr-1 sm:mr-2"></i>
+              <span className="hidden sm:inline">Categories</span>
+              <span className="sm:hidden">Categories</span>
             </TabsTrigger>
-            <TabsTrigger value="contact" className="bg-indigo-500 text-white data-[state=active]:bg-indigo-600 data-[state=active]:text-white hover:bg-indigo-400 rounded-md">
-              <i className="fas fa-envelope mr-2"></i>
-              Contact
+            <TabsTrigger value="contact" className="bg-indigo-500 text-white data-[state=active]:bg-indigo-600 data-[state=active]:text-white hover:bg-indigo-400 rounded-md py-3 px-4 sm:py-4 sm:px-6">
+              <i className="fas fa-envelope mr-1 sm:mr-2"></i>
+              <span className="hidden sm:inline">Contact</span>
+              <span className="sm:hidden">Contact</span>
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="all">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <TabsContent value="all" className="mt-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
               {Object.entries(linksData).map(([category, links]) => {
                 const gradient = categoryGradients[category as keyof typeof categoryGradients] || { 
                   from: "from-gray-600", 
@@ -1117,8 +1123,8 @@ export default function Home() {
 
 
 
-          <TabsContent value="nonprofits">
-            <div className="space-y-8">
+          <TabsContent value="nonprofits" className="mt-8">
+            <div className="space-y-6 sm:space-y-8">
               {/* Category Filter */}
               <Card className="bg-white shadow-md">
                 <CardContent className="p-4">
@@ -1218,8 +1224,8 @@ export default function Home() {
             </div>
           </TabsContent>
 
-          <TabsContent value="education">
-            <div className="space-y-6">
+          <TabsContent value="education" className="mt-8">
+            <div className="space-y-6 sm:space-y-8">
               {/* Education Header */}
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-lg">
                 <h2 className="text-2xl font-bold mb-2">Colleges & Universities</h2>

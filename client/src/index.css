@@ -80,6 +80,25 @@
   background: #94a3b8;
 }
 
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ensure tabs don't get too cramped on mobile */
+  [data-radix-tabs-trigger] {
+    min-height: 48px;
+    font-size: 0.875rem;
+  }
+  
+  /* Better spacing for cards on mobile */
+  .category-card {
+    margin-bottom: 1rem;
+  }
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {
