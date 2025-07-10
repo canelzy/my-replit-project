@@ -16,21 +16,21 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
 
   return (
     <section className="bg-white shadow-sm border-b">
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-6">
         <div className="max-w-2xl mx-auto">
           <div className="relative">
-            <i className="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            <i className="fas fa-search absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm sm:text-base"></i>
             <Input
               type="text"
               value={searchTerm}
               onChange={handleInputChange}
-              placeholder="Search government services..."
-              className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-gray-700"
+              placeholder="Search services..."
+              className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-gray-700 text-sm sm:text-base"
             />
           </div>
-          <p className="text-sm text-gray-600 mt-2 text-center">
-            <i className="fas fa-info-circle"></i> 
-            Search by service name or keyword to quickly find what you need
+          <p className="text-xs sm:text-sm text-gray-600 mt-2 text-center">
+            <i className="fas fa-info-circle mr-1"></i> 
+            Search by service name or keyword
           </p>
         </div>
       </div>
