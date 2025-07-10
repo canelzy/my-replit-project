@@ -960,6 +960,7 @@ export default function Home() {
   const [selectedType, setSelectedType] = useState<string>("all");
   const [expandedContinents, setExpandedContinents] = useState<string[]>([]);
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
+  const [expandedEducationCategories, setExpandedEducationCategories] = useState<string[]>([]);
 
   // Load favorites from localStorage on component mount
   useEffect(() => {
@@ -1046,6 +1047,18 @@ export default function Home() {
         ? prev.filter(c => c !== category)
         : [...prev, category]
     );
+  };
+
+  const toggleEducationCategory = (category: string) => {
+    setExpandedEducationCategories(prev => 
+      prev.includes(category) 
+        ? [] // Close the current category
+        : [category] // Open only this category, close all others
+    );
+  };
+
+  const isEducationCategoryExpanded = (category: string) => {
+    return expandedEducationCategories.includes(category);
   };
 
   // Initialize expanded continents on mount (start collapsed)
@@ -1443,8 +1456,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Education Categories */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Education Categories - Accordion Style */}
+              <div className="space-y-4">
                 {Object.entries(canadianEducationData).map(([category, institutions]) => {
                   if (selectedCategory !== "all" && selectedCategory !== category) return null;
                   
@@ -1461,55 +1474,76 @@ export default function Home() {
                   if (filteredInstitutions.length === 0) return null;
 
                   return (
-                    <Card key={category} className="bg-white shadow-md hover:shadow-lg transition-shadow">
-                      <CardContent className="p-6">
-                        <div className="flex items-center space-x-3 mb-4">
-                          <i className={`fas ${category === "Top Universities" ? "fa-university" : 
-                            category === "Major Polytechnics" ? "fa-cogs" :
-                            category === "Quebec CEGEPs" ? "fa-graduation-cap" :
-                            category === "Community Colleges" ? "fa-school" :
-                            "fa-info-circle"} text-blue-600 text-2xl`}></i>
-                          <h3 className="text-xl font-semibold text-gray-800">{category}</h3>
-                        </div>
-                        
-                        <div className="space-y-4">
-                          {filteredInstitutions.map((institution, index) => (
-                            <div key={index} className="border-l-4 border-blue-500 pl-4 py-2">
-                              <div className="flex items-start justify-between">
-                                <div className="flex-1">
-                                  <div className="flex items-center space-x-3 mb-2">
-                                    <a 
-                                      href={institution.url} 
-                                      target="_blank" 
-                                      rel="noopener noreferrer"
-                                      className="font-semibold text-blue-600 hover:text-blue-800 transition-colors"
-                                    >
-                                      {institution.name}
-                                      <i className="fas fa-external-link-alt ml-2 text-sm"></i>
-                                    </a>
-                                    <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
-                                      {institution.type}
-                                    </span>
-                                  </div>
-                                  <p className="text-gray-600 text-sm mb-1">{institution.description}</p>
-                                  <p className="text-gray-500 text-xs">
-                                    📍 {institution.province}
-                                  </p>
-                                </div>
-                                <Button
-                                  variant="ghost"
-                                  size="sm"
-                                  onClick={() => handleToggleSchoolFavorite(institution.url)}
-                                  className={`ml-2 ${favoriteSchools.includes(institution.url) ? 'text-yellow-500' : 'text-gray-400'}`}
-                                >
-                                  <i className="fas fa-star"></i>
-                                </Button>
-                              </div>
+                    <div key={category} className="rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300">
+                      <button
+                        className="p-4 sm:p-6 bg-gradient-to-r from-green-500 to-green-700 text-white hover:scale-[1.02] active:scale-95 transition-transform duration-200 text-left w-full"
+                        onClick={() => toggleEducationCategory(category)}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center space-x-3">
+                            <i className={`fas ${category === "Top Universities" ? "fa-university" : 
+                              category === "Major Polytechnics" ? "fa-cogs" :
+                              category === "Quebec CEGEPs" ? "fa-graduation-cap" :
+                              category === "Community Colleges" ? "fa-school" :
+                              "fa-info-circle"} text-2xl`}></i>
+                            <div>
+                              <h3 className="text-xl font-bold">{category}</h3>
+                              <p className="text-sm opacity-90">
+                                {filteredInstitutions.length} institution{filteredInstitutions.length !== 1 ? 's' : ''} available
+                                {!isEducationCategoryExpanded(category) && <span className="ml-2 font-medium">• Click to expand</span>}
+                              </p>
                             </div>
-                          ))}
+                          </div>
+                          <i className={`fas fa-chevron-${isEducationCategoryExpanded(category) ? 'up' : 'down'} text-sm opacity-75 transition-transform`}></i>
                         </div>
-                      </CardContent>
-                    </Card>
+                      </button>
+                      
+                      {isEducationCategoryExpanded(category) && (
+                        <div className="p-6 bg-white">
+                          <div className="space-y-4">
+                            {filteredInstitutions.map((institution, index) => (
+                              <div key={index} className="border-l-4 border-green-500 pl-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                <div className="flex items-start justify-between">
+                                  <div className="flex-1">
+                                    <div className="flex items-center space-x-3 mb-2">
+                                      <a 
+                                        href={institution.url} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="font-semibold text-blue-600 hover:text-blue-800 transition-colors"
+                                      >
+                                        {institution.name}
+                                        <i className="fas fa-external-link-alt ml-2 text-xs"></i>
+                                      </a>
+                                      <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                                        {institution.type}
+                                      </span>
+                                    </div>
+                                    <p className="text-gray-600 text-sm mb-1">{institution.description}</p>
+                                    <p className="text-gray-500 text-xs">
+                                      📍 {institution.province}
+                                    </p>
+                                  </div>
+                                  <button
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      handleToggleSchoolFavorite(institution.url);
+                                    }}
+                                    className={`ml-2 p-2 rounded-full transition-colors ${
+                                      favoriteSchools.includes(institution.url) 
+                                        ? 'text-yellow-500 bg-yellow-50 hover:bg-yellow-100' 
+                                        : 'text-gray-400 hover:text-yellow-500 hover:bg-gray-100'
+                                    }`}
+                                  >
+                                    <i className="fas fa-star text-sm"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   );
                 })}
               </div>
