@@ -381,4 +381,14 @@
     box-shadow: 0 10px 30px rgba(29, 78, 216, 0.5), 0 5px 18px rgba(109, 40, 217, 0.4) !important;
     transform: scale(1.1) translateY(-4px) !important;
   }
+
+  /* Scrollbar hide utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }

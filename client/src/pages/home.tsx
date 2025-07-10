@@ -1023,15 +1023,15 @@ export default function Home() {
   }, []);
 
   const categoryGradients = {
-    "Taxes & Benefits": { from: "from-green-600", to: "to-green-700", icon: "fas fa-calculator" },
-    "Pensions & Retirement": { from: "from-purple-600", to: "to-purple-700", icon: "fas fa-piggy-bank" },
-    "Employment & Social Development": { from: "from-blue-600", to: "to-blue-700", icon: "fas fa-briefcase" },
-    "Immigration & Citizenship": { from: "from-indigo-600", to: "to-indigo-700", icon: "fas fa-passport" },
-    "Health & Disability": { from: "from-red-600", to: "to-red-700", icon: "fas fa-heartbeat" },
-    "Legal / Identification": { from: "from-yellow-600", to: "to-yellow-700", icon: "fas fa-gavel" },
-    "Banking & Financial Services": { from: "from-emerald-600", to: "to-emerald-700", icon: "fas fa-university" },
-    "Non-Profits": { from: "from-pink-600", to: "to-pink-700", icon: "fas fa-heart" },
-    "General Government": { from: "from-gray-600", to: "to-gray-700", icon: "fas fa-landmark" }
+    "Taxes & Benefits": { from: "from-green-600", to: "to-green-700", icon: "fas fa-calculator", emoji: "💰" },
+    "Pensions & Retirement": { from: "from-purple-600", to: "to-purple-700", icon: "fas fa-piggy-bank", emoji: "🏦" },
+    "Employment & Social Development": { from: "from-blue-600", to: "to-blue-700", icon: "fas fa-briefcase", emoji: "💼" },
+    "Immigration & Citizenship": { from: "from-indigo-600", to: "to-indigo-700", icon: "fas fa-passport", emoji: "🛂" },
+    "Health & Disability": { from: "from-red-600", to: "to-red-700", icon: "fas fa-heartbeat", emoji: "🏥" },
+    "Legal / Identification": { from: "from-yellow-600", to: "to-yellow-700", icon: "fas fa-gavel", emoji: "⚖️" },
+    "Banking & Financial Services": { from: "from-emerald-600", to: "to-emerald-700", icon: "fas fa-university", emoji: "🏛️" },
+    "Non-Profits": { from: "from-pink-600", to: "to-pink-700", icon: "fas fa-heart", emoji: "🤝" },
+    "General Government": { from: "from-gray-600", to: "to-gray-700", icon: "fas fa-landmark", emoji: "🏛️" }
   };
 
   return (
@@ -1062,78 +1062,116 @@ export default function Home() {
       <SearchBar onSearch={handleSearch} />
 
       {/* Main Content */}
-      <main className="container mx-auto px-3 sm:px-4 py-4 sm:py-6 lg:py-8 pb-8">
-        <Tabs defaultValue="all" value={activeTab} onValueChange={handleTabChange} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 mb-8 sm:mb-12 text-xs sm:text-sm lg:text-base font-medium bg-white shadow-md p-2 sm:p-3 lg:p-4 rounded-xl gap-1 sm:gap-2 lg:gap-3 m-2.5 border border-gray-200">
-            <TabsTrigger value="all" className="bg-blue-500 text-white data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg hover:bg-blue-400 rounded-lg py-2 px-1 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14 transition-all duration-200 font-medium">
-              <div className="flex flex-col items-center sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <i className="fas fa-home text-sm sm:text-base"></i>
-                <span className="text-xs sm:text-sm lg:text-base">All</span>
-              </div>
-            </TabsTrigger>
-            <TabsTrigger value="nonprofits" className="bg-pink-500 text-white data-[state=active]:bg-pink-600 data-[state=active]:text-white data-[state=active]:shadow-lg hover:bg-pink-400 rounded-lg py-2 px-1 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14 transition-all duration-200 font-medium">
-              <div className="flex flex-col items-center sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <i className="fas fa-heart text-sm sm:text-base"></i>
-                <span className="text-xs sm:text-sm lg:text-base">Non-Profits</span>
-              </div>
-            </TabsTrigger>
-            <TabsTrigger value="education" className="bg-green-500 text-white data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-lg hover:bg-green-400 rounded-lg py-2 px-1 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14 transition-all duration-200 font-medium">
-              <div className="flex flex-col items-center sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <i className="fas fa-graduation-cap text-sm sm:text-base"></i>
-                <span className="text-xs sm:text-sm lg:text-base">Education</span>
-              </div>
-            </TabsTrigger>
-            <TabsTrigger value="embassies" className="bg-red-500 text-white data-[state=active]:bg-red-600 data-[state=active]:text-white data-[state=active]:shadow-lg hover:bg-red-400 rounded-lg py-2 px-1 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14 transition-all duration-200 font-medium">
-              <div className="flex flex-col items-center sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <i className="fas fa-flag text-sm sm:text-base"></i>
-                <span className="text-xs sm:text-sm lg:text-base">Embassies</span>
-              </div>
-            </TabsTrigger>
-            <TabsTrigger value="categories" className="bg-purple-500 text-white data-[state=active]:bg-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg hover:bg-purple-400 rounded-lg py-2 px-1 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14 transition-all duration-200 font-medium">
-              <div className="flex flex-col items-center sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <i className="fas fa-th-large text-sm sm:text-base"></i>
-                <span className="text-xs sm:text-sm lg:text-base">Categories</span>
-              </div>
-            </TabsTrigger>
-            <TabsTrigger value="contact" className="bg-indigo-500 text-white data-[state=active]:bg-indigo-600 data-[state=active]:text-white data-[state=active]:shadow-lg hover:bg-indigo-400 rounded-lg py-2 px-1 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14 transition-all duration-200 font-medium">
-              <div className="flex flex-col items-center sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <i className="fas fa-envelope text-sm sm:text-base"></i>
-                <span className="text-xs sm:text-sm lg:text-base">Contact</span>
-              </div>
-            </TabsTrigger>
-          </TabsList>
+      <main className="max-w-screen-lg mx-auto px-4 py-6">
+        {/* Top Navigation Buttons */}
+        <div className="overflow-x-auto mb-8 scrollbar-hide">
+          <div className="flex space-x-3 min-w-max px-1 py-2">
+            <button
+              onClick={() => setActiveTab('all')}
+              className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
+                activeTab === 'all' 
+                  ? 'bg-gradient-to-r from-blue-500 to-blue-700 text-white shadow-lg' 
+                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+              }`}
+            >
+              <i className="fas fa-home text-sm"></i>
+              <span className="text-sm font-medium">All</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('nonprofits')}
+              className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
+                activeTab === 'nonprofits' 
+                  ? 'bg-gradient-to-r from-pink-500 to-pink-700 text-white shadow-lg' 
+                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+              }`}
+            >
+              <i className="fas fa-heart text-sm"></i>
+              <span className="text-sm font-medium">Non-Profits</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('education')}
+              className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
+                activeTab === 'education' 
+                  ? 'bg-gradient-to-r from-green-500 to-green-700 text-white shadow-lg' 
+                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+              }`}
+            >
+              <i className="fas fa-graduation-cap text-sm"></i>
+              <span className="text-sm font-medium">Education</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('embassies')}
+              className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
+                activeTab === 'embassies' 
+                  ? 'bg-gradient-to-r from-red-500 to-red-700 text-white shadow-lg' 
+                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+              }`}
+            >
+              <i className="fas fa-flag text-sm"></i>
+              <span className="text-sm font-medium">Embassies</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('categories')}
+              className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
+                activeTab === 'categories' 
+                  ? 'bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-lg' 
+                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+              }`}
+            >
+              <i className="fas fa-th-large text-sm"></i>
+              <span className="text-sm font-medium">Categories</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('contact')}
+              className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
+                activeTab === 'contact' 
+                  ? 'bg-gradient-to-r from-indigo-500 to-indigo-700 text-white shadow-lg' 
+                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+              }`}
+            >
+              <i className="fas fa-envelope text-sm"></i>
+              <span className="text-sm font-medium">Contact</span>
+            </button>
+          </div>
+        </div>
 
-          {/* Spacer */}
-          <div className="h-7.5"></div>
-
-          <TabsContent value="all" className="mt-6 sm:mt-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-              {Object.entries(linksData).map(([category, links]) => {
-                const gradient = categoryGradients[category as keyof typeof categoryGradients] || { 
-                  from: "from-gray-600", 
-                  to: "to-gray-700", 
-                  icon: "fas fa-cog" 
-                };
-                return (
-                  <div key={category} className={category === "Taxes & Benefits" || category === "Pensions & Retirement" ? "m-2.5" : ""}>
-                    <CategoryCard
-                      title={category}
-                      description={`${links.length} services available`}
-                      icon={gradient.icon}
-                      links={links}
-                      gradientFrom={gradient.from}
-                      gradientTo={gradient.to}
-                      searchTerm={searchTerm}
-                    />
+        {/* Main Category Grid */}
+        {activeTab === 'all' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {Object.entries(linksData).map(([category, links]) => {
+              const gradient = categoryGradients[category as keyof typeof categoryGradients] || { 
+                from: "from-gray-600", 
+                to: "to-gray-700", 
+                icon: "fas fa-cog",
+                emoji: "⚙️"
+              };
+              return (
+                <button
+                  key={category}
+                  className={`p-3 sm:p-4 md:p-6 rounded-xl shadow-lg bg-gradient-to-r ${gradient.from} ${gradient.to} text-white hover:scale-105 active:scale-95 transition-transform duration-200 text-left w-full ${
+                    category === "Taxes & Benefits" || category === "Pensions & Retirement" ? "m-2.5" : ""
+                  }`}
+                  onClick={() => {
+                    // Handle category click - could expand or navigate
+                    console.log(`Clicked on ${category}`);
+                  }}
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="text-2xl">{gradient.emoji || "📋"}</div>
+                    <i className={`${gradient.icon} text-lg opacity-75`}></i>
                   </div>
-                );
-              })}
-            </div>
-          </TabsContent>
+                  <h3 className="text-xl font-bold mb-2">{category}</h3>
+                  <p className="text-sm opacity-90">{links.length} services available</p>
+                </button>
+              );
+            })}
+          </div>
+        )}
 
 
 
-          <TabsContent value="nonprofits" className="mt-6 sm:mt-8">
+        {/* Non-Profits Content */}
+        {activeTab === 'nonprofits' && (
             <div className="space-y-4 sm:space-y-6 lg:space-y-8">
               {/* Category Filter */}
               <Card className="bg-white shadow-md">
@@ -1232,9 +1270,10 @@ export default function Home() {
                   ))}
               </div>
             </div>
-          </TabsContent>
+        )}
 
-          <TabsContent value="education" className="mt-6 sm:mt-8">
+        {/* Education Content */}
+        {activeTab === 'education' && (
             <div className="space-y-4 sm:space-y-6 lg:space-y-8">
               {/* Education Header */}
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-lg">
@@ -1425,9 +1464,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </TabsContent>
+        )}
 
-          <TabsContent value="embassies">
+        {/* Embassies Content */}
+        {activeTab === 'embassies' && (
             <div className="space-y-6">
               {/* Compact Header */}
               <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-6 rounded-lg shadow-md">
@@ -1585,9 +1625,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </TabsContent>
+        )}
 
-          <TabsContent value="categories">
+        {/* Categories Content */}
+        {activeTab === 'categories' && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {Object.entries(linksData).map(([category, links]) => {
                 const gradient = categoryGradients[category as keyof typeof categoryGradients] || { 
@@ -1616,12 +1657,20 @@ export default function Home() {
                 );
               })}
             </div>
-          </TabsContent>
+        )}
 
-          <TabsContent value="contact">
-            <ContactForm />
-          </TabsContent>
-        </Tabs>
+        {/* Contact Content */}
+        {activeTab === 'contact' && (
+          <ContactForm />
+        )}
+
+        {/* Floating Back to Top Button */}
+        <button
+          className="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 active:scale-95 transition-all duration-200 md:hidden"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          <i className="fas fa-arrow-up"></i>
+        </button>
       </main>
 
       {/* Footer */}
