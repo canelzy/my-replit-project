@@ -316,91 +316,10 @@ const linksData: Record<string, LinkItem[]> = {
     { title: "Travel and Tourism", description: "Travel advisories and tourism", url: "https://travel.gc.ca/", icon: "fas fa-suitcase" },
     { title: "Weather", description: "Weather forecasts and warnings", url: "https://weather.gc.ca/", icon: "fas fa-cloud-sun" }
   ],
-  "Police & Security Forces": [
-    { title: "Royal Canadian Mounted Police (RCMP)", description: "Canada's national police force", url: "https://www.rcmp-grc.gc.ca/", icon: "fas fa-shield-alt" },
-    { title: "Canada Border Services Agency (CBSA)", description: "Border security and immigration enforcement", url: "https://www.cbsa-asfc.gc.ca/", icon: "fas fa-flag-checkered" },
-    { title: "Public Safety Canada", description: "National emergency preparedness and public safety", url: "https://www.publicsafety.gc.ca/", icon: "fas fa-exclamation-triangle" },
-    { title: "Canadian Security Intelligence Service (CSIS)", description: "National intelligence service", url: "https://www.csis-scrs.gc.ca/", icon: "fas fa-eye" },
-    { title: "Canadian Forces Military Police", description: "Military law enforcement", url: "https://www.canada.ca/en/department-national-defence/services/benefits-military/military-police.html", icon: "fas fa-user-shield" },
-    { title: "Parliamentary Protective Service", description: "Security for federal Parliament", url: "https://www.parl.ca/About/House/Administrative/PPS/index-e.html", icon: "fas fa-building-shield" },
-    { title: "Correctional Service Canada", description: "Federal corrections and parole", url: "https://www.csc-scc.gc.ca/", icon: "fas fa-lock" },
-    { title: "Parks Canada Law Enforcement", description: "National parks and historic sites protection", url: "https://www.pc.gc.ca/en/agence-agency/law-loi", icon: "fas fa-tree" }
-  ]
+
 };
 
-// Canadian Police & Security Forces Data (54 Services Total)
-const canadianPoliceSecurityData = {
-  "Federal Agencies": [
-    { name: "Royal Canadian Mounted Police (RCMP)", description: "Canada's national police force", website: "https://www.rcmp-grc.gc.ca/", type: "National Police" },
-    { name: "Canada Border Services Agency (CBSA)", description: "Border security and immigration enforcement", website: "https://www.cbsa-asfc.gc.ca/", type: "Border Security" },
-    { name: "Canadian Security Intelligence Service (CSIS)", description: "National intelligence service", website: "https://www.csis-scrs.gc.ca/", type: "Intelligence" },
-    { name: "Canadian Forces Military Police", description: "Military law enforcement", website: "https://www.canada.ca/en/department-national-defence/services/benefits-military/military-police.html", type: "Military Police" },
-    { name: "Parliamentary Protective Service", description: "Security for federal Parliament", website: "https://www.parl.ca/About/House/Administrative/PPS/index-e.html", type: "Parliamentary Security" },
-    { name: "Correctional Service Canada", description: "Federal corrections and parole", website: "https://www.csc-scc.gc.ca/", type: "Corrections" },
-    { name: "Parks Canada Law Enforcement", description: "National parks and historic sites protection", website: "https://www.pc.gc.ca/en/agence-agency/law-loi", type: "Parks Enforcement" },
-    { name: "CN Railway Police", description: "Canadian National Railway security", website: "https://www.cn.ca/en/company/safety/railway-police", type: "Railway Police" }
-  ],
-  "Provincial Police": [
-    { name: "Ontario Provincial Police (OPP)", description: "Provincial police for Ontario", website: "https://www.opp.ca/", type: "Provincial Police" },
-    { name: "Sûreté du Québec (SQ)", description: "Provincial police for Quebec", website: "https://www.sq.gouv.qc.ca/", type: "Provincial Police" },
-    { name: "Royal Newfoundland Constabulary", description: "Provincial police for Newfoundland", website: "https://www.rnc.gov.nl.ca/", type: "Provincial Police" }
-  ],
-  "Major Municipal Police": [
-    { name: "Toronto Police Service", description: "Police service for Toronto, Ontario", website: "https://www.torontopolice.on.ca/", type: "Municipal Police" },
-    { name: "Vancouver Police Department", description: "Police service for Vancouver, BC", website: "https://vpd.ca/", type: "Municipal Police" },
-    { name: "Montreal Police Service (SPVM)", description: "Police service for Montreal, Quebec", website: "https://spvm.qc.ca/", type: "Municipal Police" },
-    { name: "Calgary Police Service", description: "Police service for Calgary, Alberta", website: "https://www.calgary.ca/cps.html", type: "Municipal Police" },
-    { name: "Edmonton Police Service", description: "Police service for Edmonton, Alberta", website: "https://www.edmontonpolice.ca/", type: "Municipal Police" },
-    { name: "Ottawa Police Service", description: "Police service for Ottawa, Ontario", website: "https://www.ottawapolice.ca/", type: "Municipal Police" },
-    { name: "Winnipeg Police Service", description: "Police service for Winnipeg, Manitoba", website: "https://www.winnipeg.ca/police/", type: "Municipal Police" },
-    { name: "Hamilton Police Service", description: "Police service for Hamilton, Ontario", website: "https://hamiltonpolice.on.ca/", type: "Municipal Police" },
-    { name: "Quebec City Police Service (SPVQ)", description: "Police service for Quebec City, Quebec", website: "https://www.ville.quebec.qc.ca/citoyens/police/", type: "Municipal Police" },
-    { name: "Halifax Regional Police", description: "Police service for Halifax, Nova Scotia", website: "https://www.halifax.ca/fire-police/police", type: "Municipal Police" },
-    { name: "Regina Police Service", description: "Police service for Regina, Saskatchewan", website: "https://reginapolice.ca/", type: "Municipal Police" },
-    { name: "Saskatoon Police Service", description: "Police service for Saskatoon, Saskatchewan", website: "https://saskatoonpolice.ca/", type: "Municipal Police" },
-    { name: "London Police Service", description: "Police service for London, Ontario", website: "https://www.londonpolice.ca/", type: "Municipal Police" },
-    { name: "York Regional Police", description: "Police service for York Region, Ontario", website: "https://www.yrp.ca/", type: "Municipal Police" }
-  ],
-  "Transit & Transportation Police": [
-    { name: "South Coast BC Transportation Authority Police", description: "Transit police for Metro Vancouver", website: "https://www.translink.ca/about-us/doing-business-with-translink/corporate-overview/transit-police", type: "Transit Police" },
-    { name: "Toronto Transit Commission Special Constables", description: "TTC transit enforcement", website: "https://www.ttc.ca/riding-the-ttc/safety-and-security", type: "Transit Enforcement" },
-    { name: "GO Transit Safety", description: "GO Transit security services", website: "https://www.gotransit.com/en/travelling-with-us/safety-and-security", type: "Transit Security" },
-    { name: "YRT/Viva Transit Enforcement", description: "York Region Transit enforcement", website: "https://www.yrt.ca/en/about-us/transit-enforcement.aspx", type: "Transit Enforcement" },
-    { name: "OC Transpo Special Constables", description: "Ottawa transit enforcement", website: "https://www.octranspo.com/en/safety-and-security/", type: "Transit Enforcement" }
-  ],
-  "Indigenous Police Services": [
-    { name: "First Nations Police Services Program", description: "Indigenous community policing across Canada", website: "https://www.publicsafety.gc.ca/cnt/cntrng-crm/plcng/brgnl-plcng/index-en.aspx", type: "Indigenous Policing" },
-    { name: "Six Nations Police", description: "Police service for Six Nations territory", website: "https://www.sixnationspolice.ca/", type: "Indigenous Police" },
-    { name: "Akwesasne Mohawk Police Service", description: "Police service for Akwesasne territory", website: "https://www.akwesasnepolice.ca/", type: "Indigenous Police" },
-    { name: "Manitoba First Nations Police Service", description: "Police service for Manitoba First Nations", website: "https://mfnps.ca/", type: "Indigenous Police" },
-    { name: "Blood Tribe Police Service", description: "Police service for Blood Tribe in Alberta", website: "https://www.bloodtribe.org/departments-services/blood-tribe-police-service.htm", type: "Indigenous Police" },
-    { name: "Anishinabek Police Service", description: "Police service for Anishinabek Nation communities", website: "https://anishinabekpolice.ca/", type: "Indigenous Police" },
-    { name: "Nishnawbe-Aski Police Service", description: "Police service for northern Ontario First Nations", website: "https://naps.ca/", type: "Indigenous Police" },
-    { name: "Treaty Three Police Service", description: "Police service for Treaty Three First Nations", website: "https://www.treaty3police.ca/", type: "Indigenous Police" }
-  ],
-  "Conservation & Wildlife Enforcement": [
-    { name: "Environment and Climate Change Canada Enforcement", description: "Environmental law enforcement", website: "https://www.canada.ca/en/environment-climate-change/services/environmental-enforcement.html", type: "Environmental Enforcement" },
-    { name: "Fisheries and Oceans Canada Conservation Officers", description: "Fisheries and marine enforcement", website: "https://www.dfo-mpo.gc.ca/fisheries-peches/enforcement-application/index-eng.html", type: "Marine Enforcement" },
-    { name: "Ontario Ministry of Natural Resources Enforcement", description: "Wildlife and conservation enforcement in Ontario", website: "https://www.ontario.ca/page/conservation-officer-service", type: "Conservation Officers" },
-    { name: "BC Conservation Officer Service", description: "Wildlife and conservation enforcement in BC", website: "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/conservation-officer-service", type: "Conservation Officers" },
-    { name: "Alberta Fish and Wildlife Enforcement", description: "Wildlife enforcement in Alberta", website: "https://www.alberta.ca/fish-and-wildlife-enforcement", type: "Wildlife Enforcement" },
-    { name: "Quebec Wildlife Protection Service", description: "Wildlife protection in Quebec", website: "https://www.quebec.ca/en/government/ministere/faune/wildlife-protection", type: "Wildlife Protection" }
-  ],
-  "Sheriff & Court Services": [
-    { name: "Ontario Court Services (Sheriff Services)", description: "Court security and enforcement in Ontario", website: "https://www.ontario.ca/page/sheriff-services", type: "Sheriff Services" },
-    { name: "BC Sheriff Service", description: "Court security and prisoner transport in BC", website: "https://www2.gov.bc.ca/gov/content/justice/criminal-justice/bc-sheriff-service", type: "Sheriff Services" },
-    { name: "Alberta Sheriff Services", description: "Court security and enforcement in Alberta", website: "https://www.alberta.ca/sheriff-services", type: "Sheriff Services" },
-    { name: "Saskatchewan Sheriff Services", description: "Court security in Saskatchewan", website: "https://www.saskatchewan.ca/residents/justice-crime-and-the-law/sheriff-services", type: "Sheriff Services" },
-    { name: "Manitoba Sheriff Services", description: "Court security in Manitoba", website: "https://www.gov.mb.ca/justice/sheriff/", type: "Sheriff Services" },
-    { name: "Nova Scotia Sheriff Services", description: "Court security in Nova Scotia", website: "https://novascotia.ca/just/sheriff_services/", type: "Sheriff Services" }
-  ],
-  "Emergency Management": [
-    { name: "Public Safety Canada", description: "National emergency preparedness and public safety", website: "https://www.publicsafety.gc.ca/", type: "Emergency Management" },
-    { name: "Emergency Management Ontario", description: "Provincial emergency management", website: "https://www.ontario.ca/page/emergency-management-ontario", type: "Emergency Management" },
-    { name: "Emergency Management BC", description: "Emergency preparedness in BC", website: "https://www2.gov.bc.ca/gov/content/safety/emergency-management", type: "Emergency Management" },
-    { name: "Alberta Emergency Management Agency", description: "Emergency management in Alberta", website: "https://www.alberta.ca/alberta-emergency-management-agency", type: "Emergency Management" }
-  ]
-};
+
 
 // Canadian Embassies Worldwide Data
 const canadianEmbassiesData = {
@@ -1045,7 +964,7 @@ export default function Home() {
   const [expandedContinents, setExpandedContinents] = useState<string[]>([]);
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
   const [expandedEducationCategories, setExpandedEducationCategories] = useState<string[]>([]);
-  const [expandedPoliceCategories, setExpandedPoliceCategories] = useState<string[]>([]);
+
 
   // Load favorites from localStorage on component mount
   useEffect(() => {
@@ -1142,17 +1061,7 @@ export default function Home() {
     );
   };
 
-  const isPoliceCategoryExpanded = (category: string) => {
-    return expandedPoliceCategories.includes(category);
-  };
 
-  const togglePoliceCategory = (category: string) => {
-    setExpandedPoliceCategories(prev => 
-      prev.includes(category) 
-        ? [] // Close the current category
-        : [category] // Open only this category, close all others
-    );
-  };
 
   const isEducationCategoryExpanded = (category: string) => {
     return expandedEducationCategories.includes(category);
@@ -1161,8 +1070,6 @@ export default function Home() {
   // Initialize expanded continents on mount (start collapsed)
   useEffect(() => {
     setExpandedContinents([]);
-    // Start with Federal Agencies expanded to show users how it works
-    setExpandedPoliceCategories(["Federal Agencies"]);
   }, []);
 
   const categoryGradients = {
@@ -1175,7 +1082,7 @@ export default function Home() {
     "Banking & Financial Services": { from: "from-emerald-600", to: "to-emerald-700", icon: "fas fa-university", emoji: "🏛️" },
     "Non-Profits": { from: "from-pink-600", to: "to-pink-700", icon: "fas fa-heart", emoji: "🤝" },
     "General Government": { from: "from-gray-600", to: "to-gray-700", icon: "fas fa-landmark", emoji: "🏛️" },
-    "Police & Security Forces": { from: "from-blue-800", to: "to-blue-900", icon: "fas fa-shield-alt", emoji: "🚔" }
+
   };
 
   return (
@@ -1243,17 +1150,7 @@ export default function Home() {
               <i className="fas fa-graduation-cap text-sm"></i>
               <span className="text-sm font-medium">Education</span>
             </button>
-            <button
-              onClick={() => setActiveTab('police')}
-              className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
-                activeTab === 'police' 
-                  ? 'bg-gradient-to-r from-blue-800 to-blue-900 text-white shadow-lg' 
-                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
-              }`}
-            >
-              <i className="fas fa-shield-alt text-sm"></i>
-              <span className="text-sm font-medium">Police</span>
-            </button>
+
             <button
               onClick={() => setActiveTab('nonprofits')}
               className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
@@ -1876,252 +1773,7 @@ export default function Home() {
             </div>
         )}
 
-        {/* Police & Security Forces Content */}
-        {activeTab === 'police' && (
-            <div className="space-y-6">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-blue-800 to-blue-900 text-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    <div className="bg-white bg-opacity-20 p-2 rounded-full">
-                      <i className="fas fa-shield-alt text-xl"></i>
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold">Police & Security Forces</h3>
-                      <p className="text-blue-100">54 law enforcement and security agencies across Canada</p>
-                      <p className="text-blue-200 text-sm mt-1">
-                        <i className="fas fa-info-circle mr-1"></i>
-                        Click on any category below to view all services
-                      </p>
-                    </div>
-                  </div>
-                  <div className="hidden md:block">
-                    <i className="fas fa-maple-leaf text-4xl text-white opacity-20"></i>
-                  </div>
-                </div>
-              </div>
 
-              {/* Info Bar */}
-              <div className="bg-white p-4 rounded-lg shadow-md">
-                <div className="text-sm text-gray-600 text-center">
-                  <i className="fas fa-info-circle mr-2"></i>
-                  Official law enforcement and security agencies. For emergencies, dial 
-                  <span className="font-bold text-red-600 ml-1 mr-1">911</span>
-                  or contact your local police service.
-                </div>
-              </div>
-
-              {/* Summary Counter */}
-              <div className="bg-white p-4 rounded-lg shadow-md border border-blue-200">
-                <div className="text-center">
-                  <h4 className="text-lg font-bold text-blue-800 mb-3">
-                    📊 Complete Service Breakdown - 54 Total Services
-                  </h4>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Federal</div>
-                      <div className="text-blue-600">8 services</div>
-                    </div>
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Provincial</div>
-                      <div className="text-blue-600">3 services</div>
-                    </div>
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Municipal</div>
-                      <div className="text-blue-600">14 services</div>
-                    </div>
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Transit</div>
-                      <div className="text-blue-600">5 services</div>
-                    </div>
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Indigenous</div>
-                      <div className="text-blue-600">8 services</div>
-                    </div>
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Conservation</div>
-                      <div className="text-blue-600">6 services</div>
-                    </div>
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Sheriff</div>
-                      <div className="text-blue-600">6 services</div>
-                    </div>
-                    <div className="bg-blue-50 p-2 rounded">
-                      <div className="font-bold text-blue-800">Emergency</div>
-                      <div className="text-blue-600">4 services</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Instructions */}
-              <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
-                <div className="flex items-center space-x-2 mb-2">
-                  <i className="fas fa-list text-blue-600"></i>
-                  <h4 className="font-bold text-blue-800">How to View All 54 Services:</h4>
-                </div>
-                <p className="text-blue-700 text-sm">
-                  Each category below contains multiple police and security services. 
-                  <strong> Click on any category header to expand and see all services within that category.</strong>
-                  The first category (Federal Agencies) is expanded by default to show you how it works.
-                </p>
-              </div>
-
-              {/* Police & Security Categories - Accordion Style */}
-              <div className="space-y-4">
-                {Object.entries(canadianPoliceSecurityData).map(([category, services]) => {
-                  const filteredServices = services.filter(service => {
-                    const matchesSearch = searchTerm === "" || 
-                      service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                      service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                      service.type.toLowerCase().includes(searchTerm.toLowerCase());
-                    return matchesSearch;
-                  });
-
-                  if (filteredServices.length === 0) return null;
-
-                  return (
-                    <div key={category} className="rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300">
-                      <button
-                        className={`p-4 sm:p-6 text-white hover:scale-[1.02] active:scale-95 transition-all duration-200 text-left w-full ${
-                          isPoliceCategoryExpanded(category) 
-                            ? 'bg-gradient-to-r from-blue-700 to-blue-800' 
-                            : 'bg-gradient-to-r from-blue-800 to-blue-900 hover:from-blue-700 hover:to-blue-800'
-                        }`}
-                        onClick={() => togglePoliceCategory(category)}
-                      >
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center space-x-3">
-                            <i className={`fas ${
-                              category === "Federal Agencies" ? "fa-shield-alt" : 
-                              category === "Provincial Police" ? "fa-car-crash" :
-                              category === "Major Municipal Police" ? "fa-city" :
-                              category === "Transit & Transportation Police" ? "fa-bus" :
-                              category === "Indigenous Police Services" ? "fa-feather-alt" :
-                              category === "Conservation & Wildlife Enforcement" ? "fa-leaf" :
-                              category === "Sheriff & Court Services" ? "fa-gavel" :
-                              category === "Emergency Management" ? "fa-exclamation-triangle" :
-                              "fa-shield"
-                            } text-2xl`}></i>
-                            <div>
-                              <h3 className="text-xl font-bold">{category}</h3>
-                              <p className="text-sm opacity-90">
-                                <span className="bg-white bg-opacity-20 px-2 py-1 rounded-full mr-2">
-                                  {filteredServices.length} service{filteredServices.length !== 1 ? 's' : ''}
-                                </span>
-                                {!isPoliceCategoryExpanded(category) && <span className="font-medium animate-pulse">👆 Click to expand and view all services</span>}
-                                {isPoliceCategoryExpanded(category) && <span className="font-medium">👆 Click to collapse</span>}
-                              </p>
-                            </div>
-                          </div>
-                          <div className="flex items-center space-x-2">
-                            <span className="text-xs opacity-75">
-                              {isPoliceCategoryExpanded(category) ? 'Expanded' : 'Collapsed'}
-                            </span>
-                            <i className={`fas fa-chevron-${isPoliceCategoryExpanded(category) ? 'up' : 'down'} text-lg transition-transform duration-200 ${isPoliceCategoryExpanded(category) ? 'rotate-0' : 'rotate-0'}`}></i>
-                          </div>
-                        </div>
-                      </button>
-                      
-                      {isPoliceCategoryExpanded(category) && (
-                        <div className="p-6 bg-white">
-                          <div className="space-y-4">
-                            {filteredServices.map((service, index) => (
-                              <div key={index} className="border-l-4 border-blue-800 pl-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                                <div className="flex items-start justify-between">
-                                  <div className="flex-1">
-                                    <div className="flex items-center space-x-3 mb-2">
-                                      <a 
-                                        href={service.website} 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        className="font-semibold text-blue-600 hover:text-blue-800 transition-colors"
-                                      >
-                                        {service.name}
-                                        <i className="fas fa-external-link-alt ml-2 text-xs"></i>
-                                      </a>
-                                      <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
-                                        {service.type}
-                                      </span>
-                                    </div>
-                                    <p className="text-gray-600 text-sm">{service.description}</p>
-                                  </div>
-                                  <button
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      const favorites = [...favoriteLinks];
-                                      const index = favorites.indexOf(service.website);
-                                      if (index > -1) {
-                                        favorites.splice(index, 1);
-                                      } else {
-                                        favorites.push(service.website);
-                                      }
-                                      setFavoriteLinks(favorites);
-                                      localStorage.setItem('favoriteLinks', JSON.stringify(favorites));
-                                    }}
-                                    className={`ml-2 p-2 rounded-full transition-colors ${
-                                      favoriteLinks.includes(service.website) 
-                                        ? 'text-yellow-500 bg-yellow-50 hover:bg-yellow-100' 
-                                        : 'text-gray-400 hover:text-yellow-500 hover:bg-gray-100'
-                                    }`}
-                                  >
-                                    <i className="fas fa-star text-sm"></i>
-                                  </button>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Emergency Contact Section */}
-              <div className="bg-red-50 p-6 rounded-lg border border-red-200">
-                <div className="flex items-center mb-4">
-                  <div className="bg-red-200 p-2 rounded-full mr-3">
-                    <i className="fas fa-phone text-red-700"></i>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-red-800">Emergency Numbers</h4>
-                    <p className="text-red-700 text-sm">Important emergency and non-emergency contacts</p>
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <a href="tel:911" className="flex items-center p-3 bg-white rounded-lg hover:bg-red-50 transition-colors border border-red-200">
-                    <div className="bg-red-100 p-2 rounded-full mr-3">
-                      <i className="fas fa-exclamation-triangle text-red-700"></i>
-                    </div>
-                    <div>
-                      <p className="text-red-800 font-bold text-lg">911</p>
-                      <p className="text-red-600 text-xs">Emergency Services</p>
-                    </div>
-                  </a>
-                  <a href="tel:311" className="flex items-center p-3 bg-white rounded-lg hover:bg-blue-50 transition-colors border border-blue-200">
-                    <div className="bg-blue-100 p-2 rounded-full mr-3">
-                      <i className="fas fa-info-circle text-blue-700"></i>
-                    </div>
-                    <div>
-                      <p className="text-blue-800 font-bold text-lg">311</p>
-                      <p className="text-blue-600 text-xs">Municipal Services</p>
-                    </div>
-                  </a>
-                  <a href="tel:1-800-222-8477" className="flex items-center p-3 bg-white rounded-lg hover:bg-green-50 transition-colors border border-green-200">
-                    <div className="bg-green-100 p-2 rounded-full mr-3">
-                      <i className="fas fa-comments text-green-700"></i>
-                    </div>
-                    <div>
-                      <p className="text-green-800 font-bold text-sm">1-800-222-8477</p>
-                      <p className="text-green-600 text-xs">Crime Stoppers</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-        )}
 
         {/* Categories Content */}
         {activeTab === 'categories' && (
