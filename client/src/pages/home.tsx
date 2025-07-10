@@ -1066,6 +1066,7 @@ export default function Home() {
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
   const [expandedEducationCategories, setExpandedEducationCategories] = useState<string[]>([]);
   const [expandedPoliceCategories, setExpandedPoliceCategories] = useState<string[]>([]);
+  const [isOfficialDirectoriesExpanded, setIsOfficialDirectoriesExpanded] = useState<boolean>(false);
 
 
   // Load favorites from localStorage on component mount
@@ -1802,65 +1803,99 @@ export default function Home() {
                             </div>
                           </div>
 
-                          {/* Official Directories Section */}
-                          <div className="bg-white p-4 rounded-lg border border-pink-200">
-                            <h4 className="text-lg font-bold text-pink-800 mb-3">
-                              🏛️ Official Government Directories
-                            </h4>
-                            <div className="space-y-3">
-                              {filteredLinks.map((link, linkIndex) => (
-                                <div
-                                  key={linkIndex}
-                                  className="flex items-start justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                                >
-                                  <div className="flex-1">
-                                    <a
-                                      href={link.url}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="font-medium text-blue-600 hover:text-blue-800 transition-colors"
-                                    >
-                                      {searchTerm && link.title.toLowerCase().includes(searchTerm.toLowerCase()) ? (
-                                        <span dangerouslySetInnerHTML={{
-                                          __html: link.title.replace(
-                                            new RegExp(searchTerm, 'gi'),
-                                            '<mark class="search-highlight">$&</mark>'
-                                          )
-                                        }} />
-                                      ) : (
-                                        link.title
-                                      )}
-                                      <i className="fas fa-external-link-alt ml-2 text-xs"></i>
-                                    </a>
-                                    <p className="text-sm text-gray-600 mt-1">
-                                      {searchTerm && link.description.toLowerCase().includes(searchTerm.toLowerCase()) ? (
-                                        <span dangerouslySetInnerHTML={{
-                                          __html: link.description.replace(
-                                            new RegExp(searchTerm, 'gi'),
-                                            '<mark class="search-highlight">$&</mark>'
-                                          )
-                                        }} />
-                                      ) : (
-                                        link.description
-                                      )}
+                          {/* Official Directories Section - Accordion */}
+                          <div className="rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300">
+                            <button
+                              className={`p-4 sm:p-6 text-white hover:scale-[1.02] active:scale-95 transition-all duration-200 text-left w-full ${
+                                isOfficialDirectoriesExpanded
+                                  ? 'bg-gradient-to-r from-pink-700 to-pink-800' 
+                                  : 'bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800'
+                              }`}
+                              onClick={() => setIsOfficialDirectoriesExpanded(!isOfficialDirectoriesExpanded)}
+                            >
+                              <div className="flex items-center justify-between">
+                                <div className="flex items-center space-x-3">
+                                  <i className="fas fa-database text-2xl"></i>
+                                  <div>
+                                    <h4 className="text-lg font-bold">🏛️ Official Government Directories</h4>
+                                    <p className="text-sm opacity-90">
+                                      <span className="bg-white bg-opacity-20 px-2 py-1 rounded-full mr-2">
+                                        {filteredLinks.length} official director{filteredLinks.length !== 1 ? 'ies' : 'y'}
+                                      </span>
+                                      {!isOfficialDirectoriesExpanded && <span className="font-medium animate-pulse">👆 Click to expand and view directories</span>}
+                                      {isOfficialDirectoriesExpanded && <span className="font-medium">👆 Click to collapse</span>}
                                     </p>
                                   </div>
-                                  <button
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      handleToggleFavorite(link.url);
-                                    }}
-                                    className={`ml-3 p-2 rounded-full transition-colors ${
-                                      favoriteLinks.includes(link.url) 
-                                        ? 'text-yellow-500 bg-yellow-50 hover:bg-yellow-100' 
-                                        : 'text-gray-400 hover:text-yellow-500 hover:bg-gray-100'
-                                    }`}
-                                  >
-                                    <i className="fas fa-star text-sm"></i>
-                                  </button>
                                 </div>
-                              ))}
-                            </div>
+                                <div className="flex items-center space-x-2">
+                                  <span className="text-xs opacity-75">
+                                    {isOfficialDirectoriesExpanded ? 'Expanded' : 'Collapsed'}
+                                  </span>
+                                  <i className={`fas fa-chevron-${isOfficialDirectoriesExpanded ? 'up' : 'down'} text-lg transition-transform duration-200`}></i>
+                                </div>
+                              </div>
+                            </button>
+                            
+                            {isOfficialDirectoriesExpanded && (
+                              <div className="p-6 bg-white">
+                                <div className="space-y-3">
+                                  {filteredLinks.map((link, linkIndex) => (
+                                    <div
+                                      key={linkIndex}
+                                      className="border-l-4 border-pink-600 pl-4 py-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                                    >
+                                      <div className="flex items-start justify-between">
+                                        <div className="flex-1">
+                                          <a
+                                            href={link.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="font-medium text-pink-600 hover:text-pink-800 transition-colors"
+                                          >
+                                            {searchTerm && link.title.toLowerCase().includes(searchTerm.toLowerCase()) ? (
+                                              <span dangerouslySetInnerHTML={{
+                                                __html: link.title.replace(
+                                                  new RegExp(searchTerm, 'gi'),
+                                                  '<mark class="search-highlight">$&</mark>'
+                                                )
+                                              }} />
+                                            ) : (
+                                              link.title
+                                            )}
+                                            <i className="fas fa-external-link-alt ml-2 text-xs"></i>
+                                          </a>
+                                          <p className="text-sm text-gray-600 mt-1">
+                                            {searchTerm && link.description.toLowerCase().includes(searchTerm.toLowerCase()) ? (
+                                              <span dangerouslySetInnerHTML={{
+                                                __html: link.description.replace(
+                                                  new RegExp(searchTerm, 'gi'),
+                                                  '<mark class="search-highlight">$&</mark>'
+                                                )
+                                              }} />
+                                            ) : (
+                                              link.description
+                                            )}
+                                          </p>
+                                        </div>
+                                        <button
+                                          onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleToggleFavorite(link.url);
+                                          }}
+                                          className={`ml-3 p-2 rounded-full transition-colors ${
+                                            favoriteLinks.includes(link.url) 
+                                              ? 'text-yellow-500 bg-yellow-50 hover:bg-yellow-100' 
+                                              : 'text-gray-400 hover:text-yellow-500 hover:bg-gray-100'
+                                          }`}
+                                        >
+                                          <i className="fas fa-star text-sm"></i>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
                           </div>
 
                           {/* Category Filter */}
