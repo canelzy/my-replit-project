@@ -1123,8 +1123,8 @@ export default function Home() {
               onClick={() => setActiveTab('education')}
               className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
                 activeTab === 'education' 
-                  ? 'bg-gradient-to-r from-green-500 to-green-700 text-white shadow-lg' 
-                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+                  ? 'bg-gradient-to-r from-green-100 to-green-200 text-green-700 border border-green-300 shadow-lg' 
+                  : 'bg-gradient-to-r from-green-500 to-green-700 text-white hover:from-green-600 hover:to-green-800'
               }`}
             >
               <i className="fas fa-graduation-cap text-sm"></i>
