@@ -1112,7 +1112,7 @@ export default function Home() {
                   icon: "fas fa-cog" 
                 };
                 return (
-                  <div key={category} className={category === "Taxes & Benefits" ? "m-2.5" : ""}>
+                  <div key={category} className={category === "Taxes & Benefits" || category === "Pensions & Retirement" ? "m-2.5" : ""}>
                     <CategoryCard
                       title={category}
                       description={`${links.length} services available`}
