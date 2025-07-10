@@ -318,6 +318,589 @@ const linksData: Record<string, LinkItem[]> = {
   ]
 };
 
+// Canadian Embassies Worldwide Data
+const canadianEmbassiesData = {
+  "North America": [
+    {
+      country: "United States",
+      missions: [
+        { name: "Embassy of Canada", city: "Washington, D.C.", address: "501 Pennsylvania Avenue, N.W., Washington, D.C., 20001", phone: "1-844-880-6519", website: "https://www.international.gc.ca/country-pays/us-eu/washington.aspx?lang=eng", type: "Embassy" },
+        { name: "Consulate General of Canada", city: "New York", address: "466 Lexington Avenue, 20th Floor, New York, NY, 10017", phone: "1-844-880-6519", website: "https://www.international.gc.ca/country-pays/us-eu/new_york.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "Los Angeles", address: "550 South Hope Street, 9th Floor, Los Angeles, CA, 90071", phone: "1-844-880-6519", website: "https://www.international.gc.ca/country-pays/us-eu/los_angeles.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "Chicago", address: "Two Prudential Plaza, 180 North Stetson Avenue, Suite 2400, Chicago, IL, 60601", phone: "1-844-880-6519", website: "https://www.international.gc.ca/country-pays/us-eu/chicago.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "Boston", address: "3 Copley Place, Suite 400, Boston, MA, 02116", phone: "1-844-880-6519", website: "https://www.international.gc.ca/country-pays/us-eu/boston.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "Miami", address: "200 South Biscayne Boulevard, Suite 1600, Miami, FL, 33131", phone: "1-844-880-6519", website: "https://www.international.gc.ca/country-pays/us-eu/miami.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "San Francisco", address: "580 California Street, 14th Floor, San Francisco, CA, 94104", phone: "1-844-880-6519", website: "https://www.international.gc.ca/country-pays/us-eu/san_francisco.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "Seattle", address: "1501 4th Ave, Suite 600, Seattle, WA, 98101", phone: "1-844-880-6519", website: "https://www.international.gc.ca/country-pays/us-eu/seattle.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "Atlanta", address: "1175 Peachtree Street N.E., Suite 1700, Atlanta, GA, 30361", phone: "1-844-880-6519", website: "https://www.international.gc.ca/country-pays/us-eu/atlanta.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "Dallas", address: "500 N. Akard Street, Suite 2900, Dallas, TX, 75201", phone: "1-844-880-6519", website: "https://www.international.gc.ca/country-pays/us-eu/dallas.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "Denver", address: "1625 Broadway, Suite 2600, Denver, CO, 80202", phone: "1-844-880-6519", website: "https://www.international.gc.ca/country-pays/us-eu/denver.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "Detroit", address: "600 Renaissance Center, Suite 1100, Detroit, MI, 48243", phone: "1-844-880-6519", website: "https://www.international.gc.ca/country-pays/us-eu/detroit.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "Minneapolis", address: "701 Fourth Avenue South, Suite 900, Minneapolis, MN, 55415", phone: "1-844-880-6519", website: "https://www.international.gc.ca/country-pays/us-eu/minneapolis.aspx?lang=eng", type: "Consulate General" }
+      ]
+    },
+    {
+      country: "Mexico",
+      missions: [
+        { name: "Embassy of Canada", city: "Mexico City", address: "Schiller No. 529, Colonia Polanco, Mexico City, Mexico", phone: "+52 55 5724 7900", website: "https://www.international.gc.ca/country-pays/mexico-mexique/mexico_city-ville_de_mexico.aspx?lang=eng", type: "Embassy" }
+      ]
+    }
+  ],
+  "Europe": [
+    {
+      country: "United Kingdom",
+      missions: [
+        { name: "High Commission of Canada", city: "London", address: "Canada House, Trafalgar Square, London, SW1Y 5BJ", phone: "+44 (0) 207 004 6000", website: "https://www.international.gc.ca/country-pays/united_kingdom-royaume_uni/london-londres.aspx?lang=eng", type: "High Commission" },
+        { name: "Honorary Consul of Canada", city: "Belfast", address: "Northern Ireland", phone: "+44 (0) 207 004 6000", website: "https://www.international.gc.ca/country-pays/united_kingdom-royaume_uni/belfast.aspx?lang=eng", type: "Honorary Consul" },
+        { name: "Honorary Consul of Canada", city: "Edinburgh", address: "Scotland", phone: "+44 (0) 207 004 6000", website: "https://www.international.gc.ca/country-pays/united_kingdom-royaume_uni/edinburgh-edimbourg.aspx?lang=eng", type: "Honorary Consul" },
+        { name: "Honorary Consul of Canada", city: "Cardiff", address: "Wales", phone: "+44 (0) 207 004 6000", website: "https://www.international.gc.ca/country-pays/united_kingdom-royaume_uni/cardiff.aspx?lang=eng", type: "Honorary Consul" }
+      ]
+    },
+    {
+      country: "France",
+      missions: [
+        { name: "Embassy of Canada", city: "Paris", address: "130, rue du Faubourg Saint-Honoré, 75008 Paris", phone: "+33 (0)1 44 43 29 02", website: "https://www.international.gc.ca/country-pays/france/paris.aspx?lang=eng", type: "Embassy" },
+        { name: "Honorary Consul of Canada", city: "Nice", address: "37, boulevard Dubouchage – 1st floor, 06000 Nice", phone: "+33 (0)1 44 43 29 02", website: "https://www.international.gc.ca/country-pays/france/nice.aspx?lang=eng", type: "Honorary Consul" },
+        { name: "Honorary Consul of Canada", city: "Lyon", address: "3, place de la Bourse, 69002 Lyon", phone: "+33 (0)1 44 43 29 02", website: "https://www.international.gc.ca/country-pays/france/lyon.aspx?lang=eng", type: "Honorary Consul" }
+      ]
+    },
+    {
+      country: "Germany",
+      missions: [
+        { name: "Embassy of Canada", city: "Berlin", address: "Leipziger Platz 17, 10117 Berlin", phone: "+49 30 20312-0", website: "https://www.international.gc.ca/country-pays/germany-allemagne/berlin.aspx?lang=eng", type: "Embassy" },
+        { name: "Consulate General of Canada", city: "Munich", address: "Tal 29, 80331 Munich", phone: "+49 89 219 9570", website: "https://www.international.gc.ca/country-pays/germany-allemagne/munich.aspx?lang=eng", type: "Consulate General" }
+      ]
+    },
+    {
+      country: "Italy",
+      missions: [
+        { name: "Embassy of Canada", city: "Rome", address: "Via Zara 30, 00198 Rome", phone: "+39 06 854441", website: "https://www.international.gc.ca/country-pays/italy-italie/rome.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Spain",
+      missions: [
+        { name: "Embassy of Canada", city: "Madrid", address: "Torre Espacio, Paseo de la Castellana 259D, 28046 Madrid", phone: "+34 91 382 8400", website: "https://www.international.gc.ca/country-pays/spain-espagne/madrid.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Netherlands",
+      missions: [
+        { name: "Embassy of Canada", city: "The Hague", address: "Sophialaan 7, 2514 JP The Hague", phone: "+31 70 311 1600", website: "https://www.international.gc.ca/country-pays/netherlands-pays_bas/the_hague-la_haye.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Belgium",
+      missions: [
+        { name: "Embassy of Canada", city: "Brussels", address: "Avenue de Tervueren 2, 1040 Brussels", phone: "+32 2 741 06 11", website: "https://www.international.gc.ca/country-pays/belgium-belgique/brussels-bruxelles.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Switzerland",
+      missions: [
+        { name: "Embassy of Canada", city: "Bern", address: "Kirchenfeldstrasse 88, 3005 Bern", phone: "+41 31 357 32 00", website: "https://www.international.gc.ca/country-pays/switzerland-suisse/bern-berne.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Austria",
+      missions: [
+        { name: "Embassy of Canada", city: "Vienna", address: "Laurenzerberg 2, 1010 Vienna", phone: "+43 1 531 38 3000", website: "https://www.international.gc.ca/country-pays/austria-autriche/vienna-vienne.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Sweden",
+      missions: [
+        { name: "Embassy of Canada", city: "Stockholm", address: "Klarabergsgatan 23, 111 21 Stockholm", phone: "+46 8 453 3000", website: "https://www.international.gc.ca/country-pays/sweden-suede/stockholm.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Norway",
+      missions: [
+        { name: "Embassy of Canada", city: "Oslo", address: "Wergelandsveien 7, 0244 Oslo", phone: "+47 22 99 53 00", website: "https://www.international.gc.ca/country-pays/norway-norvege/oslo.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Denmark",
+      missions: [
+        { name: "Embassy of Canada", city: "Copenhagen", address: "Kristen Bernikows Gade 1, 1105 Copenhagen", phone: "+45 33 48 32 00", website: "https://www.international.gc.ca/country-pays/denmark-danemark/copenhagen-copenhague.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Finland",
+      missions: [
+        { name: "Embassy of Canada", city: "Helsinki", address: "Pohjoisesplanadi 25B, 00100 Helsinki", phone: "+358 9 228 530", website: "https://www.international.gc.ca/country-pays/finland-finlande/helsinki.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Poland",
+      missions: [
+        { name: "Embassy of Canada", city: "Warsaw", address: "ul. Jana Matejki 1/5, 00-481 Warsaw", phone: "+48 22 584 3100", website: "https://www.international.gc.ca/country-pays/poland-pologne/warsaw-varsovie.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Czech Republic",
+      missions: [
+        { name: "Embassy of Canada", city: "Prague", address: "Nerudova 3, 118 00 Prague 1", phone: "+420 272 101 800", website: "https://www.international.gc.ca/country-pays/czech_republic-republique_tcheque/prague.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Hungary",
+      missions: [
+        { name: "Embassy of Canada", city: "Budapest", address: "Ganz utca 12-14, 1027 Budapest", phone: "+36 1 392 3360", website: "https://www.international.gc.ca/country-pays/hungary-hongrie/budapest.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Romania",
+      missions: [
+        { name: "Embassy of Canada", city: "Bucharest", address: "Tuberozelor Street 1-3, 011411 Bucharest", phone: "+40 21 307 5000", website: "https://www.international.gc.ca/country-pays/romania-roumanie/bucharest-bucarest.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Greece",
+      missions: [
+        { name: "Embassy of Canada", city: "Athens", address: "Ethnikis Antistaseos 48, 152 31 Chalandri", phone: "+30 210 727 3400", website: "https://www.international.gc.ca/country-pays/greece-grece/athens-athenes.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Portugal",
+      missions: [
+        { name: "Embassy of Canada", city: "Lisbon", address: "Avenida da Liberdade 198-200, 1269-121 Lisbon", phone: "+351 21 316 4600", website: "https://www.international.gc.ca/country-pays/portugal/lisbon-lisbonne.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Ireland",
+      missions: [
+        { name: "Embassy of Canada", city: "Dublin", address: "7-8 Wilton Terrace, Dublin 2", phone: "+353 1 234 4000", website: "https://www.international.gc.ca/country-pays/ireland-irlande/dublin.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Russia",
+      missions: [
+        { name: "Embassy of Canada", city: "Moscow", address: "Starokonyushenny Pereulok 23, 119002 Moscow", phone: "+7 495 105 6000", website: "https://www.international.gc.ca/country-pays/russia-russie/moscow-moscou.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Ukraine",
+      missions: [
+        { name: "Embassy of Canada", city: "Kyiv", address: "Klovsky uzviz 13A, 01021 Kyiv", phone: "+380 44 590 1100", website: "https://www.international.gc.ca/country-pays/ukraine/kyiv-kiev.aspx?lang=eng", type: "Embassy" }
+      ]
+    }
+  ],
+  "Asia": [
+    {
+      country: "China",
+      missions: [
+        { name: "Embassy of Canada", city: "Beijing", address: "19 Dongzhimenwai Dajie, Chaoyang District, Beijing 100600", phone: "+86 10 5139 4000", website: "https://www.international.gc.ca/country-pays/china-chine/beijing-pekin.aspx?lang=eng", type: "Embassy" },
+        { name: "Consulate General of Canada", city: "Shanghai", address: "ECO City, 1788 Nanjing Road West, 8th Floor, Shanghai 200040", phone: "+86 21 3279 2800", website: "https://www.international.gc.ca/country-pays/china-chine/shanghai.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "Guangzhou", address: "China Hotel Office Tower, Suite 801, Liu Hua Road, Guangzhou 510015", phone: "+86 20 8666 0569", website: "https://www.international.gc.ca/country-pays/china-chine/guangzhou.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "Chongqing", address: "17th Floor, Metropolitan Tower, 68 Zourong Road, Yuzhong District, Chongqing 400010", phone: "+86 23 6373 8007", website: "https://www.international.gc.ca/country-pays/china-chine/chongqing.aspx?lang=eng", type: "Consulate General" }
+      ]
+    },
+    {
+      country: "Japan",
+      missions: [
+        { name: "Embassy of Canada", city: "Tokyo", address: "7-3-38 Akasaka, Minato-ku, Tokyo 107-8503", phone: "+81 3 5412 6200", website: "https://www.international.gc.ca/country-pays/japan-japon/tokyo.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "South Korea",
+      missions: [
+        { name: "Embassy of Canada", city: "Seoul", address: "21 Jeongdong-gil, Jung-gu, Seoul 04518", phone: "+82 2 3783 6000", website: "https://www.international.gc.ca/country-pays/south_korea-coree_du_sud/seoul.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "India",
+      missions: [
+        { name: "High Commission of Canada", city: "New Delhi", address: "7/8 Shantipath, Chanakyapuri, New Delhi 110021", phone: "+91 11 4178 2000", website: "https://www.international.gc.ca/country-pays/india-inde/new_delhi-nouvelle_delhi.aspx?lang=eng", type: "High Commission" },
+        { name: "Consulate General of Canada", city: "Mumbai", address: "Makers Chambers IV, 9th Floor, 222 Nariman Point, Mumbai 400021", phone: "+91 22 6749 4444", website: "https://www.international.gc.ca/country-pays/india-inde/mumbai.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "Chandigarh", address: "SCO 55-56, Sector 17-A, Chandigarh 160017", phone: "+91 172 5012900", website: "https://www.international.gc.ca/country-pays/india-inde/chandigarh.aspx?lang=eng", type: "Consulate General" }
+      ]
+    },
+    {
+      country: "Singapore",
+      missions: [
+        { name: "High Commission of Canada", city: "Singapore", address: "One George Street, #11-01, Singapore 049145", phone: "+65 6854 5900", website: "https://www.international.gc.ca/country-pays/singapore-singapour/singapore-singapour.aspx?lang=eng", type: "High Commission" }
+      ]
+    },
+    {
+      country: "Thailand",
+      missions: [
+        { name: "Embassy of Canada", city: "Bangkok", address: "Abdulrahim Place, 15th Floor, 990 Rama IV Road, Bangkok 10500", phone: "+66 2 636 0540", website: "https://www.international.gc.ca/country-pays/thailand-thailande/bangkok.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Indonesia",
+      missions: [
+        { name: "Embassy of Canada", city: "Jakarta", address: "World Trade Centre, 6th Floor, Jl. Jend. Sudirman Kav. 29-31, Jakarta 12920", phone: "+62 21 2550 7800", website: "https://www.international.gc.ca/country-pays/indonesia-indonesie/jakarta.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Malaysia",
+      missions: [
+        { name: "High Commission of Canada", city: "Kuala Lumpur", address: "17th Floor, Menara Tan & Tan, 207 Jalan Tun Razak, Kuala Lumpur 50400", phone: "+60 3 2718 3333", website: "https://www.international.gc.ca/country-pays/malaysia-malaisie/kuala_lumpur.aspx?lang=eng", type: "High Commission" }
+      ]
+    },
+    {
+      country: "Philippines",
+      missions: [
+        { name: "Embassy of Canada", city: "Manila", address: "Levels 6-8, Tower 2, RCBC Plaza, 6819 Ayala Avenue, Makati City 1200", phone: "+63 2 857 9000", website: "https://www.international.gc.ca/country-pays/philippines/manila-manille.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Vietnam",
+      missions: [
+        { name: "Embassy of Canada", city: "Hanoi", address: "31 Hung Vuong Street, Ba Dinh District, Hanoi", phone: "+84 24 3734 5000", website: "https://www.international.gc.ca/country-pays/vietnam/hanoi.aspx?lang=eng", type: "Embassy" },
+        { name: "Consulate General of Canada", city: "Ho Chi Minh City", address: "235 Dong Khoi Street, District 1, Ho Chi Minh City", phone: "+84 28 3827 9899", website: "https://www.international.gc.ca/country-pays/vietnam/ho_chi_minh_city-ville_ho_chi_minh.aspx?lang=eng", type: "Consulate General" }
+      ]
+    },
+    {
+      country: "Bangladesh",
+      missions: [
+        { name: "High Commission of Canada", city: "Dhaka", address: "United Nations Road, Baridhara, Dhaka 1212", phone: "+880 2 5566 7091", website: "https://www.international.gc.ca/country-pays/bangladesh/dhaka.aspx?lang=eng", type: "High Commission" }
+      ]
+    },
+    {
+      country: "Pakistan",
+      missions: [
+        { name: "High Commission of Canada", city: "Islamabad", address: "Diplomatic Enclave, Sector G-5, Islamabad", phone: "+92 51 208 6000", website: "https://www.international.gc.ca/country-pays/pakistan/islamabad.aspx?lang=eng", type: "High Commission" }
+      ]
+    },
+    {
+      country: "Afghanistan",
+      missions: [
+        { name: "Embassy of Canada", city: "Kabul", address: "Wazir Akbar Khan, Kabul (Currently suspended)", phone: "Contact via Dubai", website: "https://www.international.gc.ca/country-pays/afghanistan/kabul.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Sri Lanka",
+      missions: [
+        { name: "High Commission of Canada", city: "Colombo", address: "33A, 5th Lane, Colombo 03", phone: "+94 11 522 6232", website: "https://www.international.gc.ca/country-pays/sri_lanka/colombo.aspx?lang=eng", type: "High Commission" }
+      ]
+    },
+    {
+      country: "Myanmar",
+      missions: [
+        { name: "Embassy of Canada", city: "Yangon", address: "88 Kanbawza Road, Golden Valley, Yangon", phone: "+95 1 384 805", website: "https://www.international.gc.ca/country-pays/myanmar/yangon.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Cambodia",
+      missions: [
+        { name: "Embassy of Canada", city: "Phnom Penh", address: "Villa 9, Street 254, Sangkat Chaktomuk, Phnom Penh", phone: "+855 23 213 470", website: "https://www.international.gc.ca/country-pays/cambodia-cambodge/phnom_penh.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Laos",
+      missions: [
+        { name: "Embassy of Canada", city: "Vientiane", address: "Nehru Street, Phonexay Village, Vientiane", phone: "+856 21 223 734", website: "https://www.international.gc.ca/country-pays/laos/vientiane.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Mongolia",
+      missions: [
+        { name: "Embassy of Canada", city: "Ulaanbaatar", address: "Central Tower, Suite 608, Sukhbaatar Square 2, Ulaanbaatar 14200", phone: "+976 11 332 500", website: "https://www.international.gc.ca/country-pays/mongolia-mongolie/ulaanbaatar.aspx?lang=eng", type: "Embassy" }
+      ]
+    }
+  ],
+  "Africa": [
+    {
+      country: "South Africa",
+      missions: [
+        { name: "High Commission of Canada", city: "Pretoria", address: "1103 Arcadia Street, Hatfield, Pretoria 0028", phone: "+27 12 422 3000", website: "https://www.international.gc.ca/country-pays/south_africa-afrique_du_sud/pretoria.aspx?lang=eng", type: "High Commission" },
+        { name: "Consulate General of Canada", city: "Cape Town", address: "Reserve Bank Building, 15th Floor, 60 St George's Mall, Cape Town 8001", phone: "+27 21 423 5240", website: "https://www.international.gc.ca/country-pays/south_africa-afrique_du_sud/cape_town-cap.aspx?lang=eng", type: "Consulate General" }
+      ]
+    },
+    {
+      country: "Egypt",
+      missions: [
+        { name: "Embassy of Canada", city: "Cairo", address: "26 Kamel El Shenawy Street, Garden City, Cairo", phone: "+20 2 2791 8700", website: "https://www.international.gc.ca/country-pays/egypt-egypte/cairo-le_caire.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Kenya",
+      missions: [
+        { name: "High Commission of Canada", city: "Nairobi", address: "Limuru Road, Gigiri, Nairobi", phone: "+254 20 366 3000", website: "https://www.international.gc.ca/country-pays/kenya/nairobi.aspx?lang=eng", type: "High Commission" }
+      ]
+    },
+    {
+      country: "Ghana",
+      missions: [
+        { name: "High Commission of Canada", city: "Accra", address: "42 Independence Avenue, Accra", phone: "+233 30 221 1521", website: "https://www.international.gc.ca/country-pays/ghana/accra.aspx?lang=eng", type: "High Commission" }
+      ]
+    },
+    {
+      country: "Nigeria",
+      missions: [
+        { name: "High Commission of Canada", city: "Abuja", address: "15 Bobo Street, Maitama, Abuja", phone: "+234 9 461 2900", website: "https://www.international.gc.ca/country-pays/nigeria/abuja.aspx?lang=eng", type: "High Commission" }
+      ]
+    },
+    {
+      country: "Morocco",
+      missions: [
+        { name: "Embassy of Canada", city: "Rabat", address: "13 bis, Rue Jaafar As-Sadik, Agdal, Rabat", phone: "+212 5 37 68 74 00", website: "https://www.international.gc.ca/country-pays/morocco-maroc/rabat.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Algeria",
+      missions: [
+        { name: "Embassy of Canada", city: "Algiers", address: "18 Rue Mustapha Khalef, Ben Aknoun, Algiers", phone: "+213 21 91 06 11", website: "https://www.international.gc.ca/country-pays/algeria-algerie/algiers-alger.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Tunisia",
+      missions: [
+        { name: "Embassy of Canada", city: "Tunis", address: "3 Rue du Sénégal, Place d'Afrique, Tunis", phone: "+216 71 104 000", website: "https://www.international.gc.ca/country-pays/tunisia-tunisie/tunis.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Senegal",
+      missions: [
+        { name: "Embassy of Canada", city: "Dakar", address: "45 Avenue de la République, Dakar", phone: "+221 33 889 4700", website: "https://www.international.gc.ca/country-pays/senegal/dakar.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Côte d'Ivoire",
+      missions: [
+        { name: "Embassy of Canada", city: "Abidjan", address: "Immeuble Trade Center, 01 BP 4104, Abidjan 01", phone: "+225 20 30 07 00", website: "https://www.international.gc.ca/country-pays/cote_d_ivoire-cote_d_ivoire/abidjan.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Cameroon",
+      missions: [
+        { name: "High Commission of Canada", city: "Yaoundé", address: "Avenue Rosa Parks, Yaoundé", phone: "+237 22 220 6300", website: "https://www.international.gc.ca/country-pays/cameroon-cameroun/yaounde.aspx?lang=eng", type: "High Commission" }
+      ]
+    },
+    {
+      country: "Democratic Republic of Congo",
+      missions: [
+        { name: "Embassy of Canada", city: "Kinshasa", address: "17 Avenue Pumbu, Gombe, Kinshasa", phone: "+243 81 551 2900", website: "https://www.international.gc.ca/country-pays/congo_kinshasa/kinshasa.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Tanzania",
+      missions: [
+        { name: "High Commission of Canada", city: "Dar es Salaam", address: "Plot 1027, Msasani Peninsula, Dar es Salaam", phone: "+255 22 211 2831", website: "https://www.international.gc.ca/country-pays/tanzania-tanzanie/dar_es_salaam.aspx?lang=eng", type: "High Commission" }
+      ]
+    },
+    {
+      country: "Ethiopia",
+      missions: [
+        { name: "Embassy of Canada", city: "Addis Ababa", address: "Kirkos Sub-City, Kebele 04, House Number 122, Addis Ababa", phone: "+251 11 371 0022", website: "https://www.international.gc.ca/country-pays/ethiopia-ethiopie/addis_ababa.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Zimbabwe",
+      missions: [
+        { name: "Embassy of Canada", city: "Harare", address: "45 Baines Avenue, Harare", phone: "+263 4 252 181", website: "https://www.international.gc.ca/country-pays/zimbabwe/harare.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Mozambique",
+      missions: [
+        { name: "High Commission of Canada", city: "Maputo", address: "1138 Rua Kenneth Kaunda, Maputo", phone: "+258 21 492 623", website: "https://www.international.gc.ca/country-pays/mozambique/maputo.aspx?lang=eng", type: "High Commission" }
+      ]
+    },
+    {
+      country: "Angola",
+      missions: [
+        { name: "Embassy of Canada", city: "Luanda", address: "Rua Rei Katyavala 113, Luanda", phone: "+244 222 348 296", website: "https://www.international.gc.ca/country-pays/angola/luanda.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Mali",
+      missions: [
+        { name: "Embassy of Canada", city: "Bamako", address: "Immmeuble Séméga, Route de Koulikoro, Bamako", phone: "+223 2021 2236", website: "https://www.international.gc.ca/country-pays/mali/bamako.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Burkina Faso",
+      missions: [
+        { name: "Embassy of Canada", city: "Ouagadougou", address: "316 Avenue Kwamé N'Krumah, Ouagadougou", phone: "+226 25 49 09 00", website: "https://www.international.gc.ca/country-pays/burkina_faso/ouagadougou.aspx?lang=eng", type: "Embassy" }
+      ]
+    }
+  ],
+  "South America": [
+    {
+      country: "Brazil",
+      missions: [
+        { name: "Embassy of Canada", city: "Brasília", address: "SES Av. das Nações, Qd. 803, Lt. 16, Brasília, DF 70410-900", phone: "+55 61 3424 5400", website: "https://www.international.gc.ca/country-pays/brazil-bresil/brasilia.aspx?lang=eng", type: "Embassy" },
+        { name: "Consulate General of Canada", city: "São Paulo", address: "Av. das Nações Unidas, 12901, Torre Norte, 16° andar, São Paulo, SP 04578-000", phone: "+55 11 5509 4321", website: "https://www.international.gc.ca/country-pays/brazil-bresil/sao_paulo.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "Rio de Janeiro", address: "Av. Atlântica, 1130, 5° andar, Copacabana, Rio de Janeiro, RJ 22021-000", phone: "+55 21 2543 3004", website: "https://www.international.gc.ca/country-pays/brazil-bresil/rio_de_janeiro.aspx?lang=eng", type: "Consulate General" }
+      ]
+    },
+    {
+      country: "Argentina",
+      missions: [
+        { name: "Embassy of Canada", city: "Buenos Aires", address: "Tagle 2828, C1425EEH Buenos Aires", phone: "+54 11 4808 1000", website: "https://www.international.gc.ca/country-pays/argentina-argentine/buenos_aires.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Chile",
+      missions: [
+        { name: "Embassy of Canada", city: "Santiago", address: "Nueva Tajamar 481, Torre Norte, Piso 12, Las Condes, Santiago", phone: "+56 2 2652 3800", website: "https://www.international.gc.ca/country-pays/chile-chili/santiago.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Colombia",
+      missions: [
+        { name: "Embassy of Canada", city: "Bogotá", address: "Carrera 7 No. 114-33, Piso 14, Bogotá", phone: "+57 1 657 9800", website: "https://www.international.gc.ca/country-pays/colombia-colombie/bogota.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Peru",
+      missions: [
+        { name: "Embassy of Canada", city: "Lima", address: "Calle Bolognesi 228, Miraflores, Lima 18", phone: "+51 1 319 3200", website: "https://www.international.gc.ca/country-pays/peru-perou/lima.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Ecuador",
+      missions: [
+        { name: "Embassy of Canada", city: "Quito", address: "Av. 6 de Diciembre N36-64 y Paul Rivet, Quito", phone: "+593 2 2232 114", website: "https://www.international.gc.ca/country-pays/ecuador-equateur/quito.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Venezuela",
+      missions: [
+        { name: "Embassy of Canada", city: "Caracas", address: "Av. Francisco de Miranda, Torre Europa, Piso 7, Campo Alegre, Caracas", phone: "+58 212 600 3000", website: "https://www.international.gc.ca/country-pays/venezuela/caracas.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Uruguay",
+      missions: [
+        { name: "Embassy of Canada", city: "Montevideo", address: "Plaza Independencia 749, Oficina 102, Montevideo", phone: "+598 2 902 2030", website: "https://www.international.gc.ca/country-pays/uruguay/montevideo.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Bolivia",
+      missions: [
+        { name: "Embassy of Canada", city: "La Paz", address: "Av. 20 de Octubre 2475, Edificio Multicentro, Torre A, Piso 15, La Paz", phone: "+591 2 215 2000", website: "https://www.international.gc.ca/country-pays/bolivia-bolivie/la_paz.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Paraguay",
+      missions: [
+        { name: "Embassy of Canada", city: "Asunción", address: "Prof. Ramirez 1229, Asunción", phone: "+595 21 227 207", website: "https://www.international.gc.ca/country-pays/paraguay/asuncion.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Guyana",
+      missions: [
+        { name: "High Commission of Canada", city: "Georgetown", address: "High and Young Streets, Georgetown", phone: "+592 227 2081", website: "https://www.international.gc.ca/country-pays/guyana/georgetown.aspx?lang=eng", type: "High Commission" }
+      ]
+    },
+    {
+      country: "Suriname",
+      missions: [
+        { name: "Embassy of Canada", city: "Paramaribo", address: "Gravenberchstraat 1, Paramaribo", phone: "+597 424 305", website: "https://www.international.gc.ca/country-pays/suriname/paramaribo.aspx?lang=eng", type: "Embassy" }
+      ]
+    }
+  ],
+  "Oceania": [
+    {
+      country: "Australia",
+      missions: [
+        { name: "High Commission of Canada", city: "Canberra", address: "Commonwealth Avenue, Canberra, ACT 2600", phone: "+61 2 6270 4000", website: "https://www.international.gc.ca/country-pays/australia-australie/canberra.aspx?lang=eng", type: "High Commission" },
+        { name: "Consulate General of Canada", city: "Sydney", address: "Level 5, 111 Harrington Street, Sydney, NSW 2000", phone: "+61 2 9364 3000", website: "https://www.international.gc.ca/country-pays/australia-australie/sydney.aspx?lang=eng", type: "Consulate General" },
+        { name: "Consulate General of Canada", city: "Perth", address: "267 St Georges Terrace, Perth, WA 6000", phone: "+61 8 9322 7930", website: "https://www.international.gc.ca/country-pays/australia-australie/perth.aspx?lang=eng", type: "Consulate General" }
+      ]
+    },
+    {
+      country: "New Zealand",
+      missions: [
+        { name: "High Commission of Canada", city: "Wellington", address: "Level 11, 125 The Terrace, Wellington 6011", phone: "+64 4 473 9577", website: "https://www.international.gc.ca/country-pays/new_zealand-nouvelle_zelande/wellington.aspx?lang=eng", type: "High Commission" }
+      ]
+    },
+    {
+      country: "Fiji",
+      missions: [
+        { name: "High Commission of Canada", city: "Suva", address: "37 Gorrie Street, Suva", phone: "+679 330 4500", website: "https://www.international.gc.ca/country-pays/fiji-fidji/suva.aspx?lang=eng", type: "High Commission" }
+      ]
+    },
+    {
+      country: "Papua New Guinea",
+      missions: [
+        { name: "High Commission of Canada", city: "Port Moresby", address: "Level 6, Credit House, Cuthbertson Street, Port Moresby", phone: "+675 213 0300", website: "https://www.international.gc.ca/country-pays/papua_new_guinea-papouasie_nouvelle_guinee/port_moresby.aspx?lang=eng", type: "High Commission" }
+      ]
+    }
+  ],
+  "Middle East": [
+    {
+      country: "Israel",
+      missions: [
+        { name: "Embassy of Canada", city: "Tel Aviv", address: "3 Nirim Street, Tel Aviv 67060", phone: "+972 3 636 3300", website: "https://www.international.gc.ca/country-pays/israel-israel/tel_aviv.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Jordan",
+      missions: [
+        { name: "Embassy of Canada", city: "Amman", address: "Pearl of Shmeisani, Building 130, 5th Floor, Shmeisani, Amman", phone: "+962 6 520 3300", website: "https://www.international.gc.ca/country-pays/jordan-jordanie/amman.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Lebanon",
+      missions: [
+        { name: "Embassy of Canada", city: "Beirut", address: "Coolrite Building, 43 Jal El Dib Highway, Jal El Dib", phone: "+961 4 726 700", website: "https://www.international.gc.ca/country-pays/lebanon-liban/beirut-beyrouth.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "United Arab Emirates",
+      missions: [
+        { name: "Embassy of Canada", city: "Abu Dhabi", address: "Khalifa Business Park, Al Qurm District, Abu Dhabi", phone: "+971 2 694 0300", website: "https://www.international.gc.ca/country-pays/united_arab_emirates-emirats_arabes_unis/abu_dhabi.aspx?lang=eng", type: "Embassy" },
+        { name: "Consulate General of Canada", city: "Dubai", address: "Jumeirah Emirates Towers, Level 9-10, Dubai", phone: "+971 4 404 8444", website: "https://www.international.gc.ca/country-pays/united_arab_emirates-emirats_arabes_unis/dubai.aspx?lang=eng", type: "Consulate General" }
+      ]
+    },
+    {
+      country: "Saudi Arabia",
+      missions: [
+        { name: "Embassy of Canada", city: "Riyadh", address: "Diplomatic Quarter, Riyadh", phone: "+966 11 488 2288", website: "https://www.international.gc.ca/country-pays/saudi_arabia-arabie_saoudite/riyadh-riyad.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Kuwait",
+      missions: [
+        { name: "Embassy of Canada", city: "Kuwait City", address: "Villa 24, Block 4, Da'iya Area, Kuwait City", phone: "+965 2256 3025", website: "https://www.international.gc.ca/country-pays/kuwait-koweit/kuwait_city-ville_de_koweit.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Qatar",
+      missions: [
+        { name: "Embassy of Canada", city: "Doha", address: "Tornado Tower, Level 8, West Bay, Doha", phone: "+974 4419 8000", website: "https://www.international.gc.ca/country-pays/qatar/doha.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Oman",
+      missions: [
+        { name: "Embassy of Canada", city: "Muscat", address: "Jameat A'Duwal Al Arabiyya Street, Diplomatic Area, Muscat", phone: "+968 24 694 400", website: "https://www.international.gc.ca/country-pays/oman/muscat.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Bahrain",
+      missions: [
+        { name: "Embassy of Canada", city: "Manama", address: "Building 25, Road 1901, Block 319, Diplomatic Area, Manama", phone: "+973 1736 1122", website: "https://www.international.gc.ca/country-pays/bahrain-bahrein/manama.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Iran",
+      missions: [
+        { name: "Embassy of Canada", city: "Tehran", address: "No. 55, Shahid Javad-Al-Aemeh Street, Tehran (Currently suspended)", phone: "Contact via Ankara", website: "https://www.international.gc.ca/country-pays/iran/tehran.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Iraq",
+      missions: [
+        { name: "Embassy of Canada", city: "Baghdad", address: "International Zone, Baghdad", phone: "+964 1 538 7619", website: "https://www.international.gc.ca/country-pays/iraq-irak/baghdad.aspx?lang=eng", type: "Embassy" }
+      ]
+    },
+    {
+      country: "Turkey",
+      missions: [
+        { name: "Embassy of Canada", city: "Ankara", address: "Cinnah Caddesi No. 58, Çankaya, Ankara", phone: "+90 312 409 2700", website: "https://www.international.gc.ca/country-pays/turkey-turquie/ankara.aspx?lang=eng", type: "Embassy" },
+        { name: "Consulate General of Canada", city: "Istanbul", address: "Büyükdere Caddesi No. 209, Tekfen Tower, 16th Floor, Istanbul", phone: "+90 212 385 9700", website: "https://www.international.gc.ca/country-pays/turkey-turquie/istanbul.aspx?lang=eng", type: "Consulate General" }
+      ]
+    }
+  ]
+};
+
 // Canadian Colleges and Universities Data
 const canadianEducationData = {
   "Top Universities": [
@@ -375,6 +958,9 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedProvince, setSelectedProvince] = useState<string>("all");
   const [selectedType, setSelectedType] = useState<string>("all");
+  const [selectedContinent, setSelectedContinent] = useState<string>("all");
+  const [selectedCountry, setSelectedCountry] = useState<string>("all");
+  const [embassyFavorites, setEmbassyFavorites] = useState<string[]>([]);
 
   // Load favorites from localStorage on component mount
   useEffect(() => {
@@ -434,6 +1020,47 @@ export default function Home() {
     return favoriteLinks;
   };
 
+  // Load embassy favorites from localStorage
+  useEffect(() => {
+    const savedEmbassyFavorites = localStorage.getItem('embassyFavorites');
+    if (savedEmbassyFavorites) {
+      setEmbassyFavorites(JSON.parse(savedEmbassyFavorites));
+    }
+  }, []);
+
+  // Save embassy favorites to localStorage
+  useEffect(() => {
+    localStorage.setItem('embassyFavorites', JSON.stringify(embassyFavorites));
+  }, [embassyFavorites]);
+
+  const handleToggleEmbassyFavorite = (country: string) => {
+    setEmbassyFavorites(prev => 
+      prev.includes(country) 
+        ? prev.filter(fav => fav !== country)
+        : [...prev, country]
+    );
+  };
+
+  const getFilteredCountries = () => {
+    if (selectedContinent === 'all') {
+      return Object.values(canadianEmbassiesData).flat().map(continent => continent.country);
+    }
+    return canadianEmbassiesData[selectedContinent]?.map(country => country.country) || [];
+  };
+
+  const getFilteredEmbassies = () => {
+    const filteredData = Object.entries(canadianEmbassiesData).map(([continent, countries]) => ({
+      continent,
+      countries: countries.filter(country => {
+        const matchesContinent = selectedContinent === 'all' || continent === selectedContinent;
+        const matchesCountry = selectedCountry === 'all' || country.country === selectedCountry;
+        return matchesContinent && matchesCountry;
+      })
+    })).filter(continent => continent.countries.length > 0);
+    
+    return filteredData;
+  };
+
   const categoryGradients = {
     "Taxes & Benefits": { from: "from-green-600", to: "to-green-700", icon: "fas fa-calculator" },
     "Pensions & Retirement": { from: "from-purple-600", to: "to-purple-700", icon: "fas fa-piggy-bank" },
@@ -476,12 +1103,16 @@ export default function Home() {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <Tabs defaultValue="all" value={activeTab} onValueChange={handleTabChange} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-6 mb-8 text-lg font-medium">
+          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-7 mb-8 text-lg font-medium">
             <TabsTrigger value="all">All Services</TabsTrigger>
             <TabsTrigger value="nonprofits">Non-Profits</TabsTrigger>
             <TabsTrigger value="education" className="education-tab">
               <i className="fas fa-graduation-cap mr-2"></i>
               Education
+            </TabsTrigger>
+            <TabsTrigger value="embassies">
+              <i className="fas fa-flag mr-2"></i>
+              Embassies
             </TabsTrigger>
             <TabsTrigger value="favorites">
               <i className="fas fa-star mr-2"></i>
@@ -858,6 +1489,172 @@ export default function Home() {
                       <li>• <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Work While Studying</a></li>
                     </ul>
                   </div>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="embassies">
+            <div className="space-y-6">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                  <i className="fas fa-flag text-red-600 mr-3"></i>
+                  Canadian Embassies, High Commissions & Consulates Worldwide
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Find contact information for Canadian diplomatic missions around the world. All data is sourced from official Global Affairs Canada records.
+                </p>
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <p className="text-sm text-blue-800">
+                    <i className="fas fa-info-circle mr-2"></i>
+                    For the most current information, visit the official 
+                    <a href="https://travel.gc.ca/assistance/embassies-consulates" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium ml-1">
+                      Travel.gc.ca directory
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              {/* Search by Country */}
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h4 className="text-lg font-semibold text-gray-800 mb-4">
+                  <i className="fas fa-search mr-2 text-blue-600"></i>
+                  Search by Country or Region
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                  <Select value={selectedContinent} onValueChange={setSelectedContinent}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select Continent" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">All Continents</SelectItem>
+                      <SelectItem value="North America">North America</SelectItem>
+                      <SelectItem value="Europe">Europe</SelectItem>
+                      <SelectItem value="Asia">Asia</SelectItem>
+                      <SelectItem value="Africa">Africa</SelectItem>
+                      <SelectItem value="South America">South America</SelectItem>
+                      <SelectItem value="Oceania">Oceania</SelectItem>
+                      <SelectItem value="Middle East">Middle East</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Select value={selectedCountry} onValueChange={setSelectedCountry}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select Country" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">All Countries</SelectItem>
+                      {getFilteredCountries().map(country => (
+                        <SelectItem key={country} value={country}>{country}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <Button 
+                    onClick={() => {
+                      setSelectedContinent('all');
+                      setSelectedCountry('all');
+                    }}
+                    variant="outline"
+                    className="w-full"
+                  >
+                    <i className="fas fa-redo mr-2"></i>
+                    Reset Filters
+                  </Button>
+                </div>
+              </div>
+
+              {/* Embassy Cards */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {getFilteredEmbassies().map((continent, continentIndex) => (
+                  <div key={continentIndex} className="space-y-4">
+                    <h4 className="text-xl font-semibold text-gray-800 flex items-center mb-4">
+                      <i className="fas fa-globe-americas mr-2 text-blue-600"></i>
+                      {continent.continent}
+                    </h4>
+                    {continent.countries.map((countryData, countryIndex) => (
+                      <Card key={countryIndex} className="bg-white shadow-md hover:shadow-lg transition-shadow">
+                        <CardContent className="p-6">
+                          <div className="flex items-center justify-between mb-4">
+                            <h5 className="text-lg font-semibold text-gray-800 flex items-center">
+                              <i className="fas fa-flag mr-2 text-red-600"></i>
+                              {countryData.country}
+                            </h5>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => handleToggleEmbassyFavorite(countryData.country)}
+                              className="flex items-center space-x-2"
+                            >
+                              <i className={`fas fa-star ${embassyFavorites.includes(countryData.country) ? 'text-yellow-500' : 'text-gray-400'}`}></i>
+                              <span className="text-sm">
+                                {embassyFavorites.includes(countryData.country) ? 'Bookmarked' : 'Bookmark'}
+                              </span>
+                            </Button>
+                          </div>
+                          
+                          <div className="space-y-4">
+                            {countryData.missions.map((mission, missionIndex) => (
+                              <div key={missionIndex} className="border-l-4 border-blue-500 pl-4 py-2">
+                                <div className="flex items-center justify-between mb-2">
+                                  <h6 className="font-medium text-gray-800">{mission.name}</h6>
+                                  <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                                    {mission.type}
+                                  </span>
+                                </div>
+                                <div className="text-sm text-gray-600 space-y-1">
+                                  <p className="flex items-center">
+                                    <i className="fas fa-map-marker-alt mr-2 text-red-500 w-4"></i>
+                                    <span className="font-medium">{mission.city}</span>
+                                  </p>
+                                  <p className="flex items-start">
+                                    <i className="fas fa-building mr-2 text-gray-500 w-4 mt-0.5"></i>
+                                    <span>{mission.address}</span>
+                                  </p>
+                                  <p className="flex items-center">
+                                    <i className="fas fa-phone mr-2 text-green-500 w-4"></i>
+                                    <a href={`tel:${mission.phone}`} className="text-blue-600 hover:underline">
+                                      {mission.phone}
+                                    </a>
+                                  </p>
+                                  <p className="flex items-center">
+                                    <i className="fas fa-globe mr-2 text-blue-500 w-4"></i>
+                                    <a 
+                                      href={mission.website} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer" 
+                                      className="text-blue-600 hover:underline"
+                                    >
+                                      Visit Website
+                                    </a>
+                                  </p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                ))}
+              </div>
+
+              {/* Emergency Contact Info */}
+              <div className="bg-red-50 p-6 rounded-lg border border-red-200">
+                <h4 className="text-lg font-semibold text-red-800 mb-3 flex items-center">
+                  <i className="fas fa-exclamation-triangle mr-2"></i>
+                  Emergency Assistance
+                </h4>
+                <p className="text-red-700 text-sm mb-2">
+                  For 24/7 emergency consular assistance, contact the Emergency Watch and Response Centre (EWRC) in Ottawa:
+                </p>
+                <div className="flex items-center space-x-4">
+                  <a href="tel:1-888-949-9993" className="text-red-600 font-medium hover:underline">
+                    <i className="fas fa-phone mr-2"></i>
+                    1-888-949-9993 (toll-free)
+                  </a>
+                  <a href="mailto:sos@international.gc.ca" className="text-red-600 font-medium hover:underline">
+                    <i className="fas fa-envelope mr-2"></i>
+                    sos@international.gc.ca
+                  </a>
                 </div>
               </div>
             </div>
