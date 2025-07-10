@@ -1038,17 +1038,17 @@ export default function Home() {
     <div className="bg-gray-50 min-h-screen">
       {/* Header */}
       <header className="header-gradient text-white shadow-lg">
-        <div className="container mx-auto px-4 py-4 sm:py-6">
+        <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4 lg:py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2 sm:space-x-3">
-              <i className="fas fa-maple-leaf text-red-400 text-xl sm:text-2xl drop-shadow-sm"></i>
+              <i className="fas fa-maple-leaf text-red-400 text-lg sm:text-xl lg:text-2xl drop-shadow-sm"></i>
               <div>
-                <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">Canada Access Hub</h1>
-                <p className="text-blue-50 mt-1 text-sm sm:text-base">All your government links in one place.</p>
+                <h1 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold leading-tight">Canada Access Hub</h1>
+                <p className="text-blue-50 mt-0.5 sm:mt-1 text-xs sm:text-sm lg:text-base">All your government links in one place.</p>
               </div>
             </div>
             <div className="flex items-center space-x-2 sm:space-x-4">
-              <div className="hidden md:flex items-center space-x-4">
+              <div className="hidden lg:flex items-center space-x-4">
                 <span className="text-sm">🇨🇦</span>
                 <span className="text-sm font-medium">Official Government Portal</span>
               </div>
@@ -1062,49 +1062,49 @@ export default function Home() {
       <SearchBar onSearch={handleSearch} />
 
       {/* Main Content */}
-      <main className="container mx-auto px-3 sm:px-4 py-4 sm:py-6 lg:py-8">
+      <main className="container mx-auto px-3 sm:px-4 py-4 sm:py-6 lg:py-8 pb-8">
         <Tabs defaultValue="all" value={activeTab} onValueChange={handleTabChange} className="w-full">
-          <TabsList className="grid w-full grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 mb-12 text-xs sm:text-sm lg:text-base font-medium bg-gray-100 p-2 sm:p-3 lg:p-4 rounded-lg gap-2 sm:gap-3 lg:gap-4 m-2.5">
-            <TabsTrigger value="all" className="bg-blue-500 text-white data-[state=active]:bg-blue-600 data-[state=active]:text-white hover:bg-blue-400 rounded-md py-2 px-2 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14">
-              <div className="flex flex-col items-center sm:flex-row sm:items-center">
-                <i className="fas fa-home mb-1 sm:mb-0 sm:mr-2 text-sm sm:text-base"></i>
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 mb-8 sm:mb-12 text-xs sm:text-sm lg:text-base font-medium bg-white shadow-md p-2 sm:p-3 lg:p-4 rounded-xl gap-1 sm:gap-2 lg:gap-3 m-2.5 border border-gray-200">
+            <TabsTrigger value="all" className="bg-blue-500 text-white data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-lg hover:bg-blue-400 rounded-lg py-2 px-1 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14 transition-all duration-200 font-medium">
+              <div className="flex flex-col items-center sm:flex-row sm:items-center gap-1 sm:gap-2">
+                <i className="fas fa-home text-sm sm:text-base"></i>
                 <span className="text-xs sm:text-sm lg:text-base">All</span>
               </div>
             </TabsTrigger>
-            <TabsTrigger value="nonprofits" className="bg-pink-500 text-white data-[state=active]:bg-pink-600 data-[state=active]:text-white hover:bg-pink-400 rounded-md py-2 px-2 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14">
-              <div className="flex flex-col items-center sm:flex-row sm:items-center">
-                <i className="fas fa-heart mb-1 sm:mb-0 sm:mr-2 text-sm sm:text-base"></i>
+            <TabsTrigger value="nonprofits" className="bg-pink-500 text-white data-[state=active]:bg-pink-600 data-[state=active]:text-white data-[state=active]:shadow-lg hover:bg-pink-400 rounded-lg py-2 px-1 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14 transition-all duration-200 font-medium">
+              <div className="flex flex-col items-center sm:flex-row sm:items-center gap-1 sm:gap-2">
+                <i className="fas fa-heart text-sm sm:text-base"></i>
                 <span className="text-xs sm:text-sm lg:text-base">Non-Profits</span>
               </div>
             </TabsTrigger>
-            <TabsTrigger value="education" className="bg-green-500 text-white data-[state=active]:bg-green-600 data-[state=active]:text-white hover:bg-green-400 rounded-md py-2 px-2 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14">
-              <div className="flex flex-col items-center sm:flex-row sm:items-center">
-                <i className="fas fa-graduation-cap mb-1 sm:mb-0 sm:mr-2 text-sm sm:text-base"></i>
+            <TabsTrigger value="education" className="bg-green-500 text-white data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:shadow-lg hover:bg-green-400 rounded-lg py-2 px-1 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14 transition-all duration-200 font-medium">
+              <div className="flex flex-col items-center sm:flex-row sm:items-center gap-1 sm:gap-2">
+                <i className="fas fa-graduation-cap text-sm sm:text-base"></i>
                 <span className="text-xs sm:text-sm lg:text-base">Education</span>
               </div>
             </TabsTrigger>
-            <TabsTrigger value="embassies" className="bg-red-500 text-white data-[state=active]:bg-red-600 data-[state=active]:text-white hover:bg-red-400 rounded-md py-2 px-2 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14">
-              <div className="flex flex-col items-center sm:flex-row sm:items-center">
-                <i className="fas fa-flag mb-1 sm:mb-0 sm:mr-2 text-sm sm:text-base"></i>
+            <TabsTrigger value="embassies" className="bg-red-500 text-white data-[state=active]:bg-red-600 data-[state=active]:text-white data-[state=active]:shadow-lg hover:bg-red-400 rounded-lg py-2 px-1 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14 transition-all duration-200 font-medium">
+              <div className="flex flex-col items-center sm:flex-row sm:items-center gap-1 sm:gap-2">
+                <i className="fas fa-flag text-sm sm:text-base"></i>
                 <span className="text-xs sm:text-sm lg:text-base">Embassies</span>
               </div>
             </TabsTrigger>
-            <TabsTrigger value="categories" className="bg-purple-500 text-white data-[state=active]:bg-purple-600 data-[state=active]:text-white hover:bg-purple-400 rounded-md py-2 px-2 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14">
-              <div className="flex flex-col items-center sm:flex-row sm:items-center">
-                <i className="fas fa-th-large mb-1 sm:mb-0 sm:mr-2 text-sm sm:text-base"></i>
+            <TabsTrigger value="categories" className="bg-purple-500 text-white data-[state=active]:bg-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg hover:bg-purple-400 rounded-lg py-2 px-1 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14 transition-all duration-200 font-medium">
+              <div className="flex flex-col items-center sm:flex-row sm:items-center gap-1 sm:gap-2">
+                <i className="fas fa-th-large text-sm sm:text-base"></i>
                 <span className="text-xs sm:text-sm lg:text-base">Categories</span>
               </div>
             </TabsTrigger>
-            <TabsTrigger value="contact" className="bg-indigo-500 text-white data-[state=active]:bg-indigo-600 data-[state=active]:text-white hover:bg-indigo-400 rounded-md py-2 px-2 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14">
-              <div className="flex flex-col items-center sm:flex-row sm:items-center">
-                <i className="fas fa-envelope mb-1 sm:mb-0 sm:mr-2 text-sm sm:text-base"></i>
+            <TabsTrigger value="contact" className="bg-indigo-500 text-white data-[state=active]:bg-indigo-600 data-[state=active]:text-white data-[state=active]:shadow-lg hover:bg-indigo-400 rounded-lg py-2 px-1 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14 transition-all duration-200 font-medium">
+              <div className="flex flex-col items-center sm:flex-row sm:items-center gap-1 sm:gap-2">
+                <i className="fas fa-envelope text-sm sm:text-base"></i>
                 <span className="text-xs sm:text-sm lg:text-base">Contact</span>
               </div>
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="all" className="mt-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          <TabsContent value="all" className="mt-6 sm:mt-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
               {Object.entries(linksData).map(([category, links]) => {
                 const gradient = categoryGradients[category as keyof typeof categoryGradients] || { 
                   from: "from-gray-600", 
@@ -1130,8 +1130,8 @@ export default function Home() {
 
 
 
-          <TabsContent value="nonprofits" className="mt-8">
-            <div className="space-y-6 sm:space-y-8">
+          <TabsContent value="nonprofits" className="mt-6 sm:mt-8">
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8">
               {/* Category Filter */}
               <Card className="bg-white shadow-md">
                 <CardContent className="p-3 sm:p-4">
@@ -1231,8 +1231,8 @@ export default function Home() {
             </div>
           </TabsContent>
 
-          <TabsContent value="education" className="mt-8">
-            <div className="space-y-6 sm:space-y-8">
+          <TabsContent value="education" className="mt-6 sm:mt-8">
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8">
               {/* Education Header */}
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-lg">
                 <h2 className="text-2xl font-bold mb-2">Colleges & Universities</h2>
