@@ -1086,32 +1086,32 @@ export default function Home() {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <Tabs defaultValue="all" value={activeTab} onValueChange={handleTabChange} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-7 mb-8 text-lg font-medium bg-gray-100 p-2 rounded-lg">
-            <TabsTrigger value="all" className="bg-blue-500 text-white data-[state=active]:bg-blue-600 data-[state=active]:text-white hover:bg-blue-400">
+          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-7 mb-8 text-lg font-medium bg-gray-100 p-2 rounded-lg gap-2">
+            <TabsTrigger value="all" className="bg-blue-500 text-white data-[state=active]:bg-blue-600 data-[state=active]:text-white hover:bg-blue-400 rounded-md">
               <i className="fas fa-home mr-2"></i>
               All Services
             </TabsTrigger>
-            <TabsTrigger value="nonprofits" className="bg-pink-500 text-white data-[state=active]:bg-pink-600 data-[state=active]:text-white hover:bg-pink-400">
+            <TabsTrigger value="nonprofits" className="bg-pink-500 text-white data-[state=active]:bg-pink-600 data-[state=active]:text-white hover:bg-pink-400 rounded-md">
               <i className="fas fa-heart mr-2"></i>
               Non-Profits
             </TabsTrigger>
-            <TabsTrigger value="education" className="bg-green-500 text-white data-[state=active]:bg-green-600 data-[state=active]:text-white hover:bg-green-400">
+            <TabsTrigger value="education" className="bg-green-500 text-white data-[state=active]:bg-green-600 data-[state=active]:text-white hover:bg-green-400 rounded-md">
               <i className="fas fa-graduation-cap mr-2"></i>
               Education
             </TabsTrigger>
-            <TabsTrigger value="embassies" className="bg-red-500 text-white data-[state=active]:bg-red-600 data-[state=active]:text-white hover:bg-red-400">
+            <TabsTrigger value="embassies" className="bg-red-500 text-white data-[state=active]:bg-red-600 data-[state=active]:text-white hover:bg-red-400 rounded-md">
               <i className="fas fa-flag mr-2"></i>
               Embassies
             </TabsTrigger>
-            <TabsTrigger value="favorites" className="bg-yellow-500 text-white data-[state=active]:bg-yellow-600 data-[state=active]:text-white hover:bg-yellow-400">
+            <TabsTrigger value="favorites" className="bg-yellow-500 text-white data-[state=active]:bg-yellow-600 data-[state=active]:text-white hover:bg-yellow-400 rounded-md">
               <i className="fas fa-star mr-2"></i>
               Favorites ({favorites.length})
             </TabsTrigger>
-            <TabsTrigger value="categories" className="bg-purple-500 text-white data-[state=active]:bg-purple-600 data-[state=active]:text-white hover:bg-purple-400">
+            <TabsTrigger value="categories" className="bg-purple-500 text-white data-[state=active]:bg-purple-600 data-[state=active]:text-white hover:bg-purple-400 rounded-md">
               <i className="fas fa-th-large mr-2"></i>
               Categories
             </TabsTrigger>
-            <TabsTrigger value="contact" className="bg-indigo-500 text-white data-[state=active]:bg-indigo-600 data-[state=active]:text-white hover:bg-indigo-400">
+            <TabsTrigger value="contact" className="bg-indigo-500 text-white data-[state=active]:bg-indigo-600 data-[state=active]:text-white hover:bg-indigo-400 rounded-md">
               <i className="fas fa-envelope mr-2"></i>
               Contact
             </TabsTrigger>
