@@ -460,15 +460,9 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="hidden md:flex items-center space-x-6">
-                <div className="flex items-center space-x-2 bg-white/10 px-3 py-1 rounded-full">
-                  <span className="text-sm">🇨🇦</span>
-                  <span className="text-sm font-medium">Official Government Portal</span>
-                </div>
-                <div className="flex items-center space-x-2 bg-blue-500/20 px-3 py-1 rounded-full">
-                  <i className="fas fa-graduation-cap text-sm"></i>
-                  <span className="text-sm font-medium">Education Directory</span>
-                </div>
+              <div className="hidden md:flex items-center space-x-4">
+                <span className="text-sm">🇨🇦</span>
+                <span className="text-sm font-medium">Official Government Portal</span>
               </div>
               <ShareButton />
             </div>
