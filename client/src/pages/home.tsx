@@ -1495,166 +1495,236 @@ export default function Home() {
           </TabsContent>
 
           <TabsContent value="embassies">
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <i className="fas fa-flag text-red-600 mr-3"></i>
-                  Canadian Embassies, High Commissions & Consulates Worldwide
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Find contact information for Canadian diplomatic missions around the world. All data is sourced from official Global Affairs Canada records.
-                </p>
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <p className="text-sm text-blue-800">
+            <div className="space-y-8">
+              {/* Hero Section */}
+              <div className="bg-gradient-to-r from-red-600 to-red-700 text-white p-8 rounded-xl shadow-lg">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-white bg-opacity-20 p-3 rounded-full">
+                      <i className="fas fa-flag text-2xl"></i>
+                    </div>
+                    <div>
+                      <h3 className="text-3xl font-bold mb-2">Canadian Embassies Worldwide</h3>
+                      <p className="text-red-100 text-lg">Find Canadian diplomatic missions around the globe</p>
+                    </div>
+                  </div>
+                  <div className="hidden md:block">
+                    <i className="fas fa-maple-leaf text-6xl text-white opacity-20"></i>
+                  </div>
+                </div>
+                <div className="mt-6 bg-white bg-opacity-10 p-4 rounded-lg">
+                  <p className="text-sm text-red-100 flex items-center">
                     <i className="fas fa-info-circle mr-2"></i>
-                    For the most current information, visit the official 
-                    <a href="https://travel.gc.ca/assistance/embassies-consulates" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium ml-1">
+                    All data sourced from official Global Affairs Canada records. For the most current information, visit 
+                    <a href="https://travel.gc.ca/assistance/embassies-consulates" target="_blank" rel="noopener noreferrer" className="text-white hover:text-red-200 font-medium ml-1 underline">
                       Travel.gc.ca directory
                     </a>
                   </p>
                 </div>
               </div>
 
-              {/* Search by Country */}
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h4 className="text-lg font-semibold text-gray-800 mb-4">
-                  <i className="fas fa-search mr-2 text-blue-600"></i>
-                  Search by Country or Region
-                </h4>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                  <Select value={selectedContinent} onValueChange={setSelectedContinent}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select Continent" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Continents</SelectItem>
-                      <SelectItem value="North America">North America</SelectItem>
-                      <SelectItem value="Europe">Europe</SelectItem>
-                      <SelectItem value="Asia">Asia</SelectItem>
-                      <SelectItem value="Africa">Africa</SelectItem>
-                      <SelectItem value="South America">South America</SelectItem>
-                      <SelectItem value="Oceania">Oceania</SelectItem>
-                      <SelectItem value="Middle East">Middle East</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select Country" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Countries</SelectItem>
-                      {getFilteredCountries().map(country => (
-                        <SelectItem key={country} value={country}>{country}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <Button 
-                    onClick={() => {
-                      setSelectedContinent('all');
-                      setSelectedCountry('all');
-                    }}
-                    variant="outline"
-                    className="w-full"
-                  >
-                    <i className="fas fa-redo mr-2"></i>
-                    Reset Filters
-                  </Button>
+              {/* Search and Filter Section */}
+              <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                <div className="flex items-center mb-6">
+                  <div className="bg-blue-100 p-3 rounded-full mr-4">
+                    <i className="fas fa-search text-blue-600 text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-800">Search & Filter</h4>
+                    <p className="text-gray-600">Find embassies by continent or country</p>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                  <div className="md:col-span-1">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <i className="fas fa-globe-americas mr-2 text-blue-600"></i>
+                      Continent
+                    </label>
+                    <Select value={selectedContinent} onValueChange={setSelectedContinent}>
+                      <SelectTrigger className="h-12 border-2 border-gray-200 focus:border-blue-500">
+                        <SelectValue placeholder="All Continents" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">All Continents</SelectItem>
+                        <SelectItem value="North America">🇺🇸 North America</SelectItem>
+                        <SelectItem value="Europe">🇪🇺 Europe</SelectItem>
+                        <SelectItem value="Asia">🌏 Asia</SelectItem>
+                        <SelectItem value="Africa">🌍 Africa</SelectItem>
+                        <SelectItem value="South America">🌎 South America</SelectItem>
+                        <SelectItem value="Oceania">🏝️ Oceania</SelectItem>
+                        <SelectItem value="Middle East">🕌 Middle East</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  <div className="md:col-span-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <i className="fas fa-flag mr-2 text-red-600"></i>
+                      Country
+                    </label>
+                    <Select value={selectedCountry} onValueChange={setSelectedCountry}>
+                      <SelectTrigger className="h-12 border-2 border-gray-200 focus:border-blue-500">
+                        <SelectValue placeholder="All Countries" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">All Countries</SelectItem>
+                        {getFilteredCountries().map(country => (
+                          <SelectItem key={country} value={country}>{country}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  <div className="md:col-span-1">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Actions</label>
+                    <Button 
+                      onClick={() => {
+                        setSelectedContinent('all');
+                        setSelectedCountry('all');
+                      }}
+                      variant="outline"
+                      className="w-full h-12 border-2 hover:bg-gray-50"
+                    >
+                      <i className="fas fa-redo mr-2"></i>
+                      Reset Filters
+                    </Button>
+                  </div>
                 </div>
               </div>
 
-              {/* Embassy Cards */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Embassy Cards Grid */}
+              <div className="space-y-8">
                 {getFilteredEmbassies().map((continent, continentIndex) => (
-                  <div key={continentIndex} className="space-y-4">
-                    <h4 className="text-xl font-semibold text-gray-800 flex items-center mb-4">
-                      <i className="fas fa-globe-americas mr-2 text-blue-600"></i>
-                      {continent.continent}
-                    </h4>
-                    {continent.countries.map((countryData, countryIndex) => (
-                      <Card key={countryIndex} className="bg-white shadow-md hover:shadow-lg transition-shadow">
-                        <CardContent className="p-6">
-                          <div className="flex items-center justify-between mb-4">
-                            <h5 className="text-lg font-semibold text-gray-800 flex items-center">
-                              <i className="fas fa-flag mr-2 text-red-600"></i>
-                              {countryData.country}
-                            </h5>
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={() => handleToggleEmbassyFavorite(countryData.country)}
-                              className="flex items-center space-x-2"
-                            >
-                              <i className={`fas fa-star ${embassyFavorites.includes(countryData.country) ? 'text-yellow-500' : 'text-gray-400'}`}></i>
-                              <span className="text-sm">
-                                {embassyFavorites.includes(countryData.country) ? 'Bookmarked' : 'Bookmark'}
-                              </span>
-                            </Button>
-                          </div>
-                          
-                          <div className="space-y-4">
-                            {countryData.missions.map((mission, missionIndex) => (
-                              <div key={missionIndex} className="border-l-4 border-blue-500 pl-4 py-2">
-                                <div className="flex items-center justify-between mb-2">
-                                  <h6 className="font-medium text-gray-800">{mission.name}</h6>
-                                  <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
-                                    {mission.type}
-                                  </span>
+                  <div key={continentIndex} className="space-y-6">
+                    <div className="flex items-center space-x-4 pb-4 border-b-2 border-gray-200">
+                      <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-3 rounded-full">
+                        <i className="fas fa-globe-americas text-white text-xl"></i>
+                      </div>
+                      <div>
+                        <h4 className="text-2xl font-bold text-gray-800">{continent.continent}</h4>
+                        <p className="text-gray-600">{continent.countries.length} {continent.countries.length === 1 ? 'country' : 'countries'} with Canadian missions</p>
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                      {continent.countries.map((countryData, countryIndex) => (
+                        <Card key={countryIndex} className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
+                          <div className="bg-gradient-to-r from-gray-50 to-gray-100 p-6 border-b">
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center space-x-3">
+                                <div className="bg-red-100 p-2 rounded-full">
+                                  <i className="fas fa-flag text-red-600"></i>
                                 </div>
-                                <div className="text-sm text-gray-600 space-y-1">
-                                  <p className="flex items-center">
-                                    <i className="fas fa-map-marker-alt mr-2 text-red-500 w-4"></i>
-                                    <span className="font-medium">{mission.city}</span>
-                                  </p>
-                                  <p className="flex items-start">
-                                    <i className="fas fa-building mr-2 text-gray-500 w-4 mt-0.5"></i>
-                                    <span>{mission.address}</span>
-                                  </p>
-                                  <p className="flex items-center">
-                                    <i className="fas fa-phone mr-2 text-green-500 w-4"></i>
-                                    <a href={`tel:${mission.phone}`} className="text-blue-600 hover:underline">
-                                      {mission.phone}
-                                    </a>
-                                  </p>
-                                  <p className="flex items-center">
-                                    <i className="fas fa-globe mr-2 text-blue-500 w-4"></i>
-                                    <a 
-                                      href={mission.website} 
-                                      target="_blank" 
-                                      rel="noopener noreferrer" 
-                                      className="text-blue-600 hover:underline"
-                                    >
-                                      Visit Website
-                                    </a>
-                                  </p>
+                                <div>
+                                  <h5 className="text-xl font-bold text-gray-800">{countryData.country}</h5>
+                                  <p className="text-sm text-gray-600">{countryData.missions.length} diplomatic {countryData.missions.length === 1 ? 'mission' : 'missions'}</p>
                                 </div>
                               </div>
-                            ))}
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={() => handleToggleEmbassyFavorite(countryData.country)}
+                                className="flex items-center space-x-2 hover:bg-white"
+                              >
+                                <i className={`fas fa-star text-lg ${embassyFavorites.includes(countryData.country) ? 'text-yellow-500' : 'text-gray-400'}`}></i>
+                              </Button>
+                            </div>
                           </div>
-                        </CardContent>
-                      </Card>
-                    ))}
+                          
+                          <CardContent className="p-6">
+                            <div className="space-y-6">
+                              {countryData.missions.map((mission, missionIndex) => (
+                                <div key={missionIndex} className="border-l-4 border-red-500 pl-6 py-4 bg-gray-50 rounded-r-lg">
+                                  <div className="flex items-center justify-between mb-3">
+                                    <h6 className="font-bold text-gray-800 text-lg">{mission.name}</h6>
+                                    <span className="text-xs bg-red-100 text-red-800 px-3 py-1 rounded-full font-medium">
+                                      {mission.type}
+                                    </span>
+                                  </div>
+                                  <div className="space-y-3">
+                                    <div className="flex items-center">
+                                      <div className="bg-red-100 p-2 rounded-full mr-3">
+                                        <i className="fas fa-map-marker-alt text-red-600 text-sm"></i>
+                                      </div>
+                                      <span className="font-semibold text-gray-800">{mission.city}</span>
+                                    </div>
+                                    <div className="flex items-start">
+                                      <div className="bg-gray-100 p-2 rounded-full mr-3 mt-0.5">
+                                        <i className="fas fa-building text-gray-600 text-sm"></i>
+                                      </div>
+                                      <span className="text-gray-700 leading-relaxed">{mission.address}</span>
+                                    </div>
+                                    <div className="flex items-center">
+                                      <div className="bg-green-100 p-2 rounded-full mr-3">
+                                        <i className="fas fa-phone text-green-600 text-sm"></i>
+                                      </div>
+                                      <a href={`tel:${mission.phone}`} className="text-blue-600 hover:text-blue-800 font-medium transition-colors">
+                                        {mission.phone}
+                                      </a>
+                                    </div>
+                                    <div className="flex items-center">
+                                      <div className="bg-blue-100 p-2 rounded-full mr-3">
+                                        <i className="fas fa-globe text-blue-600 text-sm"></i>
+                                      </div>
+                                      <a 
+                                        href={mission.website} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className="text-blue-600 hover:text-blue-800 font-medium transition-colors flex items-center"
+                                      >
+                                        Visit Official Website
+                                        <i className="fas fa-external-link-alt ml-2 text-xs"></i>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
 
               {/* Emergency Contact Info */}
-              <div className="bg-red-50 p-6 rounded-lg border border-red-200">
-                <h4 className="text-lg font-semibold text-red-800 mb-3 flex items-center">
-                  <i className="fas fa-exclamation-triangle mr-2"></i>
-                  Emergency Assistance
-                </h4>
-                <p className="text-red-700 text-sm mb-2">
-                  For 24/7 emergency consular assistance, contact the Emergency Watch and Response Centre (EWRC) in Ottawa:
-                </p>
-                <div className="flex items-center space-x-4">
-                  <a href="tel:1-888-949-9993" className="text-red-600 font-medium hover:underline">
-                    <i className="fas fa-phone mr-2"></i>
-                    1-888-949-9993 (toll-free)
-                  </a>
-                  <a href="mailto:sos@international.gc.ca" className="text-red-600 font-medium hover:underline">
-                    <i className="fas fa-envelope mr-2"></i>
-                    sos@international.gc.ca
-                  </a>
+              <div className="bg-gradient-to-r from-red-50 to-red-100 p-8 rounded-xl border-2 border-red-200">
+                <div className="flex items-center mb-6">
+                  <div className="bg-red-200 p-3 rounded-full mr-4">
+                    <i className="fas fa-exclamation-triangle text-red-700 text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-red-800">Emergency Consular Assistance</h4>
+                    <p className="text-red-700">24/7 emergency support for Canadians abroad</p>
+                  </div>
+                </div>
+                
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <p className="text-red-700 mb-4 font-medium">
+                    Contact the Emergency Watch and Response Centre (EWRC) in Ottawa:
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="tel:1-888-949-9993" className="flex items-center p-4 bg-red-50 rounded-lg hover:bg-red-100 transition-colors group">
+                      <div className="bg-red-200 p-3 rounded-full mr-4">
+                        <i className="fas fa-phone text-red-700"></i>
+                      </div>
+                      <div>
+                        <p className="text-red-800 font-bold">1-888-949-9993</p>
+                        <p className="text-red-600 text-sm">Toll-free emergency line</p>
+                      </div>
+                    </a>
+                    <a href="mailto:sos@international.gc.ca" className="flex items-center p-4 bg-red-50 rounded-lg hover:bg-red-100 transition-colors group">
+                      <div className="bg-red-200 p-3 rounded-full mr-4">
+                        <i className="fas fa-envelope text-red-700"></i>
+                      </div>
+                      <div>
+                        <p className="text-red-800 font-bold">sos@international.gc.ca</p>
+                        <p className="text-red-600 text-sm">Emergency email support</p>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
