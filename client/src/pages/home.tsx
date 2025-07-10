@@ -318,24 +318,81 @@ const linksData: Record<string, LinkItem[]> = {
   ]
 };
 
+// Canadian Colleges and Universities Data
+const canadianEducationData = {
+  "Top Universities": [
+    { name: "University of Toronto", url: "https://www.utoronto.ca/", description: "Canada's top-ranked university with 97,000+ students", province: "Ontario", type: "University" },
+    { name: "University of British Columbia", url: "https://www.ubc.ca/", description: "Leading research university with campuses in Vancouver and Okanagan", province: "British Columbia", type: "University" },
+    { name: "McGill University", url: "https://www.mcgill.ca/", description: "Prestigious research university in Montreal", province: "Quebec", type: "University" },
+    { name: "McMaster University", url: "https://www.mcmaster.ca/", description: "Renowned for health sciences and problem-based learning", province: "Ontario", type: "University" },
+    { name: "University of Alberta", url: "https://www.ualberta.ca/", description: "Leading research university with 200+ programs", province: "Alberta", type: "University" },
+    { name: "University of Waterloo", url: "https://uwaterloo.ca/", description: "World-renowned for engineering and computer science", province: "Ontario", type: "University" },
+    { name: "University of Montreal", url: "https://www.umontreal.ca/", description: "Major French-language research university", province: "Quebec", type: "University" },
+    { name: "University of Calgary", url: "https://www.ucalgary.ca/", description: "Comprehensive research university known for energy studies", province: "Alberta", type: "University" }
+  ],
+  "Major Polytechnics": [
+    { name: "British Columbia Institute of Technology (BCIT)", url: "https://www.bcit.ca/", description: "Leading polytechnic with applied technology programs", province: "British Columbia", type: "Polytechnic" },
+    { name: "Seneca Polytechnic", url: "https://www.senecapolytechnic.ca/", description: "Toronto's largest polytechnic with diverse programs", province: "Ontario", type: "Polytechnic" },
+    { name: "Humber Polytechnic", url: "https://www.humber.ca/", description: "Comprehensive polytechnic with strong industry connections", province: "Ontario", type: "Polytechnic" },
+    { name: "Northern Alberta Institute of Technology (NAIT)", url: "https://www.nait.ca/", description: "Leading technical institute in Western Canada", province: "Alberta", type: "Polytechnic" },
+    { name: "Southern Alberta Institute of Technology (SAIT)", url: "https://www.sait.ca/", description: "Applied learning and technology institute", province: "Alberta", type: "Polytechnic" },
+    { name: "Red River College Polytechnic", url: "https://www.rrc.ca/", description: "Manitoba's largest polytechnic institution", province: "Manitoba", type: "Polytechnic" },
+    { name: "Saskatchewan Polytechnic", url: "https://www.saskpolytech.ca/", description: "Saskatchewan's primary polytechnic institution", province: "Saskatchewan", type: "Polytechnic" }
+  ],
+  "Quebec CEGEPs": [
+    { name: "Dawson College", url: "https://www.dawsoncollege.qc.ca/", description: "Leading English CEGEP in Montreal", province: "Quebec", type: "CEGEP" },
+    { name: "Vanier College", url: "https://www.vaniercollege.qc.ca/", description: "English CEGEP with diverse programs", province: "Quebec", type: "CEGEP" },
+    { name: "John Abbott College", url: "https://www.johnabbott.qc.ca/", description: "English CEGEP in Montreal's West Island", province: "Quebec", type: "CEGEP" },
+    { name: "Champlain College", url: "https://www.champlaincollege.qc.ca/", description: "English CEGEP with multiple campuses", province: "Quebec", type: "CEGEP" },
+    { name: "Cégep de Sainte-Foy", url: "https://www.cegep-ste-foy.qc.ca/", description: "French CEGEP in Quebec City", province: "Quebec", type: "CEGEP" },
+    { name: "Cégep du Vieux Montréal", url: "https://www.cvm.qc.ca/", description: "Historic French CEGEP in Montreal", province: "Quebec", type: "CEGEP" }
+  ],
+  "Community Colleges": [
+    { name: "George Brown College", url: "https://www.georgebrown.ca/", description: "Toronto-based college with career-focused programs", province: "Ontario", type: "College" },
+    { name: "Algonquin College", url: "https://www.algonquincollege.com/", description: "Ottawa's largest college with over 300 programs", province: "Ontario", type: "College" },
+    { name: "Mohawk College", url: "https://www.mohawkcollege.ca/", description: "Hamilton-based college with applied arts and technology", province: "Ontario", type: "College" },
+    { name: "Vancouver Community College", url: "https://www.vcc.ca/", description: "Vancouver's community college with diverse programs", province: "British Columbia", type: "College" },
+    { name: "Langara College", url: "https://www.langara.ca/", description: "Vancouver college known for university transfer programs", province: "British Columbia", type: "College" },
+    { name: "Nova Scotia Community College", url: "https://www.nscc.ca/", description: "Province-wide college system with 13 campuses", province: "Nova Scotia", type: "College" },
+    { name: "New Brunswick Community College", url: "https://www.nbcc.ca/", description: "Bilingual college system across New Brunswick", province: "New Brunswick", type: "College" },
+    { name: "College of the North Atlantic", url: "https://www.cna.nl.ca/", description: "Newfoundland and Labrador's largest college", province: "Newfoundland and Labrador", type: "College" }
+  ],
+  "Official Resources": [
+    { name: "Universities Canada", url: "https://www.univcan.ca/", description: "Official association representing Canadian universities", province: "National", type: "Resource" },
+    { name: "Colleges and Institutes Canada", url: "https://www.collegesinstitutes.ca/", description: "National association for colleges and institutes", province: "National", type: "Resource" },
+    { name: "Polytechnics Canada", url: "https://polytechnicscanada.ca/", description: "Association of leading polytechnic institutions", province: "National", type: "Resource" },
+    { name: "Government of Canada - Study in Canada", url: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada.html", description: "Official guide for international students", province: "National", type: "Resource" },
+    { name: "EduCanada", url: "https://www.educanada.ca/", description: "Official portal for international education in Canada", province: "National", type: "Resource" },
+    { name: "StudentAid BC", url: "https://studentaidbc.ca/", description: "Student financial aid for British Columbia", province: "British Columbia", type: "Resource" }
+  ]
+};
+
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeTab, setActiveTab] = useState("all");
   const [favorites, setFavorites] = useState<string[]>([]);
+  const [favoriteSchools, setFavoriteSchools] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedProvince, setSelectedProvince] = useState<string>("all");
+  const [selectedType, setSelectedType] = useState<string>("all");
 
   // Load favorites from localStorage on component mount
   useEffect(() => {
     const savedFavorites = localStorage.getItem('canadaAccessHub_favorites');
+    const savedSchools = localStorage.getItem('canadaAccessHub_favoriteSchools');
     if (savedFavorites) {
       setFavorites(JSON.parse(savedFavorites));
+    }
+    if (savedSchools) {
+      setFavoriteSchools(JSON.parse(savedSchools));
     }
   }, []);
 
   // Save favorites to localStorage whenever favorites change
   useEffect(() => {
     localStorage.setItem('canadaAccessHub_favorites', JSON.stringify(favorites));
-  }, [favorites]);
+    localStorage.setItem('canadaAccessHub_favoriteSchools', JSON.stringify(favoriteSchools));
+  }, [favorites, favoriteSchools]);
 
   const handleSearch = (term: string) => {
     setSearchTerm(term);
@@ -347,6 +404,22 @@ export default function Home() {
         ? prev.filter(fav => fav !== url)
         : [...prev, url]
     );
+  };
+
+  const handleToggleSchoolFavorite = (url: string) => {
+    setFavoriteSchools(prev => 
+      prev.includes(url) 
+        ? prev.filter(fav => fav !== url)
+        : [...prev, url]
+    );
+  };
+
+  const handleTabChange = (value: string) => {
+    if (activeTab === value) {
+      setActiveTab(""); // Close the tab if it's already active
+    } else {
+      setActiveTab(value); // Open the new tab
+    }
   };
 
   const getFavoriteLinks = () => {
@@ -376,14 +449,14 @@ export default function Home() {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Header */}
-      <header className="bg-blue-600 text-white shadow-lg">
+      <header className="header-gradient text-white shadow-lg">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <i className="fas fa-maple-leaf text-red-600 text-2xl"></i>
+              <i className="fas fa-maple-leaf text-red-400 text-2xl drop-shadow-sm"></i>
               <div>
                 <h1 className="text-3xl font-bold">Canada Access Hub</h1>
-                <p className="text-blue-100 mt-1">All your government links in one place.</p>
+                <p className="text-blue-50 mt-1">All your government links in one place.</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -402,10 +475,14 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
-        <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 mb-8">
+        <Tabs defaultValue="all" value={activeTab} onValueChange={handleTabChange} className="w-full">
+          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-6 mb-8">
             <TabsTrigger value="all">All Services</TabsTrigger>
             <TabsTrigger value="nonprofits">Non-Profits</TabsTrigger>
+            <TabsTrigger value="education">
+              <i className="fas fa-graduation-cap mr-2"></i>
+              Education
+            </TabsTrigger>
             <TabsTrigger value="favorites">
               <i className="fas fa-star mr-2"></i>
               Favorites ({favorites.length})
@@ -450,43 +527,45 @@ export default function Home() {
                 </CardContent>
               </Card>
             ) : (
-              <Card className="bg-white shadow-md">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                    <i className="fas fa-star text-yellow-500 mr-3"></i>
-                    Your Favorite Services
-                  </h3>
-                  <div className="space-y-4">
-                    {getFavoriteLinks().map((link, index) => (
-                      <div key={index} className="flex items-start justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                        <div className="flex-1">
-                          <div className="flex items-center space-x-3 mb-2">
-                            {link.icon && <i className={`${link.icon} text-blue-600 text-lg`}></i>}
-                            <a 
-                              href={link.url} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="link-item font-semibold text-blue-600 hover:text-blue-800 transition-colors"
-                            >
-                              {link.title}
-                              <i className="fas fa-external-link-alt ml-2 text-sm"></i>
-                            </a>
+              <div className="space-y-6">
+                <Card className="bg-white shadow-md">
+                  <CardContent className="p-6">
+                    <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                      <i className="fas fa-star text-yellow-500 mr-3"></i>
+                      Your Favorite Services
+                    </h3>
+                    <div className="space-y-4">
+                      {getFavoriteLinks().map((link, index) => (
+                        <div key={index} className="flex items-start justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                          <div className="flex-1">
+                            <div className="flex items-center space-x-3 mb-2">
+                              {link.icon && <i className={`${link.icon} text-blue-600 text-lg`}></i>}
+                              <a 
+                                href={link.url} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="link-item font-semibold text-blue-600 hover:text-blue-800 transition-colors"
+                              >
+                                {link.title}
+                                <i className="fas fa-external-link-alt ml-2 text-sm"></i>
+                              </a>
+                            </div>
+                            <p className="text-gray-600 text-sm ml-6">{link.description}</p>
                           </div>
-                          <p className="text-gray-600 text-sm ml-6">{link.description}</p>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => handleToggleFavorite(link.url)}
+                            className="ml-4 text-yellow-500 hover:text-yellow-600"
+                          >
+                            <i className="fas fa-star"></i>
+                          </Button>
                         </div>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => handleToggleFavorite(link.url)}
-                          className="ml-4 text-yellow-500 hover:text-yellow-600"
-                        >
-                          <i className="fas fa-star"></i>
-                        </Button>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             )}
           </TabsContent>
 
@@ -587,6 +666,199 @@ export default function Home() {
                       </CardContent>
                     </Card>
                   ))}
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="education">
+            <div className="space-y-6">
+              {/* Education Header */}
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-lg">
+                <h2 className="text-2xl font-bold mb-2">Colleges & Universities</h2>
+                <p className="text-blue-100">Explore Canadian higher education institutions and application resources</p>
+              </div>
+
+              {/* Search and Filter Controls */}
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Province</label>
+                    <select 
+                      value={selectedProvince} 
+                      onChange={(e) => setSelectedProvince(e.target.value)}
+                      className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    >
+                      <option value="all">All Provinces</option>
+                      <option value="Ontario">Ontario</option>
+                      <option value="Quebec">Quebec</option>
+                      <option value="British Columbia">British Columbia</option>
+                      <option value="Alberta">Alberta</option>
+                      <option value="Manitoba">Manitoba</option>
+                      <option value="Saskatchewan">Saskatchewan</option>
+                      <option value="Nova Scotia">Nova Scotia</option>
+                      <option value="New Brunswick">New Brunswick</option>
+                      <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                      <option value="Prince Edward Island">Prince Edward Island</option>
+                      <option value="Northwest Territories">Northwest Territories</option>
+                      <option value="Nunavut">Nunavut</option>
+                      <option value="Yukon">Yukon</option>
+                      <option value="National">National</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Institution Type</label>
+                    <select 
+                      value={selectedType} 
+                      onChange={(e) => setSelectedType(e.target.value)}
+                      className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    >
+                      <option value="all">All Types</option>
+                      <option value="University">Universities</option>
+                      <option value="Polytechnic">Polytechnics</option>
+                      <option value="College">Colleges</option>
+                      <option value="CEGEP">CEGEPs</option>
+                      <option value="Resource">Resources</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                    <select 
+                      value={selectedCategory} 
+                      onChange={(e) => setSelectedCategory(e.target.value)}
+                      className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    >
+                      <option value="all">All Categories</option>
+                      {Object.keys(canadianEducationData).map(category => (
+                        <option key={category} value={category}>{category}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              {/* Education Categories */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {Object.entries(canadianEducationData).map(([category, institutions]) => {
+                  if (selectedCategory !== "all" && selectedCategory !== category) return null;
+                  
+                  const filteredInstitutions = institutions.filter(inst => {
+                    const matchesProvince = selectedProvince === "all" || inst.province === selectedProvince;
+                    const matchesType = selectedType === "all" || inst.type === selectedType;
+                    const matchesSearch = searchTerm === "" || 
+                      inst.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                      inst.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                      inst.province.toLowerCase().includes(searchTerm.toLowerCase());
+                    return matchesProvince && matchesType && matchesSearch;
+                  });
+
+                  if (filteredInstitutions.length === 0) return null;
+
+                  return (
+                    <Card key={category} className="bg-white shadow-md hover:shadow-lg transition-shadow">
+                      <CardContent className="p-6">
+                        <div className="flex items-center space-x-3 mb-4">
+                          <i className={`fas ${category === "Top Universities" ? "fa-university" : 
+                            category === "Major Polytechnics" ? "fa-cogs" :
+                            category === "Quebec CEGEPs" ? "fa-graduation-cap" :
+                            category === "Community Colleges" ? "fa-school" :
+                            "fa-info-circle"} text-blue-600 text-2xl`}></i>
+                          <h3 className="text-xl font-semibold text-gray-800">{category}</h3>
+                        </div>
+                        
+                        <div className="space-y-4">
+                          {filteredInstitutions.map((institution, index) => (
+                            <div key={index} className="border-l-4 border-blue-500 pl-4 py-2">
+                              <div className="flex items-start justify-between">
+                                <div className="flex-1">
+                                  <div className="flex items-center space-x-3 mb-2">
+                                    <a 
+                                      href={institution.url} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                      className="font-semibold text-blue-600 hover:text-blue-800 transition-colors"
+                                    >
+                                      {institution.name}
+                                      <i className="fas fa-external-link-alt ml-2 text-sm"></i>
+                                    </a>
+                                    <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+                                      {institution.type}
+                                    </span>
+                                  </div>
+                                  <p className="text-gray-600 text-sm mb-1">{institution.description}</p>
+                                  <p className="text-gray-500 text-xs">
+                                    📍 {institution.province}
+                                  </p>
+                                </div>
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  onClick={() => handleToggleSchoolFavorite(institution.url)}
+                                  className={`ml-2 ${favoriteSchools.includes(institution.url) ? 'text-yellow-500' : 'text-gray-400'}`}
+                                >
+                                  <i className="fas fa-star"></i>
+                                </Button>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+
+              {/* Key Resources Section */}
+              <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                  <i className="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                  Key Resources for Students
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <h4 className="font-medium text-gray-800 mb-2">
+                      <i className="fas fa-clipboard-list text-blue-600 mr-2"></i>
+                      Application Portals
+                    </h4>
+                    <ul className="text-sm text-gray-600 space-y-1">
+                      <li>• <a href="https://www.ouac.on.ca/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">OUAC</a> - Ontario Universities</li>
+                      <li>• <a href="https://applyalberta.ca/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">ApplyAlberta</a> - Alberta Institutions</li>
+                      <li>• <a href="https://www.educationplannerbc.ca/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Education Planner BC</a> - BC Schools</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <h4 className="font-medium text-gray-800 mb-2">
+                      <i className="fas fa-dollar-sign text-green-600 mr-2"></i>
+                      Financial Aid
+                    </h4>
+                    <ul className="text-sm text-gray-600 space-y-1">
+                      <li>• <a href="https://www.canada.ca/en/services/benefits/education/student-aid.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Canada Student Loans</a></li>
+                      <li>• <a href="https://www.scholarshipscanada.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">ScholarshipsCanada</a></li>
+                      <li>• <a href="https://www.ontario.ca/page/osap-ontario-student-assistance-program" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">OSAP</a> - Ontario Aid</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <h4 className="font-medium text-gray-800 mb-2">
+                      <i className="fas fa-globe text-purple-600 mr-2"></i>
+                      International Students
+                    </h4>
+                    <ul className="text-sm text-gray-600 space-y-1">
+                      <li>• <a href="https://www.educanada.ca/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">EduCanada</a> - Official Portal</li>
+                      <li>• <a href="https://www.wes.org/ca/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">WES</a> - Credential Evaluation</li>
+                      <li>• <a href="https://www.cicic.ca/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">CICIC</a> - Recognition Info</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <h4 className="font-medium text-gray-800 mb-2">
+                      <i className="fas fa-passport text-red-600 mr-2"></i>
+                      Study Permits
+                    </h4>
+                    <ul className="text-sm text-gray-600 space-y-1">
+                      <li>• <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Study in Canada</a></li>
+                      <li>• <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Study Permit Info</a></li>
+                      <li>• <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Work While Studying</a></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </TabsContent>

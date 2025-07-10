@@ -79,12 +79,12 @@ export default function ShareButton() {
   return (
     <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="flex items-center space-x-2">
+        <Button variant="outline" size="sm" className="flex items-center space-x-2 bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm transition-all duration-300 shadow-lg">
           <Share2 className="h-4 w-4" />
           <span>Share</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-48">
+      <DropdownMenuContent align="end" className="w-48 bg-white/95 backdrop-blur-sm border-gray-200/50 shadow-xl">
         {navigator.share && (
           <DropdownMenuItem onClick={handleNativeShare} className="flex items-center space-x-2">
             <Share2 className="h-4 w-4" />
