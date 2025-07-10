@@ -2635,7 +2635,95 @@ export default function Home() {
 
         {/* Contact Content */}
         {activeTab === 'contact' && (
-          <ContactForm />
+          <div className="space-y-6">
+            {/* Contact Header */}
+            <div className="bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 text-white p-8 rounded-2xl shadow-xl">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-white bg-opacity-20 rounded-full mb-4">
+                  <i className="fas fa-envelope text-3xl"></i>
+                </div>
+                <h2 className="text-3xl font-bold mb-3">Get in Touch</h2>
+                <p className="text-lg opacity-90 max-w-2xl mx-auto">
+                  Have suggestions for new government services, found broken links, or want to report an issue? 
+                  We'd love to hear from you and continuously improve the Canada Access Hub.
+                </p>
+              </div>
+            </div>
+
+            {/* Contact Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-xl">
+                <div className="flex items-center">
+                  <div className="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                    <i className="fas fa-clock text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">Quick Response</h3>
+                    <p className="text-sm opacity-90">We respond within 24 hours</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-orange-400 to-red-500 text-white p-6 rounded-xl">
+                <div className="flex items-center">
+                  <div className="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                    <i className="fas fa-shield-alt text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">Secure & Private</h3>
+                    <p className="text-sm opacity-90">Your information is protected</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-blue-400 to-purple-500 text-white p-6 rounded-xl">
+                <div className="flex items-center">
+                  <div className="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                    <i className="fas fa-users text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">Community Driven</h3>
+                    <p className="text-sm opacity-90">Built with user feedback</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <ContactForm />
+
+            {/* Additional Resources */}
+            <div className="bg-gradient-to-r from-cyan-50 to-blue-50 p-6 rounded-xl border border-blue-200">
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                  <i className="fas fa-info-circle text-blue-600 mr-2"></i>
+                  Additional Ways to Help
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <h4 className="font-medium text-gray-800 mb-2">
+                      <i className="fas fa-link text-indigo-600 mr-2"></i>
+                      Suggest New Links
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      Know of important government services missing from our directory? 
+                      Let us know and we'll add them to help other Canadians.
+                    </p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <h4 className="font-medium text-gray-800 mb-2">
+                      <i className="fas fa-bug text-red-600 mr-2"></i>
+                      Report Issues
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      Found a broken link or outdated information? 
+                      Report it so we can keep the directory accurate and up-to-date.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         )}
 
         {/* Floating Back to Top Button */}
