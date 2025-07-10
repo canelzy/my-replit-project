@@ -20,9 +20,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const emailSent = await sendContactEmail(validatedData);
       
       if (emailSent) {
+        // Check if we're using email service or console logging
+        const hasEmailService = process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD;
+        
         res.json({ 
           success: true, 
-          message: "Your message has been sent successfully! We'll get back to you soon." 
+          message: hasEmailService 
+            ? "Your message has been sent successfully! We'll get back to you soon." 
+            : "Your message has been received and logged successfully! We'll get back to you soon via the provided email address."
         });
       } else {
         res.status(500).json({ 
