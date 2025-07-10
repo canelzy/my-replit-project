@@ -1074,10 +1074,9 @@ export default function Home() {
     return expandedContinents.includes(continent);
   };
 
-  // Initialize expanded continents on mount
+  // Initialize expanded continents on mount (start collapsed)
   useEffect(() => {
-    const allContinents = Object.keys(canadianEmbassiesData);
-    setExpandedContinents(allContinents);
+    setExpandedContinents([]);
   }, []);
 
   const categoryGradients = {
@@ -1628,7 +1627,7 @@ export default function Home() {
                 {getFilteredEmbassies().map((continent, continentIndex) => (
                   <div key={continentIndex} className="bg-white rounded-lg shadow-md border border-gray-200">
                     <div 
-                      className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition-colors"
+                      className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition-colors border-b border-gray-100"
                       onClick={() => toggleContinent(continent.continent)}
                     >
                       <div className="flex items-center space-x-3">
@@ -1637,7 +1636,10 @@ export default function Home() {
                         </div>
                         <div>
                           <h4 className="text-xl font-bold text-gray-800">{continent.continent}</h4>
-                          <p className="text-sm text-gray-600">{continent.countries.length} {continent.countries.length === 1 ? 'country' : 'countries'}</p>
+                          <p className="text-sm text-gray-600">
+                            {continent.countries.length} {continent.countries.length === 1 ? 'country' : 'countries'}
+                            {!isExpanded(continent.continent) && <span className="ml-2 text-blue-600 font-medium">Click to expand</span>}
+                          </p>
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
@@ -1666,8 +1668,8 @@ export default function Home() {
                           }`}></i>
                           {continent.countries.every(c => embassyFavorites.includes(c.country)) ? 'Unfavorite All' : 'Favorite All'}
                         </Button>
-                        <div className="flex items-center">
-                          <i className={`fas fa-chevron-${isExpanded(continent.continent) ? 'up' : 'down'} text-gray-600 transition-transform`}></i>
+                        <div className="flex items-center bg-gray-100 px-2 py-1 rounded">
+                          <i className={`fas fa-chevron-${isExpanded(continent.continent) ? 'up' : 'down'} text-gray-600 transition-transform text-sm`}></i>
                         </div>
                       </div>
                     </div>
