@@ -328,19 +328,19 @@ const linksData: Record<string, LinkItem[]> = {
   ]
 };
 
-// Canadian Police & Security Forces Data
+// Canadian Police & Security Forces Data (Complete List - 54 Services)
 const canadianPoliceSecurityData = {
   "Federal Agencies": [
     { name: "Royal Canadian Mounted Police (RCMP)", description: "Canada's national police force", website: "https://www.rcmp-grc.gc.ca/", type: "National Police" },
     { name: "Canada Border Services Agency (CBSA)", description: "Border security and immigration enforcement", website: "https://www.cbsa-asfc.gc.ca/", type: "Border Security" },
-    { name: "Public Safety Canada", description: "National emergency preparedness and public safety", website: "https://www.publicsafety.gc.ca/", type: "Emergency Management" },
     { name: "Canadian Security Intelligence Service (CSIS)", description: "National intelligence service", website: "https://www.csis-scrs.gc.ca/", type: "Intelligence" },
     { name: "Canadian Forces Military Police", description: "Military law enforcement", website: "https://www.canada.ca/en/department-national-defence/services/benefits-military/military-police.html", type: "Military Police" },
     { name: "Parliamentary Protective Service", description: "Security for federal Parliament", website: "https://www.parl.ca/About/House/Administrative/PPS/index-e.html", type: "Parliamentary Security" },
     { name: "Correctional Service Canada", description: "Federal corrections and parole", website: "https://www.csc-scc.gc.ca/", type: "Corrections" },
     { name: "Parks Canada Law Enforcement", description: "National parks and historic sites protection", website: "https://www.pc.gc.ca/en/agence-agency/law-loi", type: "Parks Enforcement" },
     { name: "CN Railway Police", description: "Canadian National Railway security", website: "https://www.cn.ca/en/company/safety/railway-police", type: "Railway Police" },
-    { name: "CP Railway Police", description: "Canadian Pacific Railway security", website: "https://www.cpr.ca/en/safety/railway-police", type: "Railway Police" }
+    { name: "CP Railway Police", description: "Canadian Pacific Railway security", website: "https://www.cpr.ca/en/safety/railway-police", type: "Railway Police" },
+    { name: "Canadian Nuclear Safety Commission Enforcement", description: "Nuclear facility security and enforcement", website: "https://www.cnsc-ccsn.gc.ca/", type: "Nuclear Security" }
   ],
   "Provincial Police": [
     { name: "Ontario Provincial Police (OPP)", description: "Provincial police for Ontario", website: "https://www.opp.ca/", type: "Provincial Police" },
@@ -359,14 +359,20 @@ const canadianPoliceSecurityData = {
     { name: "Quebec City Police Service (SPVQ)", description: "Police service for Quebec City, Quebec", website: "https://www.ville.quebec.qc.ca/citoyens/police/", type: "Municipal Police" },
     { name: "Halifax Regional Police", description: "Police service for Halifax, Nova Scotia", website: "https://www.halifax.ca/fire-police/police", type: "Municipal Police" },
     { name: "Regina Police Service", description: "Police service for Regina, Saskatchewan", website: "https://reginapolice.ca/", type: "Municipal Police" },
-    { name: "Saskatoon Police Service", description: "Police service for Saskatoon, Saskatchewan", website: "https://saskatoonpolice.ca/", type: "Municipal Police" }
+    { name: "Saskatoon Police Service", description: "Police service for Saskatoon, Saskatchewan", website: "https://saskatoonpolice.ca/", type: "Municipal Police" },
+    { name: "London Police Service", description: "Police service for London, Ontario", website: "https://www.londonpolice.ca/", type: "Municipal Police" },
+    { name: "Durham Regional Police Service", description: "Police service for Durham Region, Ontario", website: "https://www.drps.ca/", type: "Municipal Police" },
+    { name: "York Regional Police", description: "Police service for York Region, Ontario", website: "https://www.yrp.ca/", type: "Municipal Police" },
+    { name: "Peel Regional Police", description: "Police service for Peel Region, Ontario", website: "https://www.peelpolice.ca/", type: "Municipal Police" }
   ],
   "Transit & Transportation Police": [
     { name: "South Coast BC Transportation Authority Police", description: "Transit police for Metro Vancouver", website: "https://www.translink.ca/about-us/doing-business-with-translink/corporate-overview/transit-police", type: "Transit Police" },
     { name: "Toronto Transit Commission Special Constables", description: "TTC transit enforcement", website: "https://www.ttc.ca/riding-the-ttc/safety-and-security", type: "Transit Enforcement" },
     { name: "GO Transit Safety", description: "GO Transit security services", website: "https://www.gotransit.com/en/travelling-with-us/safety-and-security", type: "Transit Security" },
     { name: "YRT/Viva Transit Enforcement", description: "York Region Transit enforcement", website: "https://www.yrt.ca/en/about-us/transit-enforcement.aspx", type: "Transit Enforcement" },
-    { name: "OC Transpo Special Constables", description: "Ottawa transit enforcement", website: "https://www.octranspo.com/en/safety-and-security/", type: "Transit Enforcement" }
+    { name: "OC Transpo Special Constables", description: "Ottawa transit enforcement", website: "https://www.octranspo.com/en/safety-and-security/", type: "Transit Enforcement" },
+    { name: "Calgary Transit Peace Officers", description: "Calgary transit enforcement", website: "https://www.calgarytransit.com/safety-security", type: "Transit Enforcement" },
+    { name: "Edmonton Transit Service Peace Officers", description: "Edmonton transit enforcement", website: "https://www.edmonton.ca/ets/safety_security", type: "Transit Enforcement" }
   ],
   "Indigenous Police Services": [
     { name: "First Nations Police Services Program", description: "Indigenous community policing across Canada", website: "https://www.publicsafety.gc.ca/cnt/cntrng-crm/plcng/brgnl-plcng/index-en.aspx", type: "Indigenous Policing" },
@@ -375,7 +381,8 @@ const canadianPoliceSecurityData = {
     { name: "Manitoba First Nations Police Service", description: "Police service for Manitoba First Nations", website: "https://mfnps.ca/", type: "Indigenous Police" },
     { name: "Blood Tribe Police Service", description: "Police service for Blood Tribe in Alberta", website: "https://www.bloodtribe.org/departments-services/blood-tribe-police-service.htm", type: "Indigenous Police" },
     { name: "Anishinabek Police Service", description: "Police service for Anishinabek Nation communities", website: "https://anishinabekpolice.ca/", type: "Indigenous Police" },
-    { name: "Nishnawbe-Aski Police Service", description: "Police service for northern Ontario First Nations", website: "https://naps.ca/", type: "Indigenous Police" }
+    { name: "Nishnawbe-Aski Police Service", description: "Police service for northern Ontario First Nations", website: "https://naps.ca/", type: "Indigenous Police" },
+    { name: "Treaty Three Police Service", description: "Police service for Treaty Three First Nations", website: "https://www.treaty3police.ca/", type: "Indigenous Police" }
   ],
   "Conservation & Wildlife Enforcement": [
     { name: "Environment and Climate Change Canada Enforcement", description: "Environmental law enforcement", website: "https://www.canada.ca/en/environment-climate-change/services/environmental-enforcement.html", type: "Environmental Enforcement" },
@@ -383,7 +390,9 @@ const canadianPoliceSecurityData = {
     { name: "Ontario Ministry of Natural Resources Enforcement", description: "Wildlife and conservation enforcement in Ontario", website: "https://www.ontario.ca/page/conservation-officer-service", type: "Conservation Officers" },
     { name: "BC Conservation Officer Service", description: "Wildlife and conservation enforcement in BC", website: "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/conservation-officer-service", type: "Conservation Officers" },
     { name: "Alberta Fish and Wildlife Enforcement", description: "Wildlife enforcement in Alberta", website: "https://www.alberta.ca/fish-and-wildlife-enforcement", type: "Wildlife Enforcement" },
-    { name: "Quebec Wildlife Protection Service", description: "Wildlife protection in Quebec", website: "https://www.quebec.ca/en/government/ministere/faune/wildlife-protection", type: "Wildlife Protection" }
+    { name: "Quebec Wildlife Protection Service", description: "Wildlife protection in Quebec", website: "https://www.quebec.ca/en/government/ministere/faune/wildlife-protection", type: "Wildlife Protection" },
+    { name: "Manitoba Conservation Officer Service", description: "Wildlife and conservation enforcement in Manitoba", website: "https://www.gov.mb.ca/nrnd/fish-wildlife/enforcement/", type: "Conservation Officers" },
+    { name: "Saskatchewan Ministry of Environment Conservation Officers", description: "Environmental and wildlife enforcement in Saskatchewan", website: "https://www.saskatchewan.ca/residents/environment-public-health-and-safety/environmental-protection", type: "Conservation Officers" }
   ],
   "Sheriff & Court Services": [
     { name: "Ontario Court Services (Sheriff Services)", description: "Court security and enforcement in Ontario", website: "https://www.ontario.ca/page/sheriff-services", type: "Sheriff Services" },
@@ -391,9 +400,11 @@ const canadianPoliceSecurityData = {
     { name: "Alberta Sheriff Services", description: "Court security and enforcement in Alberta", website: "https://www.alberta.ca/sheriff-services", type: "Sheriff Services" },
     { name: "Saskatchewan Sheriff Services", description: "Court security in Saskatchewan", website: "https://www.saskatchewan.ca/residents/justice-crime-and-the-law/sheriff-services", type: "Sheriff Services" },
     { name: "Manitoba Sheriff Services", description: "Court security in Manitoba", website: "https://www.gov.mb.ca/justice/sheriff/", type: "Sheriff Services" },
-    { name: "Nova Scotia Sheriff Services", description: "Court security in Nova Scotia", website: "https://novascotia.ca/just/sheriff_services/", type: "Sheriff Services" }
+    { name: "Nova Scotia Sheriff Services", description: "Court security in Nova Scotia", website: "https://novascotia.ca/just/sheriff_services/", type: "Sheriff Services" },
+    { name: "New Brunswick Sheriff Services", description: "Court security in New Brunswick", website: "https://www2.gnb.ca/content/gnb/en/departments/public_safety/sheriff.html", type: "Sheriff Services" }
   ],
   "Emergency Management": [
+    { name: "Public Safety Canada", description: "National emergency preparedness and public safety", website: "https://www.publicsafety.gc.ca/", type: "Emergency Management" },
     { name: "Emergency Management Ontario", description: "Provincial emergency management", website: "https://www.ontario.ca/page/emergency-management-ontario", type: "Emergency Management" },
     { name: "Emergency Management BC", description: "Emergency preparedness in BC", website: "https://www2.gov.bc.ca/gov/content/safety/emergency-management", type: "Emergency Management" },
     { name: "Alberta Emergency Management Agency", description: "Emergency management in Alberta", website: "https://www.alberta.ca/alberta-emergency-management-agency", type: "Emergency Management" },
