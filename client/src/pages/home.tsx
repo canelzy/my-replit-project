@@ -1239,17 +1239,7 @@ export default function Home() {
               <i className="fas fa-heart text-sm"></i>
               <span className="text-sm font-medium">Non-Profits</span>
             </button>
-            <button
-              onClick={() => setActiveTab('categories')}
-              className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
-                activeTab === 'categories' 
-                  ? 'bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-lg' 
-                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
-              }`}
-            >
-              <i className="fas fa-th-large text-sm"></i>
-              <span className="text-sm font-medium">Categories</span>
-            </button>
+
             <button
               onClick={() => setActiveTab('contact')}
               className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
@@ -2335,37 +2325,7 @@ export default function Home() {
 
 
 
-        {/* Categories Content */}
-        {activeTab === 'categories' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {Object.entries(linksData).map(([category, links]) => {
-                const gradient = categoryGradients[category as keyof typeof categoryGradients] || { 
-                  from: "from-gray-600", 
-                  to: "to-gray-700", 
-                  icon: "fas fa-cog" 
-                };
-                return (
-                  <Card key={category} className="bg-white shadow-md hover:shadow-lg transition-shadow">
-                    <CardContent className="p-6">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <i className={`${gradient.icon} text-blue-600 text-2xl`}></i>
-                        <h3 className="text-xl font-semibold text-gray-800">{category}</h3>
-                      </div>
-                      <p className="text-gray-600 text-sm mb-4">{links.length} services available</p>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => setActiveTab("all")}
-                        className="w-full"
-                      >
-                        View Services
-                      </Button>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-        )}
+
 
         {/* Contact Content */}
         {activeTab === 'contact' && (
