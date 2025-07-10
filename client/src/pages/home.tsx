@@ -960,7 +960,6 @@ export default function Home() {
   const [selectedType, setSelectedType] = useState<string>("all");
   const [selectedContinent, setSelectedContinent] = useState<string>("all");
   const [selectedCountry, setSelectedCountry] = useState<string>("all");
-  const [embassyFavorites, setEmbassyFavorites] = useState<string[]>([]);
   const [expandedContinents, setExpandedContinents] = useState<string[]>([]);
 
   // Load favorites from localStorage on component mount
@@ -1021,26 +1020,7 @@ export default function Home() {
     return favoriteLinks;
   };
 
-  // Load embassy favorites from localStorage
-  useEffect(() => {
-    const savedEmbassyFavorites = localStorage.getItem('embassyFavorites');
-    if (savedEmbassyFavorites) {
-      setEmbassyFavorites(JSON.parse(savedEmbassyFavorites));
-    }
-  }, []);
 
-  // Save embassy favorites to localStorage
-  useEffect(() => {
-    localStorage.setItem('embassyFavorites', JSON.stringify(embassyFavorites));
-  }, [embassyFavorites]);
-
-  const handleToggleEmbassyFavorite = (country: string) => {
-    setEmbassyFavorites(prev => 
-      prev.includes(country) 
-        ? prev.filter(fav => fav !== country)
-        : [...prev, country]
-    );
-  };
 
   const getFilteredCountries = () => {
     if (selectedContinent === 'all') {
@@ -1642,35 +1622,8 @@ export default function Home() {
                           </p>
                         </div>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            const allCountries = continent.countries.map(c => c.country);
-                            const allFavorited = allCountries.every(country => embassyFavorites.includes(country));
-                            
-                            if (allFavorited) {
-                              // Remove all from favorites
-                              setEmbassyFavorites(prev => prev.filter(fav => !allCountries.includes(fav)));
-                            } else {
-                              // Add all to favorites
-                              setEmbassyFavorites(prev => [...prev, ...allCountries.filter(country => !prev.includes(country))]);
-                            }
-                          }}
-                          className="text-xs"
-                        >
-                          <i className={`fas fa-star mr-1 ${
-                            continent.countries.every(c => embassyFavorites.includes(c.country)) 
-                              ? 'text-yellow-500' 
-                              : 'text-gray-400'
-                          }`}></i>
-                          {continent.countries.every(c => embassyFavorites.includes(c.country)) ? 'Unfavorite All' : 'Favorite All'}
-                        </Button>
-                        <div className="flex items-center bg-gray-100 px-2 py-1 rounded">
-                          <i className={`fas fa-chevron-${isExpanded(continent.continent) ? 'up' : 'down'} text-gray-600 transition-transform text-sm`}></i>
-                        </div>
+                      <div className="flex items-center bg-gray-100 px-2 py-1 rounded">
+                        <i className={`fas fa-chevron-${isExpanded(continent.continent) ? 'up' : 'down'} text-gray-600 transition-transform text-sm`}></i>
                       </div>
                     </div>
                     
@@ -1680,24 +1633,14 @@ export default function Home() {
                           {continent.countries.map((countryData, countryIndex) => (
                             <Card key={countryIndex} className="bg-white shadow-md hover:shadow-lg transition-shadow">
                               <div className="bg-gray-50 p-4 border-b">
-                                <div className="flex items-center justify-between">
-                                  <div className="flex items-center space-x-2">
-                                    <div className="bg-red-100 p-1.5 rounded-full">
-                                      <i className="fas fa-flag text-red-600 text-sm"></i>
-                                    </div>
-                                    <div>
-                                      <h5 className="font-bold text-gray-800">{countryData.country}</h5>
-                                      <p className="text-xs text-gray-600">{countryData.missions.length} {countryData.missions.length === 1 ? 'mission' : 'missions'}</p>
-                                    </div>
+                                <div className="flex items-center space-x-2">
+                                  <div className="bg-red-100 p-1.5 rounded-full">
+                                    <i className="fas fa-flag text-red-600 text-sm"></i>
                                   </div>
-                                  <Button
-                                    variant="ghost"
-                                    size="sm"
-                                    onClick={() => handleToggleEmbassyFavorite(countryData.country)}
-                                    className="p-1"
-                                  >
-                                    <i className={`fas fa-star ${embassyFavorites.includes(countryData.country) ? 'text-yellow-500' : 'text-gray-400'}`}></i>
-                                  </Button>
+                                  <div>
+                                    <h5 className="font-bold text-gray-800">{countryData.country}</h5>
+                                    <p className="text-xs text-gray-600">{countryData.missions.length} {countryData.missions.length === 1 ? 'mission' : 'missions'}</p>
+                                  </div>
                                 </div>
                               </div>
                               
