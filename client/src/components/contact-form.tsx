@@ -4,13 +4,16 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    suggestion: ""
+    subject: "",
+    message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -21,31 +24,54 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
-    if (!formData.name || !formData.email || !formData.suggestion) {
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       toast({
         title: "Please fill in all fields",
-        description: "All fields are required to submit your suggestion.",
+        description: "All fields are required to submit your message.",
         variant: "destructive"
       });
       return;
     }
 
-    // Show success message
-    toast({
-      title: "Thank you for your suggestion!",
-      description: "Your feedback has been received. This feature would be implemented in the production version.",
-    });
+    setIsSubmitting(true);
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      suggestion: ""
-    });
+    try {
+      const response = await apiRequest("/api/contact", "POST", formData);
+      
+      if (response.success) {
+        toast({
+          title: "Message sent successfully!",
+          description: response.message,
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: ""
+        });
+      } else {
+        toast({
+          title: "Error sending message",
+          description: response.message,
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      console.error('Contact form submission error:', error);
+      toast({
+        title: "Error sending message",
+        description: "Unable to send your message. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -61,6 +87,7 @@ export default function ContactForm() {
               value={formData.name}
               onChange={handleInputChange}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+              placeholder="Enter your full name"
               required
             />
           </div>
@@ -72,27 +99,51 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleInputChange}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+              placeholder="your.email@example.com"
               required
             />
           </div>
           <div className="md:col-span-2">
-            <label className="block text-sm font-medium text-gray-700 mb-2">Suggestion or Issue</label>
-            <Textarea
-              name="suggestion"
-              value={formData.suggestion}
+            <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+            <Input
+              type="text"
+              name="subject"
+              value={formData.subject}
               onChange={handleInputChange}
-              rows={4}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-              placeholder="Please describe your suggestion or issue..."
+              placeholder="Brief description of your message"
+              required
+            />
+          </div>
+          <div className="md:col-span-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+            <Textarea
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              rows={5}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+              placeholder="Please describe your suggestion, feedback, or issue in detail..."
               required
             />
           </div>
           <div className="md:col-span-2">
             <Button 
               type="submit"
-              className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-800 transition-colors"
+              disabled={isSubmitting}
+              className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Submit Suggestion
+              {isSubmitting ? (
+                <>
+                  <i className="fas fa-spinner fa-spin mr-2"></i>
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <i className="fas fa-paper-plane mr-2"></i>
+                  Send Message
+                </>
+              )}
             </Button>
           </div>
         </form>
