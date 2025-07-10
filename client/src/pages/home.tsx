@@ -954,23 +954,34 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeTab, setActiveTab] = useState("all");
   const [favoriteSchools, setFavoriteSchools] = useState<string[]>([]);
+  const [favoriteLinks, setFavoriteLinks] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedProvince, setSelectedProvince] = useState<string>("all");
   const [selectedType, setSelectedType] = useState<string>("all");
   const [expandedContinents, setExpandedContinents] = useState<string[]>([]);
+  const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
 
-  // Load school favorites from localStorage on component mount
+  // Load favorites from localStorage on component mount
   useEffect(() => {
     const savedSchools = localStorage.getItem('canadaAccessHub_favoriteSchools');
     if (savedSchools) {
       setFavoriteSchools(JSON.parse(savedSchools));
     }
+    
+    const savedLinks = localStorage.getItem('canadaAccessHub_favoriteLinks');
+    if (savedLinks) {
+      setFavoriteLinks(JSON.parse(savedLinks));
+    }
   }, []);
 
-  // Save school favorites to localStorage whenever favorites change
+  // Save favorites to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem('canadaAccessHub_favoriteSchools', JSON.stringify(favoriteSchools));
   }, [favoriteSchools]);
+
+  useEffect(() => {
+    localStorage.setItem('canadaAccessHub_favoriteLinks', JSON.stringify(favoriteLinks));
+  }, [favoriteLinks]);
 
   const handleSearch = (term: string) => {
     setSearchTerm(term);
@@ -983,6 +994,14 @@ export default function Home() {
       prev.includes(url) 
         ? prev.filter(fav => fav !== url)
         : [...prev, url]
+    );
+  };
+
+  const handleToggleFavorite = (linkUrl: string) => {
+    setFavoriteLinks(prev => 
+      prev.includes(linkUrl) 
+        ? prev.filter(fav => fav !== linkUrl)
+        : [...prev, linkUrl]
     );
   };
 
@@ -1015,6 +1034,18 @@ export default function Home() {
 
   const isExpanded = (continent: string) => {
     return expandedContinents.includes(continent);
+  };
+
+  const isCategoryExpanded = (category: string) => {
+    return expandedCategories.includes(category);
+  };
+
+  const toggleCategory = (category: string) => {
+    setExpandedCategories(prev =>
+      prev.includes(category)
+        ? prev.filter(c => c !== category)
+        : [...prev, category]
+    );
   };
 
   // Initialize expanded continents on mount (start collapsed)
@@ -1145,24 +1176,97 @@ export default function Home() {
                 icon: "fas fa-cog",
                 emoji: "⚙️"
               };
+              
+              const filteredLinks = links.filter(link => 
+                searchTerm === "" || 
+                link.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                link.description.toLowerCase().includes(searchTerm.toLowerCase())
+              );
+              
               return (
-                <button
+                <div
                   key={category}
-                  className={`p-3 sm:p-4 md:p-6 rounded-xl shadow-lg bg-gradient-to-r ${gradient.from} ${gradient.to} text-white hover:scale-105 active:scale-95 transition-transform duration-200 text-left w-full ${
+                  className={`rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300 ${
                     category === "Taxes & Benefits" || category === "Pensions & Retirement" ? "m-2.5" : ""
-                  }`}
-                  onClick={() => {
-                    // Handle category click - could expand or navigate
-                    console.log(`Clicked on ${category}`);
-                  }}
+                  } ${isCategoryExpanded(category) ? "row-span-2" : ""}`}
                 >
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="text-2xl">{gradient.emoji || "📋"}</div>
-                    <i className={`${gradient.icon} text-lg opacity-75`}></i>
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">{category}</h3>
-                  <p className="text-sm opacity-90">{links.length} services available</p>
-                </button>
+                  <button
+                    className={`p-3 sm:p-4 md:p-6 bg-gradient-to-r ${gradient.from} ${gradient.to} text-white hover:scale-[1.02] active:scale-95 transition-transform duration-200 text-left w-full`}
+                    onClick={() => toggleCategory(category)}
+                  >
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="text-2xl">{gradient.emoji || "📋"}</div>
+                      <div className="flex items-center space-x-2">
+                        <i className={`${gradient.icon} text-lg opacity-75`}></i>
+                        <i className={`fas fa-chevron-${isCategoryExpanded(category) ? 'up' : 'down'} text-sm opacity-75 transition-transform`}></i>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">{category}</h3>
+                    <p className="text-sm opacity-90">
+                      {filteredLinks.length} service{filteredLinks.length !== 1 ? 's' : ''} available
+                      {!isCategoryExpanded(category) && <span className="ml-2 font-medium">• Click to expand</span>}
+                    </p>
+                  </button>
+                  
+                  {isCategoryExpanded(category) && (
+                    <div className="p-4 bg-white">
+                      <div className="space-y-3">
+                        {filteredLinks.map((link, linkIndex) => (
+                          <div
+                            key={linkIndex}
+                            className="flex items-start justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                          >
+                            <div className="flex-1">
+                              <a
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-medium text-blue-600 hover:text-blue-800 transition-colors"
+                              >
+                                {searchTerm && link.title.toLowerCase().includes(searchTerm.toLowerCase()) ? (
+                                  <span dangerouslySetInnerHTML={{
+                                    __html: link.title.replace(
+                                      new RegExp(searchTerm, 'gi'),
+                                      '<mark class="search-highlight">$&</mark>'
+                                    )
+                                  }} />
+                                ) : (
+                                  link.title
+                                )}
+                                <i className="fas fa-external-link-alt ml-2 text-xs"></i>
+                              </a>
+                              <p className="text-sm text-gray-600 mt-1">
+                                {searchTerm && link.description.toLowerCase().includes(searchTerm.toLowerCase()) ? (
+                                  <span dangerouslySetInnerHTML={{
+                                    __html: link.description.replace(
+                                      new RegExp(searchTerm, 'gi'),
+                                      '<mark class="search-highlight">$&</mark>'
+                                    )
+                                  }} />
+                                ) : (
+                                  link.description
+                                )}
+                              </p>
+                            </div>
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleToggleFavorite(link.url);
+                              }}
+                              className={`ml-3 p-2 rounded-full transition-colors ${
+                                favoriteLinks.includes(link.url) 
+                                  ? 'text-yellow-500 bg-yellow-50 hover:bg-yellow-100' 
+                                  : 'text-gray-400 hover:text-yellow-500 hover:bg-gray-100'
+                              }`}
+                            >
+                              <i className="fas fa-star text-sm"></i>
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               );
             })}
           </div>
