@@ -1109,15 +1109,15 @@ export default function Home() {
               <span className="text-sm font-medium">All</span>
             </button>
             <button
-              onClick={() => setActiveTab('nonprofits')}
+              onClick={() => setActiveTab('embassies')}
               className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
-                activeTab === 'nonprofits' 
-                  ? 'bg-gradient-to-r from-pink-500 to-pink-700 text-white shadow-lg' 
+                activeTab === 'embassies' 
+                  ? 'bg-gradient-to-r from-red-500 to-red-700 text-white shadow-lg' 
                   : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
               }`}
             >
-              <i className="fas fa-heart text-sm"></i>
-              <span className="text-sm font-medium">Non-Profits</span>
+              <i className="fas fa-flag text-sm"></i>
+              <span className="text-sm font-medium">Embassies</span>
             </button>
             <button
               onClick={() => setActiveTab('education')}
@@ -1131,15 +1131,15 @@ export default function Home() {
               <span className="text-sm font-medium">Education</span>
             </button>
             <button
-              onClick={() => setActiveTab('embassies')}
+              onClick={() => setActiveTab('nonprofits')}
               className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
-                activeTab === 'embassies' 
-                  ? 'bg-gradient-to-r from-red-500 to-red-700 text-white shadow-lg' 
+                activeTab === 'nonprofits' 
+                  ? 'bg-gradient-to-r from-pink-500 to-pink-700 text-white shadow-lg' 
                   : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
               }`}
             >
-              <i className="fas fa-flag text-sm"></i>
-              <span className="text-sm font-medium">Embassies</span>
+              <i className="fas fa-heart text-sm"></i>
+              <span className="text-sm font-medium">Non-Profits</span>
             </button>
             <button
               onClick={() => setActiveTab('categories')}
