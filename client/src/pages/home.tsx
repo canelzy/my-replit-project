@@ -1064,7 +1064,7 @@ export default function Home() {
       {/* Main Content */}
       <main className="container mx-auto px-3 sm:px-4 py-4 sm:py-6 lg:py-8">
         <Tabs defaultValue="all" value={activeTab} onValueChange={handleTabChange} className="w-full">
-          <TabsList className="grid w-full grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 mb-12 text-xs sm:text-sm lg:text-base font-medium bg-gray-100 p-2 sm:p-3 lg:p-4 rounded-lg gap-2 sm:gap-3 lg:gap-4 m-1.5">
+          <TabsList className="grid w-full grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 mb-12 text-xs sm:text-sm lg:text-base font-medium bg-gray-100 p-2 sm:p-3 lg:p-4 rounded-lg gap-2 sm:gap-3 lg:gap-4 m-2.5">
             <TabsTrigger value="all" className="bg-blue-500 text-white data-[state=active]:bg-blue-600 data-[state=active]:text-white hover:bg-blue-400 rounded-md py-2 px-2 sm:py-3 sm:px-4 lg:py-4 lg:px-6 min-h-12 sm:min-h-14">
               <div className="flex flex-col items-center sm:flex-row sm:items-center">
                 <i className="fas fa-home mb-1 sm:mb-0 sm:mr-2 text-sm sm:text-base"></i>
