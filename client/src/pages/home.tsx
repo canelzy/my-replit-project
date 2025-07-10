@@ -315,6 +315,62 @@ const linksData: Record<string, LinkItem[]> = {
     { title: "Elections Canada", description: "Voting and elections information", url: "https://www.elections.ca/", icon: "fas fa-vote-yea" },
     { title: "Travel and Tourism", description: "Travel advisories and tourism", url: "https://travel.gc.ca/", icon: "fas fa-suitcase" },
     { title: "Weather", description: "Weather forecasts and warnings", url: "https://weather.gc.ca/", icon: "fas fa-cloud-sun" }
+  ],
+  "Police & Security Forces": [
+    // Federal Agencies
+    { title: "Royal Canadian Mounted Police (RCMP)", description: "Canada's national police force", url: "https://www.rcmp-grc.gc.ca/", icon: "fas fa-shield-alt" },
+    { title: "Canada Border Services Agency (CBSA)", description: "Border security and immigration enforcement", url: "https://www.cbsa-asfc.gc.ca/", icon: "fas fa-flag-checkered" },
+    { title: "Canadian Forces Military Police", description: "Military law enforcement", url: "https://www.canada.ca/en/department-national-defence/services/benefits-military/military-police.html", icon: "fas fa-user-shield" },
+    { title: "Parliamentary Protective Service", description: "Security for federal Parliament", url: "https://www.parl.ca/About/House/Administrative/PPS/index-e.html", icon: "fas fa-building-shield" },
+    { title: "Parks Canada Law Enforcement", description: "National parks and historic sites protection", url: "https://www.pc.gc.ca/en/agence-agency/law-loi", icon: "fas fa-tree" },
+    { title: "CN Railway Police", description: "Canadian National Railway security", url: "https://www.cn.ca/en/company/safety/railway-police", icon: "fas fa-train" },
+    { title: "CP Railway Police", description: "Canadian Pacific Railway security", url: "https://www.cpr.ca/en/safety/railway-police", icon: "fas fa-subway" },
+    { title: "Correctional Service Canada", description: "Federal corrections and parole", url: "https://www.csc-scc.gc.ca/", icon: "fas fa-lock" },
+    
+    // Provincial Police
+    { title: "Ontario Provincial Police (OPP)", description: "Provincial police for Ontario", url: "https://www.opp.ca/", icon: "fas fa-car-crash" },
+    { title: "Sûreté du Québec (SQ)", description: "Provincial police for Quebec", url: "https://www.sq.gouv.qc.ca/", icon: "fas fa-police-box" },
+    { title: "Royal Newfoundland Constabulary", description: "Provincial police for Newfoundland", url: "https://www.rnc.gov.nl.ca/", icon: "fas fa-anchor" },
+    
+    // Major Municipal Police
+    { title: "Toronto Police Service", description: "Police service for Toronto", url: "https://www.torontopolice.on.ca/", icon: "fas fa-city" },
+    { title: "Vancouver Police Department", description: "Police service for Vancouver", url: "https://vpd.ca/", icon: "fas fa-mountain" },
+    { title: "Montreal Police Service (SPVM)", description: "Police service for Montreal", url: "https://spvm.qc.ca/", icon: "fas fa-landmark" },
+    { title: "Calgary Police Service", description: "Police service for Calgary", url: "https://www.calgary.ca/cps.html", icon: "fas fa-hard-hat" },
+    { title: "Edmonton Police Service", description: "Police service for Edmonton", url: "https://www.edmontonpolice.ca/", icon: "fas fa-oil-well" },
+    { title: "Ottawa Police Service", description: "Police service for Ottawa", url: "https://www.ottawapolice.ca/", icon: "fas fa-university" },
+    { title: "Winnipeg Police Service", description: "Police service for Winnipeg", url: "https://www.winnipeg.ca/police/", icon: "fas fa-snowflake" },
+    { title: "Hamilton Police Service", description: "Police service for Hamilton", url: "https://hamiltonpolice.on.ca/", icon: "fas fa-industry" },
+    { title: "Quebec City Police Service (SPVQ)", description: "Police service for Quebec City", url: "https://www.ville.quebec.qc.ca/citoyens/police/", icon: "fas fa-castle" },
+    { title: "Halifax Regional Police", description: "Police service for Halifax", url: "https://www.halifax.ca/fire-police/police", icon: "fas fa-ship" },
+    
+    // Transit Police
+    { title: "South Coast BC Transportation Authority Police", description: "Transit police for Metro Vancouver", url: "https://www.translink.ca/about-us/doing-business-with-translink/corporate-overview/transit-police", icon: "fas fa-bus" },
+    { title: "Toronto Transit Commission Special Constables", description: "TTC transit enforcement", url: "https://www.ttc.ca/riding-the-ttc/safety-and-security", icon: "fas fa-subway" },
+    { title: "GO Transit Safety", description: "GO Transit security services", url: "https://www.gotransit.com/en/travelling-with-us/safety-and-security", icon: "fas fa-train" },
+    
+    // Indigenous Police Services
+    { title: "First Nations Police Services", description: "Indigenous community policing across Canada", url: "https://www.publicsafety.gc.ca/cnt/cntrng-crm/plcng/brgnl-plcng/index-en.aspx", icon: "fas fa-feather-alt" },
+    { title: "Six Nations Police", description: "Police service for Six Nations territory", url: "https://www.sixnationspolice.ca/", icon: "fas fa-people-group" },
+    { title: "Akwesasne Mohawk Police Service", description: "Police service for Akwesasne territory", url: "https://www.akwesasnepolice.ca/", icon: "fas fa-hands-helping" },
+    { title: "Manitoba First Nations Police Service", description: "Police service for Manitoba First Nations", url: "https://mfnps.ca/", icon: "fas fa-community" },
+    { title: "Blood Tribe Police Service", description: "Police service for Blood Tribe in Alberta", url: "https://www.bloodtribe.org/departments-services/blood-tribe-police-service.htm", icon: "fas fa-eagle" },
+    
+    // Conservation and Wildlife Enforcement
+    { title: "Environment and Climate Change Canada Enforcement", description: "Environmental law enforcement", url: "https://www.canada.ca/en/environment-climate-change/services/environmental-enforcement.html", icon: "fas fa-leaf" },
+    { title: "Fisheries and Oceans Canada Conservation Officers", description: "Fisheries and marine enforcement", url: "https://www.dfo-mpo.gc.ca/fisheries-peches/enforcement-application/index-eng.html", icon: "fas fa-fish" },
+    { title: "Ontario Ministry of Natural Resources Enforcement", description: "Wildlife and conservation enforcement in Ontario", url: "https://www.ontario.ca/page/conservation-officer-service", icon: "fas fa-paw" },
+    { title: "BC Conservation Officer Service", description: "Wildlife and conservation enforcement in BC", url: "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/conservation-officer-service", icon: "fas fa-forest" },
+    
+    // Sheriff Services
+    { title: "Ontario Court Services (Sheriff Services)", description: "Court security and enforcement in Ontario", url: "https://www.ontario.ca/page/sheriff-services", icon: "fas fa-gavel" },
+    { title: "BC Sheriff Service", description: "Court security and prisoner transport in BC", url: "https://www2.gov.bc.ca/gov/content/justice/criminal-justice/bc-sheriff-service", icon: "fas fa-balance-scale" },
+    { title: "Alberta Sheriff Services", description: "Court security and enforcement in Alberta", url: "https://www.alberta.ca/sheriff-services", icon: "fas fa-handcuffs" },
+    
+    // Emergency Services
+    { title: "Public Safety Canada", description: "National emergency preparedness and public safety", url: "https://www.publicsafety.gc.ca/", icon: "fas fa-exclamation-triangle" },
+    { title: "Emergency Management Ontario", description: "Provincial emergency management", url: "https://www.ontario.ca/page/emergency-management-ontario", icon: "fas fa-siren" },
+    { title: "Canadian Security Intelligence Service (CSIS)", description: "National intelligence service", url: "https://www.csis-scrs.gc.ca/", icon: "fas fa-eye" }
   ]
 };
 
@@ -1075,7 +1131,8 @@ export default function Home() {
     "Legal / Identification": { from: "from-yellow-600", to: "to-yellow-700", icon: "fas fa-gavel", emoji: "⚖️" },
     "Banking & Financial Services": { from: "from-emerald-600", to: "to-emerald-700", icon: "fas fa-university", emoji: "🏛️" },
     "Non-Profits": { from: "from-pink-600", to: "to-pink-700", icon: "fas fa-heart", emoji: "🤝" },
-    "General Government": { from: "from-gray-600", to: "to-gray-700", icon: "fas fa-landmark", emoji: "🏛️" }
+    "General Government": { from: "from-gray-600", to: "to-gray-700", icon: "fas fa-landmark", emoji: "🏛️" },
+    "Police & Security Forces": { from: "from-blue-800", to: "to-blue-900", icon: "fas fa-shield-alt", emoji: "🚔" }
   };
 
   return (
