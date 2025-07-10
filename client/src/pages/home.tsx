@@ -1241,7 +1241,7 @@ export default function Home() {
               }`}
             >
               <i className="fas fa-home text-sm"></i>
-              <span className="text-sm font-medium">All</span>
+              <span className="text-sm font-medium">Home</span>
             </button>
 
 
