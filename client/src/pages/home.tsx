@@ -1898,16 +1898,7 @@ export default function Home() {
                             )}
                           </div>
 
-                          {/* Category Filter */}
-                          <div className="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-500">
-                            <div className="flex items-center space-x-2 mb-2">
-                              <i className="fas fa-filter text-pink-600"></i>
-                              <h4 className="font-bold text-pink-800">Browse Ontario Non-Profits by Category:</h4>
-                            </div>
-                            <p className="text-pink-700 text-sm">
-                              Click on any category below to view non-profit organizations in that area.
-                            </p>
-                          </div>
+
 
                           {/* Non-Profit Categories - Accordion Style */}
                           <div className="space-y-4">
