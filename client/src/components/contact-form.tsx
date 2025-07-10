@@ -137,7 +137,7 @@ export default function ContactForm() {
                   onChange={handleInputChange}
                   rows={5}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                  placeholder="Please describe your suggestion, feedback, or issue in detail..."
+                  placeholder="Please describe your suggestion, feedback, or issue..."
                   required
                 />
               </div>

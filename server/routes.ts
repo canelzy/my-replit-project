@@ -8,7 +8,7 @@ const contactFormSchema = z.object({
   name: z.string().min(1, "Name is required").max(100, "Name must be under 100 characters"),
   email: z.string().email("Please enter a valid email address"),
   subject: z.string().min(1, "Subject is required").max(200, "Subject must be under 200 characters"),
-  message: z.string().min(10, "Message must be at least 10 characters").max(2000, "Message must be under 2000 characters")
+  message: z.string().min(1, "Message is required").max(2000, "Message must be under 2000 characters")
 });
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -37,9 +37,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
     } catch (error) {
       if (error instanceof z.ZodError) {
+        console.error('Contact form validation error:', error.errors);
+        const errorMessages = error.errors.map(err => err.message).join(', ');
         res.status(400).json({ 
           success: false, 
-          message: "Please check your form data and try again.",
+          message: errorMessages,
           errors: error.errors 
         });
       } else {
