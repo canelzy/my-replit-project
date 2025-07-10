@@ -1076,6 +1076,7 @@ export default function Home() {
   const [expandedPoliceCategories, setExpandedPoliceCategories] = useState<string[]>([]);
   const [expandedTransportCategories, setExpandedTransportCategories] = useState<string[]>([]);
   const [isOfficialDirectoriesExpanded, setIsOfficialDirectoriesExpanded] = useState<boolean>(false);
+  const [expandedNonprofitCategories, setExpandedNonprofitCategories] = useState<string[]>([]);
 
 
   // Load favorites from localStorage on component mount
@@ -1199,6 +1200,18 @@ export default function Home() {
 
   const toggleTransportCategory = (category: string) => {
     setExpandedTransportCategories(prev => 
+      prev.includes(category) 
+        ? [] // Close the current category
+        : [category] // Open only this category, close all others
+    );
+  };
+
+  const isNonprofitCategoryExpanded = (category: string) => {
+    return expandedNonprofitCategories.includes(category);
+  };
+
+  const toggleNonprofitCategory = (category: string) => {
+    setExpandedNonprofitCategories(prev => 
       prev.includes(category) 
         ? [] // Close the current category
         : [category] // Open only this category, close all others
@@ -2170,11 +2183,11 @@ export default function Home() {
                                 <div key={nonprofitCategory} className="rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300">
                                   <button
                                     className={`p-4 sm:p-6 text-white hover:scale-[1.02] active:scale-95 transition-all duration-200 text-left w-full ${
-                                      expandedCategories.includes(nonprofitCategory)
+                                      isNonprofitCategoryExpanded(nonprofitCategory)
                                         ? 'bg-gradient-to-r from-pink-700 to-pink-800' 
                                         : 'bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800'
                                     }`}
-                                    onClick={() => toggleCategory(nonprofitCategory)}
+                                    onClick={() => toggleNonprofitCategory(nonprofitCategory)}
                                   >
                                     <div className="flex items-center justify-between">
                                       <div className="flex items-center space-x-3">
@@ -2196,21 +2209,21 @@ export default function Home() {
                                             <span className="bg-white bg-opacity-20 px-2 py-1 rounded-full mr-2">
                                               {filteredOrganizations.length} organization{filteredOrganizations.length !== 1 ? 's' : ''}
                                             </span>
-                                            {!expandedCategories.includes(nonprofitCategory) && <span className="font-medium animate-pulse">👆 Click to expand and view organizations</span>}
-                                            {expandedCategories.includes(nonprofitCategory) && <span className="font-medium">👆 Click to collapse</span>}
+                                            {!isNonprofitCategoryExpanded(nonprofitCategory) && <span className="font-medium animate-pulse">👆 Click to expand and view organizations</span>}
+                                            {isNonprofitCategoryExpanded(nonprofitCategory) && <span className="font-medium">👆 Click to collapse</span>}
                                           </p>
                                         </div>
                                       </div>
                                       <div className="flex items-center space-x-2">
                                         <span className="text-xs opacity-75">
-                                          {expandedCategories.includes(nonprofitCategory) ? 'Expanded' : 'Collapsed'}
+                                          {isNonprofitCategoryExpanded(nonprofitCategory) ? 'Expanded' : 'Collapsed'}
                                         </span>
-                                        <i className={`fas fa-chevron-${expandedCategories.includes(nonprofitCategory) ? 'up' : 'down'} text-lg transition-transform duration-200`}></i>
+                                        <i className={`fas fa-chevron-${isNonprofitCategoryExpanded(nonprofitCategory) ? 'up' : 'down'} text-lg transition-transform duration-200`}></i>
                                       </div>
                                     </div>
                                   </button>
                                   
-                                  {expandedCategories.includes(nonprofitCategory) && (
+                                  {isNonprofitCategoryExpanded(nonprofitCategory) && (
                                     <div className="p-6 bg-white">
                                       <div className="space-y-4">
                                         {filteredOrganizations.map((org, index) => (
