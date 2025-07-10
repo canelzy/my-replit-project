@@ -328,6 +328,22 @@ const linksData: Record<string, LinkItem[]> = {
     { title: "Parks Canada Law Enforcement", description: "National parks and historic sites protection", url: "https://www.pc.gc.ca/en/agence-agency/law-loi", icon: "fas fa-tree" }
   ],
 
+  "Education": [
+    { title: "Universities Canada", description: "Association of Canadian universities", url: "https://www.univcan.ca/", icon: "fas fa-university" },
+    { title: "Colleges and Institutes Canada", description: "National association of colleges", url: "https://www.collegesinstitutes.ca/", icon: "fas fa-school" },
+    { title: "Government of Canada - Education", description: "Education policies and programs", url: "https://www.canada.ca/en/services/education.html", icon: "fas fa-graduation-cap" },
+    { title: "Student Loans and Grants", description: "Financial aid for students", url: "https://www.canada.ca/en/services/benefits/education/student-aid.html", icon: "fas fa-dollar-sign" },
+    { title: "Study Permits for International Students", description: "Immigration for students", url: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada.html", icon: "fas fa-passport" }
+  ],
+
+  "Embassies": [
+    { title: "Global Affairs Canada", description: "International relations and diplomatic services", url: "https://www.international.gc.ca/", icon: "fas fa-globe" },
+    { title: "Canadian Embassies and Consulates", description: "Diplomatic missions worldwide", url: "https://travel.gc.ca/assistance/embassies-consulates", icon: "fas fa-flag" },
+    { title: "Travel Advisories", description: "Safety information for travelers", url: "https://travel.gc.ca/travelling/advisories", icon: "fas fa-exclamation-triangle" },
+    { title: "Consular Services", description: "Emergency assistance for Canadians abroad", url: "https://travel.gc.ca/assistance", icon: "fas fa-hands-helping" },
+    { title: "Emergency Contact", description: "24/7 emergency line for Canadians abroad", url: "tel:1-888-949-9993", icon: "fas fa-phone" }
+  ],
+
 };
 
 
@@ -1178,6 +1194,9 @@ export default function Home() {
     "Banking & Financial Services": { from: "from-emerald-600", to: "to-emerald-700", icon: "fas fa-university", emoji: "🏛️" },
     "Non-Profits": { from: "from-pink-600", to: "to-pink-700", icon: "fas fa-heart", emoji: "🤝" },
     "General Government": { from: "from-gray-600", to: "to-gray-700", icon: "fas fa-landmark", emoji: "🏛️" },
+    "Police & Security Forces": { from: "from-blue-600", to: "to-blue-700", icon: "fas fa-shield-alt", emoji: "🚔" },
+    "Education": { from: "from-green-600", to: "to-green-700", icon: "fas fa-graduation-cap", emoji: "🎓" },
+    "Embassies": { from: "from-red-600", to: "to-red-700", icon: "fas fa-flag", emoji: "🏛️" },
 
   };
 
