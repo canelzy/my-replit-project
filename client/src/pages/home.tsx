@@ -1143,6 +1143,10 @@ export default function Home() {
     return expandedContinents.includes(continent);
   };
 
+  const isContinentExpanded = (continent: string) => {
+    return expandedContinents.includes(continent);
+  };
+
   const isCategoryExpanded = (category: string) => {
     return expandedCategories.includes(category);
   };
@@ -1150,8 +1154,8 @@ export default function Home() {
   const toggleCategory = (category: string) => {
     setExpandedCategories(prev =>
       prev.includes(category)
-        ? prev.filter(c => c !== category)
-        : [...prev, category]
+        ? [] // Close the current category
+        : [category] // Open only this category, close all others
     );
   };
 
