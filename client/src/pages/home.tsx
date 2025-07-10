@@ -398,7 +398,7 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 mb-8">
             <TabsTrigger value="all">All Services</TabsTrigger>
             <TabsTrigger value="nonprofits">Non-Profits</TabsTrigger>
