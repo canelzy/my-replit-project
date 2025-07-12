@@ -2846,7 +2846,7 @@ export default function Home() {
             </p>
             
             {/* Blue Bar */}
-            <div className="mt-6 h-1 bg-blue-600 w-full"></div>
+            <div className="mt-6 h-4 bg-blue-600 w-full"></div>
           </div>
         </div>
       </footer>
