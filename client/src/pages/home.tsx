@@ -2845,9 +2845,9 @@ export default function Home() {
               </a>
             </p>
             
-            {/* Transparent Bars */}
-            <div className="mt-6 h-4 bg-transparent w-full"></div>
-            <div className="mt-5 h-4 bg-transparent w-full"></div>
+            {/* Blue Semi-Transparent Bars */}
+            <div className="mt-6 h-4 bg-blue-600 bg-opacity-5 w-full"></div>
+            <div className="mt-5 h-4 bg-blue-600 bg-opacity-5 w-full"></div>
           </div>
         </div>
       </footer>
