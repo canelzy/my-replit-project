@@ -2844,6 +2844,9 @@ export default function Home() {
                 INTEL-GIOLYNX
               </a>
             </p>
+            
+            {/* Blue Bar */}
+            <div className="mt-6 h-1 bg-blue-600 w-full"></div>
           </div>
         </div>
       </footer>
