@@ -2845,9 +2845,9 @@ export default function Home() {
               </a>
             </p>
             
-            {/* Colorless Bars */}
-            <div className="mt-6 h-4 bg-gray-400 w-full"></div>
-            <div className="mt-5 h-4 bg-gray-400 w-full"></div>
+            {/* Transparent Bars */}
+            <div className="mt-6 h-4 bg-transparent w-full"></div>
+            <div className="mt-5 h-4 bg-transparent w-full"></div>
           </div>
         </div>
       </footer>
