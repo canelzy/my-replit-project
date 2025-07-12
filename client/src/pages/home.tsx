@@ -1242,8 +1242,8 @@ export default function Home() {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* Header */}
-      <header className="header-gradient text-white shadow-lg">
+      {/* Fixed Header */}
+      <header className="header-gradient text-white shadow-xl fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4 lg:py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2 sm:space-x-3">
@@ -1263,6 +1263,9 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      {/* Header Spacer */}
+      <div className="h-20 sm:h-24 lg:h-32"></div>
 
       {/* Search Section */}
       <SearchBar onSearch={handleSearch} />
