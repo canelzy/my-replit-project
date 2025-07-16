@@ -52,7 +52,7 @@ export default function CategoryCard({
   }
 
   return (
-    <Card className="category-card bg-white rounded-xl shadow-md overflow-hidden">
+    <Card className="category-card bg-white rounded-xl shadow-md overflow-hidden" data-category={title}>
       <div className={`bg-gradient-to-r ${gradientFrom} ${gradientTo} p-4 sm:p-6`}>
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-3">

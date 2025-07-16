@@ -11,6 +11,39 @@
   "edge_side_panel": {
     "preferred_width": 400
   },
+  "file_handlers": [
+    {
+      "action": "/?handler=tax-form",
+      "accept": {
+        "application/pdf": [".pdf"],
+        "text/plain": [".txt"]
+      },
+      "icons": [
+        {
+          "src": "/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    },
+    {
+      "action": "/?handler=government-doc",
+      "accept": {
+        "application/pdf": [".pdf"],
+        "application/msword": [".doc"],
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document": [".docx"]
+      },
+      "icons": [
+        {
+          "src": "/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    }
+  ],
   "icons": [
     {
       "src": "/icon-192x192.png",
