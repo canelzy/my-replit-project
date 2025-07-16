@@ -1,0 +1,19 @@
+{
+  "name": "com.canadaaccesshub.app",
+  "displayName": "Canada Access Hub",
+  "version": "1.0.0",
+  "description": "Your comprehensive directory for Canadian government services and resources.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "canada",
+    "government",
+    "services",
+    "directory"
+  ],
+  "author": "Canada Access Hub Team",
+  "license": "Apache-2.0"
+}
