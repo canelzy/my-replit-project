@@ -2838,6 +2838,21 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-700 pt-4 mt-6 text-center">
+            <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-4 mb-4">
+              <a 
+                href="/privacy" 
+                className="text-blue-400 hover:text-blue-300 transition-colors text-sm"
+              >
+                Privacy Policy
+              </a>
+              <span className="text-gray-600 hidden md:inline">|</span>
+              <a 
+                href="mailto:support@giolynx.org" 
+                className="text-blue-400 hover:text-blue-300 transition-colors text-sm"
+              >
+                Contact Support
+              </a>
+            </div>
             <p className="text-gray-400 text-sm">
               Links are sourced from the Government of Canada. Last updated: July 9, 2025.
             </p>

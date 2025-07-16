@@ -110,3 +110,5 @@ The application includes curated links to official Canadian government services:
 11. **Non-Profit Directory**: Official directories and categorized Ontario non-profit organizations
 12. **Category Filtering**: Dropdown filter for quick navigation to specific non-profit categories
 13. **Major Transportation Systems**: Complete directory of Canadian transportation including airlines, rail, urban transit, ferries, and northern services with nested accordion functionality
+14. **Progressive Web App**: Full PWA support with manifest, service worker, window controls overlay, Edge side panel, and file handlers
+15. **Privacy Policy**: Comprehensive privacy policy page with clear data handling practices
