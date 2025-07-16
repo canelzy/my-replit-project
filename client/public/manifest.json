@@ -8,6 +8,9 @@
   "background_color": "#ffffff",
   "theme_color": "#1976d2",
   "description": "A comprehensive hub for accessing Canadian government services and community resources.",
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
   "icons": [
     {
       "src": "/icon-192x192.png",

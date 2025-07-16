@@ -88,6 +88,46 @@
   }
 }
 
+/* Edge Side Panel optimizations */
+@media (max-width: 500px) {
+  .edge-side-panel {
+    padding: 0.5rem;
+  }
+  
+  .edge-side-panel .header-gradient {
+    padding: 0.5rem 1rem;
+  }
+  
+  .edge-side-panel h1 {
+    font-size: 1rem;
+  }
+  
+  .edge-side-panel .category-card {
+    margin-bottom: 0.5rem;
+  }
+  
+  .edge-side-panel .container {
+    max-width: none;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Detect if running in Edge side panel */
+@media (display-mode: standalone) and (max-width: 500px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .tabs-list {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .search-bar {
+    margin-bottom: 0.5rem;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
