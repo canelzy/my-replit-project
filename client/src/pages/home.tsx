@@ -2838,35 +2838,13 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-700 pt-4 mt-6 text-center">
-            <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-4 mb-4">
-              <a 
-                href="/privacy" 
-                className="text-blue-400 hover:text-blue-300 transition-colors text-sm"
-              >
-                Privacy Policy
-              </a>
-              <span className="text-gray-600 hidden md:inline">|</span>
-              <a 
-                href="mailto:support@giolynx.org" 
-                className="text-blue-400 hover:text-blue-300 transition-colors text-sm"
-              >
-                Contact Support
-              </a>
-            </div>
-            <p className="text-gray-400 text-sm">
-              Links are sourced from the Government of Canada. Last updated: July 9, 2025.
-            </p>
-            <p className="text-gray-500 text-xs mt-2">
-              Created by:{" "}
-              <a 
-                href="http://intel.giolynx.org/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text font-semibold hover:from-blue-400 hover:via-purple-500 hover:to-pink-500 transition-all duration-300"
-              >
-                INTEL-GIOLYNX
-              </a>
-            </p>
+            <p className="text-gray-400 text-sm mb-2">&copy; 2025 Canada Access Hub</p>
+            <a 
+              href="/privacy.html" 
+              className="text-blue-400 hover:text-blue-300 transition-colors text-sm"
+            >
+              Privacy Policy
+            </a>
             
             {/* Blue Semi-Transparent Bars */}
             <div className="mt-6 h-4 bg-blue-600 bg-opacity-5 w-full"></div>
