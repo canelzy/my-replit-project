@@ -1,5 +1,5 @@
 {
-  "id": "/?source=pwa",
+  "id": "/canada-access-hub",
   "name": "Canada Access Hub",
   "short_name": "Access Hub",
   "start_url": "/?source=pwa",
@@ -7,22 +7,30 @@
   "background_color": "#ffffff",
   "theme_color": "#1976d2",
   "description": "A comprehensive hub for accessing Canadian government services and community resources.",
-  "scope": "/",
-  "orientation": "portrait-primary",
-  "categories": ["government", "utilities", "productivity"],
-  "lang": "en-CA",
   "icons": [
     {
       "src": "/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192x192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512x512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
