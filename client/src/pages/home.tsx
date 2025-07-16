@@ -1242,6 +1242,14 @@ export default function Home() {
 
   return (
     <div className="bg-gray-50 min-h-screen">
+      {/* Window Controls Overlay for PWA */}
+      <div className="window-controls-overlay">
+        <div className="flex items-center space-x-2 px-4">
+          <i className="fas fa-maple-leaf text-red-400 text-lg"></i>
+          <h1 className="text-lg font-bold text-foreground">Canada Access Hub</h1>
+        </div>
+      </div>
+      
       {/* Fixed Header */}
       <header className="header-gradient text-white shadow-xl fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4 lg:py-6">

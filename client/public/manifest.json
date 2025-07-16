@@ -4,6 +4,7 @@
   "short_name": "Access Hub",
   "start_url": "/?source=pwa",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
   "background_color": "#ffffff",
   "theme_color": "#1976d2",
   "description": "A comprehensive hub for accessing Canadian government services and community resources.",
