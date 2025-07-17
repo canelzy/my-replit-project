@@ -1090,6 +1090,56 @@ const torontoNonProfitsData = {
       name: "Weston King Neighbourhood Centre",
       url: "https://wknc.ca/",
       description: "Serves hot meals and groceries to residents in Weston and Mount Dennis neighborhoods. Address: 2017 Weston Rd, Toronto, ON M9N 1X2. Phone: (416) 241-9898. Email: info@wknc.ca"
+    },
+    {
+      name: "Daily Bread Food Bank",
+      url: "https://dailybread.ca/",
+      description: "Food distribution, research, advocacy, and support to 200+ food programs across Toronto. Address: 191 New Toronto St, Toronto, ON M8V 2E7. Phone: (416) 203-0050. Email: info@dailybread.ca"
+    },
+    {
+      name: "Second Harvest",
+      url: "https://secondharvest.ca/",
+      description: "Canada's largest food rescue organization, supplying surplus food to nonprofits. Address: 120 The East Mall, Toronto, ON M8Z 5V5. Phone: (416) 408-2594. Email: info@secondharvest.ca"
+    },
+    {
+      name: "North York Harvest Food Bank",
+      url: "https://northyorkharvest.com/",
+      description: "Emergency food programs and advocacy to reduce food insecurity in North York. Address: 116 Industry St, Toronto, ON M6M 4L8. Phone: (416) 635-7771. Email: info@northyorkharvest.com"
+    },
+    {
+      name: "Toronto Urban Growers",
+      url: "https://torontourbangrowers.org/",
+      description: "Promotes urban agriculture through networking, advocacy, and education. Address: 40 Orchard View Blvd, Toronto, ON M4R 1B9 (Mailing only). Email: info@torontourbangrowers.org"
+    },
+    {
+      name: "The Stop Community Food Centre",
+      url: "https://thestop.org/",
+      description: "Combines food access with community-building and social justice. Address: 1884 Davenport Rd, Toronto, ON M6N 4Y2. Phone: (416) 652-7867. Email: general@thestop.org"
+    },
+    {
+      name: "Black Creek Community Farm",
+      url: "https://blackcreekfarm.ca/",
+      description: "Urban farm offering community food growing, markets, and youth education. Address: 4929 Jane St, Toronto, ON M3N 2K8. Phone: (416) 393-6381. Email: info@blackcreekfarm.ca"
+    },
+    {
+      name: "FoodShare Toronto",
+      url: "https://foodshare.net/",
+      description: "Equitable food access through markets, advocacy, and school programs. Address: 120 Industry St, Unit C, Toronto, ON M6M 4L8. Phone: (416) 363-6441. Email: info@foodshare.net"
+    },
+    {
+      name: "Regent Park Community Food Centre",
+      url: "https://crcchog.org/",
+      description: "Food access, meal programs, and advocacy led by CRC (Christian Resource Centre). Address: 40 Oak St, Toronto, ON M5A 2C6. Phone: (416) 364-2261. Email: info@crcchog.org"
+    },
+    {
+      name: "Malvern Family Resource Centre – Food Security Program",
+      url: "https://mfrc.org/",
+      description: "Emergency food hampers and nutrition services for vulnerable families. Address: 1371 Neilson Rd, Unit 219, Scarborough, ON M1B 4Z8. Phone: (416) 284-4184. Email: info@mfrc.org"
+    },
+    {
+      name: "Parkdale Community Food Bank",
+      url: "https://pcfb.ca/",
+      description: "Low-barrier food access in west-end Toronto with a focus on dignity and community care. Address: 263 Dunn Ave, Toronto, ON M6K 2S2. Phone: (416) 532-2375. Email: info@pcfb.ca"
     }
   ],
   "Environment & Sustainability": [
