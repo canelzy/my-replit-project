@@ -367,28 +367,103 @@ const torontoNonProfitsData = {
   "Settlement & Employment": [
     {
       name: "COSTI Immigrant Services",
-      url: "https://www.costi.org/",
-      description: "Settlement services for newcomers to Canada in the GTA."
+      url: "https://costi.org/",
+      description: "Immigrant and refugee resettlement, employment services, English classes, housing, and youth programs."
+    },
+    {
+      name: "CultureLink Settlement and Community Services",
+      url: "https://culturelink.ca/",
+      description: "Support for newcomers, refugees, LGBTQ+ immigrants, and youth. Offers mentorship, language and employment programs."
+    },
+    {
+      name: "The Neighbourhood Organization (TNO)",
+      url: "https://tno-toronto.org/",
+      description: "Settlement services, youth and seniors programming, employment readiness, and language classes."
     },
     {
       name: "ACCES Employment",
       url: "https://accesemployment.ca/",
-      description: "Employment services for skilled immigrants and refugees."
+      description: "Job search support, sector-specific bridging programs, and hiring connections for newcomers and job seekers."
     },
     {
-      name: "WoodGreen Community Services",
-      url: "https://www.woodgreen.org/",
-      description: "Employment, training, and community support services."
+      name: "Toronto Region Immigrant Employment Council (TRIEC)",
+      url: "https://triec.ca/",
+      description: "Connects skilled immigrants with mentors, employers, and training opportunities. Advocates for inclusive hiring."
+    },
+    {
+      name: "JobStart",
+      url: "https://jobstart.org/",
+      description: "Employment services for newcomers, youth, adults, and persons with disabilities."
+    },
+    {
+      name: "YMCA of Greater Toronto – Newcomer and Employment Services",
+      url: "https://ymcagta.org/",
+      description: "Offers newcomer orientation, employment counselling, language classes, and youth integration programs."
+    },
+    {
+      name: "Working Women Community Centre",
+      url: "https://workingwomencc.org/",
+      description: "Settlement services for immigrant women, housing help, and employment workshops."
+    },
+    {
+      name: "OCASI – Ontario Council of Agencies Serving Immigrants",
+      url: "https://ocasi.org/",
+      description: "Policy and support organization for immigrant-serving agencies. Offers public education and anti-racism training."
     },
     {
       name: "Skills for Change",
       url: "https://skillsforchange.org/",
-      description: "Employment services for newcomers and racialized communities."
+      description: "Employment training, mentorship, language programs, and entrepreneurship supports for newcomers."
     },
     {
-      name: "Toronto Employment and Social Services",
-      url: "https://www.toronto.ca/community-people/employment-social-support/",
-      description: "Employment support and social assistance programs."
+      name: "North York Community House (NYCH)",
+      url: "https://nych.ca/",
+      description: "Newcomer settlement services, English classes, employment help, family and youth programs."
+    },
+    {
+      name: "Newcomer Women's Services Toronto (NEW)",
+      url: "https://newcomerwomen.org/",
+      description: "Employment and training programs tailored for immigrant and refugee women."
+    },
+    {
+      name: "Catholic Crosscultural Services (CCS)",
+      url: "https://ccsyr.org/",
+      description: "Settlement help, employment preparation, LINC classes, and refugee sponsorship."
+    },
+    {
+      name: "Arab Community Centre of Toronto (ACCT)",
+      url: "https://acctonline.ca/",
+      description: "Serves Arab-speaking newcomers with settlement, employment, and mental health supports."
+    },
+    {
+      name: "Centre for Immigrant and Community Services (CICS)",
+      url: "https://cicscanada.com/",
+      description: "Settlement help, employment training, seniors support, and youth leadership programs."
+    },
+    {
+      name: "Bloor Information and Life Skills Centre",
+      url: "https://bloorinfoskills.org/",
+      description: "Employment and settlement services for newcomers and underemployed Torontonians."
+    },
+    {
+      name: "Polycultural Immigrant and Community Services",
+      url: "https://polycultural.org/",
+      description: "Multilingual newcomer services, including housing help, employment, and youth programs."
+    },
+    {
+      name: "Mennonite New Life Centre of Toronto (MNLCT)",
+      url: "https://mnlct.org/",
+      description: "Immigrant and refugee support, bridging programs, language training, and mental health services."
+    },
+    {
+      name: "Rexdale Women's Centre",
+      url: "https://rexdalewomen.org/",
+      description: "Multicultural women-focused settlement and employment programs."
+    },
+    {
+      name: "Employment and Education Centre (EEC)",
+      url: "https://eecentre.org/",
+      description: "Employment placement, career coaching, and skills upgrading for newcomers."
     }
   ],
   "Arts & Culture": [
