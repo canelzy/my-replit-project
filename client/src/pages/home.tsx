@@ -1144,29 +1144,154 @@ const torontoNonProfitsData = {
   ],
   "Environment & Sustainability": [
     {
-      name: "Toronto Environmental Alliance",
-      url: "https://www.torontoenvironment.org/",
-      description: "Environmental advocacy and community action."
+      name: "Toronto Environmental Alliance (TEA)",
+      url: "https://torontoenvironment.org/",
+      description: "Advocates for a greener Toronto through policy research, community organizing, and environmental justice campaigns. Address: 30 Duncan St, Suite 403, Toronto, ON M5V 2C3. Phone: (416) 596-0660. Email: contact@torontoenvironment.org"
     },
     {
       name: "Evergreen",
-      url: "https://www.evergreen.ca/",
-      description: "Creating healthy communities through environmental action."
+      url: "https://evergreen.ca/",
+      description: "Connects people, natural spaces, and city planning through sustainable urban design and ecology projects. Address: Evergreen Brick Works, 550 Bayview Ave, Toronto, ON M4W 3X8. Phone: (416) 596-1495. Email: info@evergreen.ca"
     },
     {
       name: "Environmental Defence Canada",
       url: "https://environmentaldefence.ca/",
-      description: "Environmental advocacy and protection initiatives."
+      description: "National advocacy organization tackling climate, toxics, water, plastic pollution, and green economy issues. Address: 40 St. Clair Ave W, Suite 300, Toronto, ON M4V 1M2. Phone: (416) 323-9521. Email: info@environmentaldefence.ca"
     },
     {
-      name: "Green Toronto",
-      url: "https://www.toronto.ca/services-payments/water-environment/environmentally-friendly-city-initiatives/",
-      description: "City of Toronto environmental programs."
+      name: "Ontario Nature",
+      url: "https://ontarionature.org/",
+      description: "Protects wild species and spaces through conservation, education, and community science. Address: 720 Bathurst St, Toronto, ON M5S 2R4. Phone: (416) 444-8419. Email: info@ontarionature.org"
+    },
+    {
+      name: "Park People",
+      url: "https://parkpeople.ca/",
+      description: "Supports community park groups and city partnerships to create vibrant, accessible public spaces. Address: 401 Richmond St W, Studio 119, Toronto, ON M5V 3A8. Phone: (416) 583-5776. Email: info@parkpeople.ca"
+    },
+    {
+      name: "EcoSpark",
+      url: "https://ecospark.ca/",
+      description: "Empowers communities and youth to protect their local environment through citizen science and education. Address: 718 The Queensway, Suite 204, Toronto, ON M8Y 1L3. Phone: (416) 805-4914. Email: info@ecospark.ca"
+    },
+    {
+      name: "Greenpeace Canada",
+      url: "https://greenpeace.org/canada/",
+      description: "Uses non-violent direct action to challenge environmental destruction and promote climate justice globally and locally. Address: 33 Cecil St, Toronto, ON M5T 1N1. Phone: (416) 597-8408. Email: info@greenpeace.ca"
+    },
+    {
+      name: "Toronto Field Naturalists",
+      url: "https://torontofieldnaturalists.org/",
+      description: "Promotes the study, enjoyment, and conservation of nature in Toronto through walks, lectures, and advocacy. Address: 2-63 Queen St W, Box 71694, Toronto, ON M5H 3M6. Phone: (416) 593-2656. Email: info@torontofieldnaturalists.org"
+    },
+    {
+      name: "LEAF (Local Enhancement and Appreciation of Forests)",
+      url: "https://yourleaf.org/",
+      description: "Protects and grows Toronto's urban forest through tree planting, education, and community forestry. Address: 601 Christie St, Suite 253, Toronto, ON M6G 4C7. Phone: (416) 413-9244. Email: info@yourleaf.org"
+    },
+    {
+      name: "Cycle Toronto",
+      url: "https://cycleto.ca/",
+      description: "Promotes cycling as a safe, sustainable mode of transportation through advocacy, education, and civic engagement. Address: 192 Spadina Ave, Suite 215, Toronto, ON M5T 2C2. Phone: (416) 644-7188. Email: info@cycleto.ca"
+    },
+    {
+      name: "Toronto Nature Stewards",
+      url: "https://torontonaturestewards.org/",
+      description: "Trains and supports volunteer stewards to restore Toronto's ravines and natural areas in collaboration with the city. Citywide (no central office). Email: info@torontonaturestewards.org"
+    },
+    {
+      name: "EcoSchools Canada",
+      url: "https://ecoschools.ca/",
+      description: "Certifies K–12 schools in environmental education and action to build sustainability leadership across Canada. Address: 215 Spadina Ave, Suite 100, Toronto, ON M5T 2C7. Phone: (416) 642-5774. Email: info@ecoschools.ca"
+    },
+    {
+      name: "Stop Plastics",
+      url: "https://stopplastics.ca/",
+      description: "Volunteer group focused on eliminating single-use plastics through education, lobbying, and community cleanups. Based in Etobicoke/Lakeshore. Email: info@stopplastics.ca"
+    },
+    {
+      name: "Friends of the Rouge Watershed",
+      url: "https://frw.ca/",
+      description: "Works to protect and restore the Rouge River ecosystem through tree planting, habitat stewardship, and youth programs. Address: 225 Confederation Dr, Unit 1, Scarborough, ON M1G 1B2. Phone: (416) 208-9870. Email: info@frw.ca"
+    },
+    {
+      name: "Toronto Climate Action Network (TCAN)",
+      url: "https://torontoclimatenetwork.org/",
+      description: "A network of community-based climate groups collaborating on local action, advocacy, and city climate policy. Citywide network (no central office). Email: info@torontoclimatenetwork.org"
+    },
+    {
+      name: "Not Far From The Tree",
+      url: "https://notfarfromthetree.org/",
+      description: "Harvests fruit from Toronto's private trees and shares it among homeowners, volunteers, and local charities. Address: 601 Christie St, Suite 253, Toronto, ON M6G 4C7. Phone: (647) 933-7707. Email: info@notfarfromthetree.org"
+    },
+    {
+      name: "Friends of the Don East (FODE)",
+      url: "https://fode.ca/",
+      description: "Community stewardship group restoring the Don River Valley and advocating for naturalization and sustainable trails. Address: P.O. Box 65122, RPO Chester, Toronto, ON M4K 3Z2. Email: info@fode.ca"
+    },
+    {
+      name: "Sketch Working Arts – Eco Arts Program",
+      url: "https://sketch.ca/",
+      description: "Supports homeless and marginalized youth in creating eco-conscious art, including reuse and environmental storytelling. Address: 180 Shaw St, Suite 201, Toronto, ON M6J 2W5. Phone: (416) 516-1559. Email: info@sketch.ca"
+    },
+    {
+      name: "High Park Nature Centre",
+      url: "https://highparknaturecentre.com/",
+      description: "Educates the public about urban ecology, stewardship, and Indigenous knowledge in Toronto's High Park. Address: 375 Colborne Lodge Dr, Toronto, ON M6R 2Z3. Phone: (416) 392-1748. Email: naturecentre@highpark.org"
+    },
+    {
+      name: "Regent Park Community Garden",
+      url: "https://regentparkgarden.ca/",
+      description: "Supports sustainable growing, community food sharing, and green space access for residents of Regent Park. Address: 620 Dundas St E, Toronto, ON M5A 3S4. Email: info@regentparkgarden.ca"
+    },
+    {
+      name: "David Suzuki Foundation",
+      url: "https://davidsuzuki.org/",
+      description: "Works to protect nature, tackle climate change, and create a sustainable future through science, advocacy, and education. Address: 130 Spadina Ave, Suite 301, Toronto, ON M5V 2L4. Phone: (416) 861-1237. Email: contact@davidsuzuki.org"
+    },
+    {
+      name: "Regenesis (York University Chapter)",
+      url: "https://regenesis.eco/",
+      description: "Student-led environmental and social justice group supporting zero waste, free markets, and sustainable transportation. Address: 4700 Keele St, Toronto, ON M3J 1P3 (York U Student Centre). Phone: (647) 560-4785. Email: york@regenesis.eco"
+    },
+    {
+      name: "Toronto Urban Growers (TUG)",
+      url: "https://torontourbangrowers.org/",
+      description: "Network that promotes urban agriculture in Toronto through policy, community projects, and food justice. Address: Based at Daniels Spectrum, 585 Dundas St E, Toronto, ON M5A 2B7. Email: info@torontourbangrowers.org"
+    },
+    {
+      name: "Transition Toronto",
+      url: "https://transitiontoronto.org/",
+      description: "Local chapter of the global Transition Network, working to build resilience and sustainability at the neighborhood level. Virtual/Citywide. Email: info@transitiontoronto.org"
     },
     {
       name: "Live Green Toronto",
-      url: "https://www.livegreentoronto.ca/",
-      description: "Environmental initiatives and sustainability programs."
+      url: "https://livegreentoronto.ca/",
+      description: "Municipal program supporting residents, businesses, and communities to take climate action and live sustainably. Address: City Hall, 100 Queen St W, Toronto, ON M5H 2N2. Phone: 311 (within Toronto). Email: livegreen@toronto.ca"
+    },
+    {
+      name: "Building Roots",
+      url: "https://buildingroots.ca/",
+      description: "Creates dynamic urban agriculture and food spaces in underserved communities, including the Moss Park shipping container market. Address: 260 Queen St E, Toronto, ON M5A 1S6. Email: info@buildingroots.ca"
+    },
+    {
+      name: "Second Harvest – Environmental Impact Program",
+      url: "https://secondharvest.ca/",
+      description: "Canada's largest food rescue organization — reduces food waste and GHGs by redirecting surplus food to those in need. Address: 120 The East Mall, Toronto, ON M8Z 5V5. Phone: (416) 408-2594. Email: info@secondharvest.ca"
+    },
+    {
+      name: "Green Neighbours Network of Toronto",
+      url: "https://gnntoronto.ca/",
+      description: "A grassroots network that connects climate-action groups and environmental advocates across Toronto neighborhoods. Virtual/Citywide. Email: gnn@gnntoronto.ca"
+    },
+    {
+      name: "Friends of Allan Gardens",
+      url: "https://friendsofallangardens.ca/",
+      description: "Advocates for the preservation and revitalization of Allan Gardens through gardening, education, and community events. Address: 19 Horticultural Ave, Toronto, ON M5A 2P2. Email: info@friendsofallangardens.ca"
+    },
+    {
+      name: "Clean Air Partnership",
+      url: "https://cleanairpartnership.org/",
+      description: "Supports municipalities in advancing clean air, climate resilience, and sustainable urban planning through research and collaboration. Address: 75 Elizabeth St, Toronto, ON M5G 1P4. Phone: (416) 460-8341. Email: info@cleanairpartnership.org"
     },
     {
       name: "Lake Ontario Waterkeeper (now Swim Drink Fish Canada)",
