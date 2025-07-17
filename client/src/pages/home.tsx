@@ -1626,8 +1626,18 @@ export default function Home() {
 
                               if (filteredNonprofits.length === 0) return null;
 
+                              const subcategoryColors = {
+                                'Settlement & Employment': 'bg-gradient-to-br from-emerald-100 to-emerald-200 border-emerald-300',
+                                'Arts & Culture': 'bg-gradient-to-br from-rose-100 to-rose-200 border-rose-300',
+                                'Youth & LGBTQ+': 'bg-gradient-to-br from-violet-100 to-violet-200 border-violet-300',
+                                'Food Security': 'bg-gradient-to-br from-orange-100 to-orange-200 border-orange-300',
+                                'Environment & Sustainability': 'bg-gradient-to-br from-teal-100 to-teal-200 border-teal-300'
+                              };
+                              
+                              const cardColor = subcategoryColors[subcategory] || 'bg-gradient-to-br from-gray-100 to-gray-200 border-gray-300';
+
                               return (
-                                <div key={subcategory} className="rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300">
+                                <div key={subcategory} className={`rounded-xl shadow-lg ${cardColor} border overflow-hidden transition-all duration-300`}>
                                   <button
                                     className="p-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 transition-all duration-200 text-left w-full"
                                     onClick={() => toggleTorontoNonprofitCategory(subcategory)}
