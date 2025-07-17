@@ -2209,12 +2209,17 @@ export default function Home() {
 
                                           return (
                                             <div key={index} className={`p-3 ${cardColor} rounded-lg shadow-sm border`}>
-                                              <div className="flex-1">
-                                                <h5 className="font-semibold text-gray-900 mb-1">{nonprofit.name}</h5>
-                                                <p 
-                                                  className="text-sm text-gray-600"
-                                                  dangerouslySetInnerHTML={{ __html: formatDescriptionWithLinks(nonprofit.description) }}
-                                                />
+                                              <div className="flex items-start space-x-3">
+                                                <div className="flex-shrink-0 w-8 h-8 bg-white bg-opacity-70 rounded-full flex items-center justify-center">
+                                                  <span className="text-sm font-bold text-gray-700">{index + 1}</span>
+                                                </div>
+                                                <div className="flex-1">
+                                                  <h5 className="font-semibold text-gray-900 mb-1">{nonprofit.name}</h5>
+                                                  <p 
+                                                    className="text-sm text-gray-600"
+                                                    dangerouslySetInnerHTML={{ __html: formatDescriptionWithLinks(nonprofit.description) }}
+                                                  />
+                                                </div>
                                               </div>
                                             </div>
                                           );
