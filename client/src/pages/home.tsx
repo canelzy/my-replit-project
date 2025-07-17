@@ -368,202 +368,202 @@ const torontoNonProfitsData = {
     {
       name: "COSTI Immigrant Services",
       url: "https://costi.org/",
-      description: "Immigrant and refugee resettlement, employment services, English classes, housing, and youth programs."
+      description: "Immigrant and refugee resettlement, employment services, English classes, housing, and youth programs. Address: 1710 Dufferin St, Toronto, ON M6E 3P2. Phone: (416) 658-1600. Email: info@costi.org"
     },
     {
       name: "CultureLink Settlement and Community Services",
       url: "https://culturelink.ca/",
-      description: "Support for newcomers, refugees, LGBTQ+ immigrants, and youth. Offers mentorship, language and employment programs."
+      description: "Support for newcomers, refugees, LGBTQ+ immigrants, and youth. Offers mentorship, language and employment programs. Address: 2340 Dundas St W, Toronto, ON M6P 4A9. Phone: (416) 588-6288. Email: info@culturelink.ca"
     },
     {
       name: "The Neighbourhood Organization (TNO)",
       url: "https://tno-toronto.org/",
-      description: "Settlement services, youth and seniors programming, employment readiness, and language classes."
+      description: "Settlement services, youth and seniors programming, employment readiness, and language classes. Address: 18 Thorncliffe Park Dr, Toronto, ON M4H 1N7. Phone: (416) 421-3054. Email: info@tno-toronto.org"
     },
     {
       name: "ACCES Employment",
       url: "https://accesemployment.ca/",
-      description: "Job search support, sector-specific bridging programs, and hiring connections for newcomers and job seekers."
+      description: "Job search support, sector-specific bridging programs, and hiring connections for newcomers and job seekers. Address: 489 College St, Suite 100, Toronto, ON M6G 1A5. Phone: (416) 921-1800. Email: info@accesemployment.ca"
     },
     {
       name: "Toronto Region Immigrant Employment Council (TRIEC)",
       url: "https://triec.ca/",
-      description: "Connects skilled immigrants with mentors, employers, and training opportunities. Advocates for inclusive hiring."
+      description: "Connects skilled immigrants with mentors, employers, and training opportunities. Advocates for inclusive hiring. Address: 25 York St, Suite 2200, Toronto, ON M5J 2V5. Phone: (416) 944-1946. Email: info@triec.ca"
     },
     {
       name: "JobStart",
       url: "https://jobstart.org/",
-      description: "Employment services for newcomers, youth, adults, and persons with disabilities."
+      description: "Employment services for newcomers, youth, adults, and persons with disabilities. Address: 2930 Lake Shore Blvd W, Toronto, ON M8V 1J4. Phone: (416) 231-2295. Email: information@jobstart.org"
     },
     {
       name: "YMCA of Greater Toronto – Newcomer and Employment Services",
       url: "https://ymcagta.org/",
-      description: "Offers newcomer orientation, employment counselling, language classes, and youth integration programs."
+      description: "Offers newcomer orientation, employment counselling, language classes, and youth integration programs. Address: 2200 Yonge St, Toronto, ON M4S 2C6. Phone: (416) 928-9622. Email: info@ymcagta.org"
     },
     {
       name: "Working Women Community Centre",
       url: "https://workingwomencc.org/",
-      description: "Settlement services for immigrant women, housing help, and employment workshops."
+      description: "Settlement services for immigrant women, housing help, and employment workshops. Address: 5 Fairview Mall Dr, Suite 478, Toronto, ON M2J 2Z1. Phone: (416) 494-7978. Email: info@workingwomencc.org"
     },
     {
       name: "OCASI – Ontario Council of Agencies Serving Immigrants",
       url: "https://ocasi.org/",
-      description: "Policy and support organization for immigrant-serving agencies. Offers public education and anti-racism training."
+      description: "Policy and support organization for immigrant-serving agencies. Offers public education and anti-racism training. Address: 110 Eglinton Ave W, Suite 200, Toronto, ON M4R 1A3. Phone: (416) 322-4950. Email: info@ocasi.org"
     },
     {
       name: "Skills for Change",
       url: "https://skillsforchange.org/",
-      description: "Employment training, mentorship, language programs, and entrepreneurship supports for newcomers."
+      description: "Employment training, mentorship, language programs, and entrepreneurship supports for newcomers. Address: 791 St. Clair Ave W, Toronto, ON M6C 1B7. Phone: (416) 658-3101. Email: info@skillsforchange.org"
     },
     {
       name: "North York Community House (NYCH)",
       url: "https://nych.ca/",
-      description: "Newcomer settlement services, English classes, employment help, family and youth programs."
+      description: "Newcomer settlement services, English classes, employment help, family and youth programs. Address: 700 Lawrence Ave W, Suite 226, Toronto, ON M6A 3B4. Phone: (416) 784-0920. Email: info@nych.ca"
     },
     {
       name: "Newcomer Women's Services Toronto (NEW)",
       url: "https://newcomerwomen.org/",
-      description: "Employment and training programs tailored for immigrant and refugee women."
+      description: "Employment and training programs tailored for immigrant and refugee women. Address: 745 Danforth Ave, Suite 401, Toronto, ON M4J 1L4. Phone: (416) 469-0196. Email: general@newcomerwomen.org"
     },
     {
       name: "Catholic Crosscultural Services (CCS)",
       url: "https://ccsyr.org/",
-      description: "Settlement help, employment preparation, LINC classes, and refugee sponsorship."
+      description: "Settlement help, employment preparation, LINC classes, and refugee sponsorship. Address: 55 Town Centre Court, Suite 401, Scarborough, ON M1P 4X4. Phone: (416) 757-7010. Email: general@ccsby.org"
     },
     {
       name: "Arab Community Centre of Toronto (ACCT)",
       url: "https://acctonline.ca/",
-      description: "Serves Arab-speaking newcomers with settlement, employment, and mental health supports."
+      description: "Serves Arab-speaking newcomers with settlement, employment, and mental health supports. Address: 28 Overlea Blvd, Unit 3, Toronto, ON M4H 1B6. Phone: (416) 231-7746. Email: acct@acctonline.ca"
     },
     {
       name: "Centre for Immigrant and Community Services (CICS)",
       url: "https://cicscanada.com/",
-      description: "Settlement help, employment training, seniors support, and youth leadership programs."
+      description: "Settlement help, employment training, seniors support, and youth leadership programs. Address: 2330 Midland Ave, Toronto, ON M1S 5G5. Phone: (416) 292-7510. Email: info@cicscanada.com"
     },
     {
       name: "Bloor Information and Life Skills Centre",
       url: "https://bloorinfoskills.org/",
-      description: "Employment and settlement services for newcomers and underemployed Torontonians."
+      description: "Employment and settlement services for newcomers and underemployed Torontonians. Address: 672 Dupont St, Suite 308, Toronto, ON M6G 1Z6. Phone: (416) 588-0623. Email: info@bloorinfoskills.org"
     },
     {
       name: "Polycultural Immigrant and Community Services",
       url: "https://polycultural.org/",
-      description: "Multilingual newcomer services, including housing help, employment, and youth programs."
+      description: "Multilingual newcomer services, including housing help, employment, and youth programs. Address: 3660A Midland Ave, Scarborough, ON M1V 0B8. Phone: (416) 439-1293. Email: info@polycultural.org"
     },
     {
       name: "Mennonite New Life Centre of Toronto (MNLCT)",
       url: "https://mnlct.org/",
-      description: "Immigrant and refugee support, bridging programs, language training, and mental health services."
+      description: "Immigrant and refugee support, bridging programs, language training, and mental health services. Address: 1774 Queen St E, Toronto, ON M4L 1G7. Phone: (416) 699-4527. Email: info@mnlct.org"
     },
     {
       name: "Rexdale Women's Centre",
       url: "https://rexdalewomen.org/",
-      description: "Multicultural women-focused settlement and employment programs."
+      description: "Multicultural women-focused settlement and employment programs. Address: 925 Albion Rd, Suite 309, Etobicoke, ON M9V 1A6. Phone: (416) 745-0062. Email: info@rexdalewomen.org"
     },
     {
       name: "Employment and Education Centre (EEC)",
       url: "https://eecentre.org/",
-      description: "Employment placement, career coaching, and skills upgrading for newcomers."
+      description: "Employment placement, career coaching, and skills upgrading for newcomers. Address: 340 College St, Suite 100, Toronto, ON M5T 3A9. Phone: (416) 928-3536. Email: info@eecentre.org"
     },
     {
       name: "The Career Foundation",
       url: "https://careerfoundation.com/",
-      description: "Job matching, resume support, youth training, and programs for internationally trained professionals."
+      description: "Job matching, resume support, youth training, and programs for internationally trained professionals. Address: 700 Lawrence Ave W, Suite 420, Toronto, ON M6A 3B4. Phone: (416) 789-4862. Email: info@careerfoundation.org"
     },
     {
       name: "JVS Toronto",
       url: "https://jvstoronto.org/",
-      description: "Employment, career counselling, newcomer programs, and disability employment services."
+      description: "Employment, career counselling, newcomer programs, and disability employment services. Address: 74 Tycos Dr, Toronto, ON M6B 1V9. Phone: (416) 787-1151. Email: info@jvstoronto.org"
     },
     {
       name: "Afghan Women's Organization (AWO) Refugee and Immigrant Services",
       url: "https://afghanwomen.org/",
-      description: "Specialized support for Afghan and other newcomer women and families, including ESL, settlement, and job training."
+      description: "Specialized support for Afghan and other newcomer women and families, including ESL, settlement, and job training. Address: 305 Milner Ave, Suite 314, Scarborough, ON M1B 3V4. Phone: (416) 588-3585. Email: info@afghanwomen.org"
     },
     {
       name: "Black Creek Community Health Centre – Newcomer Services",
       url: "https://bcchc.com/",
-      description: "Health and settlement support, especially for low-income and racialized communities in the Jane-Finch area."
+      description: "Health and settlement support, especially for low-income and racialized communities in the Jane-Finch area. Address: 2202 Jane St, Toronto, ON M3M 1A4. Phone: (416) 249-8000. Email: info@bcchc.com"
     },
     {
       name: "Scadding Court Community Centre – Newcomer Services",
       url: "https://scaddingcourt.org/",
-      description: "Integrated settlement support, employment readiness, and small business supports for newcomers."
+      description: "Integrated settlement support, employment readiness, and small business supports for newcomers. Address: 707 Dundas St W, Toronto, ON M5T 2W6. Phone: (416) 392-0335. Email: info@scaddingcourt.org"
     },
     {
       name: "Centre Francophone du Grand Toronto",
       url: "https://centrefranco.org/",
-      description: "Offers French-language services including settlement, employment, and health care for Francophone immigrants."
+      description: "Offers French-language services including settlement, employment, and health care for Francophone immigrants. Address: 555 Richmond St W, Suite 303, Toronto, ON M5V 3B1. Phone: (416) 922-2672. Email: info@centrefranco.org"
     },
     {
       name: "WoodGreen Community Services",
       url: "https://woodgreen.org/",
-      description: "Comprehensive services including housing, employment, newcomer support, seniors care, and youth programs."
+      description: "Comprehensive services including housing, employment, newcomer support, seniors care, and youth programs. Address: 815 Danforth Ave, Toronto, ON M4J 1L2. Phone: (416) 645-6000. Email: info@woodgreen.org"
     },
     {
       name: "Sojourn House",
       url: "https://sojournhouse.org/",
-      description: "Transitional housing and settlement support for refugees and asylum seekers."
+      description: "Transitional housing and settlement support for refugees and asylum seekers. Address: 101 Ontario St, Toronto, ON M5A 2V2. Phone: (416) 864-0515. Email: info@sojournhouse.org"
     },
     {
       name: "Fred Victor – Employment & Training Services",
       url: "https://fredvictor.org/",
-      description: "Offers housing, employment services, and mental health support, particularly for marginalized populations."
+      description: "Offers housing, employment services, and mental health support, particularly for marginalized populations. Address: 20 Dundas St E, 5th Floor, Toronto, ON M5B 2H6. Phone: (416) 364-8228. Email: info@fredvictor.org"
     },
     {
       name: "Access Alliance Multicultural Health and Community Services",
       url: "https://accessalliance.ca/",
-      description: "Health, employment, and settlement support for immigrants, refugees, and racialized communities."
+      description: "Health, employment, and settlement support for immigrants, refugees, and racialized communities. Address: 340 College St, Suite 500, Toronto, ON M5T 3A9. Phone: (416) 324-8677. Email: info@accessalliance.ca"
     },
     {
       name: "COSTI Immigrant Services – Vaughan Employment Services",
       url: "https://costi.org/",
-      description: "Full range of settlement, housing, and employment services for immigrants and refugees."
+      description: "Full range of settlement, housing, and employment services for immigrants and refugees. Address: 3100 Rutherford Rd, Suite 102, Vaughan, ON L4K 0G6. Phone: (905) 669-5627. Email: info@costi.org"
     },
     {
       name: "Working Women Community Centre",
       url: "https://workingwomencc.org/",
-      description: "Supports immigrant women and families with employment readiness, ESL, and leadership programs."
+      description: "Supports immigrant women and families with employment readiness, ESL, and leadership programs. Address: 533A Gladstone Ave, Toronto, ON M6H 3J1. Phone: (416) 532-2824. Email: info@workingwomencc.org"
     },
     {
       name: "CUIAS Immigrant Services",
       url: "https://cuias.org/",
-      description: "Offers LINC English classes, employment services, and orientation programs for Ukrainian and other immigrants."
+      description: "Offers LINC English classes, employment services, and orientation programs for Ukrainian and other immigrants. Address: 2885 Bloor St W, Suite 202, Toronto, ON M8X 1B3. Phone: (416) 767-4595. Email: info@cuias.org"
     },
     {
       name: "Skills for Change",
       url: "https://skillsforchange.org/",
-      description: "Pioneers in employment, mentoring, entrepreneurship, and language training for newcomers."
+      description: "Pioneers in employment, mentoring, entrepreneurship, and language training for newcomers. Address: 791 St Clair Ave W, Toronto, ON M6C 1B7. Phone: (416) 658-3101. Email: info@skillsforchange.org"
     },
     {
       name: "ACCES Employment",
       url: "https://accesemployment.ca/",
-      description: "Employment and career programs for newcomers and skilled immigrants."
+      description: "Employment and career programs for newcomers and skilled immigrants. Address: 489 College St, Suite 100, Toronto, ON M6G 1A5. Phone: (416) 921-1800. Email: info@accesemployment.ca"
     },
     {
       name: "CultureLink Settlement and Community Services",
       url: "https://culturelink.ca/",
-      description: "Programs for youth, seniors, newcomers, and LGBTQ+ immigrants."
+      description: "Programs for youth, seniors, newcomers, and LGBTQ+ immigrants. Address: 2340 Dundas St W, Suite 301, Toronto, ON M6P 4A9. Phone: (416) 588-6288. Email: info@culturelink.ca"
     },
     {
       name: "Immigrant Women Services Toronto (IWST)",
       url: "https://iwstoronto.org/",
-      description: "Offers settlement services, trauma support, and job training for immigrant and refugee women."
+      description: "Offers settlement services, trauma support, and job training for immigrant and refugee women. Address: 789 Don Mills Rd, Suite 501, Toronto, ON M3C 1T5. Phone: (416) 323-9986. Email: info@iwstoronto.org"
     },
     {
       name: "Achev (formerly MicroSkills)",
       url: "https://achev.ca/",
-      description: "Job readiness, career development, newcomer integration."
+      description: "Job readiness, career development, newcomer integration. Phone: (416) 247-7181. Email: info@achev.ca"
     },
     {
       name: "YMCAs of Greater Toronto – Newcomer Services",
       url: "https://ymcagta.org/",
-      description: "Career and settlement supports for immigrants, youth employment, English assessment."
+      description: "Career and settlement supports for immigrants, youth employment, English assessment. Address: 2200 Yonge St, Toronto, ON M4S 2C6. Phone: (416) 928-3362. Email: contactcentre@ymcagta.org"
     },
     {
       name: "JobStart",
       url: "https://jobstartworks.org/",
-      description: "Employment support for youth, newcomers, persons with disabilities, and job seekers with barriers."
+      description: "Employment support for youth, newcomers, persons with disabilities, and job seekers with barriers. Address: 219 Dufferin St, Suite 1C, Toronto, ON M6K 3J1. Phone: (416) 231-2295. Email: info@jobstartworks.org"
     }
   ],
   "Arts & Culture": [
