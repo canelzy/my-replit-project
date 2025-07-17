@@ -468,6 +468,56 @@ const torontoNonProfitsData = {
       name: "Pride Toronto (Youth Programs)",
       url: "https://pridetoronto.com/",
       description: "Organizes Toronto's Pride celebrations and year-round 2SLGBTQ+ youth and arts programming."
+    },
+    {
+      name: "Friends of Ruby",
+      url: "https://friendsofruby.ca/",
+      description: "Mental health support and transitional housing for LGBTQI2S youth aged 16–29."
+    },
+    {
+      name: "Breakaway Community Services – Youth Harm Reduction Program",
+      url: "https://breakawaycs.ca/",
+      description: "Harm reduction and substance use support for youth, including LGBTQ+ programming."
+    },
+    {
+      name: "Delisle Youth Services (Skylark Youth)",
+      url: "https://skylarkyouth.org/",
+      description: "Counselling and wraparound services for youth ages 0–24, with LGBTQ+ affirming supports."
+    },
+    {
+      name: "QTBIPOC Youth Project – Planned Parenthood Toronto",
+      url: "https://ppt.on.ca/",
+      description: "Peer-led programming and health support for Queer, Trans, Black, Indigenous, and racialized youth."
+    },
+    {
+      name: "Toronto Kiwanis Boys and Girls Clubs – LGBTQ+ Inclusion Programs",
+      url: "https://believeinkids.ca/",
+      description: "Community and after-school programs for children and youth, with inclusive spaces for LGBTQ+ youth."
+    },
+    {
+      name: "Canadian Centre for Gender & Sexual Diversity (Toronto Office)",
+      url: "https://ccgsd-ccdgs.org/",
+      description: "Anti-oppression and anti-bullying education, youth training, and LGBTQ+ inclusion advocacy."
+    },
+    {
+      name: "Camp fYrefly – Toronto Chapter",
+      url: "https://fyrefly.ualberta.ca/",
+      description: "Leadership retreat for LGBTQ+ and gender-diverse youth, focused on wellness, creativity, and empowerment."
+    },
+    {
+      name: "Rexdale Women's Centre – LGBTQ+ Newcomer Youth Programs",
+      url: "https://rexdalewomen.org/",
+      description: "Supports immigrant women, families, and youth with LGBTQ+-affirming programs for newcomers."
+    },
+    {
+      name: "For Youth Initiative (FYI)",
+      url: "https://foryouth.ca/",
+      description: "Empowers racialized and newcomer youth with education, leadership, and employment programs."
+    },
+    {
+      name: "Parkdale Queen West Community Health Centre – Youth Health Program",
+      url: "https://pqwchc.org/",
+      description: "Inclusive youth health programs, mental health support, LGBTQ+ safe space drop-ins."
     }
   ],
   "Food Security": [
