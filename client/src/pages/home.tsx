@@ -1902,17 +1902,17 @@ export default function Home() {
                               if (filteredNonprofits.length === 0) return null;
 
                               const subcategoryColors = {
-                                'Settlement & Employment': 'bg-gradient-to-br from-emerald-100 to-emerald-200 border-emerald-300',
-                                'Arts & Culture': 'bg-gradient-to-br from-rose-100 to-rose-200 border-rose-300',
-                                'Youth & LGBTQ+': 'bg-gradient-to-br from-violet-100 to-violet-200 border-violet-300',
-                                'Food Security': 'bg-gradient-to-br from-orange-100 to-orange-200 border-orange-300',
-                                'Environment & Sustainability': 'bg-gradient-to-br from-teal-100 to-teal-200 border-teal-300'
+                                'Settlement & Employment': 'bg-gradient-to-br from-emerald-200 to-emerald-300 border-emerald-400',
+                                'Arts & Culture': 'bg-gradient-to-br from-rose-200 to-rose-300 border-rose-400',
+                                'Youth & LGBTQ+': 'bg-gradient-to-br from-violet-200 to-violet-300 border-violet-400',
+                                'Food Security': 'bg-gradient-to-br from-orange-200 to-orange-300 border-orange-400',
+                                'Environment & Sustainability': 'bg-gradient-to-br from-teal-200 to-teal-300 border-teal-400'
                               };
                               
-                              const cardColor = subcategoryColors[subcategory] || 'bg-gradient-to-br from-gray-100 to-gray-200 border-gray-300';
+                              const cardColor = subcategoryColors[subcategory] || 'bg-gradient-to-br from-gray-200 to-gray-300 border-gray-400';
 
                               return (
-                                <div key={subcategory} className={`rounded-xl shadow-lg ${cardColor} border overflow-hidden transition-all duration-300`}>
+                                <div key={subcategory} className={`rounded-xl shadow-lg ${cardColor} border-2 overflow-hidden transition-all duration-300`}>
                                   <button
                                     className="p-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 transition-all duration-200 text-left w-full"
                                     onClick={() => toggleTorontoNonprofitCategory(subcategory)}
