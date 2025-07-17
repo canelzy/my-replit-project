@@ -2550,6 +2550,8 @@ export default function Home() {
   const [expandedTorontoNonprofitCategories, setExpandedTorontoNonprofitCategories] = useState<string[]>([]);
   const [torontoNonprofitSearchTerms, setTorontoNonprofitSearchTerms] = useState<{[key: string]: string}>({});
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [visibleCounts, setVisibleCounts] = useState<{[key: string]: number}>({});
+  const [isLoading, setIsLoading] = useState<{[key: string]: boolean}>({});
 
   // Common tags for filtering
   const commonTags = [
@@ -2579,6 +2581,8 @@ export default function Home() {
         ? prev.filter(t => t !== tag)
         : [...prev, tag]
     );
+    // Reset visible counts when tags change
+    Object.keys(torontoNonProfitsData).forEach(cat => resetVisibleCount(cat));
   };
 
   // Helper function to update search term for a specific category
@@ -2586,6 +2590,38 @@ export default function Home() {
     setTorontoNonprofitSearchTerms(prev => ({
       ...prev,
       [category]: term
+    }));
+    // Reset visible count when search changes
+    setVisibleCounts(prev => ({
+      ...prev,
+      [category]: 20
+    }));
+  };
+
+  // Helper function to get visible count for a category
+  const getVisibleCount = (category: string) => {
+    return visibleCounts[category] || 20;
+  };
+
+  // Helper function to load more organizations
+  const loadMoreOrganizations = (category: string, totalCount: number) => {
+    setIsLoading(prev => ({ ...prev, [category]: true }));
+    
+    // Simulate loading delay for better UX
+    setTimeout(() => {
+      setVisibleCounts(prev => ({
+        ...prev,
+        [category]: Math.min((prev[category] || 20) + 20, totalCount)
+      }));
+      setIsLoading(prev => ({ ...prev, [category]: false }));
+    }, 300);
+  };
+
+  // Helper function to reset visible count when category is collapsed
+  const resetVisibleCount = (category: string) => {
+    setVisibleCounts(prev => ({
+      ...prev,
+      [category]: 20
     }));
   };
 
@@ -2729,11 +2765,18 @@ export default function Home() {
   };
 
   const toggleTorontoNonprofitCategory = (category: string) => {
-    setExpandedTorontoNonprofitCategories(prev => 
-      prev.includes(category) 
-        ? [] // Close the current category
-        : [category] // Open only this category, close all others
-    );
+    setExpandedTorontoNonprofitCategories(prev => {
+      const isCurrentlyExpanded = prev.includes(category);
+      if (isCurrentlyExpanded) {
+        // Reset visible count when closing
+        resetVisibleCount(category);
+        return []; // Close the current category
+      } else {
+        // Reset visible counts for all categories when opening a new one
+        Object.keys(torontoNonProfitsData).forEach(cat => resetVisibleCount(cat));
+        return [category]; // Open only this category, close all others
+      }
+    });
   };
 
   const isTorontoNonprofitCategoryExpanded = (category: string) => {
@@ -2931,7 +2974,10 @@ export default function Home() {
                                     {selectedTags.length} tag{selectedTags.length !== 1 ? 's' : ''} selected
                                   </span>
                                   <button
-                                    onClick={() => setSelectedTags([])}
+                                    onClick={() => {
+                                      setSelectedTags([]);
+                                      Object.keys(torontoNonProfitsData).forEach(cat => resetVisibleCount(cat));
+                                    }}
                                     className="text-sm text-purple-600 hover:text-purple-800 underline"
                                   >
                                     Clear all
@@ -3053,7 +3099,7 @@ export default function Home() {
                                       </div>
                                       
                                       <div className="space-y-4">
-                                        {filteredNonprofits.map((nonprofit, index) => {
+                                        {filteredNonprofits.slice(0, getVisibleCount(subcategory)).map((nonprofit, index) => {
                                           const cardColors = [
                                             'bg-gradient-to-r from-blue-50 to-blue-100 border-blue-300 shadow-blue-100',
                                             'bg-gradient-to-r from-green-50 to-green-100 border-green-300 shadow-green-100',
@@ -3130,6 +3176,41 @@ export default function Home() {
                                             </div>
                                           );
                                         })}
+                                        
+                                        {/* Load More Button */}
+                                        {filteredNonprofits.length > getVisibleCount(subcategory) && (
+                                          <div className="flex justify-center mt-6">
+                                            <button
+                                              onClick={() => loadMoreOrganizations(subcategory, filteredNonprofits.length)}
+                                              disabled={isLoading[subcategory]}
+                                              className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                                            >
+                                              {isLoading[subcategory] ? (
+                                                <div className="flex items-center space-x-2">
+                                                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                                  <span>Loading...</span>
+                                                </div>
+                                              ) : (
+                                                <div className="flex items-center space-x-2">
+                                                  <span>Load More</span>
+                                                  <span className="bg-white bg-opacity-20 px-2 py-1 rounded-full text-sm">
+                                                    {filteredNonprofits.length - getVisibleCount(subcategory)} remaining
+                                                  </span>
+                                                </div>
+                                              )}
+                                            </button>
+                                          </div>
+                                        )}
+                                        
+                                        {/* All Results Loaded Message */}
+                                        {filteredNonprofits.length > 20 && getVisibleCount(subcategory) >= filteredNonprofits.length && (
+                                          <div className="flex justify-center mt-6">
+                                            <div className="bg-green-50 text-green-700 px-4 py-2 rounded-lg flex items-center space-x-2">
+                                              <i className="fas fa-check-circle"></i>
+                                              <span>All {filteredNonprofits.length} organizations loaded</span>
+                                            </div>
+                                          </div>
+                                        )}
                                       </div>
                                     </div>
                                   )}
