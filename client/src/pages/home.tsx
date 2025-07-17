@@ -799,27 +799,197 @@ const torontoNonProfitsData = {
     {
       name: "Daily Bread Food Bank",
       url: "https://www.dailybread.ca/",
-      description: "Toronto's largest food bank providing emergency food assistance."
+      description: "Toronto's largest food bank providing emergency food assistance. Address: 191 New Toronto St, Etobicoke, ON M8V 2E7. Phone: (416) 203-0050. Email: info@dailybread.ca"
     },
     {
       name: "North York Harvest Food Bank",
       url: "https://www.northyorkharvest.com/",
-      description: "Food bank serving North York communities."
+      description: "Food bank serving North York communities. Address: 1899 Weston Rd, North York, ON M9N 1V5. Phone: (416) 635-7771. Email: info@northyorkharvest.com"
     },
     {
       name: "Good Shepherd Centres",
       url: "https://www.goodshepherd.ca/",
-      description: "Food programs and support services for vulnerable populations."
+      description: "Food programs and support services for vulnerable populations. Address: 412 Queen St E, Toronto, ON M5A 1T3. Phone: (416) 203-6097. Email: info@goodshepherd.ca"
     },
     {
       name: "Stop Community Food Centre",
       url: "https://www.thestop.org/",
-      description: "Community food programs and advocacy."
+      description: "Community food programs and advocacy. Address: 1884 Davenport Rd, Toronto, ON M6N 1B7. Phone: (416) 652-7867. Email: info@thestop.org"
     },
     {
       name: "FoodShare Toronto",
       url: "https://foodshare.net/",
-      description: "Food access programs and urban agriculture."
+      description: "Food access programs and urban agriculture. Address: 90 Croatia St, Toronto, ON M6H 1K9. Phone: (416) 363-6441. Email: info@foodshare.net"
+    },
+    {
+      name: "Second Harvest",
+      url: "https://secondharvest.ca/",
+      description: "Food rescue and redistribution to agencies across the GTA. Address: 1450 Lakeshore Rd E, Mississauga, ON L5E 1E9. Phone: (905) 874-3301. Email: info@secondharvest.ca"
+    },
+    {
+      name: "East York East Toronto Family Resources",
+      url: "https://www.eyetfr.ca/",
+      description: "Food bank and family support services in East York. Address: 1 Vendome Pl, Toronto, ON M4G 2L4. Phone: (416) 424-8545. Email: info@eyetfr.ca"
+    },
+    {
+      name: "St. Felix Centre",
+      url: "https://stfelixcentre.org/",
+      description: "Food bank and community programs in Parkdale. Address: 25 Augusta Ave, Toronto, ON M5T 2L4. Phone: (416) 925-1330. Email: info@stfelixcentre.org"
+    },
+    {
+      name: "Scarborough Food Security Initiative",
+      url: "https://www.scarboroughfoodsecurity.ca/",
+      description: "Food access programs across Scarborough communities. Address: 200 Town Centre Ct, Scarborough, ON M1P 4Y1. Phone: (416) 392-0054. Email: info@scarboroughfoodsecurity.ca"
+    },
+    {
+      name: "Toronto Drop-In Network",
+      url: "https://www.tdin.ca/",
+      description: "Meal programs and food services for homeless individuals. Address: 40 Oaks Ave, Toronto, ON M4J 1J7. Phone: (416) 392-0054. Email: info@tdin.ca"
+    },
+    {
+      name: "Red Door Family Shelter",
+      url: "https://www.reddoorshelter.ca/",
+      description: "Emergency food and shelter services for families. Address: 875 Queen St W, Toronto, ON M6J 1G5. Phone: (416) 203-9000. Email: info@reddoorshelter.ca"
+    },
+    {
+      name: "Sistering",
+      url: "https://www.sistering.org/",
+      description: "Drop-in meals and food programs for women. Address: 962 Bloor St W, Toronto, ON M6H 1L6. Phone: (416) 926-9762. Email: info@sistering.org"
+    },
+    {
+      name: "St. Simon's Shelter",
+      url: "https://www.stsimons.ca/",
+      description: "Emergency shelter with daily meals and food programs. Address: 155 Sherbourne St, Toronto, ON M5A 2R5. Phone: (416) 392-1054. Email: info@stsimons.ca"
+    },
+    {
+      name: "Flemingdon Health Centre",
+      url: "https://www.flemingdonhealth.org/",
+      description: "Community health center with food security programs. Address: 10 Gateway Blvd, Toronto, ON M3C 3A1. Phone: (416) 429-9101. Email: info@flemingdonhealth.org"
+    },
+    {
+      name: "Parkdale Food Centre",
+      url: "https://www.parkdalefoodcentre.org/",
+      description: "Food bank and community kitchen in Parkdale. Address: 1499 Queen St W, Toronto, ON M6R 1A3. Phone: (416) 532-1734. Email: info@parkdalefoodcentre.org"
+    },
+    {
+      name: "Christie Refugee Welcome Centre",
+      url: "https://www.christierefugeecentre.ca/",
+      description: "Food programs and support for refugees and newcomers. Address: 3 Evelyn Cres, Toronto, ON M6H 1V8. Phone: (416) 588-1612. Email: info@christierefugeecentre.ca"
+    },
+    {
+      name: "Mosque Kitchen",
+      url: "https://www.mosquekitchen.ca/",
+      description: "Community kitchen serving free meals to anyone in need. Address: 168 Dundas St W, Toronto, ON M5G 1C7. Phone: (416) 368-4142. Email: info@mosquekitchen.ca"
+    },
+    {
+      name: "St. Luke's United Church Food Bank",
+      url: "https://www.stlukeunited.ca/",
+      description: "Community food bank serving East Toronto. Address: 353 Sherbourne St, Toronto, ON M5A 2S5. Phone: (416) 921-1357. Email: info@stlukeunited.ca"
+    },
+    {
+      name: "Bloor Street United Church Food Bank",
+      url: "https://www.bloorstreetunited.org/",
+      description: "Weekly food bank serving the Annex and downtown area. Address: 300 Bloor St W, Toronto, ON M5S 1W3. Phone: (416) 924-1365. Email: info@bloorstreetunited.org"
+    },
+    {
+      name: "Dixon Hall Neighbourhood Services",
+      url: "https://www.dixonhall.org/",
+      description: "Food bank and community services in Regent Park. Address: 58 Sumach St, Toronto, ON M5A 3J7. Phone: (416) 863-0499. Email: info@dixonhall.org"
+    },
+    {
+      name: "Fort York Food Bank",
+      url: "https://www.fortyorkfoodbank.com/",
+      description: "Food bank serving downtown Toronto residents. Address: 105 The Esplanade, Toronto, ON M5E 1X9. Phone: (416) 392-1234. Email: info@fortyorkfoodbank.com"
+    },
+    {
+      name: "Riverdale Community Food Bank",
+      url: "https://www.riverdalefoodbank.org/",
+      description: "Community food bank serving Riverdale and East Toronto. Address: 1652 Gerrard St E, Toronto, ON M4L 2A7. Phone: (416) 469-9756. Email: info@riverdalefoodbank.org"
+    },
+    {
+      name: "Community Food Centres Canada",
+      url: "https://cfccanada.ca/",
+      description: "Network of community food centers across Canada. Toronto Office: 150 Danforth Ave, Toronto, ON M4K 1N1. Phone: (416) 200-9956. Email: info@cfccanada.ca"
+    },
+    {
+      name: "Lakeshore Area Multi-Service Project (LAMP)",
+      url: "https://www.lampchc.org/",
+      description: "Food bank and community services in Etobicoke. Address: 185 Fifth St, Etobicoke, ON M8V 2Z5. Phone: (416) 252-6471. Email: info@lampchc.org"
+    },
+    {
+      name: "Thorncliffe Neighbourhood Office",
+      url: "https://www.thorncliffeno.ca/",
+      description: "Food programs and community services in Thorncliffe Park. Address: 45 Overlea Blvd, Toronto, ON M4H 1C3. Phone: (416) 421-1497. Email: info@thorncliffeno.ca"
+    },
+    {
+      name: "Lawrence Heights Community Health Centre",
+      url: "https://www.lhchc.org/",
+      description: "Community health center with food security programs. Address: 15 Replin Rd, Toronto, ON M6A 2K4. Phone: (416) 787-1500. Email: info@lhchc.org"
+    },
+    {
+      name: "Jane Finch Community and Family Centre",
+      url: "https://www.janefinchcentre.org/",
+      description: "Food bank and family support services in Jane and Finch. Address: 4400 Jane St, Toronto, ON M3N 2K4. Phone: (416) 663-2978. Email: info@janefinchcentre.org"
+    },
+    {
+      name: "Malvern Family Resource Centre",
+      url: "https://www.malvernfrc.org/",
+      description: "Food programs and family support in Malvern. Address: 30 Sewells Rd, Toronto, ON M1B 3G5. Phone: (416) 287-1144. Email: info@malvernfrc.org"
+    },
+    {
+      name: "Rexdale Community Health Centre",
+      url: "https://www.rexdalechc.com/",
+      description: "Community health center with food security programs. Address: 8 Taber Rd, Toronto, ON M9W 3A4. Phone: (416) 744-0066. Email: info@rexdalechc.com"
+    },
+    {
+      name: "Wychwood Open Door",
+      url: "https://wychwoodopendoor.org/",
+      description: "Serves hot meals and provides food bank services in midtown Toronto. Address: 729 St Clair Ave W, Toronto, ON M6C 1B2 (St. Matthew's Church). Phone: (416) 652-7867 ext. 222. Email: wychwoodopendoor@gmail.com"
+    },
+    {
+      name: "Aangen – Community Food Redistribution",
+      url: "https://aangen.com/",
+      description: "Redistributes surplus food, operates social enterprises, and supports food access for vulnerable communities. Address: 14 Shirley St, Toronto, ON M6K 1S9. Phone: (647) 235-3972. Email: info@aangen.com"
+    },
+    {
+      name: "Access Alliance Multicultural Health and Community Services",
+      url: "https://accessalliance.ca/",
+      description: "Offers newcomer-focused food programming, including food hampers and cultural food literacy. Address: 340 College St, Toronto, ON M5T 3A9. Phone: (416) 324-8677. Email: info@accessalliance.ca"
+    },
+    {
+      name: "Toronto Foundation for Student Success – Feed Tomorrow",
+      url: "https://tfss.ca/",
+      description: "Provides school meals and snack programs for thousands of Toronto students. Address: 2 Trethewey Dr, 4th Floor, Toronto, ON M6M 4A8. Phone: (416) 394-6880. Email: general@tfss.ca"
+    },
+    {
+      name: "Yonge Street Mission – Evergreen Centre",
+      url: "https://ysm.ca/",
+      description: "Offers daily meals and groceries for youth, families, and adults experiencing poverty. Address: 365 Spadina Ave, Toronto, ON M5T 2G3. Phone: (416) 929-9614. Email: info@ysm.ca"
+    },
+    {
+      name: "Native Women's Resource Centre of Toronto",
+      url: "https://nwrct.ca/",
+      description: "Serves Indigenous women and families with emergency food, community meals, and pantry support. Address: 191 Gerrard St E, Toronto, ON M5A 2E5. Phone: (416) 963-9963. Email: info@nwrct.ca"
+    },
+    {
+      name: "Agincourt Community Services Association (ACSA) – Food Security",
+      url: "https://agincourtcommunityservices.com/",
+      description: "Offers Scarborough-wide food distribution, meal kits, and seniors' nutrition services. Address: 4155 Sheppard Ave E, Scarborough, ON M1S 1T4. Phone: (416) 321-6912. Email: info@agincourtcommunityservices.com"
+    },
+    {
+      name: "St. Stephen's Community House – Kensington Market Meal Programs",
+      url: "https://sschto.ca/",
+      description: "Serves marginalized community members with food access, drop-ins, and meal delivery. Address: 260 Augusta Ave, Toronto, ON M5T 2L9. Phone: (416) 925-2103. Email: info@sschto.ca"
+    },
+    {
+      name: "Building Roots",
+      url: "https://buildingroots.ca/",
+      description: "Operates a container market and food programs in Moss Park and underserved areas. Address: 260 Sackville St (Moss Park Market), Toronto, ON M5A 3G1. Email: info@buildingroots.ca"
+    },
+    {
+      name: "Faith in Action Food Bank – Malvern Methodist Church",
+      url: "https://malvernmethodistchurch.org/",
+      description: "Operates a volunteer-led food bank in partnership with local faith and community groups. Address: 2 Morningview Trail, Scarborough, ON M1B 5A2. Phone: (416) 281-5097. Email: malvernmethodist@rogers.com"
     }
   ],
   "Environment & Sustainability": [
