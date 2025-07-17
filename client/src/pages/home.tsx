@@ -421,28 +421,53 @@ const torontoNonProfitsData = {
   "Youth & LGBTQ+": [
     {
       name: "The 519",
-      url: "https://www.the519.org/",
-      description: "Community centre serving LGBTQ2S+ communities."
+      url: "https://the519.org/",
+      description: "Leading LGBTQ+ community centre offering newcomer services, youth programs, trans ID clinics, and advocacy."
     },
     {
-      name: "Covenant House Toronto",
-      url: "https://www.covenanthousetoronto.ca/",
-      description: "Crisis shelter and services for homeless youth."
+      name: "SKETCH Working Arts",
+      url: "https://sketch.ca/",
+      description: "Supports youth 16–29 living homeless or on the margins through arts, creative enterprise, and mentorship."
     },
     {
-      name: "YMCA of Greater Toronto",
-      url: "https://www.ymcagta.org/",
-      description: "Youth programs and community services."
+      name: "Supporting Our Youth (SOY) – Sherbourne Health",
+      url: "https://sherbourne.on.ca/soy/",
+      description: "Programs for 2SLGBTQ youth aged 29 and under, including housing, health, mentoring, and peer leadership."
     },
     {
-      name: "Big Brothers Big Sisters of Toronto",
-      url: "https://www.bigbrothersbigsisters.ca/",
-      description: "Youth mentorship programs."
+      name: "Planned Parenthood Toronto (PPT)",
+      url: "https://ppt.on.ca/",
+      description: "Inclusive sexual and reproductive health care and education to youth aged 13–29, including LGBTQ+ supports."
     },
     {
-      name: "Toronto Pride",
-      url: "https://www.pridetoronto.com/",
-      description: "Celebrating and supporting LGBTQ2S+ communities."
+      name: "Griffin Centre Mental Health Services",
+      url: "https://griffincentre.org/",
+      description: "Mental health support and group programs for youth with a focus on LGBTQ+ and racialized youth."
+    },
+    {
+      name: "Youth Assisting Youth (YAY)",
+      url: "https://yay.org/",
+      description: "Peer mentorship and leadership training for youth aged 6–15 by volunteers aged 16–29."
+    },
+    {
+      name: "Egale Canada",
+      url: "https://egale.ca/",
+      description: "National 2SLGBTQI human rights organization offering youth mental health supports and homelessness prevention."
+    },
+    {
+      name: "BlackCAP (Black Coalition for AIDS Prevention)",
+      url: "https://black-cap.com/",
+      description: "Support and education for Black communities affected by HIV/AIDS, with youth and LGBTQ+ services."
+    },
+    {
+      name: "Native Youth Resource Centre – Native Child and Family Services of Toronto",
+      url: "https://nativechild.org/",
+      description: "Drop-in, education, and cultural supports for Indigenous youth in Toronto."
+    },
+    {
+      name: "Pride Toronto (Youth Programs)",
+      url: "https://pridetoronto.com/",
+      description: "Organizes Toronto's Pride celebrations and year-round 2SLGBTQ+ youth and arts programming."
     }
   ],
   "Food Security": [
