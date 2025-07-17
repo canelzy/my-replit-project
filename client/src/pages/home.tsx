@@ -568,6 +568,56 @@ const torontoNonProfitsData = {
       name: "Maggie's Toronto Sex Workers Action Project – Youth & Trans Outreach",
       url: "https://maggiestoronto.org/",
       description: "Harm reduction, support, and advocacy for LGBTQ+ and youth sex workers."
+    },
+    {
+      name: "SOY – Supporting Our Youth (Sherbourne Health)",
+      url: "https://sherbourne.on.ca/soy/",
+      description: "Programs for 2SLGBTQ youth including mentorship, health, and newcomer supports."
+    },
+    {
+      name: "Egale Canada",
+      url: "https://egale.ca/",
+      description: "National 2SLGBTQI advocacy with Toronto-based youth housing and mental health programming."
+    },
+    {
+      name: "The 519 – Youth Programming",
+      url: "https://the519.org/",
+      description: "Community hub offering inclusive youth programming, housing support, and leadership initiatives."
+    },
+    {
+      name: "BlackCAP – Youth and LGBTQ+ African, Caribbean, Black (ACB) Programming",
+      url: "https://blackcap.ca/",
+      description: "HIV/AIDS support and LGBTQ+ affirming services for Black youth in Toronto."
+    },
+    {
+      name: "StepStones for Youth",
+      url: "https://stepstonesforyouth.com/",
+      description: "Wraparound support for vulnerable youth including housing, mentorship, and LGBTQ+ affirming services."
+    },
+    {
+      name: "Stella's Place",
+      url: "https://stellasplace.ca/",
+      description: "Mental health support for youth 16–29, with inclusive services for LGBTQ+ and gender-diverse individuals."
+    },
+    {
+      name: "ArtReach Toronto",
+      url: "https://artreachtoronto.ca/",
+      description: "Funding and mentorship for youth-led arts projects, prioritizing BIPOC and LGBTQ+ youth in underserved communities."
+    },
+    {
+      name: "West Neighbourhood House – Meeting Place Youth Programs",
+      url: "https://westnh.org/",
+      description: "Harm reduction, housing help, and social inclusion programs for street-involved and LGBTQ+ youth."
+    },
+    {
+      name: "The Neighbourhood Group – Youth and LGBTQ+ Services",
+      url: "https://tngcs.org/",
+      description: "Employment, housing, and wellness supports for youth, including dedicated LGBTQ+ outreach."
+    },
+    {
+      name: "Native Youth Resource Centre (NWRCT)",
+      url: "https://nwrct.ca/",
+      description: "Indigenous-led programming for urban Indigenous youth, including Two-Spirit and LGBTQ+ affirming supports."
     }
   ],
   "Food Security": [
