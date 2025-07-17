@@ -514,6 +514,56 @@ const torontoNonProfitsData = {
       name: "Access Alliance Multicultural Health and Community Services",
       url: "https://accessalliance.ca/",
       description: "Health, employment, and settlement support for immigrants, refugees, and racialized communities."
+    },
+    {
+      name: "COSTI Immigrant Services – Vaughan Employment Services",
+      url: "https://costi.org/",
+      description: "Full range of settlement, housing, and employment services for immigrants and refugees."
+    },
+    {
+      name: "Working Women Community Centre",
+      url: "https://workingwomencc.org/",
+      description: "Supports immigrant women and families with employment readiness, ESL, and leadership programs."
+    },
+    {
+      name: "CUIAS Immigrant Services",
+      url: "https://cuias.org/",
+      description: "Offers LINC English classes, employment services, and orientation programs for Ukrainian and other immigrants."
+    },
+    {
+      name: "Skills for Change",
+      url: "https://skillsforchange.org/",
+      description: "Pioneers in employment, mentoring, entrepreneurship, and language training for newcomers."
+    },
+    {
+      name: "ACCES Employment",
+      url: "https://accesemployment.ca/",
+      description: "Employment and career programs for newcomers and skilled immigrants."
+    },
+    {
+      name: "CultureLink Settlement and Community Services",
+      url: "https://culturelink.ca/",
+      description: "Programs for youth, seniors, newcomers, and LGBTQ+ immigrants."
+    },
+    {
+      name: "Immigrant Women Services Toronto (IWST)",
+      url: "https://iwstoronto.org/",
+      description: "Offers settlement services, trauma support, and job training for immigrant and refugee women."
+    },
+    {
+      name: "Achev (formerly MicroSkills)",
+      url: "https://achev.ca/",
+      description: "Job readiness, career development, newcomer integration."
+    },
+    {
+      name: "YMCAs of Greater Toronto – Newcomer Services",
+      url: "https://ymcagta.org/",
+      description: "Career and settlement supports for immigrants, youth employment, English assessment."
+    },
+    {
+      name: "JobStart",
+      url: "https://jobstartworks.org/",
+      description: "Employment support for youth, newcomers, persons with disabilities, and job seekers with barriers."
     }
   ],
   "Arts & Culture": [
