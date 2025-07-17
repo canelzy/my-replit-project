@@ -1645,6 +1645,183 @@ const torontoNonProfitsData = {
       url: "https://www.nigeriancanadian.ca/",
       description: "Supports Nigerian immigrants through cultural, social, and development programming. Greater Toronto Area. Phone: (416) 925-3355. Email: info@nigeriancanadian.ca"
     }
+  ],
+  "Ghana & Ghanaian Communities": [
+    {
+      name: "Ghanaian Canadian Association of Ontario (GCAO)",
+      url: "https://gcaocanada.org/",
+      description: "Enhances living standards of Ghanaian-Canadians through social, cultural, and educational programs. Supports over 20,000 Ghanaian-Canadians in the GTA. Address: 65 Mayall Ave, North York, ON M3L 1E7. Email: info@gcaocanada.org"
+    },
+    {
+      name: "Ghanaian Canadian Chamber of Commerce (GCCC)",
+      url: "https://canadagcc.ca/",
+      description: "Promotes business, trade, tourism, and investment between Canada and Ghana. Offers mentorship, networking, and free advertising for Ghanaian-Canadian entrepreneurs. Address: 65 Mayall Ave, North York, ON M3L 1E7. Email: info@canadagcc.ca"
+    },
+    {
+      name: "Ghanaian Women's Association of Ontario (GWAO)",
+      url: "https://gcaocanada.org/",
+      description: "Empowers Ghanaian women and families in Ontario through community support and cultural preservation. Organizes women's empowerment events, cultural programs, and settlement services in the GTA. Email: info@gcaocanada.org"
+    },
+    {
+      name: "Ghanaian Canadian Youth Association (GCYA)",
+      url: "https://gcaocanada.org/",
+      description: "Empowers Ghanaian-Canadian youth in Ontario through education and mentorship. Organizes leadership workshops, scholarships, and cultural events in the GTA. Email: info@gcaocanada.org"
+    },
+    {
+      name: "Ghanaian Canadian Professionals and Entrepreneurs Association (GCPEA)",
+      url: "https://gcaocanada.org/",
+      description: "Supports Ghanaian-Canadian professionals and entrepreneurs through networking and mentorship. Organizes career workshops and business networking events in the GTA. Email: info@gcaocanada.org"
+    },
+    {
+      name: "Ghanaian Canadian Multicultural Community Centre (GCMCC)",
+      url: "https://gcaocanada.org/",
+      description: "Supports Ghanaian-Canadians through cultural, educational, and social programs. Offers youth mentorship, cultural festivals, and settlement services in the GTA. Email: info@gcaocanada.org"
+    },
+    {
+      name: "Canadian Physicians for Aid and Relief (CPAR)",
+      url: "https://www.cpar.ca/",
+      description: "Supports health and sustainable development in Ghana, focusing on maternal and child health. Implements health programs and clean water initiatives. Address: 401 Richmond St W, Suite 365, Toronto, ON M5V 3A8. Phone: (416) 369-0865. Email: info@cpar.ca"
+    },
+    {
+      name: "Plan International Canada – Ontario Office",
+      url: "https://plancanada.ca/",
+      description: "Advances children's rights and gender equality in Ghana through education and health programs. Supports girls' education and community development. Address: 245 Eglinton Ave E, Suite 300, Toronto, ON M4P 0B3. Phone: (800) 387-1418. Email: info@plancanada.ca"
+    },
+    {
+      name: "Right To Play – Ontario Office",
+      url: "https://www.righttoplay.ca/",
+      description: "Uses play-based learning to empower Ghanaian children through education and life skills. Implements school programs promoting education and gender equality. Address: 18 King St E, Suite 800, Toronto, ON M5C 1C4. Phone: (416) 498-1922. Email: info@righttoplay.ca"
+    },
+    {
+      name: "Engineers Without Borders Canada – Ontario Chapter",
+      url: "https://www.ewb.ca/",
+      description: "Supports sustainable development in Ghana through technology and entrepreneurship. Promotes agricultural innovation and youth entrepreneurship. Address: 200-2464 Bloor St W, Toronto, ON M6S 1P7. Phone: (416) 481-3696. Email: info@ewb.ca"
+    },
+    {
+      name: "Free The Children (WE Charity) – Ontario Office",
+      url: "https://www.we.org/",
+      description: "Supports education and community development in Ghana, focusing on youth empowerment. Builds schools and provides clean water. Address: 225 Carlton St, Toronto, ON M5A 2L2. Phone: (416) 925-5894. Email: info@we.org"
+    },
+    {
+      name: "Africans in Partnership Against AIDS (APAA)",
+      url: "https://www.apaa.ca/",
+      description: "Supports Ghanaian and African communities in Ontario with HIV/AIDS education, with outreach to Ghana. Provides health workshops, support groups, and advocacy for Ghanaian-Canadians. Address: 517 College St, Suite 235, Toronto, ON M6G 4A2. Phone: (416) 924-5256. Email: info@apaa.ca"
+    },
+    {
+      name: "Action Against Hunger Canada – Ontario Office",
+      url: "https://actionagainsthunger.ca/",
+      description: "Addresses malnutrition and food insecurity in Ghana's northern regions. Implements nutrition and water access projects. Address: 720 Bathurst St, Toronto, ON M5S 2R4. Phone: (416) 644-1016. Email: info@actionagainsthunger.ca"
+    },
+    {
+      name: "World Vision Canada – Ontario Office",
+      url: "https://www.worldvision.ca/",
+      description: "Supports child welfare, education, and health in Ghana through community development. Funds clean water, education, and nutrition projects. Address: 1 World Dr, Mississauga, ON L5T 2Y4. Phone: (800) 844-7993. Email: info@worldvision.ca"
+    },
+    {
+      name: "Crossroads International – Ontario Office",
+      url: "https://www.cintl.org/",
+      description: "Promotes women's rights and economic empowerment in Ghana through volunteer programs. Supports women's cooperatives and gender equality. Address: 49 Bathurst St, Suite 201, Toronto, ON M5V 2P2. Phone: (416) 967-1611. Email: info@cintl.org"
+    },
+    {
+      name: "Save the Mothers – Ontario Office",
+      url: "https://www.savethemothers.org/",
+      description: "Improves maternal health in Ghana through training and education programs. Trains healthcare workers and supports maternal care. Address: 27 Legend Ct, P.O. Box 10126, Ancaster, ON L9K 1P4. Phone: (905) 648-9212. Email: info@savethemothers.org"
+    },
+    {
+      name: "Canadian Feed The Children – Ontario Office",
+      url: "https://canadianfeedthechildren.ca/",
+      description: "Supports child nutrition and education in Ghana's rural communities. Partners with Ghanaian NGOs for school feeding and agricultural training. Address: 901-2 Lansing Square, Toronto, ON M2J 4P8. Phone: (416) 757-1220. Email: info@canadianfeedthechildren.ca"
+    },
+    {
+      name: "WUSC (World University Service of Canada) – Ontario Office",
+      url: "https://wusc.ca/",
+      description: "Promotes education and economic opportunities for Ghanaian youth, especially women. Provides scholarships and vocational training. Address: 1404 Scott St, Ottawa, ON K1Y 4M8. Phone: (613) 798-7477. Email: info@wusc.ca"
+    },
+    {
+      name: "Care Canada – Ontario Office",
+      url: "https://care.ca/",
+      description: "Supports women's empowerment and health programs in Ghana, focusing on maternal health. Implements gender-focused health projects. Address: 9 Gurdwara Rd, Suite 200, Ottawa, ON K2E 7X6. Phone: (800) 267-5232. Email: info@care.ca"
+    },
+    {
+      name: "Operation Eyesight Universal – Ontario Office",
+      url: "https://operationeyesight.com/",
+      description: "Improves eye health in Ghana through community-based vision care programs. Funds eye clinics and training. Address: 20 Adelaide St E, Suite 200, Toronto, ON M5C 2T6. Phone: (800) 585-8265. Email: info@operationeyesight.com"
+    },
+    {
+      name: "Aga Khan Foundation Canada – Ontario Office",
+      url: "https://www.akfc.ca/",
+      description: "Supports education and economic development in Ghana's rural areas. Funds community schools and agricultural cooperatives. Address: 199 Sussex Dr, Ottawa, ON K1N 1K6. Phone: (613) 237-2532. Email: info@akfc.ca"
+    },
+    {
+      name: "Children Believe – Ontario Office",
+      url: "https://childrenbelieve.ca/",
+      description: "Supports education and child protection in Ghana's marginalized communities. Funds school programs and child sponsorships. Address: 1200 Denison St, Markham, ON L3R 8G6. Phone: (800) 387-1418. Email: info@childrenbelieve.ca"
+    },
+    {
+      name: "CAMFED Canada – Ontario Office",
+      url: "https://camfed.org/",
+      description: "Promotes girls' education in Ghana through scholarships and community support. Supports secondary education for girls in rural Ghana. Based in Toronto. Email: canada@camfed.org"
+    },
+    {
+      name: "SOS Children's Villages Canada – Ontario Office",
+      url: "https://www.soschildrensvillages.ca/",
+      description: "Supports orphaned and vulnerable children in Ghana through family-based care. Funds children's villages in Ghana (Tamale, Kumasi). Address: 44 By Ward Market Square, Suite 204, Ottawa, ON K1N 7A2. Phone: (613) 232-3309. Email: info@soschildrensvillages.ca"
+    },
+    {
+      name: "The Hunger Project Canada – Ontario Office",
+      url: "https://thp.org/",
+      description: "Addresses hunger and poverty in Ghana through community-led development. Supports epicenter programs for food security and women's empowerment. Based in Toronto. Email: info@thp.org"
+    },
+    {
+      name: "War Child Canada – Ontario Office",
+      url: "https://www.warchild.ca/",
+      description: "Supports education and protection for children in Ghana affected by poverty. Funds community-based education and psychosocial support. Address: 67 Mowat Ave, Suite 414, Toronto, ON M6K 3E3. Phone: (416) 971-7474. Email: info@warchild.ca"
+    },
+    {
+      name: "WaterAid Canada – Ontario Office",
+      url: "https://www.wateraid.org/ca/",
+      description: "Improves access to clean water and sanitation in Ghana's rural communities. Funds water and hygiene projects. Address: 321 Chapel St, Ottawa, ON K1N 7Z2. Phone: (613) 230-5182. Email: info@wateraidcanada.org"
+    },
+    {
+      name: "Youth Challenge International – Ontario Office",
+      url: "https://yci.org/",
+      description: "Empowers Ghanaian youth through skills training and entrepreneurship programs. Runs youth employment and leadership programs. Address: 3044 Bloor St W, Suite 972, Toronto, ON M8X 2Y8. Email: info@yci.org"
+    },
+    {
+      name: "CODE (Canadian Organization for Development through Education)",
+      url: "https://code.ngo/",
+      description: "Advances literacy and education in Ghana, particularly for girls. Supports teacher training and reading programs. Address: 321 Chapel St, Ottawa, ON K1N 7Z2. Phone: (613) 241-2633. Email: info@code.ngo"
+    },
+    {
+      name: "ChildFund Canada – Ontario Office",
+      url: "https://childfund.ca/",
+      description: "Supports child education and protection in Ghana through community programs. Funds school infrastructure and child sponsorships. Address: 2600 Skymark Ave, Unit 4-101, Mississauga, ON L4W 5B2. Phone: (800) 387-1418. Email: info@childfund.ca"
+    },
+    {
+      name: "Farm Radio International – Ontario Office",
+      url: "https://farmradio.org/",
+      description: "Supports rural Ghanaian communities through radio-based agricultural education. Delivers radio programs to Ghanaian farmers. Address: 1404 Scott St, Ottawa, ON K1Y 4M8. Phone: (613) 761-3650. Email: info@farmradio.org"
+    },
+    {
+      name: "VSO Canada (Voluntary Service Overseas) – Ontario Office",
+      url: "https://vsocanada.org/",
+      description: "Promotes education and health in Ghana through volunteer-driven programs. Sends volunteers to support teacher training and health initiatives. Address: 44 Eccles St, Suite 100, Ottawa, ON K1R 6S4. Phone: (613) 234-1364. Email: info@vsocanada.org"
+    },
+    {
+      name: "Ghana Rural Integrated Development (GRID)",
+      url: "https://grid-nea.org/",
+      description: "Supports sustainable development in rural Ghana, focusing on health, education, and economic empowerment. Builds schools, provides clean water, and supports agriculture in Northern Ghana. Based in Milton, Ontario. Email: info@grid-nea.org"
+    },
+    {
+      name: "Ghana Medical Help",
+      url: "https://ghanamedicalhelp.com/",
+      description: "Improves healthcare access in rural Ghana, particularly in the Upper West Region. Supplies medical equipment and training to Ghanaian hospitals. Based in Ontario. Email: info@ghanamedicalhelp.com"
+    },
+    {
+      name: "The Afri-Can Education and Support Fund",
+      url: "https://www.afri-canedusupport.org/",
+      description: "Supports education for Ghanaian children and youth in rural areas. Funds school supplies, teacher training, and infrastructure with Ontario-based fundraising. Based in Toronto. Email: info@afri-canedusupport.org"
+    }
   ]
 
 };
