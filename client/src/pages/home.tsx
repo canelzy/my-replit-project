@@ -1167,6 +1167,56 @@ const torontoNonProfitsData = {
       name: "Live Green Toronto",
       url: "https://www.livegreentoronto.ca/",
       description: "Environmental initiatives and sustainability programs."
+    },
+    {
+      name: "Lake Ontario Waterkeeper (now Swim Drink Fish Canada)",
+      url: "https://swimdrinkfish.ca/",
+      description: "Protects clean water and promotes public access to swimmable, drinkable, fishable lakes through citizen science and advocacy. Address: 460 Richmond St W, Suite 400, Toronto, ON M5V 1Y1. Phone: (416) 861-1237. Email: info@swimdrinkfish.ca"
+    },
+    {
+      name: "North American Native Plant Society (NANPS)",
+      url: "https://nanps.org/",
+      description: "Promotes the conservation, cultivation, and restoration of native plants in home gardens and natural areas. Address: P.O. Box 69070, St. Clair P.O., Toronto, ON M4T 3A1. Phone: (416) 631-4438. Email: nanps@nanps.org"
+    },
+    {
+      name: "Seeds of Diversity Canada",
+      url: "https://seeds.ca/",
+      description: "Protects Canada's seed biodiversity through seed saving, heritage plant preservation, and education. Address: P.O. Box 36, Stn Q, Toronto, ON M4T 2L7. Phone: (519) 827-0829. Email: office@seeds.ca"
+    },
+    {
+      name: "FoodShare Toronto – Urban Agriculture Program",
+      url: "https://foodshare.net/",
+      description: "Builds food justice by supporting community gardens, school gardens, rooftop growing, and composting programs. Address: 120 Industry St, Unit C, Toronto, ON M6M 4L8. Phone: (416) 363-6441. Email: info@foodshare.net"
+    },
+    {
+      name: "Toronto Green Community",
+      url: "https://torontogreen.ca/",
+      description: "Runs local greening projects, home energy programs, and community workshops to promote sustainable living. Address: 180 Sudbury St, Unit C3, Toronto, ON M6J 0A8. Phone: (416) 388-7447. Email: info@torontogreen.ca"
+    },
+    {
+      name: "Urban Biodiversity Education and Research (UBER) Group",
+      url: "https://uberresearch.org/",
+      description: "Conducts ecological research on urban biodiversity to inform local conservation efforts and green planning. Address: University of Toronto Scarborough. Email: info@uberresearch.org"
+    },
+    {
+      name: "Faith & the Common Good – Green Sacred Spaces",
+      url: "https://faithcommongood.org/",
+      description: "Supports faith communities in greening their buildings, reducing waste, and promoting climate justice. Address: 310 Dupont St, Suite 200, Toronto, ON M5R 1V9. Phone: (647) 382-6309. Email: fgc@faithcommongood.org"
+    },
+    {
+      name: "Environmental Youth Alliance (Toronto chapter partners)",
+      url: "https://eya.ca/",
+      description: "Connects marginalized youth with nature and environmental justice through community-led learning and leadership. HQ in Vancouver but active in Toronto through partners."
+    },
+    {
+      name: "Green Thumbs Growing Kids",
+      url: "https://greenthumbsto.org/",
+      description: "Partners with schools and communities to engage children in urban gardening, ecology, and healthy food education. Address: 200 Dundas St E, Suite 300, Toronto, ON M5A 4R6. Phone: (647) 348-5848. Email: info@greenthumbsto.org"
+    },
+    {
+      name: "Jane/Finch Centre – Environmental Justice Program",
+      url: "https://janefinchcentre.org/",
+      description: "Offers environmental programming that connects sustainability, social equity, and climate resilience in underserved communities. Address: 540 Jane St, Toronto, ON M6N 4A4. Phone: (416) 645-7575. Email: info@janefinchcentre.org"
     }
   ]
 };
