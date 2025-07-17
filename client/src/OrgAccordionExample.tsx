@@ -1,4 +1,4 @@
-import OrgAccordion from "./components/OrgAccordion";
+import SimpleOrgAccordion from "./components/SimpleOrgAccordion";
 import orgData from "./orgData.json";
 
 function OrgAccordionExample() {
@@ -11,7 +11,7 @@ function OrgAccordionExample() {
         <p className="text-lg text-gray-600 dark:text-gray-300 text-center mb-8">
           Toronto Non-Profit Organizations Directory
         </p>
-        <OrgAccordion categories={orgData} />
+        <SimpleOrgAccordion categories={orgData} />
       </div>
     </main>
   );
