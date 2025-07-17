@@ -238,58 +238,6 @@ const ontarioNonProfits = {
       url: "https://www.ohcc-ccso.ca/",
       description: "Community health promotion and development."
     }
-  ],
-  "Non-Profits in Toronto": [
-    {
-      name: "United Way Greater Toronto",
-      url: "https://www.unitedwaygt.org/",
-      description: "Leading funder of social services in the Greater Toronto Area."
-    },
-    {
-      name: "Daily Bread Food Bank",
-      url: "https://www.dailybread.ca/",
-      description: "Toronto's largest food bank providing emergency food assistance."
-    },
-    {
-      name: "Centre for Addiction and Mental Health (CAMH)",
-      url: "https://www.camh.ca/",
-      description: "Canada's largest mental health and addiction hospital."
-    },
-    {
-      name: "Toronto Public Library Foundation",
-      url: "https://www.torontopubliclibrary.ca/",
-      description: "Supporting library services and programs across Toronto."
-    },
-    {
-      name: "SickKids Foundation",
-      url: "https://www.sickkidsfoundation.com/",
-      description: "Supporting The Hospital for Sick Children in Toronto."
-    },
-    {
-      name: "Toronto Community Housing Corporation",
-      url: "https://www.torontohousing.ca/",
-      description: "Providing affordable housing solutions in Toronto."
-    },
-    {
-      name: "Yonge Street Mission",
-      url: "https://www.ysm.ca/",
-      description: "Supporting homeless and at-risk individuals in Toronto."
-    },
-    {
-      name: "Covenant House Toronto",
-      url: "https://www.covenanthousetoronto.ca/",
-      description: "Crisis shelter and services for homeless youth."
-    },
-    {
-      name: "Toronto Foundation",
-      url: "https://www.torontofoundation.ca/",
-      description: "Community foundation supporting charitable causes in Toronto."
-    },
-    {
-      name: "Good Shepherd Centres",
-      url: "https://www.goodshepherd.ca/",
-      description: "Housing, health, and support services for vulnerable populations."
-    }
   ]
 };
 
@@ -402,6 +350,19 @@ const linksData: Record<string, LinkItem[]> = {
     { title: "VIA Rail Canada", description: "National passenger rail service", url: "https://www.viarail.ca/", icon: "fas fa-train" },
     { title: "Transport Canada", description: "Federal transportation regulations and safety", url: "https://tc.canada.ca/", icon: "fas fa-road" },
     { title: "BC Ferries", description: "Ferry services in British Columbia", url: "https://www.bcferries.com/", icon: "fas fa-ship" }
+  ],
+
+  "Toronto Non-Profits": [
+    { title: "United Way Greater Toronto", description: "Leading funder of social services in the Greater Toronto Area", url: "https://www.unitedwaygt.org/", icon: "fas fa-hands-helping" },
+    { title: "Daily Bread Food Bank", description: "Toronto's largest food bank providing emergency food assistance", url: "https://www.dailybread.ca/", icon: "fas fa-bread-slice" },
+    { title: "Centre for Addiction and Mental Health (CAMH)", description: "Canada's largest mental health and addiction hospital", url: "https://www.camh.ca/", icon: "fas fa-brain" },
+    { title: "Toronto Public Library Foundation", description: "Supporting library services and programs across Toronto", url: "https://www.torontopubliclibrary.ca/", icon: "fas fa-book" },
+    { title: "SickKids Foundation", description: "Supporting The Hospital for Sick Children in Toronto", url: "https://www.sickkidsfoundation.com/", icon: "fas fa-child" },
+    { title: "Toronto Community Housing Corporation", description: "Providing affordable housing solutions in Toronto", url: "https://www.torontohousing.ca/", icon: "fas fa-home" },
+    { title: "Yonge Street Mission", description: "Supporting homeless and at-risk individuals in Toronto", url: "https://www.ysm.ca/", icon: "fas fa-heart" },
+    { title: "Covenant House Toronto", description: "Crisis shelter and services for homeless youth", url: "https://www.covenanthousetoronto.ca/", icon: "fas fa-shield-alt" },
+    { title: "Toronto Foundation", description: "Community foundation supporting charitable causes in Toronto", url: "https://www.torontofoundation.ca/", icon: "fas fa-donate" },
+    { title: "Good Shepherd Centres", description: "Housing, health, and support services for vulnerable populations", url: "https://www.goodshepherd.ca/", icon: "fas fa-hands-helping" }
   ],
 
 };
@@ -1289,6 +1250,7 @@ export default function Home() {
     "Education": { from: "from-green-600", to: "to-green-700", icon: "fas fa-graduation-cap", emoji: "🎓" },
     "Embassies": { from: "from-red-600", to: "to-red-700", icon: "fas fa-flag", emoji: "🏛️" },
     "Major Transportation": { from: "from-orange-600", to: "to-orange-700", icon: "fas fa-plane", emoji: "🚗" },
+    "Toronto Non-Profits": { from: "from-violet-600", to: "to-violet-700", icon: "fas fa-city", emoji: "🏙️" },
 
   };
 
