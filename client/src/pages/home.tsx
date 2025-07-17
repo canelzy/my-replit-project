@@ -1603,27 +1603,43 @@ export default function Home() {
                                   {isTorontoNonprofitCategoryExpanded(subcategory) && (
                                     <div className="p-4 bg-gray-50">
                                       <div className="space-y-3">
-                                        {filteredNonprofits.map((nonprofit, index) => (
-                                          <div key={index} className="p-3 bg-white rounded-lg shadow-sm border border-gray-200">
-                                            <div className="flex items-center justify-between">
-                                              <div className="flex-1">
-                                                <h5 className="font-semibold text-gray-900 mb-1">{nonprofit.name}</h5>
-                                                <p className="text-sm text-gray-600">{nonprofit.description}</p>
-                                              </div>
-                                              <div className="flex items-center space-x-2 ml-4">
-                                                <a
-                                                  href={nonprofit.url}
-                                                  target="_blank"
-                                                  rel="noopener noreferrer"
-                                                  className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm hover:bg-purple-200 transition-colors"
-                                                >
-                                                  <i className="fas fa-external-link-alt mr-1"></i>
-                                                  Visit
-                                                </a>
+                                        {filteredNonprofits.map((nonprofit, index) => {
+                                          const cardColors = [
+                                            'bg-gradient-to-r from-blue-50 to-blue-100 border-blue-200',
+                                            'bg-gradient-to-r from-green-50 to-green-100 border-green-200',
+                                            'bg-gradient-to-r from-purple-50 to-purple-100 border-purple-200',
+                                            'bg-gradient-to-r from-pink-50 to-pink-100 border-pink-200',
+                                            'bg-gradient-to-r from-indigo-50 to-indigo-100 border-indigo-200',
+                                            'bg-gradient-to-r from-cyan-50 to-cyan-100 border-cyan-200',
+                                            'bg-gradient-to-r from-orange-50 to-orange-100 border-orange-200',
+                                            'bg-gradient-to-r from-red-50 to-red-100 border-red-200',
+                                            'bg-gradient-to-r from-yellow-50 to-yellow-100 border-yellow-200',
+                                            'bg-gradient-to-r from-teal-50 to-teal-100 border-teal-200'
+                                          ];
+                                          const cardColor = cardColors[index % cardColors.length];
+                                          
+                                          return (
+                                            <div key={index} className={`p-3 ${cardColor} rounded-lg shadow-sm border`}>
+                                              <div className="flex items-center justify-between">
+                                                <div className="flex-1">
+                                                  <h5 className="font-semibold text-gray-900 mb-1">{nonprofit.name}</h5>
+                                                  <p className="text-sm text-gray-600">{nonprofit.description}</p>
+                                                </div>
+                                                <div className="flex items-center space-x-2 ml-4">
+                                                  <a
+                                                    href={nonprofit.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm hover:bg-purple-200 transition-colors"
+                                                  >
+                                                    <i className="fas fa-external-link-alt mr-1"></i>
+                                                    Visit
+                                                  </a>
+                                                </div>
                                               </div>
                                             </div>
-                                          </div>
-                                        ))}
+                                          );
+                                        })}
                                       </div>
                                     </div>
                                   )}
