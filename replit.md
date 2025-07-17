@@ -4,6 +4,8 @@
 
 This is a React-based web application called "Canada Access Hub" that serves as a comprehensive directory for Canadian government services and Ontario non-profit organizations. The application provides an organized interface for users to access various government services categorized into nine main areas: Taxes & Benefits, Pensions & Retirement, Employment & Social Development, Immigration & Citizenship, Health & Disability, Legal/Identification, Banking & Financial Services, Non-Profits, and General Government. Additionally, it features a dedicated Non-Profits tab with official directories and categorized Ontario non-profit organizations. Built with modern web technologies, it offers a responsive design with search functionality, favorites management, category filtering, and user feedback capabilities.
 
+**Recent Enhancement**: Transitioned to modular component architecture with standalone OrgAccordion component using JSON data structure for better reusability and maintainability.
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
@@ -37,7 +39,8 @@ Preferred communication style: Simple, everyday language.
 1. **CategoryCard**: Displays service categories with collapsible sections and search highlighting
 2. **SearchBar**: Provides real-time search functionality across all services
 3. **ContactForm**: Allows users to submit suggestions and feedback
-4. **UI Components**: Comprehensive shadcn/ui component library for consistent design
+4. **OrgAccordion**: Standalone reusable component for organization directories with JSON data structure
+5. **UI Components**: Comprehensive shadcn/ui component library for consistent design
 
 ### Backend Components
 1. **Express Server**: Handles API routes and serves static files

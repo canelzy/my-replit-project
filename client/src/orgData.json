@@ -1,0 +1,112 @@
+[
+  {
+    "title": "Settlement & Employment",
+    "organizations": [
+      {
+        "name": "CultureLink",
+        "description": "Support for newcomers, refugees, LGBTQ+ immigrants, and youth. Offers mentorship, language and employment programs. Address: 2340 Dundas St W, Toronto, ON M6P 4A9. Phone: (416) 588-6288. Email: info@culturelink.ca",
+        "url": "https://culturelink.ca/"
+      },
+      {
+        "name": "The Neighbourhood Organization (TNO)",
+        "description": "Settlement services, youth and seniors programming, employment readiness, and language classes. Address: 18 Thorncliffe Park Dr, Toronto, ON M4H 1N7. Phone: (416) 421-3054. Email: info@tno-toronto.org",
+        "url": "https://tno-toronto.org/"
+      },
+      {
+        "name": "ACCES Employment",
+        "description": "Job search support, sector-specific bridging programs, and hiring connections for newcomers and job seekers. Address: 489 College St, Suite 100, Toronto, ON M6G 1A5. Phone: (416) 921-1800. Email: info@accesemployment.ca",
+        "url": "https://accesemployment.ca/"
+      }
+    ]
+  },
+  {
+    "title": "Arts & Culture",
+    "organizations": [
+      {
+        "name": "Toronto Arts Council",
+        "description": "Support for local artists and arts organizations through grants, resources, and advocacy. Address: 100 Queen St W, Toronto, ON M5H 2N2. Phone: (416) 392-6802. Email: info@torontoartscouncil.org",
+        "url": "https://torontoartscouncil.org/"
+      },
+      {
+        "name": "Harbourfront Centre",
+        "description": "Cultural organization presenting contemporary arts, theatre, music, dance, and literature. Address: 235 Queens Quay W, Toronto, ON M5J 2G8. Phone: (416) 973-4000. Email: info@harbourfrontcentre.com",
+        "url": "https://harbourfrontcentre.com/"
+      }
+    ]
+  },
+  {
+    "title": "Youth & LGBTQ+",
+    "organizations": [
+      {
+        "name": "The 519",
+        "description": "Community centre serving LGBTQ+ community with health, social, and cultural programs. Address: 519 Church St, Toronto, ON M4Y 2C9. Phone: (416) 392-6874. Email: info@the519.org",
+        "url": "https://www.the519.org/"
+      },
+      {
+        "name": "Boys and Girls Clubs of Toronto",
+        "description": "Youth programming including after-school programs, summer camps, and leadership development. Address: 33 Beverley St, Toronto, ON M5T 1Y1. Phone: (416) 924-4822. Email: info@bgcto.ca",
+        "url": "https://www.bgcto.ca/"
+      }
+    ]
+  },
+  {
+    "title": "Food Security",
+    "organizations": [
+      {
+        "name": "Daily Bread Food Bank",
+        "description": "Food bank providing emergency food assistance to individuals and families in need. Address: 191 New Toronto St, Toronto, ON M8V 2E7. Phone: (416) 203-0050. Email: info@dailybread.ca",
+        "url": "https://www.dailybread.ca/"
+      },
+      {
+        "name": "FoodShare Toronto",
+        "description": "Community food programs including good food markets, school nutrition, and urban agriculture. Address: 90 Croatia St, Toronto, ON M6H 1L5. Phone: (416) 363-6441. Email: info@foodshare.net",
+        "url": "https://foodshare.net/"
+      }
+    ]
+  },
+  {
+    "title": "Environment & Sustainability",
+    "organizations": [
+      {
+        "name": "Toronto Environmental Alliance",
+        "description": "Environmental advocacy organization working on climate change, waste reduction, and sustainable transportation. Address: 30 Duncan St, Suite 403, Toronto, ON M5V 2C3. Phone: (416) 596-0660. Email: info@torontoenvironment.org",
+        "url": "https://torontoenvironment.org/"
+      },
+      {
+        "name": "Evergreen",
+        "description": "Environmental organization focused on bringing nature to cities through community engagement and education. Address: 550 Bayview Ave, Toronto, ON M4W 3X8. Phone: (416) 596-1495. Email: info@evergreen.ca",
+        "url": "https://evergreen.ca/"
+      }
+    ]
+  },
+  {
+    "title": "African & Black Communities",
+    "organizations": [
+      {
+        "name": "African Canadian Association of Ottawa",
+        "description": "Community organization serving African and Caribbean communities with settlement, employment, and cultural programs. Address: 1419 Carling Ave, Ottawa, ON K1Z 7L6. Phone: (613) 235-1988. Email: info@acao-ottawa.org",
+        "url": "https://acao-ottawa.org/"
+      },
+      {
+        "name": "Black Business and Professional Association",
+        "description": "Professional development and networking organization for Black professionals and entrepreneurs. Address: 1 Dundas St W, Suite 2500, Toronto, ON M5G 1Z3. Phone: (416) 504-4097. Email: info@bbpa.org",
+        "url": "https://bbpa.org/"
+      }
+    ]
+  },
+  {
+    "title": "Ghana & Ghanaian Communities",
+    "organizations": [
+      {
+        "name": "Ghanaian Canadian Association of Ontario",
+        "description": "Cultural organization promoting Ghanaian heritage and providing support to Ghanaian-Canadians in Ontario. Address: 25 Peel Centre Dr, Brampton, ON L6T 3R5. Phone: (905) 791-7639. Email: info@gcao.ca",
+        "url": "https://gcao.ca/"
+      },
+      {
+        "name": "Ghana Union Toronto",
+        "description": "Community organization supporting Ghanaian immigrants with cultural events, networking, and community support. Address: 1315 Lawrence Ave W, Toronto, ON M6L 1A3. Phone: (416) 242-8744. Email: info@ghanatunion.org",
+        "url": "https://ghanatunion.org/"
+      }
+    ]
+  }
+]

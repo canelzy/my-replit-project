@@ -6,12 +6,14 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import Privacy from "@/pages/privacy";
 import NotFound from "@/pages/not-found";
+import OrgAccordionExample from "./OrgAccordionExample";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/privacy" component={Privacy} />
+      <Route path="/org-accordion" component={OrgAccordionExample} />
       <Route component={NotFound} />
     </Switch>
   );
