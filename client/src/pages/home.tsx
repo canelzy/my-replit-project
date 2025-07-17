@@ -1343,6 +1343,208 @@ const torontoNonProfitsData = {
       url: "https://janefinchcentre.org/",
       description: "Offers environmental programming that connects sustainability, social equity, and climate resilience in underserved communities. Address: 540 Jane St, Toronto, ON M6N 4A4. Phone: (416) 645-7575. Email: info@janefinchcentre.org"
     }
+  ],
+  "African & Black Communities": [
+    {
+      name: "African Community Services of Peel",
+      url: "http://www.africancommunityservices.com/",
+      description: "Settlement services for African and Caribbean immigrants across GTA. Address: 20 Nelson St W, Brampton, ON L6Y 0A5. Phone: (905) 451-2017. Email: info@acsp.ca"
+    },
+    {
+      name: "Afri-Can FoodBasket",
+      url: "https://www.africanfoodbasket.ca/",
+      description: "Food security, Black food sovereignty, urban agriculture programs. Address: 120 Industry St, Toronto, ON M6M 4L8. Phone: (416) 704-8055. Email: info@africanfoodbasket.ca"
+    },
+    {
+      name: "Black Health Alliance",
+      url: "https://www.blackhealthalliance.ca/",
+      description: "Health equity and mental health advocacy for Black communities. Address: 1840 Eglinton Ave W, Toronto, ON M6E 2H6. Phone: (416) 661-5397. Email: info@blackhealthalliance.ca"
+    },
+    {
+      name: "Black Legal Action Centre",
+      url: "https://www.blacklegalactioncentre.ca/",
+      description: "Legal advocacy, human rights, and anti-Black racism litigation. Address: 415 Yonge St, Suite 1800, Toronto, ON M5B 2E7. Phone: (416) 597-5831. Email: info@blacklegalactioncentre.ca"
+    },
+    {
+      name: "Black Business and Professional Association",
+      url: "https://www.bbpa.org/",
+      description: "Business development, professional networking, and economic empowerment for Black professionals. Address: 1 West Pearce St, Suite 700, Richmond Hill, ON L4B 3K3. Phone: (416) 504-4097. Email: info@bbpa.org"
+    },
+    {
+      name: "African Canadian Association of Ottawa",
+      url: "https://www.acao-acdo.ca/",
+      description: "Cultural preservation, youth programs, and community support for African Canadians. Address: 1364 Bank St, Ottawa, ON K1H 7Y3. Phone: (613) 235-1406. Email: info@acao-acdo.ca"
+    },
+    {
+      name: "Black Creek Community Health Centre",
+      url: "https://www.bcchc.com/",
+      description: "Comprehensive healthcare services, mental health support, and community programs. Address: 2 Firvalley Crt, Toronto, ON M3N 1N6. Phone: (416) 249-8000. Email: info@bcchc.com"
+    },
+    {
+      name: "Caribbean African Canadian Social Services",
+      url: "https://www.cacssnb.org/",
+      description: "Settlement services, employment support, and cultural programs for Caribbean and African immigrants. Address: 145 Millidge Ave, Saint John, NB E2K 2N5. Phone: (506) 634-3088. Email: info@cacssnb.org"
+    },
+    {
+      name: "Congress of Black Women of Canada",
+      url: "https://www.cbwc-ccfn.ca/",
+      description: "Advocacy, leadership development, and support for Black women and girls. Address: 1595 Bedford Hwy, Suite 225, Bedford, NS B4A 3Y4. Phone: (902) 423-8920. Email: info@cbwc-ccfn.ca"
+    },
+    {
+      name: "Centre for Spanish Speaking Peoples - African Programs",
+      url: "https://www.spanishcentre.ca/",
+      description: "Settlement services, language training, and cultural programs for Spanish-speaking African immigrants. Address: 2141 Jane St, Toronto, ON M3M 1A2. Phone: (416) 533-8545. Email: info@spanishcentre.ca"
+    },
+    {
+      name: "Black Youth Helpline",
+      url: "https://www.blackyouthhelpline.ca/",
+      description: "Crisis support, mental health services, and youth programs specifically for Black youth. Address: 1912 Eglinton Ave E, Toronto, ON M1L 4L9. Phone: (416) 285-9944. Email: info@blackyouthhelpline.ca"
+    },
+    {
+      name: "Tropicana Community Services",
+      url: "https://www.tropicana.org/",
+      description: "Employment, housing, and settlement services for African, Caribbean, and Latin American communities. Address: 658 Danforth Ave, Toronto, ON M4J 1L1. Phone: (416) 469-4888. Email: info@tropicana.org"
+    },
+    {
+      name: "African Centre for International Development",
+      url: "https://www.acfid.ca/",
+      description: "International development, capacity building, and diaspora engagement programs. Address: 1235 Bay St, Suite 400, Toronto, ON M5R 3K4. Phone: (416) 352-8189. Email: info@acfid.ca"
+    },
+    {
+      name: "Black Community Resource Centre",
+      url: "https://www.bcrcmontreal.com/",
+      description: "Community development, youth programs, and social services for Black communities. Address: 6767 Côte-des-Neiges Rd, Suite 497, Montreal, QC H3S 2T6. Phone: (514) 342-2247. Email: info@bcrcmontreal.com"
+    },
+    {
+      name: "Ethiopian Association in Toronto",
+      url: "https://www.ethiopianassociation.ca/",
+      description: "Cultural programs, settlement services, and community support for Ethiopian Canadians. Address: 1200 Markham Rd, Suite 200, Toronto, ON M1H 3C3. Phone: (416) 439-5881. Email: info@ethiopianassociation.ca"
+    },
+    {
+      name: "Ghana Union Association of Toronto",
+      url: "https://www.ghanaunto.org/",
+      description: "Cultural preservation, community events, and support services for Ghanaian Canadians. Address: 40 Orchard View Blvd, Suite 219, Toronto, ON M4R 1B9. Phone: (416) 781-9677. Email: info@ghanaunto.org"
+    },
+    {
+      name: "Jamaican Canadian Association",
+      url: "https://www.jcatoronto.org/",
+      description: "Cultural programs, youth development, and community advocacy for Jamaican Canadians. Address: 995 Arrow Rd, Toronto, ON M9M 2Z5. Phone: (416) 746-5772. Email: info@jcatoronto.org"
+    },
+    {
+      name: "Kenyan Community in Toronto",
+      url: "https://www.kenyancommunity.ca/",
+      description: "Cultural events, networking, and support services for Kenyan Canadians. Address: 25 The Esplanade, Suite 3600, Toronto, ON M5E 1W5. Phone: (416) 214-1840. Email: info@kenyancommunity.ca"
+    },
+    {
+      name: "Nigerian Canadian Association",
+      url: "https://www.nigeriancanadian.ca/",
+      description: "Cultural preservation, professional networking, and community development programs. Address: 200 Consumers Rd, Suite 118, Toronto, ON M2J 4R4. Phone: (416) 499-4411. Email: info@nigeriancanadian.ca"
+    },
+    {
+      name: "Somali Centre for Family Services",
+      url: "https://www.somalicentre.ca/",
+      description: "Settlement services, family support, and cultural programs for Somali Canadians. Address: 1265 Wilson Ave, Toronto, ON M3M 3E9. Phone: (416) 743-9888. Email: info@somalicentre.ca"
+    },
+    {
+      name: "Black Artists' Networks in Dialogue",
+      url: "https://www.blackartistnetworks.ca/",
+      description: "Arts advocacy, creative programs, and professional development for Black artists. Address: 925 Bloor St W, Toronto, ON M6H 1L5. Phone: (416) 536-6468. Email: info@blackartistnetworks.ca"
+    },
+    {
+      name: "Caribana Arts Group",
+      url: "https://www.caribanaarts.com/",
+      description: "Cultural festivals, arts programming, and Caribbean heritage celebration. Address: 468 Queen St E, Toronto, ON M5A 1T7. Phone: (416) 925-5435. Email: info@caribanaarts.com"
+    },
+    {
+      name: "Universal African Peoples Organization",
+      url: "https://www.uapo.org/",
+      description: "Pan-African advocacy, cultural education, and community organizing. Address: 925 Bloor St W, Toronto, ON M6H 1L5. Phone: (416) 532-3434. Email: info@uapo.org"
+    },
+    {
+      name: "Black Women in Motion",
+      url: "https://www.blackwomeninmotion.org/",
+      description: "Empowerment programs, leadership development, and advocacy for Black women. Address: 40 Orchard View Blvd, Suite 253, Toronto, ON M4R 1B9. Phone: (416) 925-7742. Email: info@blackwomeninmotion.org"
+    },
+    {
+      name: "African Heritage Foundation",
+      url: "https://www.africanheritage.ca/",
+      description: "Heritage preservation, cultural education, and community history programs. Address: 316 Dupont St, Toronto, ON M5R 1V9. Phone: (416) 925-9701. Email: info@africanheritage.ca"
+    },
+    {
+      name: "Black Education Project",
+      url: "https://www.blackeducationproject.org/",
+      description: "Educational advocacy, tutoring programs, and academic support for Black students. Address: 1481 Bathurst St, Toronto, ON M5R 3S3. Phone: (416) 658-3101. Email: info@blackeducationproject.org"
+    },
+    {
+      name: "Afrofest Toronto",
+      url: "https://www.afrofest.ca/",
+      description: "Annual African arts festival, cultural programming, and community celebration. Address: 925 Bloor St W, Toronto, ON M6H 1L5. Phone: (416) 536-9111. Email: info@afrofest.ca"
+    },
+    {
+      name: "Caribbean Cultural Committee",
+      url: "https://www.caribbeancultural.ca/",
+      description: "Cultural festivals, heritage programs, and community arts initiatives. Address: 789 Don Mills Rd, Suite 701, Toronto, ON M3C 1T5. Phone: (416) 391-0234. Email: info@caribbeancultural.ca"
+    },
+    {
+      name: "Black Theatre Workshop",
+      url: "https://www.blacktheatreworkshop.ca/",
+      description: "Theatre arts, performance training, and cultural programming for Black artists. Address: 3680 Jeanne-Mance St, Suite 430, Montreal, QC H2X 2K5. Phone: (514) 932-1104. Email: info@blacktheatreworkshop.ca"
+    },
+    {
+      name: "African Canadian Continuing Education Society",
+      url: "https://www.accessociety.org/",
+      description: "Adult education, skills training, and professional development programs. Address: 170 Keefer St, Vancouver, BC V6A 1X3. Phone: (604) 683-2387. Email: info@accessociety.org"
+    },
+    {
+      name: "Black History Canada",
+      url: "https://www.blackhistorycanada.ca/",
+      description: "Historical research, education programs, and heritage preservation initiatives. Address: 40 Orchard View Blvd, Suite 211, Toronto, ON M4R 1B9. Phone: (416) 925-2600. Email: info@blackhistorycanada.ca"
+    },
+    {
+      name: "African Diaspora Association of the Maritimes",
+      url: "https://www.africandiaspora.ca/",
+      description: "Cultural programming, advocacy, and community support for African diaspora in Atlantic Canada. Address: 2786 Agricola St, Halifax, NS B3K 4E2. Phone: (902) 404-3472. Email: info@africandiaspora.ca"
+    },
+    {
+      name: "Black Educators Association",
+      url: "https://www.blackeducators.ca/",
+      description: "Professional development, educational advocacy, and mentorship for Black educators. Address: 1265 Military Trail, Toronto, ON M1C 1A4. Phone: (416) 289-5000. Email: info@blackeducators.ca"
+    },
+    {
+      name: "Caribbean Community Centre",
+      url: "https://www.caribbeancentre.ca/",
+      description: "Community services, cultural programs, and social support for Caribbean families. Address: 4800 Dufferin St, Toronto, ON M3H 5S9. Phone: (416) 644-4597. Email: info@caribbeancentre.ca"
+    },
+    {
+      name: "African Women's Pastoral Program",
+      url: "https://www.africanwomens.ca/",
+      description: "Spiritual support, counseling services, and women's empowerment programs. Address: 40 Orchard View Blvd, Suite 267, Toronto, ON M4R 1B9. Phone: (416) 925-1944. Email: info@africanwomens.ca"
+    },
+    {
+      name: "Black Farmers and Food Justice Fund",
+      url: "https://www.blackfarmers.ca/",
+      description: "Agricultural support, food sovereignty, and land access programs for Black farmers. Address: 192 Spadina Ave, Suite 200, Toronto, ON M5T 2C2. Phone: (416) 260-9251. Email: info@blackfarmers.ca"
+    },
+    {
+      name: "African Canadian Heritage Association",
+      url: "https://www.africancanadianheritage.org/",
+      description: "Heritage preservation, cultural education, and historical documentation programs. Address: 316 Dupont St, Toronto, ON M5R 1V9. Phone: (416) 925-9445. Email: info@africancanadianheritage.org"
+    },
+    {
+      name: "Caribbean Studies Association",
+      url: "https://www.caribbeanstudies.ca/",
+      description: "Academic research, cultural studies, and educational programming on Caribbean culture. Address: 1265 Military Trail, Toronto, ON M1C 1A4. Phone: (416) 287-7027. Email: info@caribbeanstudies.ca"
+    },
+    {
+      name: "Black Mental Health Alliance",
+      url: "https://www.blackmentalhealthalliance.ca/",
+      description: "Mental health advocacy, counseling services, and wellness programs for Black communities. Address: 1840 Eglinton Ave W, Toronto, ON M6E 2H6. Phone: (416) 661-5397. Email: info@blackmentalhealthalliance.ca"
+    },
+    {
+      name: "African Youth Network",
+      url: "https://www.africanyouthnetwork.ca/",
+      description: "Youth development, leadership training, and cultural programming for African youth. Address: 40 Orchard View Blvd, Suite 245, Toronto, ON M4R 1B9. Phone: (416) 925-5622. Email: info@africanyouthnetwork.ca"
+    }
   ]
 };
 
