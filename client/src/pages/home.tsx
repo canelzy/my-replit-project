@@ -3,6 +3,7 @@ import SearchBar from "@/components/search-bar";
 import CategoryCard from "@/components/category-card";
 import ContactForm from "@/components/contact-form";
 import ShareButton from "@/components/share-button";
+import SimpleOrgAccordion from "@/components/SimpleOrgAccordion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -2585,6 +2586,18 @@ export default function Home() {
     Object.keys(torontoNonProfitsData).forEach(cat => resetVisibleCount(cat));
   };
 
+  // Convert Toronto Non-Profits data to SimpleOrgAccordion format
+  const convertToAccordionFormat = () => {
+    return Object.entries(torontoNonProfitsData).map(([category, organizations]) => ({
+      title: category,
+      organizations: organizations.map(org => ({
+        name: org.name,
+        description: org.description,
+        url: org.url
+      }))
+    }));
+  };
+
   // Helper function to update search term for a specific category
   const updateSearchTerm = (category: string, term: string) => {
     setTorontoNonprofitSearchTerms(prev => ({
@@ -3038,228 +3051,8 @@ export default function Home() {
                             </div>
                           </div>
 
-                          {/* Toronto Non-Profits Categories - Enhanced Accordion */}
-                          <div className="space-y-4">
-                            {Object.entries(torontoNonProfitsData).map(([subcategory, nonprofits]) => {
-                              const categorySearchTerm = torontoNonprofitSearchTerms[subcategory] || "";
-                              const filteredNonprofits = nonprofits.filter(nonprofit => {
-                                // Search filtering
-                                const matchesGlobalSearch = searchTerm === "" || 
-                                  nonprofit.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                  nonprofit.description.toLowerCase().includes(searchTerm.toLowerCase());
-                                
-                                const matchesCategorySearch = categorySearchTerm === "" || 
-                                  nonprofit.name.toLowerCase().includes(categorySearchTerm.toLowerCase()) ||
-                                  nonprofit.description.toLowerCase().includes(categorySearchTerm.toLowerCase());
-                                
-                                // Tag filtering
-                                const matchesTags = selectedTags.length === 0 || 
-                                  selectedTags.some(tag => extractTags(nonprofit.description).includes(tag));
-                                
-                                return matchesGlobalSearch && matchesCategorySearch && matchesTags;
-                              });
-
-                              if (filteredNonprofits.length === 0) return null;
-
-                              const categoryStyle = torontoNonprofitCategoryColors[subcategory] || {
-                                header: 'bg-gray-600 hover:bg-gray-700',
-                                background: 'bg-gray-50',
-                                border: 'border-gray-300',
-                                icon: 'fas fa-building'
-                              };
-
-                              const isOpen = isTorontoNonprofitCategoryExpanded(subcategory);
-
-                              return (
-                                <div key={subcategory} className={`rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl ${categoryStyle.background} ${categoryStyle.border} border-2`}>
-                                  {/* Category Header */}
-                                  <button
-                                    onClick={() => toggleTorontoNonprofitCategory(subcategory)}
-                                    className={`w-full flex items-center justify-between px-6 py-4 text-white font-bold text-lg transition-all duration-300 ${categoryStyle.header}`}
-                                    aria-expanded={isOpen}
-                                  >
-                                    <div className="flex items-center space-x-4">
-                                      <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                                        <i className={`${categoryStyle.icon} text-lg`}></i>
-                                      </div>
-                                      <span>{subcategory}</span>
-                                    </div>
-                                    <div className="flex items-center space-x-3">
-                                      <span className="text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full font-medium">
-                                        {filteredNonprofits.length} organizations
-                                      </span>
-                                      <i className={`fas fa-chevron-${isOpen ? 'up' : 'down'} text-lg transition-transform duration-300`}></i>
-                                    </div>
-                                  </button>
-
-                                  {/* Category Content */}
-                                  {isOpen && (
-                                    <div className="bg-white p-6">
-                                      {/* Category Search Filter */}
-                                      <div className="mb-6">
-                                        <div className="relative">
-                                          <input
-                                            type="text"
-                                            placeholder={`Search within ${subcategory}...`}
-                                            value={categorySearchTerm}
-                                            onChange={(e) => updateSearchTerm(subcategory, e.target.value)}
-                                            className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                          />
-                                          <i className="fas fa-search absolute left-4 top-4 text-gray-400"></i>
-                                          {categorySearchTerm && (
-                                            <button
-                                              onClick={() => updateSearchTerm(subcategory, "")}
-                                              className="absolute right-4 top-4 text-gray-400 hover:text-gray-600"
-                                            >
-                                              <i className="fas fa-times"></i>
-                                            </button>
-                                          )}
-                                        </div>
-                                        
-                                        {/* Results Counter */}
-                                        {(categorySearchTerm || selectedTags.length > 0) && (
-                                          <div className="mt-2 text-sm text-gray-600">
-                                            <i className="fas fa-filter mr-1"></i>
-                                            Showing {filteredNonprofits.length} of {nonprofits.length} organizations
-                                            {selectedTags.length > 0 && (
-                                              <span className="ml-2">
-                                                • Filtered by {selectedTags.length} tag{selectedTags.length !== 1 ? 's' : ''}
-                                              </span>
-                                            )}
-                                          </div>
-                                        )}
-                                      </div>
-
-                                      {/* Organizations List */}
-                                      <div className="space-y-4">
-                                        {filteredNonprofits.slice(0, getVisibleCount(subcategory)).map((nonprofit, index) => {
-                                          const organizationTags = extractTags(nonprofit.description);
-                                          
-                                          // Parse contact information from description
-                                          const parseContactInfo = (description: string) => {
-                                            const addressMatch = description.match(/Address:\s*([^.]+)/);
-                                            const phoneMatch = description.match(/Phone:\s*([^.]+)/);
-                                            const emailMatch = description.match(/Email:\s*([^.\s]+)/);
-                                            const websiteMatch = description.match(/(https?:\/\/[^\s]+)/);
-                                            
-                                            return {
-                                              address: addressMatch ? addressMatch[1].trim() : '',
-                                              phone: phoneMatch ? phoneMatch[1].trim() : '',
-                                              email: emailMatch ? emailMatch[1].trim() : '',
-                                              website: websiteMatch ? websiteMatch[1].trim() : ''
-                                            };
-                                          };
-
-                                          const contact = parseContactInfo(nonprofit.description);
-                                          
-                                          return (
-                                            <div key={index} className="border-b border-gray-200 pb-6 mb-6 last:border-b-0 last:pb-0 last:mb-0">
-                                              <div className="flex items-start space-x-4">
-                                                <div className="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                                                  <span className="text-sm font-bold text-purple-700">{index + 1}</span>
-                                                </div>
-                                                <div className="flex-1">
-                                                  <h3 className="text-xl font-bold text-gray-900 mb-2">{nonprofit.name}</h3>
-                                                  <p className="text-gray-700 mb-4 leading-relaxed">{nonprofit.description}</p>
-                                                  
-                                                  {/* Contact Information */}
-                                                  <div className="space-y-2 text-sm text-gray-600 mb-4">
-                                                    {contact.address && (
-                                                      <div className="flex items-start space-x-2">
-                                                        <i className="fas fa-map-marker-alt text-gray-500 mt-1"></i>
-                                                        <span>{contact.address}</span>
-                                                      </div>
-                                                    )}
-                                                    {contact.phone && (
-                                                      <div className="flex items-center space-x-2">
-                                                        <i className="fas fa-phone text-gray-500"></i>
-                                                        <a href={`tel:${contact.phone.replace(/\D/g, '')}`} className="text-green-700 hover:text-green-900 underline font-medium">
-                                                          {contact.phone}
-                                                        </a>
-                                                      </div>
-                                                    )}
-                                                    {contact.email && (
-                                                      <div className="flex items-center space-x-2">
-                                                        <i className="fas fa-envelope text-gray-500"></i>
-                                                        <a href={`mailto:${contact.email}`} className="text-purple-700 hover:text-purple-900 underline font-medium">
-                                                          {contact.email}
-                                                        </a>
-                                                      </div>
-                                                    )}
-                                                    {contact.website && (
-                                                      <div className="flex items-center space-x-2">
-                                                        <i className="fas fa-globe text-gray-500"></i>
-                                                        <a href={contact.website} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900 underline font-medium">
-                                                          {contact.website}
-                                                        </a>
-                                                      </div>
-                                                    )}
-                                                  </div>
-
-                                                  {/* Tags */}
-                                                  {organizationTags.length > 0 && (
-                                                    <div className="flex flex-wrap gap-2">
-                                                      {organizationTags.map((tag, tagIndex) => (
-                                                        <span
-                                                          key={tagIndex}
-                                                          className={`px-2 py-1 rounded-full text-xs font-medium ${
-                                                            selectedTags.includes(tag)
-                                                              ? 'bg-purple-600 text-white'
-                                                              : 'bg-gray-200 text-gray-600'
-                                                          }`}
-                                                        >
-                                                          {tag}
-                                                        </span>
-                                                      ))}
-                                                    </div>
-                                                  )}
-                                                </div>
-                                              </div>
-                                            </div>
-                                          );
-                                        })}
-                                        
-                                        {/* Load More Button */}
-                                        {filteredNonprofits.length > getVisibleCount(subcategory) && (
-                                          <div className="flex justify-center mt-8">
-                                            <button
-                                              onClick={() => loadMoreOrganizations(subcategory, filteredNonprofits.length)}
-                                              disabled={isLoading[subcategory]}
-                                              className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-8 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
-                                            >
-                                              {isLoading[subcategory] ? (
-                                                <div className="flex items-center space-x-2">
-                                                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                                                  <span>Loading...</span>
-                                                </div>
-                                              ) : (
-                                                <div className="flex items-center space-x-2">
-                                                  <span>Load More</span>
-                                                  <span className="bg-white bg-opacity-20 px-2 py-1 rounded-full text-sm">
-                                                    {filteredNonprofits.length - getVisibleCount(subcategory)} remaining
-                                                  </span>
-                                                </div>
-                                              )}
-                                            </button>
-                                          </div>
-                                        )}
-                                        
-                                        {/* All Results Loaded Message */}
-                                        {filteredNonprofits.length > 20 && getVisibleCount(subcategory) >= filteredNonprofits.length && (
-                                          <div className="flex justify-center mt-8">
-                                            <div className="bg-green-50 text-green-700 px-4 py-2 rounded-lg flex items-center space-x-2">
-                                              <i className="fas fa-check-circle"></i>
-                                              <span>All {filteredNonprofits.length} organizations loaded</span>
-                                            </div>
-                                          </div>
-                                        )}
-                                      </div>
-                                    </div>
-                                  )}
-                                </div>
-                              );
-                            })}
-                          </div>
+                          {/* Toronto Non-Profits - Simple Accordion */}
+                          <SimpleOrgAccordion categories={convertToAccordionFormat()} />
                         </div>
                       ) : category === "Major Transportation" ? (
                         <div className="space-y-6">
