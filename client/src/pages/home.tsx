@@ -2881,57 +2881,67 @@ export default function Home() {
                                 'Arts & Culture': 'bg-gradient-to-br from-rose-300 to-rose-400 border-rose-500',
                                 'Youth & LGBTQ+': 'bg-gradient-to-br from-violet-300 to-violet-400 border-violet-500',
                                 'Food Security': 'bg-gradient-to-br from-orange-300 to-orange-400 border-orange-500',
-                                'Environment & Sustainability': 'bg-gradient-to-br from-teal-300 to-teal-400 border-teal-500'
+                                'Environment & Sustainability': 'bg-gradient-to-br from-teal-300 to-teal-400 border-teal-500',
+                                'African & Black Communities': 'bg-gradient-to-br from-amber-300 to-amber-400 border-amber-500',
+                                'Ghana & Ghanaian Communities': 'bg-gradient-to-br from-red-300 to-red-400 border-red-500'
                               };
                               
                               const cardColor = subcategoryColors[subcategory] || 'bg-gradient-to-br from-gray-300 to-gray-400 border-gray-500';
 
                               return (
-                                <div key={subcategory} className={`rounded-xl shadow-lg ${cardColor} border-2 overflow-hidden transition-all duration-300`} style={{
+                                <div key={subcategory} className={`rounded-xl shadow-lg ${cardColor} border-2 overflow-hidden transition-all duration-300 hover:shadow-xl`} style={{
                                   background: subcategory === 'Settlement & Employment' ? 'linear-gradient(to bottom right, #a7f3d0, #6ee7b7)' :
                                             subcategory === 'Arts & Culture' ? 'linear-gradient(to bottom right, #fecaca, #fca5a5)' :
                                             subcategory === 'Youth & LGBTQ+' ? 'linear-gradient(to bottom right, #ddd6fe, #c4b5fd)' :
                                             subcategory === 'Food Security' ? 'linear-gradient(to bottom right, #fed7aa, #fdba74)' :
                                             subcategory === 'Environment & Sustainability' ? 'linear-gradient(to bottom right, #99f6e4, #5eead4)' :
+                                            subcategory === 'African & Black Communities' ? 'linear-gradient(to bottom right, #fde68a, #fbbf24)' :
+                                            subcategory === 'Ghana & Ghanaian Communities' ? 'linear-gradient(to bottom right, #fca5a5, #f87171)' :
                                             'linear-gradient(to bottom right, #d1d5db, #9ca3af)'
                                 }}>
                                   <button
-                                    className="p-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 transition-all duration-200 text-left w-full"
+                                    className="p-5 bg-gradient-to-r from-slate-800 to-slate-900 text-white hover:from-slate-900 hover:to-black transition-all duration-300 text-left w-full shadow-lg"
                                     onClick={() => toggleTorontoNonprofitCategory(subcategory)}
                                   >
                                     <div className="flex items-center justify-between">
-                                      <div className="flex items-center space-x-3">
-                                        <i className={`fas fa-${
-                                          subcategory === 'Settlement & Employment' ? 'handshake' :
-                                          subcategory === 'Arts & Culture' ? 'palette' :
-                                          subcategory === 'Youth & LGBTQ+' ? 'heart' :
-                                          subcategory === 'Food Security' ? 'utensils' :
-                                          subcategory === 'Environment & Sustainability' ? 'leaf' : 'building'
-                                        } text-lg`}></i>
-                                        <h4 className="text-lg font-semibold">{subcategory}</h4>
+                                      <div className="flex items-center space-x-4">
+                                        <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                          <i className={`fas fa-${
+                                            subcategory === 'Settlement & Employment' ? 'handshake' :
+                                            subcategory === 'Arts & Culture' ? 'palette' :
+                                            subcategory === 'Youth & LGBTQ+' ? 'heart' :
+                                            subcategory === 'Food Security' ? 'utensils' :
+                                            subcategory === 'Environment & Sustainability' ? 'leaf' :
+                                            subcategory === 'African & Black Communities' ? 'users' :
+                                            subcategory === 'Ghana & Ghanaian Communities' ? 'flag' : 'building'
+                                          } text-lg text-white`}></i>
+                                        </div>
+                                        <h4 className="text-xl font-bold">{subcategory}</h4>
                                       </div>
-                                      <div className="flex items-center space-x-2">
-                                        <span className="text-sm opacity-75">{filteredNonprofits.length} organizations</span>
-                                        <i className={`fas fa-chevron-${isTorontoNonprofitCategoryExpanded(subcategory) ? 'up' : 'down'} text-sm opacity-75 transition-transform`}></i>
+                                      <div className="flex items-center space-x-3">
+                                        <span className="text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full font-medium">
+                                          {filteredNonprofits.length} organizations
+                                        </span>
+                                        <i className={`fas fa-chevron-${isTorontoNonprofitCategoryExpanded(subcategory) ? 'up' : 'down'} text-lg transition-transform duration-300`}></i>
                                       </div>
                                     </div>
                                   </button>
                                   
                                   {isTorontoNonprofitCategoryExpanded(subcategory) && (
-                                    <div className="p-4">
-                                      <div className="space-y-3">
+                                    <div className="p-6 bg-white bg-opacity-50">
+                                      <div className="space-y-4">
                                         {filteredNonprofits.map((nonprofit, index) => {
                                           const cardColors = [
-                                            'bg-gradient-to-r from-blue-50 to-blue-100 border-blue-200',
-                                            'bg-gradient-to-r from-green-50 to-green-100 border-green-200',
-                                            'bg-gradient-to-r from-purple-50 to-purple-100 border-purple-200',
-                                            'bg-gradient-to-r from-pink-50 to-pink-100 border-pink-200',
-                                            'bg-gradient-to-r from-indigo-50 to-indigo-100 border-indigo-200',
-                                            'bg-gradient-to-r from-cyan-50 to-cyan-100 border-cyan-200',
-                                            'bg-gradient-to-r from-orange-50 to-orange-100 border-orange-200',
-                                            'bg-gradient-to-r from-red-50 to-red-100 border-red-200',
-                                            'bg-gradient-to-r from-yellow-50 to-yellow-100 border-yellow-200',
-                                            'bg-gradient-to-r from-teal-50 to-teal-100 border-teal-200'
+                                            'bg-gradient-to-r from-blue-50 to-blue-100 border-blue-300 shadow-blue-100',
+                                            'bg-gradient-to-r from-green-50 to-green-100 border-green-300 shadow-green-100',
+                                            'bg-gradient-to-r from-purple-50 to-purple-100 border-purple-300 shadow-purple-100',
+                                            'bg-gradient-to-r from-pink-50 to-pink-100 border-pink-300 shadow-pink-100',
+                                            'bg-gradient-to-r from-indigo-50 to-indigo-100 border-indigo-300 shadow-indigo-100',
+                                            'bg-gradient-to-r from-cyan-50 to-cyan-100 border-cyan-300 shadow-cyan-100',
+                                            'bg-gradient-to-r from-orange-50 to-orange-100 border-orange-300 shadow-orange-100',
+                                            'bg-gradient-to-r from-red-50 to-red-100 border-red-300 shadow-red-100',
+                                            'bg-gradient-to-r from-yellow-50 to-yellow-100 border-yellow-300 shadow-yellow-100',
+                                            'bg-gradient-to-r from-teal-50 to-teal-100 border-teal-300 shadow-teal-100'
                                           ];
                                           const cardColor = cardColors[index % cardColors.length];
                                           
@@ -2945,33 +2955,33 @@ export default function Home() {
                                             
                                             // Make URLs clickable
                                             formattedDescription = formattedDescription.replace(urlRegex, (url) => 
-                                              `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">${url}</a>`
+                                              `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-900 underline font-medium">${url}</a>`
                                             );
                                             
                                             // Make phone numbers clickable
                                             formattedDescription = formattedDescription.replace(phoneRegex, (phone) => {
                                               const phoneNumber = phone.replace(/Phone:\s*/, '').replace(/[\s\(\)-]/g, '');
-                                              return `<a href="tel:+1${phoneNumber}" class="text-green-600 hover:text-green-800 underline">${phone}</a>`;
+                                              return `<a href="tel:+1${phoneNumber}" class="text-green-700 hover:text-green-900 underline font-medium">${phone}</a>`;
                                             });
                                             
                                             // Make email addresses clickable
                                             formattedDescription = formattedDescription.replace(emailRegex, (match, email) => 
-                                              `Email: <a href="mailto:${email}" class="text-purple-600 hover:text-purple-800 underline">${email}</a>`
+                                              `Email: <a href="mailto:${email}" class="text-purple-700 hover:text-purple-900 underline font-medium">${email}</a>`
                                             );
                                             
                                             return formattedDescription;
                                           };
 
                                           return (
-                                            <div key={index} className={`p-3 ${cardColor} rounded-lg shadow-sm border`}>
-                                              <div className="flex items-start space-x-3">
-                                                <div className="flex-shrink-0 w-8 h-8 bg-white bg-opacity-70 rounded-full flex items-center justify-center">
-                                                  <span className="text-sm font-bold text-gray-700">{index + 1}</span>
+                                            <div key={index} className={`p-4 ${cardColor} rounded-lg shadow-md border-2 hover:shadow-lg transition-all duration-300`}>
+                                              <div className="flex items-start space-x-4">
+                                                <div className="flex-shrink-0 w-10 h-10 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-sm">
+                                                  <span className="text-sm font-bold text-gray-800">{index + 1}</span>
                                                 </div>
                                                 <div className="flex-1">
-                                                  <h5 className="font-semibold text-gray-900 mb-1">{nonprofit.name}</h5>
+                                                  <h5 className="font-bold text-gray-900 mb-2 text-lg">{nonprofit.name}</h5>
                                                   <p 
-                                                    className="text-sm text-gray-600"
+                                                    className="text-sm text-gray-700 leading-relaxed"
                                                     dangerouslySetInnerHTML={{ __html: formatDescriptionWithLinks(nonprofit.description) }}
                                                   />
                                                 </div>
