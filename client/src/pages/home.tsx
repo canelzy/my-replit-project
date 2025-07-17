@@ -518,6 +518,56 @@ const torontoNonProfitsData = {
       name: "Parkdale Queen West Community Health Centre – Youth Health Program",
       url: "https://pqwchc.org/",
       description: "Inclusive youth health programs, mental health support, LGBTQ+ safe space drop-ins."
+    },
+    {
+      name: "Griffin Centre – ReachOUT",
+      url: "https://reachout.ca/",
+      description: "Counseling, support groups, and leadership opportunities for LGBTQ+ youth and allies, especially BIPOC and newcomer communities."
+    },
+    {
+      name: "Central Toronto Youth Services (CTYS)",
+      url: "https://ctys.org/",
+      description: "Mental health and support services for youth ages 12–25, including LGBTQ+ and trans youth programs."
+    },
+    {
+      name: "YOUTHline (LGBT Youth Line)",
+      url: "https://youthline.ca/",
+      description: "Peer support through phone, text, and chat for LGBTQ+ youth under 29 across Ontario."
+    },
+    {
+      name: "Asian Community AIDS Services (ACAS) – LGBTQ+ Youth Programs",
+      url: "https://acas.org/",
+      description: "Services for East & Southeast Asian LGBTQ+ youth, including sexual health and peer leadership."
+    },
+    {
+      name: "Access Alliance Multicultural Health and Community Services",
+      url: "https://accessalliance.ca/",
+      description: "Multicultural services including youth drop-ins, LGBTQ+ newcomer groups, and health access."
+    },
+    {
+      name: "Sprott House – YMCA of Greater Toronto",
+      url: "https://ymcagta.org/",
+      description: "Transitional housing program for LGBTQ2S youth experiencing homelessness."
+    },
+    {
+      name: "The Get REAL Movement",
+      url: "https://thegetrealmovement.com/",
+      description: "Anti-discrimination workshops in schools, focused on LGBTQ+ inclusion and allyship."
+    },
+    {
+      name: "Urban Rez Solutions – Queer Trans Youth of Colour Programming",
+      url: "https://urbanrezsolutions.com/",
+      description: "Mediation, social justice, and leadership development with programming for 2SLGBTQ+ youth of colour."
+    },
+    {
+      name: "Toronto District School Board – Gender-Based Violence Prevention Office",
+      url: "https://tdsb.on.ca/",
+      description: "LGBTQ+ affirming policies, resources, and workshops in schools. Youth-led initiatives supported through the board."
+    },
+    {
+      name: "Maggie's Toronto Sex Workers Action Project – Youth & Trans Outreach",
+      url: "https://maggiestoronto.org/",
+      description: "Harm reduction, support, and advocacy for LGBTQ+ and youth sex workers."
     }
   ],
   "Food Security": [
