@@ -2549,42 +2549,7 @@ export default function Home() {
   const [isOfficialDirectoriesExpanded, setIsOfficialDirectoriesExpanded] = useState<boolean>(false);
   const [expandedNonprofitCategories, setExpandedNonprofitCategories] = useState<string[]>([]);
   const [expandedTorontoNonprofitCategories, setExpandedTorontoNonprofitCategories] = useState<string[]>([]);
-  const [torontoNonprofitSearchTerms, setTorontoNonprofitSearchTerms] = useState<{[key: string]: string}>({});
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [visibleCounts, setVisibleCounts] = useState<{[key: string]: number}>({});
-  const [isLoading, setIsLoading] = useState<{[key: string]: boolean}>({});
 
-  // Common tags for filtering
-  const commonTags = [
-    "health", "legal", "youth", "women", "employment", "housing", "education", 
-    "mental health", "food", "seniors", "immigrant", "refugee", "disability", 
-    "family", "community", "training", "arts", "culture", "advocacy", "support"
-  ];
-
-  // Helper function to extract tags from organization descriptions
-  const extractTags = (description: string): string[] => {
-    const tags: string[] = [];
-    const lowerDesc = description.toLowerCase();
-    
-    commonTags.forEach(tag => {
-      if (lowerDesc.includes(tag.toLowerCase())) {
-        tags.push(tag);
-      }
-    });
-    
-    return tags;
-  };
-
-  // Helper function to toggle tag selection
-  const toggleTag = (tag: string) => {
-    setSelectedTags(prev => 
-      prev.includes(tag) 
-        ? prev.filter(t => t !== tag)
-        : [...prev, tag]
-    );
-    // Reset visible counts when tags change
-    Object.keys(torontoNonProfitsData).forEach(cat => resetVisibleCount(cat));
-  };
 
   // Convert Toronto Non-Profits data to SimpleOrgAccordion format
   const convertToAccordionFormat = () => {
@@ -2598,45 +2563,7 @@ export default function Home() {
     }));
   };
 
-  // Helper function to update search term for a specific category
-  const updateSearchTerm = (category: string, term: string) => {
-    setTorontoNonprofitSearchTerms(prev => ({
-      ...prev,
-      [category]: term
-    }));
-    // Reset visible count when search changes
-    setVisibleCounts(prev => ({
-      ...prev,
-      [category]: 20
-    }));
-  };
 
-  // Helper function to get visible count for a category
-  const getVisibleCount = (category: string) => {
-    return visibleCounts[category] || 20;
-  };
-
-  // Helper function to load more organizations
-  const loadMoreOrganizations = (category: string, totalCount: number) => {
-    setIsLoading(prev => ({ ...prev, [category]: true }));
-    
-    // Simulate loading delay for better UX
-    setTimeout(() => {
-      setVisibleCounts(prev => ({
-        ...prev,
-        [category]: Math.min((prev[category] || 20) + 20, totalCount)
-      }));
-      setIsLoading(prev => ({ ...prev, [category]: false }));
-    }, 300);
-  };
-
-  // Helper function to reset visible count when category is collapsed
-  const resetVisibleCount = (category: string) => {
-    setVisibleCounts(prev => ({
-      ...prev,
-      [category]: 20
-    }));
-  };
 
   // Enhanced category colors for better visual hierarchy
   const torontoNonprofitCategoryColors: Record<string, {
@@ -3010,46 +2937,7 @@ export default function Home() {
                             </div>
                           </div>
 
-                          {/* Global Tag Filter */}
-                          <div className="bg-white p-4 rounded-lg shadow-md border">
-                            <div className="mb-3">
-                              <h4 className="text-lg font-semibold text-gray-800 mb-2">
-                                <i className="fas fa-tags mr-2 text-purple-600"></i>
-                                Filter by Tags
-                              </h4>
-                              <div className="flex flex-wrap gap-2">
-                                {commonTags.map(tag => (
-                                  <button
-                                    key={tag}
-                                    onClick={() => toggleTag(tag)}
-                                    className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
-                                      selectedTags.includes(tag)
-                                        ? 'bg-purple-600 text-white shadow-md'
-                                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                                    }`}
-                                  >
-                                    {tag}
-                                  </button>
-                                ))}
-                              </div>
-                              {selectedTags.length > 0 && (
-                                <div className="mt-2 flex items-center justify-between">
-                                  <span className="text-sm text-gray-600">
-                                    {selectedTags.length} tag{selectedTags.length !== 1 ? 's' : ''} selected
-                                  </span>
-                                  <button
-                                    onClick={() => {
-                                      setSelectedTags([]);
-                                      Object.keys(torontoNonProfitsData).forEach(cat => resetVisibleCount(cat));
-                                    }}
-                                    className="text-sm text-purple-600 hover:text-purple-800 underline"
-                                  >
-                                    Clear all
-                                  </button>
-                                </div>
-                              )}
-                            </div>
-                          </div>
+
 
                           {/* Toronto Non-Profits - Simple Accordion */}
                           <SimpleOrgAccordion categories={convertToAccordionFormat()} />
