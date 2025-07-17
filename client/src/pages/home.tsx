@@ -597,202 +597,202 @@ const torontoNonProfitsData = {
     {
       name: "The 519",
       url: "https://the519.org/",
-      description: "Leading LGBTQ+ community centre offering newcomer services, youth programs, trans ID clinics, and advocacy."
+      description: "Leading LGBTQ+ community centre offering newcomer services, youth programs, trans ID clinics, and advocacy. Address: 519 Church St, Toronto, ON M4Y 2C9. Phone: (416) 392-6874. Email: info@the519.org"
     },
     {
       name: "SKETCH Working Arts",
       url: "https://sketch.ca/",
-      description: "Supports youth 16–29 living homeless or on the margins through arts, creative enterprise, and mentorship."
+      description: "Supports youth 16–29 living homeless or on the margins through arts, creative enterprise, and mentorship. Address: 401 Richmond St W, Toronto, ON M5V 3A8. Phone: (416) 506-8956. Email: info@sketch.ca"
     },
     {
       name: "Supporting Our Youth (SOY) – Sherbourne Health",
       url: "https://sherbourne.on.ca/soy/",
-      description: "Programs for 2SLGBTQ youth aged 29 and under, including housing, health, mentoring, and peer leadership."
+      description: "Programs for 2SLGBTQ youth aged 29 and under, including housing, health, mentoring, and peer leadership. Address: 333 Sherbourne St, Toronto, ON M5A 2S5. Phone: (416) 324-4180. Email: soy@sherbourne.on.ca"
     },
     {
       name: "Planned Parenthood Toronto (PPT)",
       url: "https://ppt.on.ca/",
-      description: "Inclusive sexual and reproductive health care and education to youth aged 13–29, including LGBTQ+ supports."
+      description: "Inclusive sexual and reproductive health care and education to youth aged 13–29, including LGBTQ+ supports. Address: 36B Prince Arthur Ave, Toronto, ON M5R 1A9. Phone: (416) 961-0113. Email: info@ppt.on.ca"
     },
     {
       name: "Griffin Centre Mental Health Services",
       url: "https://griffincentre.org/",
-      description: "Mental health support and group programs for youth with a focus on LGBTQ+ and racialized youth."
+      description: "Mental health support and group programs for youth with a focus on LGBTQ+ and racialized youth. Address: 24 Wellesley St W, Toronto, ON M4Y 2X6. Phone: (416) 222-1153. Email: info@griffincentre.org"
     },
     {
       name: "Youth Assisting Youth (YAY)",
       url: "https://yay.org/",
-      description: "Peer mentorship and leadership training for youth aged 6–15 by volunteers aged 16–29."
+      description: "Peer mentorship and leadership training for youth aged 6–15 by volunteers aged 16–29. Address: 1200 Markham Rd, Scarborough, ON M1H 3C3. Phone: (416) 410-3677. Email: info@yay.org"
     },
     {
       name: "Egale Canada",
       url: "https://egale.ca/",
-      description: "National 2SLGBTQI human rights organization offering youth mental health supports and homelessness prevention."
-    },
-    {
-      name: "BlackCAP (Black Coalition for AIDS Prevention)",
-      url: "https://black-cap.com/",
-      description: "Support and education for Black communities affected by HIV/AIDS, with youth and LGBTQ+ services."
-    },
-    {
-      name: "Native Youth Resource Centre – Native Child and Family Services of Toronto",
-      url: "https://nativechild.org/",
-      description: "Drop-in, education, and cultural supports for Indigenous youth in Toronto."
-    },
-    {
-      name: "Pride Toronto (Youth Programs)",
-      url: "https://pridetoronto.com/",
-      description: "Organizes Toronto's Pride celebrations and year-round 2SLGBTQ+ youth and arts programming."
-    },
-    {
-      name: "Friends of Ruby",
-      url: "https://friendsofruby.ca/",
-      description: "Mental health support and transitional housing for LGBTQI2S youth aged 16–29."
-    },
-    {
-      name: "Breakaway Community Services – Youth Harm Reduction Program",
-      url: "https://breakawaycs.ca/",
-      description: "Harm reduction and substance use support for youth, including LGBTQ+ programming."
-    },
-    {
-      name: "Delisle Youth Services (Skylark Youth)",
-      url: "https://skylarkyouth.org/",
-      description: "Counselling and wraparound services for youth ages 0–24, with LGBTQ+ affirming supports."
-    },
-    {
-      name: "QTBIPOC Youth Project – Planned Parenthood Toronto",
-      url: "https://ppt.on.ca/",
-      description: "Peer-led programming and health support for Queer, Trans, Black, Indigenous, and racialized youth."
-    },
-    {
-      name: "Toronto Kiwanis Boys and Girls Clubs – LGBTQ+ Inclusion Programs",
-      url: "https://believeinkids.ca/",
-      description: "Community and after-school programs for children and youth, with inclusive spaces for LGBTQ+ youth."
-    },
-    {
-      name: "Canadian Centre for Gender & Sexual Diversity (Toronto Office)",
-      url: "https://ccgsd-ccdgs.org/",
-      description: "Anti-oppression and anti-bullying education, youth training, and LGBTQ+ inclusion advocacy."
-    },
-    {
-      name: "Camp fYrefly – Toronto Chapter",
-      url: "https://fyrefly.ualberta.ca/",
-      description: "Leadership retreat for LGBTQ+ and gender-diverse youth, focused on wellness, creativity, and empowerment."
-    },
-    {
-      name: "Rexdale Women's Centre – LGBTQ+ Newcomer Youth Programs",
-      url: "https://rexdalewomen.org/",
-      description: "Supports immigrant women, families, and youth with LGBTQ+-affirming programs for newcomers."
-    },
-    {
-      name: "For Youth Initiative (FYI)",
-      url: "https://foryouth.ca/",
-      description: "Empowers racialized and newcomer youth with education, leadership, and employment programs."
-    },
-    {
-      name: "Parkdale Queen West Community Health Centre – Youth Health Program",
-      url: "https://pqwchc.org/",
-      description: "Inclusive youth health programs, mental health support, LGBTQ+ safe space drop-ins."
-    },
-    {
-      name: "Griffin Centre – ReachOUT",
-      url: "https://reachout.ca/",
-      description: "Counseling, support groups, and leadership opportunities for LGBTQ+ youth and allies, especially BIPOC and newcomer communities."
-    },
-    {
-      name: "Central Toronto Youth Services (CTYS)",
-      url: "https://ctys.org/",
-      description: "Mental health and support services for youth ages 12–25, including LGBTQ+ and trans youth programs."
-    },
-    {
-      name: "YOUTHline (LGBT Youth Line)",
-      url: "https://youthline.ca/",
-      description: "Peer support through phone, text, and chat for LGBTQ+ youth under 29 across Ontario."
-    },
-    {
-      name: "Asian Community AIDS Services (ACAS) – LGBTQ+ Youth Programs",
-      url: "https://acas.org/",
-      description: "Services for East & Southeast Asian LGBTQ+ youth, including sexual health and peer leadership."
-    },
-    {
-      name: "Access Alliance Multicultural Health and Community Services",
-      url: "https://accessalliance.ca/",
-      description: "Multicultural services including youth drop-ins, LGBTQ+ newcomer groups, and health access."
-    },
-    {
-      name: "Sprott House – YMCA of Greater Toronto",
-      url: "https://ymcagta.org/",
-      description: "Transitional housing program for LGBTQ2S youth experiencing homelessness."
-    },
-    {
-      name: "The Get REAL Movement",
-      url: "https://thegetrealmovement.com/",
-      description: "Anti-discrimination workshops in schools, focused on LGBTQ+ inclusion and allyship."
-    },
-    {
-      name: "Urban Rez Solutions – Queer Trans Youth of Colour Programming",
-      url: "https://urbanrezsolutions.com/",
-      description: "Mediation, social justice, and leadership development with programming for 2SLGBTQ+ youth of colour."
-    },
-    {
-      name: "Toronto District School Board – Gender-Based Violence Prevention Office",
-      url: "https://tdsb.on.ca/",
-      description: "LGBTQ+ affirming policies, resources, and workshops in schools. Youth-led initiatives supported through the board."
-    },
-    {
-      name: "Maggie's Toronto Sex Workers Action Project – Youth & Trans Outreach",
-      url: "https://maggiestoronto.org/",
-      description: "Harm reduction, support, and advocacy for LGBTQ+ and youth sex workers."
-    },
-    {
-      name: "SOY – Supporting Our Youth (Sherbourne Health)",
-      url: "https://sherbourne.on.ca/soy/",
-      description: "Programs for 2SLGBTQ youth including mentorship, health, and newcomer supports."
-    },
-    {
-      name: "Egale Canada",
-      url: "https://egale.ca/",
-      description: "National 2SLGBTQI advocacy with Toronto-based youth housing and mental health programming."
-    },
-    {
-      name: "The 519 – Youth Programming",
-      url: "https://the519.org/",
-      description: "Community hub offering inclusive youth programming, housing support, and leadership initiatives."
+      description: "National 2SLGBTQI advocacy with Toronto-based youth housing and mental health programming. Address: 120 Carlton St, Suite 217, Toronto, ON M5A 4K2. Phone: (416) 964-7887. Email: info@egale.ca"
     },
     {
       name: "BlackCAP – Youth and LGBTQ+ African, Caribbean, Black (ACB) Programming",
       url: "https://blackcap.ca/",
-      description: "HIV/AIDS support and LGBTQ+ affirming services for Black youth in Toronto."
-    },
-    {
-      name: "StepStones for Youth",
-      url: "https://stepstonesforyouth.com/",
-      description: "Wraparound support for vulnerable youth including housing, mentorship, and LGBTQ+ affirming services."
-    },
-    {
-      name: "Stella's Place",
-      url: "https://stellasplace.ca/",
-      description: "Mental health support for youth 16–29, with inclusive services for LGBTQ+ and gender-diverse individuals."
-    },
-    {
-      name: "ArtReach Toronto",
-      url: "https://artreachtoronto.ca/",
-      description: "Funding and mentorship for youth-led arts projects, prioritizing BIPOC and LGBTQ+ youth in underserved communities."
-    },
-    {
-      name: "West Neighbourhood House – Meeting Place Youth Programs",
-      url: "https://westnh.org/",
-      description: "Harm reduction, housing help, and social inclusion programs for street-involved and LGBTQ+ youth."
-    },
-    {
-      name: "The Neighbourhood Group – Youth and LGBTQ+ Services",
-      url: "https://tngcs.org/",
-      description: "Employment, housing, and wellness supports for youth, including dedicated LGBTQ+ outreach."
+      description: "HIV/AIDS support and LGBTQ+ affirming services for Black youth in Toronto. Address: 20 Victoria St, 4th Floor, Toronto, ON M5C 2N8. Phone: (416) 977-9955. Email: info@black-cap.com"
     },
     {
       name: "Native Youth Resource Centre (NWRCT)",
       url: "https://nwrct.ca/",
-      description: "Indigenous-led programming for urban Indigenous youth, including Two-Spirit and LGBTQ+ affirming supports."
+      description: "Indigenous-led programming for urban Indigenous youth, including Two-Spirit and LGBTQ+ affirming supports. Address: 191 Gerrard St E, Toronto, ON M5A 2E5. Phone: (416) 963-9963. Email: reception@nwrct.ca"
+    },
+    {
+      name: "Pride Toronto (Youth Programs)",
+      url: "https://pridetoronto.com/",
+      description: "Organizes Toronto's Pride celebrations and year-round 2SLGBTQ+ youth and arts programming. Address: 145 Richmond St W, Suite 405, Toronto, ON M5H 2L2. Phone: (416) 927-7433. Email: info@pridetoronto.com"
+    },
+    {
+      name: "Friends of Ruby",
+      url: "https://friendsofruby.ca/",
+      description: "Mental health support and transitional housing for LGBTQI2S youth aged 16–29. Address: 257 Dundas St E, Toronto, ON M5A 1Z5. Phone: (416) 359-0237. Email: info@friendsofruby.ca"
+    },
+    {
+      name: "Breakaway Community Services – Youth Harm Reduction Program",
+      url: "https://breakawaycs.ca/",
+      description: "Harm reduction and substance use support for youth, including LGBTQ+ programming. Address: 1456 Gerrard St E, Toronto, ON M4L 2A1. Phone: (416) 469-5211. Email: info@breakawaycs.ca"
+    },
+    {
+      name: "Delisle Youth Services (Skylark Youth)",
+      url: "https://skylarkyouth.org/",
+      description: "Counselling and wraparound services for youth ages 0–24, with LGBTQ+ affirming supports. Address: 57 Adelaide St W, Toronto, ON M5H 1M6. Phone: (416) 544-1313. Email: info@skylarkyouth.org"
+    },
+    {
+      name: "QTBIPOC Youth Project – Planned Parenthood Toronto",
+      url: "https://ppt.on.ca/",
+      description: "Peer-led programming and health support for Queer, Trans, Black, Indigenous, and racialized youth. Address: 36B Prince Arthur Ave, Toronto, ON M5R 1A9. Phone: (416) 961-0113. Email: info@ppt.on.ca"
+    },
+    {
+      name: "Toronto Kiwanis Boys and Girls Clubs – LGBTQ+ Inclusion Programs",
+      url: "https://believeinkids.ca/",
+      description: "Community and after-school programs for children and youth, with inclusive spaces for LGBTQ+ youth. Address: 1640 Queen St E, Toronto, ON M4L 1G6. Phone: (416) 392-0054. Email: info@believeinkids.ca"
+    },
+    {
+      name: "Canadian Centre for Gender & Sexual Diversity (Toronto Office)",
+      url: "https://ccgsd-ccdgs.org/",
+      description: "Anti-oppression and anti-bullying education, youth training, and LGBTQ+ inclusion advocacy. Address: 2 Carlton St, Suite 1306, Toronto, ON M5B 1J3. Phone: (613) 222-2215. Email: info@ccgsd-ccdgs.org"
+    },
+    {
+      name: "Camp fYrefly – Toronto Chapter",
+      url: "https://fyrefly.ualberta.ca/",
+      description: "Leadership retreat for LGBTQ+ and gender-diverse youth, focused on wellness, creativity, and empowerment. Contact via website for Toronto chapter information. Email: fyrefly@ualberta.ca"
+    },
+    {
+      name: "Rexdale Women's Centre – LGBTQ+ Newcomer Youth Programs",
+      url: "https://rexdalewomen.org/",
+      description: "Supports immigrant women, families, and youth with LGBTQ+-affirming programs for newcomers. Address: 925 Albion Rd, Suite 309, Etobicoke, ON M9V 1A6. Phone: (416) 745-0062. Email: info@rexdalewomen.org"
+    },
+    {
+      name: "For Youth Initiative (FYI)",
+      url: "https://foryouth.ca/",
+      description: "Empowers racialized and newcomer youth with education, leadership, and employment programs. Address: 5961 Steeles Ave W, Toronto, ON M9L 2V7. Phone: (647) 748-3949. Email: info@foryouth.ca"
+    },
+    {
+      name: "Parkdale Queen West Community Health Centre – Youth Health Program",
+      url: "https://pqwchc.org/",
+      description: "Inclusive youth health programs, mental health support, LGBTQ+ safe space drop-ins. Address: 168 Bathurst St, Toronto, ON M5V 2R4. Phone: (416) 703-6000. Email: info@pqwchc.org"
+    },
+    {
+      name: "Griffin Centre – ReachOUT",
+      url: "https://reachout.ca/",
+      description: "Counseling, support groups, and leadership opportunities for LGBTQ+ youth and allies, especially BIPOC and newcomer communities. Address: 1126 Finch Ave W, Unit 16, Toronto, ON M3J 3J6. Phone: (416) 222-1153. Email: reachout@griffincentre.org"
+    },
+    {
+      name: "Central Toronto Youth Services (CTYS)",
+      url: "https://ctys.org/",
+      description: "Mental health and support services for youth ages 12–25, including LGBTQ+ and trans youth programs. Address: 65 Wellesley St E, Suite 300, Toronto, ON M4Y 1G7. Phone: (416) 924-2100. Email: info@ctys.org"
+    },
+    {
+      name: "YOUTHline (LGBT Youth Line)",
+      url: "https://youthline.ca/",
+      description: "Peer support through phone, text, and chat for LGBTQ+ youth under 29 across Ontario. Mailing Address: PO Box 73118, Wood Street PO, Toronto, ON M4Y 2W5. Phone/Text: 1-800-268-9688. Email: info@youthline.ca"
+    },
+    {
+      name: "Asian Community AIDS Services (ACAS) – LGBTQ+ Youth Programs",
+      url: "https://acas.org/",
+      description: "Services for East & Southeast Asian LGBTQ+ youth, including sexual health and peer leadership. Address: 260 Spadina Ave, Suite 410, Toronto, ON M5T 2E4. Phone: (416) 963-4300. Email: youth@acas.org"
+    },
+    {
+      name: "Access Alliance Multicultural Health and Community Services",
+      url: "https://accessalliance.ca/",
+      description: "Multicultural services including youth drop-ins, LGBTQ+ newcomer groups, and health access. Address: 340 College St, Suite 500, Toronto, ON M5T 3A9. Phone: (416) 324-8677. Email: info@accessalliance.ca"
+    },
+    {
+      name: "Sprott House – YMCA of Greater Toronto",
+      url: "https://ymcagta.org/",
+      description: "Transitional housing program for LGBTQ2S youth experiencing homelessness. Address: 21 Walmer Rd, Toronto, ON M5R 2W7. Phone: (416) 928-9622. Email: info@ymcagta.org"
+    },
+    {
+      name: "The Get REAL Movement",
+      url: "https://thegetrealmovement.com/",
+      description: "Anti-discrimination workshops in schools, focused on LGBTQ+ inclusion and allyship. Mailing Address: 1255 Bay St, Suite 2301, Toronto, ON M5R 2A9. Phone: (416) 645-0111. Email: info@thegetrealmovement.com"
+    },
+    {
+      name: "Urban Rez Solutions – Queer Trans Youth of Colour Programming",
+      url: "https://urbanrezsolutions.com/",
+      description: "Mediation, social justice, and leadership development with programming for 2SLGBTQ+ youth of colour. Based in Toronto – contact via website. Phone: (416) 803-5593. Email: info@urbanrezsolutions.com"
+    },
+    {
+      name: "Toronto District School Board – Gender-Based Violence Prevention Office",
+      url: "https://tdsb.on.ca/",
+      description: "LGBTQ+ affirming policies, resources, and workshops in schools. Youth-led initiatives supported through the board. Address: 5050 Yonge St, Toronto, ON M2N 5N8. Phone: (416) 397-3000."
+    },
+    {
+      name: "Maggie's Toronto Sex Workers Action Project – Youth & Trans Outreach",
+      url: "https://maggiestoronto.org/",
+      description: "Harm reduction, support, and advocacy for LGBTQ+ and youth sex workers. Address: 305-569 Parliament St, Toronto, ON M4X 1P7. Phone: (647) 344-3135. Email: info@maggiestoronto.org"
+    },
+    {
+      name: "SOY – Supporting Our Youth (Sherbourne Health)",
+      url: "https://sherbourne.on.ca/soy/",
+      description: "Programs for 2SLGBTQ youth including mentorship, health, and newcomer supports. Address: 333 Sherbourne St, Toronto, ON M5A 2S5. Phone: (416) 324-4180. Email: soy@sherbourne.on.ca"
+    },
+    {
+      name: "Egale Canada",
+      url: "https://egale.ca/",
+      description: "National 2SLGBTQI advocacy with Toronto-based youth housing and mental health programming. Address: 120 Carlton St, Suite 217, Toronto, ON M5A 4K2. Phone: (416) 964-7887. Email: info@egale.ca"
+    },
+    {
+      name: "The 519 – Youth Programming",
+      url: "https://the519.org/",
+      description: "Community hub offering inclusive youth programming, housing support, and leadership initiatives. Address: 519 Church St, Toronto, ON M4Y 2C9. Phone: (416) 392-6874. Email: info@the519.org"
+    },
+    {
+      name: "BlackCAP – Youth and LGBTQ+ African, Caribbean, Black (ACB) Programming",
+      url: "https://blackcap.ca/",
+      description: "HIV/AIDS support and LGBTQ+ affirming services for Black youth in Toronto. Address: 20 Victoria St, 4th Floor, Toronto, ON M5C 2N8. Phone: (416) 977-9955. Email: info@black-cap.com"
+    },
+    {
+      name: "StepStones for Youth",
+      url: "https://stepstonesforyouth.com/",
+      description: "Wraparound support for vulnerable youth including housing, mentorship, and LGBTQ+ affirming services. Address: 150 Eglinton Ave E, Suite 406, Toronto, ON M4P 1E8. Phone: (416) 893-5196. Email: info@stepstonesforyouth.com"
+    },
+    {
+      name: "Stella's Place",
+      url: "https://stellasplace.ca/",
+      description: "Mental health support for youth 16–29, with inclusive services for LGBTQ+ and gender-diverse individuals. Address: 54 Wolseley St, Toronto, ON M5T 1A5. Phone: (416) 461-2345. Email: connect@stellasplace.ca"
+    },
+    {
+      name: "ArtReach Toronto",
+      url: "https://artreachtoronto.ca/",
+      description: "Funding and mentorship for youth-led arts projects, prioritizing BIPOC and LGBTQ+ youth in underserved communities. Address: 401 Richmond St W, Toronto, ON M5V 3A8. Phone: (647) 802-2233. Email: info@artreachtoronto.ca"
+    },
+    {
+      name: "West Neighbourhood House – Meeting Place Youth Programs",
+      url: "https://westnh.org/",
+      description: "Harm reduction, housing help, and social inclusion programs for street-involved and LGBTQ+ youth. Address: 588 Queen St W, Toronto, ON M6J 1E3. Phone: (416) 532-4828. Email: info@westnh.org"
+    },
+    {
+      name: "The Neighbourhood Group – Youth and LGBTQ+ Services",
+      url: "https://tngcs.org/",
+      description: "Employment, housing, and wellness supports for youth, including dedicated LGBTQ+ outreach. Address: 349 Ontario St, Toronto, ON M5A 2V8. Phone: (416) 925-4363. Email: info@tngcs.org"
+    },
+    {
+      name: "Native Youth Resource Centre (NWRCT)",
+      url: "https://nwrct.ca/",
+      description: "Indigenous-led programming for urban Indigenous youth, including Two-Spirit and LGBTQ+ affirming supports. Address: 191 Gerrard St E, Toronto, ON M5A 2E5. Phone: (416) 963-9963. Email: reception@nwrct.ca"
     }
   ],
   "Food Security": [
