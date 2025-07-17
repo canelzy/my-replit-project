@@ -1395,7 +1395,7 @@ export default function Home() {
     "Education": { from: "from-green-600", to: "to-green-700", icon: "fas fa-graduation-cap", emoji: "🎓" },
     "Embassies": { from: "from-red-600", to: "to-red-700", icon: "fas fa-flag", emoji: "🏛️" },
     "Major Transportation": { from: "from-orange-600", to: "to-orange-700", icon: "fas fa-plane", emoji: "🚗" },
-    "Toronto Non-Profits": { from: "from-teal-600", to: "to-cyan-700", icon: "fas fa-city", emoji: "🏙️" },
+    "Toronto Non-Profits": { from: "from-purple-600", to: "to-purple-700", icon: "fas fa-city", emoji: "🏙️" },
 
   };
 
@@ -1532,8 +1532,8 @@ export default function Home() {
                       {category === "Toronto Non-Profits" ? (
                         <div className="space-y-6">
                           {/* Info Bar */}
-                          <div className="bg-teal-50 p-4 rounded-lg">
-                            <div className="text-sm text-teal-700 text-center">
+                          <div className="bg-purple-50 p-4 rounded-lg">
+                            <div className="text-sm text-purple-700 text-center">
                               <i className="fas fa-info-circle mr-2"></i>
                               Toronto-based non-profit organizations categorized by their primary focus areas and services.
                             </div>
@@ -1554,7 +1554,7 @@ export default function Home() {
                               return (
                                 <div key={subcategory} className="rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300">
                                   <button
-                                    className="p-4 bg-gradient-to-r from-teal-500 to-cyan-600 text-white hover:from-teal-600 hover:to-cyan-700 transition-all duration-200 text-left w-full"
+                                    className="p-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 transition-all duration-200 text-left w-full"
                                     onClick={() => toggleTorontoNonprofitCategory(subcategory)}
                                   >
                                     <div className="flex items-center justify-between">
@@ -1590,7 +1590,7 @@ export default function Home() {
                                                   href={nonprofit.url}
                                                   target="_blank"
                                                   rel="noopener noreferrer"
-                                                  className="px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-sm hover:bg-teal-200 transition-colors"
+                                                  className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm hover:bg-purple-200 transition-colors"
                                                 >
                                                   <i className="fas fa-external-link-alt mr-1"></i>
                                                   Visit
