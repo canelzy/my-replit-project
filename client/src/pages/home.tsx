@@ -2548,7 +2548,46 @@ export default function Home() {
   const [isOfficialDirectoriesExpanded, setIsOfficialDirectoriesExpanded] = useState<boolean>(false);
   const [expandedNonprofitCategories, setExpandedNonprofitCategories] = useState<string[]>([]);
   const [expandedTorontoNonprofitCategories, setExpandedTorontoNonprofitCategories] = useState<string[]>([]);
+  const [torontoNonprofitSearchTerms, setTorontoNonprofitSearchTerms] = useState<{[key: string]: string}>({});
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
+  // Common tags for filtering
+  const commonTags = [
+    "health", "legal", "youth", "women", "employment", "housing", "education", 
+    "mental health", "food", "seniors", "immigrant", "refugee", "disability", 
+    "family", "community", "training", "arts", "culture", "advocacy", "support"
+  ];
+
+  // Helper function to extract tags from organization descriptions
+  const extractTags = (description: string): string[] => {
+    const tags: string[] = [];
+    const lowerDesc = description.toLowerCase();
+    
+    commonTags.forEach(tag => {
+      if (lowerDesc.includes(tag.toLowerCase())) {
+        tags.push(tag);
+      }
+    });
+    
+    return tags;
+  };
+
+  // Helper function to toggle tag selection
+  const toggleTag = (tag: string) => {
+    setSelectedTags(prev => 
+      prev.includes(tag) 
+        ? prev.filter(t => t !== tag)
+        : [...prev, tag]
+    );
+  };
+
+  // Helper function to update search term for a specific category
+  const updateSearchTerm = (category: string, term: string) => {
+    setTorontoNonprofitSearchTerms(prev => ({
+      ...prev,
+      [category]: term
+    }));
+  };
 
   // Load favorites from localStorage on component mount
   useEffect(() => {
@@ -2864,14 +2903,63 @@ export default function Home() {
                             </div>
                           </div>
 
+                          {/* Global Tag Filter */}
+                          <div className="bg-white p-4 rounded-lg shadow-md border">
+                            <div className="mb-3">
+                              <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                                <i className="fas fa-tags mr-2 text-purple-600"></i>
+                                Filter by Tags
+                              </h4>
+                              <div className="flex flex-wrap gap-2">
+                                {commonTags.map(tag => (
+                                  <button
+                                    key={tag}
+                                    onClick={() => toggleTag(tag)}
+                                    className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
+                                      selectedTags.includes(tag)
+                                        ? 'bg-purple-600 text-white shadow-md'
+                                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                    }`}
+                                  >
+                                    {tag}
+                                  </button>
+                                ))}
+                              </div>
+                              {selectedTags.length > 0 && (
+                                <div className="mt-2 flex items-center justify-between">
+                                  <span className="text-sm text-gray-600">
+                                    {selectedTags.length} tag{selectedTags.length !== 1 ? 's' : ''} selected
+                                  </span>
+                                  <button
+                                    onClick={() => setSelectedTags([])}
+                                    className="text-sm text-purple-600 hover:text-purple-800 underline"
+                                  >
+                                    Clear all
+                                  </button>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+
                           {/* Toronto Non-Profits Categories - Accordion Style */}
                           <div className="space-y-4">
                             {Object.entries(torontoNonProfitsData).map(([subcategory, nonprofits]) => {
+                              const categorySearchTerm = torontoNonprofitSearchTerms[subcategory] || "";
                               const filteredNonprofits = nonprofits.filter(nonprofit => {
-                                const matchesSearch = searchTerm === "" || 
+                                // Search filtering
+                                const matchesGlobalSearch = searchTerm === "" || 
                                   nonprofit.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                                   nonprofit.description.toLowerCase().includes(searchTerm.toLowerCase());
-                                return matchesSearch;
+                                
+                                const matchesCategorySearch = categorySearchTerm === "" || 
+                                  nonprofit.name.toLowerCase().includes(categorySearchTerm.toLowerCase()) ||
+                                  nonprofit.description.toLowerCase().includes(categorySearchTerm.toLowerCase());
+                                
+                                // Tag filtering
+                                const matchesTags = selectedTags.length === 0 || 
+                                  selectedTags.some(tag => extractTags(nonprofit.description).includes(tag));
+                                
+                                return matchesGlobalSearch && matchesCategorySearch && matchesTags;
                               });
 
                               if (filteredNonprofits.length === 0) return null;
@@ -2929,6 +3017,41 @@ export default function Home() {
                                   
                                   {isTorontoNonprofitCategoryExpanded(subcategory) && (
                                     <div className="p-6 bg-white bg-opacity-50">
+                                      {/* Category Search Filter */}
+                                      <div className="mb-4">
+                                        <div className="relative">
+                                          <input
+                                            type="text"
+                                            placeholder={`Search within ${subcategory}...`}
+                                            value={categorySearchTerm}
+                                            onChange={(e) => updateSearchTerm(subcategory, e.target.value)}
+                                            className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                          />
+                                          <i className="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                                          {categorySearchTerm && (
+                                            <button
+                                              onClick={() => updateSearchTerm(subcategory, "")}
+                                              className="absolute right-3 top-3 text-gray-400 hover:text-gray-600"
+                                            >
+                                              <i className="fas fa-times"></i>
+                                            </button>
+                                          )}
+                                        </div>
+                                        
+                                        {/* Results Counter */}
+                                        {(categorySearchTerm || selectedTags.length > 0) && (
+                                          <div className="mt-2 text-sm text-gray-600">
+                                            <i className="fas fa-filter mr-1"></i>
+                                            Showing {filteredNonprofits.length} of {nonprofits.length} organizations
+                                            {selectedTags.length > 0 && (
+                                              <span className="ml-2">
+                                                • Filtered by {selectedTags.length} tag{selectedTags.length !== 1 ? 's' : ''}
+                                              </span>
+                                            )}
+                                          </div>
+                                        )}
+                                      </div>
+                                      
                                       <div className="space-y-4">
                                         {filteredNonprofits.map((nonprofit, index) => {
                                           const cardColors = [
@@ -2972,6 +3095,8 @@ export default function Home() {
                                             return formattedDescription;
                                           };
 
+                                          const organizationTags = extractTags(nonprofit.description);
+                                          
                                           return (
                                             <div key={index} className={`p-4 ${cardColor} rounded-lg shadow-md border-2 hover:shadow-lg transition-all duration-300`}>
                                               <div className="flex items-start space-x-4">
@@ -2981,9 +3106,25 @@ export default function Home() {
                                                 <div className="flex-1">
                                                   <h5 className="font-bold text-gray-900 mb-2 text-lg">{nonprofit.name}</h5>
                                                   <p 
-                                                    className="text-sm text-gray-700 leading-relaxed"
+                                                    className="text-sm text-gray-700 leading-relaxed mb-3"
                                                     dangerouslySetInnerHTML={{ __html: formatDescriptionWithLinks(nonprofit.description) }}
                                                   />
+                                                  {organizationTags.length > 0 && (
+                                                    <div className="flex flex-wrap gap-1 mt-2">
+                                                      {organizationTags.map((tag, tagIndex) => (
+                                                        <span
+                                                          key={tagIndex}
+                                                          className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                                            selectedTags.includes(tag)
+                                                              ? 'bg-purple-600 text-white'
+                                                              : 'bg-gray-200 text-gray-600'
+                                                          }`}
+                                                        >
+                                                          {tag}
+                                                        </span>
+                                                      ))}
+                                                    </div>
+                                                  )}
                                                 </div>
                                               </div>
                                             </div>
