@@ -464,6 +464,56 @@ const torontoNonProfitsData = {
       name: "Employment and Education Centre (EEC)",
       url: "https://eecentre.org/",
       description: "Employment placement, career coaching, and skills upgrading for newcomers."
+    },
+    {
+      name: "The Career Foundation",
+      url: "https://careerfoundation.com/",
+      description: "Job matching, resume support, youth training, and programs for internationally trained professionals."
+    },
+    {
+      name: "JVS Toronto",
+      url: "https://jvstoronto.org/",
+      description: "Employment, career counselling, newcomer programs, and disability employment services."
+    },
+    {
+      name: "Afghan Women's Organization (AWO) Refugee and Immigrant Services",
+      url: "https://afghanwomen.org/",
+      description: "Specialized support for Afghan and other newcomer women and families, including ESL, settlement, and job training."
+    },
+    {
+      name: "Black Creek Community Health Centre – Newcomer Services",
+      url: "https://bcchc.com/",
+      description: "Health and settlement support, especially for low-income and racialized communities in the Jane-Finch area."
+    },
+    {
+      name: "Scadding Court Community Centre – Newcomer Services",
+      url: "https://scaddingcourt.org/",
+      description: "Integrated settlement support, employment readiness, and small business supports for newcomers."
+    },
+    {
+      name: "Centre Francophone du Grand Toronto",
+      url: "https://centrefranco.org/",
+      description: "Offers French-language services including settlement, employment, and health care for Francophone immigrants."
+    },
+    {
+      name: "WoodGreen Community Services",
+      url: "https://woodgreen.org/",
+      description: "Comprehensive services including housing, employment, newcomer support, seniors care, and youth programs."
+    },
+    {
+      name: "Sojourn House",
+      url: "https://sojournhouse.org/",
+      description: "Transitional housing and settlement support for refugees and asylum seekers."
+    },
+    {
+      name: "Fred Victor – Employment & Training Services",
+      url: "https://fredvictor.org/",
+      description: "Offers housing, employment services, and mental health support, particularly for marginalized populations."
+    },
+    {
+      name: "Access Alliance Multicultural Health and Community Services",
+      url: "https://accessalliance.ca/",
+      description: "Health, employment, and settlement support for immigrants, refugees, and racialized communities."
     }
   ],
   "Arts & Culture": [
