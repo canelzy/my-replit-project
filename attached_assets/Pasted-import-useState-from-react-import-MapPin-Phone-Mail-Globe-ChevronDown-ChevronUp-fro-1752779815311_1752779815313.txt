@@ -1,0 +1,69 @@
+import { useState } from "react";
+import { MapPin, Phone, Mail, Globe, ChevronDown, ChevronUp } from "lucide-react";
+
+type Organization = {
+  name: string;
+  address: string;
+  website: string;
+  email: string;
+  phone: string;
+  description: string;
+};
+
+type Category = {
+  title: string;
+  organizations: Organization[];
+};
+
+const categoryColors: Record<string, string> = {
+  "Settlement & Employment": "bg-green-500",
+  "African & Black Communities": "bg-neutral-800",
+};
+
+export default function OrgAccordion({ categories }: { categories: Category[] }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleIndex = (index: number) =>
+    setOpenIndex(openIndex === index ? null : index);
+
+  return (
+    <div className="w-full max-w-3xl mx-auto">
+      {categories.map((cat, index) => {
+        const isOpen = openIndex === index;
+        const headerColor = categoryColors[cat.title] || "bg-gray-500";
+        return (
+          <div key={index} className="mb-4">
+            <button
+              onClick={() => toggleIndex(index)}
+              className={`w-full flex justify-between items-center px-5 py-4 text-white font-semibold rounded-xl shadow-md transition ${headerColor}`}
+              aria-expanded={isOpen}
+            >
+              <span>{cat.title}</span>
+              <span className="text-sm">{cat.organizations.length} organizations</span>
+              {isOpen ? <ChevronUp className="ml-3 w-5 h-5" /> : <ChevronDown className="ml-3 w-5 h-5" />}
+            </button>
+
+            {isOpen && (
+              <div className="mt-2 bg-white dark:bg-zinc-900 rounded-xl p-4 shadow-inner">
+                {cat.organizations.map((org, idx) => (
+                  <div key={idx} className="border-b border-gray-200 dark:border-zinc-700 pb-4 mb-4 last:border-b-0 last:pb-0 last:mb-0">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      {org.name}
+                    </h3>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">{org.description}</p>
+                    <div className="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400">
+                      <p><MapPin className="inline w-4 h-4 mr-1" /> {org.address}</p>
+                      <p><Phone className="inline w-4 h-4 mr-1" /> {org.phone}</p>
+                      <p><Mail className="inline w-4 h-4 mr-1" /> <a href={`mailto:${org.email}`} className="underline text-blue-600">{org.email}</a></p>
+                      <p><Globe className="inline w-4 h-4 mr-1" /> <a href={org.website} className="underline text-blue-600" target="_blank">{org.website}</a></p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
