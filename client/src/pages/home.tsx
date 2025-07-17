@@ -2184,7 +2184,16 @@ export default function Home() {
                                             <div key={index} className={`p-3 ${cardColor} rounded-lg shadow-sm border`}>
                                               <div className="flex items-center justify-between">
                                                 <div className="flex-1">
-                                                  <h5 className="font-semibold text-gray-900 mb-1">{nonprofit.name}</h5>
+                                                  <h5 className="font-semibold text-gray-900 mb-1">
+                                                    <a 
+                                                      href={nonprofit.url}
+                                                      target="_blank"
+                                                      rel="noopener noreferrer"
+                                                      className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                                                    >
+                                                      {nonprofit.name}
+                                                    </a>
+                                                  </h5>
                                                   <p className="text-sm text-gray-600">{nonprofit.description}</p>
                                                 </div>
                                                 <div className="flex items-center space-x-2 ml-4">
