@@ -238,6 +238,58 @@ const ontarioNonProfits = {
       url: "https://www.ohcc-ccso.ca/",
       description: "Community health promotion and development."
     }
+  ],
+  "Non-Profits in Toronto": [
+    {
+      name: "United Way Greater Toronto",
+      url: "https://www.unitedwaygt.org/",
+      description: "Leading funder of social services in the Greater Toronto Area."
+    },
+    {
+      name: "Daily Bread Food Bank",
+      url: "https://www.dailybread.ca/",
+      description: "Toronto's largest food bank providing emergency food assistance."
+    },
+    {
+      name: "Centre for Addiction and Mental Health (CAMH)",
+      url: "https://www.camh.ca/",
+      description: "Canada's largest mental health and addiction hospital."
+    },
+    {
+      name: "Toronto Public Library Foundation",
+      url: "https://www.torontopubliclibrary.ca/",
+      description: "Supporting library services and programs across Toronto."
+    },
+    {
+      name: "SickKids Foundation",
+      url: "https://www.sickkidsfoundation.com/",
+      description: "Supporting The Hospital for Sick Children in Toronto."
+    },
+    {
+      name: "Toronto Community Housing Corporation",
+      url: "https://www.torontohousing.ca/",
+      description: "Providing affordable housing solutions in Toronto."
+    },
+    {
+      name: "Yonge Street Mission",
+      url: "https://www.ysm.ca/",
+      description: "Supporting homeless and at-risk individuals in Toronto."
+    },
+    {
+      name: "Covenant House Toronto",
+      url: "https://www.covenanthousetoronto.ca/",
+      description: "Crisis shelter and services for homeless youth."
+    },
+    {
+      name: "Toronto Foundation",
+      url: "https://www.torontofoundation.ca/",
+      description: "Community foundation supporting charitable causes in Toronto."
+    },
+    {
+      name: "Good Shepherd Centres",
+      url: "https://www.goodshepherd.ca/",
+      description: "Housing, health, and support services for vulnerable populations."
+    }
   ]
 };
 
