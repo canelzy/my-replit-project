@@ -1864,13 +1864,13 @@ export default function Home() {
                        category === "Education" ? "50+" :
                        category === "Embassies" ? "200+" :
                        category === "Major Transportation" ? "50+" :
-                       category === "Toronto Non-Profits" ? "25" :
+                       category === "Toronto Non-Profits" ? "200+" :
                        filteredLinks.length} service{
                         (category === "Police & Security Forces" ? 54 : 
                          category === "Education" ? 50 :
                          category === "Embassies" ? 200 :
                          category === "Major Transportation" ? 50 :
-                         category === "Toronto Non-Profits" ? 25 :
+                         category === "Toronto Non-Profits" ? 200 :
                          filteredLinks.length) !== 1 ? 's' : ''
                       } available
                       {!isCategoryExpanded(category) && <span className="ml-2 font-medium">• Click to expand</span>}
