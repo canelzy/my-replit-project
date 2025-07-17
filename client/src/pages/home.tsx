@@ -1761,7 +1761,7 @@ export default function Home() {
                                   </button>
                                   
                                   {isTorontoNonprofitCategoryExpanded(subcategory) && (
-                                    <div className="p-4 bg-gray-50">
+                                    <div className="p-4">
                                       <div className="space-y-3">
                                         {filteredNonprofits.map((nonprofit, index) => {
                                           const cardColors = [
