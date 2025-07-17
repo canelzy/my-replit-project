@@ -2940,7 +2940,33 @@ export default function Home() {
 
 
                           {/* Toronto Non-Profits - Simple Accordion */}
-                          <SimpleOrgAccordion categories={convertToAccordionFormat()} />
+                          <div className="space-y-4">
+                            {Object.entries(torontoNonProfitsData).map(([category, organizations]) => (
+                              <div key={category} className="border border-gray-200 rounded-lg shadow-md overflow-hidden">
+                                <div className="bg-purple-600 text-white px-4 py-3 font-semibold">
+                                  {category} ({organizations.length} organizations)
+                                </div>
+                                <div className="bg-white p-4 space-y-3">
+                                  {organizations.slice(0, 3).map((org, idx) => (
+                                    <div key={idx} className="border-b border-gray-200 pb-2 last:border-b-0">
+                                      <h4 className="font-medium text-gray-900">{org.name}</h4>
+                                      <p className="text-sm text-gray-600">{org.description}</p>
+                                      {org.url && (
+                                        <a href={org.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 text-sm underline">
+                                          Visit Website
+                                        </a>
+                                      )}
+                                    </div>
+                                  ))}
+                                  {organizations.length > 3 && (
+                                    <p className="text-sm text-gray-500 italic">
+                                      ...and {organizations.length - 3} more organizations
+                                    </p>
+                                  )}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
                         </div>
                       ) : category === "Major Transportation" ? (
                         <div className="space-y-6">
