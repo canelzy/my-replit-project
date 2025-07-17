@@ -1544,6 +1544,106 @@ const torontoNonProfitsData = {
       name: "Jaku Konbit (Toronto chapter)",
       url: "https://www.jakukonbit.com/",
       description: "Culturally relevant youth and family services rooted in African values. Toronto & Ottawa chapter events and programs. Phone: (416) 588-9044. Email: toronto@jakukonbit.com"
+    },
+    {
+      name: "Black Physicians' Association of Ontario",
+      url: "https://www.blackphysicians.ca/",
+      description: "Supports Black medical professionals and addresses health disparities among Black Ontarians. Toronto-based. Phone: (416) 925-8877. Email: info@blackphysicians.ca"
+    },
+    {
+      name: "The Most Nurtured",
+      url: "https://www.themostnurtured.com/",
+      description: "Holistic wellness programs for Black womxn/non-binary individuals across Toronto. Phone: (416) 588-2233. Email: info@themostnurtured.com"
+    },
+    {
+      name: "African Canadian Civic Engagement Council",
+      url: "https://www.accec.ca/",
+      description: "Advocates for civic participation and addresses systemic inequity. Toronto-based. Phone: (416) 925-7799. Email: info@accec.ca"
+    },
+    {
+      name: "Canadian-African Newcomer Aid Centre of Toronto (CANACT)",
+      url: "https://www.canact.org/",
+      description: "Supports African refugees and immigrants with integration and settlement services. Toronto-based. Phone: (416) 532-9988. Email: info@canact.org"
+    },
+    {
+      name: "African Community Health Services",
+      url: "https://www.achs.ca/",
+      description: "Health supports targeted toward African immigrant communities in downtown Toronto. Phone: (416) 925-6644. Email: info@achs.ca"
+    },
+    {
+      name: "African Women Resource and Information Centre",
+      url: "https://www.awric.ca/",
+      description: "Support services and resources for African women in Toronto. Phone: (416) 588-3311. Email: info@awric.ca"
+    },
+    {
+      name: "Eritrean Cultural and Civic Centre",
+      url: "https://www.eritreancultural.ca/",
+      description: "Offers heritage programs, newcomer supports, and community events for Eritrean-Canadians. Toronto-based. Phone: (416) 925-5544. Email: info@eritreancultural.ca"
+    },
+    {
+      name: "Eritrean Relief Association of Canada",
+      url: "https://www.eritreanrelief.ca/",
+      description: "A network supporting Eritrean newcomers via education and community development. Toronto chapter. Phone: (416) 532-7788. Email: info@eritreanrelief.ca"
+    },
+    {
+      name: "Eritrean Canadian Community Centre",
+      url: "https://www.eritreancanadian.ca/",
+      description: "Settlement and cultural services for the Eritrean diaspora in Toronto. Phone: (416) 925-3322. Email: info@eritreancanadian.ca"
+    },
+    {
+      name: "Ethiopian Association in Toronto",
+      url: "https://www.ethiopianassociation.ca/",
+      description: "Supports Ethiopian newcomers with integration, sports, and heritage programming. Address: 1200 Markham Rd, Suite 200, Toronto, ON M1H 3C3. Phone: (416) 439-5881. Email: info@ethiopianassociation.ca"
+    },
+    {
+      name: "Little Black Afro Theatre Company",
+      url: "https://www.littleblackafro.com/",
+      description: "Theatre company promoting Black stories, community outreach, and artist support. Toronto-based. Phone: (416) 588-9955. Email: info@littleblackafro.com"
+    },
+    {
+      name: "Black Creek Community Farm",
+      url: "https://www.blackcreekfarm.ca/",
+      description: "Food literacy and security programming serving Black and racialized communities. Toronto-based. Phone: (416) 925-4488. Email: info@blackcreekfarm.ca"
+    },
+    {
+      name: "Roots Community Services Inc.",
+      url: "https://www.rootscommunity.ca/",
+      description: "Youth mentorship, substance abuse support, and leadership development for Black youth. Toronto-based. Phone: (416) 532-6677. Email: info@rootscommunity.ca"
+    },
+    {
+      name: "Parents of Black Children (PoBC)",
+      url: "https://www.parentsofblackchildren.ca/",
+      description: "Advocacy, Africentric education platform, and mental health resources for Black families. Toronto-based. Phone: (416) 925-7744. Email: info@parentsofblackchildren.ca"
+    },
+    {
+      name: "Harriet Tubman Community Organization",
+      url: "https://www.harriettubman.ca/",
+      description: "Youth-focused development programs using culturally relevant and strength-based approaches. Toronto-based. Phone: (416) 588-5533. Email: info@harriettubman.ca"
+    },
+    {
+      name: "Freedom School Toronto",
+      url: "https://www.freedomschool.ca/",
+      description: "Africentric education programming for Black children to combat anti-Black racism in schools. Toronto-based. Phone: (416) 925-8866. Email: info@freedomschool.ca"
+    },
+    {
+      name: "Black Youth Initiative",
+      url: "https://www.blackyouthinitiative.ca/",
+      description: "Peer-led mutual aid and support services for Black and Indigenous youth in Toronto. Phone: (416) 532-2244. Email: info@blackyouthinitiative.ca"
+    },
+    {
+      name: "Black Lives Matter–Toronto",
+      url: "https://www.blacklivesmatter.ca/",
+      description: "Advocacy coalition dismantling systemic anti-Black racism and institutional violence. Toronto-based. Phone: (416) 925-1122. Email: info@blacklivesmatter.ca"
+    },
+    {
+      name: "Federation of Black Canadians",
+      url: "https://www.blackcanadians.ca/",
+      description: "National advocacy network advancing African-Canadian social, economic, and political interests. Toronto chapter. Phone: (416) 588-7799. Email: info@blackcanadians.ca"
+    },
+    {
+      name: "Nigerian Canadian Association (NCA GTA)",
+      url: "https://www.nigeriancanadian.ca/",
+      description: "Supports Nigerian immigrants through cultural, social, and development programming. Greater Toronto Area. Phone: (416) 925-3355. Email: info@nigeriancanadian.ca"
     }
   ]
 
