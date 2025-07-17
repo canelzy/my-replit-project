@@ -354,20 +354,152 @@ const linksData: Record<string, LinkItem[]> = {
 
   "Toronto Non-Profits": [
     { title: "United Way Greater Toronto", description: "Leading funder of social services in the Greater Toronto Area", url: "https://www.unitedwaygt.org/", icon: "fas fa-hands-helping" },
-    { title: "Daily Bread Food Bank", description: "Toronto's largest food bank providing emergency food assistance", url: "https://www.dailybread.ca/", icon: "fas fa-bread-slice" },
-    { title: "Centre for Addiction and Mental Health (CAMH)", description: "Canada's largest mental health and addiction hospital", url: "https://www.camh.ca/", icon: "fas fa-brain" },
-    { title: "Toronto Public Library Foundation", description: "Supporting library services and programs across Toronto", url: "https://www.torontopubliclibrary.ca/", icon: "fas fa-book" },
-    { title: "SickKids Foundation", description: "Supporting The Hospital for Sick Children in Toronto", url: "https://www.sickkidsfoundation.com/", icon: "fas fa-child" },
-    { title: "Toronto Community Housing Corporation", description: "Providing affordable housing solutions in Toronto", url: "https://www.torontohousing.ca/", icon: "fas fa-home" },
-    { title: "Yonge Street Mission", description: "Supporting homeless and at-risk individuals in Toronto", url: "https://www.ysm.ca/", icon: "fas fa-heart" },
-    { title: "Covenant House Toronto", description: "Crisis shelter and services for homeless youth", url: "https://www.covenanthousetoronto.ca/", icon: "fas fa-shield-alt" },
     { title: "Toronto Foundation", description: "Community foundation supporting charitable causes in Toronto", url: "https://www.torontofoundation.ca/", icon: "fas fa-donate" },
-    { title: "Good Shepherd Centres", description: "Housing, health, and support services for vulnerable populations", url: "https://www.goodshepherd.ca/", icon: "fas fa-hands-helping" }
+    { title: "Centre for Addiction and Mental Health (CAMH)", description: "Canada's largest mental health and addiction hospital", url: "https://www.camh.ca/", icon: "fas fa-brain" },
+    { title: "SickKids Foundation", description: "Supporting The Hospital for Sick Children in Toronto", url: "https://www.sickkidsfoundation.com/", icon: "fas fa-child" },
+    { title: "Toronto Public Library Foundation", description: "Supporting library services and programs across Toronto", url: "https://www.torontopubliclibrary.ca/", icon: "fas fa-book" }
   ],
 
 };
 
-
+// Toronto Non-Profits by Category
+const torontoNonProfitsData = {
+  "Settlement & Employment": [
+    {
+      name: "COSTI Immigrant Services",
+      url: "https://www.costi.org/",
+      description: "Settlement services for newcomers to Canada in the GTA."
+    },
+    {
+      name: "ACCES Employment",
+      url: "https://accesemployment.ca/",
+      description: "Employment services for skilled immigrants and refugees."
+    },
+    {
+      name: "WoodGreen Community Services",
+      url: "https://www.woodgreen.org/",
+      description: "Employment, training, and community support services."
+    },
+    {
+      name: "Skills for Change",
+      url: "https://skillsforchange.org/",
+      description: "Employment services for newcomers and racialized communities."
+    },
+    {
+      name: "Toronto Employment and Social Services",
+      url: "https://www.toronto.ca/community-people/employment-social-support/",
+      description: "Employment support and social assistance programs."
+    }
+  ],
+  "Arts & Culture": [
+    {
+      name: "Toronto Arts Council",
+      url: "https://torontoartscouncil.org/",
+      description: "Supporting artists and arts organizations in Toronto."
+    },
+    {
+      name: "Canadian Opera Company",
+      url: "https://www.coc.ca/",
+      description: "Canada's largest opera company based in Toronto."
+    },
+    {
+      name: "Toronto Symphony Orchestra",
+      url: "https://www.tso.ca/",
+      description: "One of Canada's leading orchestras."
+    },
+    {
+      name: "The Theatre Centre",
+      url: "https://www.theatrecentre.org/",
+      description: "Supporting contemporary theatre in Toronto."
+    },
+    {
+      name: "Harbourfront Centre",
+      url: "https://www.harbourfrontcentre.com/",
+      description: "Contemporary arts and culture programming."
+    }
+  ],
+  "Youth & LGBTQ+": [
+    {
+      name: "The 519",
+      url: "https://www.the519.org/",
+      description: "Community centre serving LGBTQ2S+ communities."
+    },
+    {
+      name: "Covenant House Toronto",
+      url: "https://www.covenanthousetoronto.ca/",
+      description: "Crisis shelter and services for homeless youth."
+    },
+    {
+      name: "YMCA of Greater Toronto",
+      url: "https://www.ymcagta.org/",
+      description: "Youth programs and community services."
+    },
+    {
+      name: "Big Brothers Big Sisters of Toronto",
+      url: "https://www.bigbrothersbigsisters.ca/",
+      description: "Youth mentorship programs."
+    },
+    {
+      name: "Toronto Pride",
+      url: "https://www.pridetoronto.com/",
+      description: "Celebrating and supporting LGBTQ2S+ communities."
+    }
+  ],
+  "Food Security": [
+    {
+      name: "Daily Bread Food Bank",
+      url: "https://www.dailybread.ca/",
+      description: "Toronto's largest food bank providing emergency food assistance."
+    },
+    {
+      name: "North York Harvest Food Bank",
+      url: "https://www.northyorkharvest.com/",
+      description: "Food bank serving North York communities."
+    },
+    {
+      name: "Good Shepherd Centres",
+      url: "https://www.goodshepherd.ca/",
+      description: "Food programs and support services for vulnerable populations."
+    },
+    {
+      name: "Stop Community Food Centre",
+      url: "https://www.thestop.org/",
+      description: "Community food programs and advocacy."
+    },
+    {
+      name: "FoodShare Toronto",
+      url: "https://foodshare.net/",
+      description: "Food access programs and urban agriculture."
+    }
+  ],
+  "Environment & Sustainability": [
+    {
+      name: "Toronto Environmental Alliance",
+      url: "https://www.torontoenvironment.org/",
+      description: "Environmental advocacy and community action."
+    },
+    {
+      name: "Evergreen",
+      url: "https://www.evergreen.ca/",
+      description: "Creating healthy communities through environmental action."
+    },
+    {
+      name: "Environmental Defence Canada",
+      url: "https://environmentaldefence.ca/",
+      description: "Environmental advocacy and protection initiatives."
+    },
+    {
+      name: "Green Toronto",
+      url: "https://www.toronto.ca/services-payments/water-environment/environmentally-friendly-city-initiatives/",
+      description: "City of Toronto environmental programs."
+    },
+    {
+      name: "Live Green Toronto",
+      url: "https://www.livegreentoronto.ca/",
+      description: "Environmental initiatives and sustainability programs."
+    }
+  ]
+};
 
 // Canadian Embassies Worldwide Data
 const canadianEmbassiesData = {
@@ -1090,6 +1222,7 @@ export default function Home() {
   const [expandedTransportCategories, setExpandedTransportCategories] = useState<string[]>([]);
   const [isOfficialDirectoriesExpanded, setIsOfficialDirectoriesExpanded] = useState<boolean>(false);
   const [expandedNonprofitCategories, setExpandedNonprofitCategories] = useState<string[]>([]);
+  const [expandedTorontoNonprofitCategories, setExpandedTorontoNonprofitCategories] = useState<string[]>([]);
 
 
   // Load favorites from localStorage on component mount
@@ -1231,6 +1364,18 @@ export default function Home() {
     );
   };
 
+  const toggleTorontoNonprofitCategory = (category: string) => {
+    setExpandedTorontoNonprofitCategories(prev => 
+      prev.includes(category) 
+        ? [] // Close the current category
+        : [category] // Open only this category, close all others
+    );
+  };
+
+  const isTorontoNonprofitCategoryExpanded = (category: string) => {
+    return expandedTorontoNonprofitCategories.includes(category);
+  };
+
   // Initialize expanded continents on mount (start collapsed)
   useEffect(() => {
     setExpandedContinents([]);
@@ -1369,11 +1514,13 @@ export default function Home() {
                        category === "Education" ? "50+" :
                        category === "Embassies" ? "200+" :
                        category === "Major Transportation" ? "50+" :
+                       category === "Toronto Non-Profits" ? "25" :
                        filteredLinks.length} service{
                         (category === "Police & Security Forces" ? 54 : 
                          category === "Education" ? 50 :
                          category === "Embassies" ? 200 :
                          category === "Major Transportation" ? 50 :
+                         category === "Toronto Non-Profits" ? 25 :
                          filteredLinks.length) !== 1 ? 's' : ''
                       } available
                       {!isCategoryExpanded(category) && <span className="ml-2 font-medium">• Click to expand</span>}
@@ -1382,7 +1529,85 @@ export default function Home() {
                   
                   {isCategoryExpanded(category) && (
                     <div className="p-4 bg-white">
-                      {category === "Major Transportation" ? (
+                      {category === "Toronto Non-Profits" ? (
+                        <div className="space-y-6">
+                          {/* Info Bar */}
+                          <div className="bg-violet-50 p-4 rounded-lg">
+                            <div className="text-sm text-violet-700 text-center">
+                              <i className="fas fa-info-circle mr-2"></i>
+                              Toronto-based non-profit organizations categorized by their primary focus areas and services.
+                            </div>
+                          </div>
+
+                          {/* Toronto Non-Profits Categories - Accordion Style */}
+                          <div className="space-y-4">
+                            {Object.entries(torontoNonProfitsData).map(([subcategory, nonprofits]) => {
+                              const filteredNonprofits = nonprofits.filter(nonprofit => {
+                                const matchesSearch = searchTerm === "" || 
+                                  nonprofit.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                  nonprofit.description.toLowerCase().includes(searchTerm.toLowerCase());
+                                return matchesSearch;
+                              });
+
+                              if (filteredNonprofits.length === 0) return null;
+
+                              return (
+                                <div key={subcategory} className="rounded-xl shadow-lg bg-white border border-gray-200 overflow-hidden transition-all duration-300">
+                                  <button
+                                    className="p-4 bg-gradient-to-r from-violet-500 to-purple-600 text-white hover:from-violet-600 hover:to-purple-700 transition-all duration-200 text-left w-full"
+                                    onClick={() => toggleTorontoNonprofitCategory(subcategory)}
+                                  >
+                                    <div className="flex items-center justify-between">
+                                      <div className="flex items-center space-x-3">
+                                        <i className={`fas fa-${
+                                          subcategory === 'Settlement & Employment' ? 'handshake' :
+                                          subcategory === 'Arts & Culture' ? 'palette' :
+                                          subcategory === 'Youth & LGBTQ+' ? 'heart' :
+                                          subcategory === 'Food Security' ? 'utensils' :
+                                          subcategory === 'Environment & Sustainability' ? 'leaf' : 'building'
+                                        } text-lg`}></i>
+                                        <h4 className="text-lg font-semibold">{subcategory}</h4>
+                                      </div>
+                                      <div className="flex items-center space-x-2">
+                                        <span className="text-sm opacity-75">{filteredNonprofits.length} organizations</span>
+                                        <i className={`fas fa-chevron-${isTorontoNonprofitCategoryExpanded(subcategory) ? 'up' : 'down'} text-sm opacity-75 transition-transform`}></i>
+                                      </div>
+                                    </div>
+                                  </button>
+                                  
+                                  {isTorontoNonprofitCategoryExpanded(subcategory) && (
+                                    <div className="p-4 bg-gray-50">
+                                      <div className="space-y-3">
+                                        {filteredNonprofits.map((nonprofit, index) => (
+                                          <div key={index} className="p-3 bg-white rounded-lg shadow-sm border border-gray-200">
+                                            <div className="flex items-center justify-between">
+                                              <div className="flex-1">
+                                                <h5 className="font-semibold text-gray-900 mb-1">{nonprofit.name}</h5>
+                                                <p className="text-sm text-gray-600">{nonprofit.description}</p>
+                                              </div>
+                                              <div className="flex items-center space-x-2 ml-4">
+                                                <a
+                                                  href={nonprofit.url}
+                                                  target="_blank"
+                                                  rel="noopener noreferrer"
+                                                  className="px-3 py-1 bg-violet-100 text-violet-700 rounded-full text-sm hover:bg-violet-200 transition-colors"
+                                                >
+                                                  <i className="fas fa-external-link-alt mr-1"></i>
+                                                  Visit
+                                                </a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      ) : category === "Major Transportation" ? (
                         <div className="space-y-6">
                           {/* Info Bar */}
                           <div className="bg-orange-50 p-4 rounded-lg">
