@@ -2180,33 +2180,41 @@ export default function Home() {
                                           ];
                                           const cardColor = cardColors[index % cardColors.length];
                                           
+                                          const formatDescriptionWithLinks = (description: string) => {
+                                            // Extract website URLs from description
+                                            const urlRegex = /(https?:\/\/[^\s]+)/g;
+                                            const phoneRegex = /Phone:\s*\([0-9]{3}\)\s*[0-9]{3}-[0-9]{4}(?:\s*ext\.\s*[0-9]+)?/g;
+                                            const emailRegex = /Email:\s*([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
+                                            
+                                            let formattedDescription = description;
+                                            
+                                            // Make URLs clickable
+                                            formattedDescription = formattedDescription.replace(urlRegex, (url) => 
+                                              `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">${url}</a>`
+                                            );
+                                            
+                                            // Make phone numbers clickable
+                                            formattedDescription = formattedDescription.replace(phoneRegex, (phone) => {
+                                              const phoneNumber = phone.replace(/Phone:\s*/, '').replace(/[\s\(\)-]/g, '');
+                                              return `<a href="tel:+1${phoneNumber}" class="text-green-600 hover:text-green-800 underline">${phone}</a>`;
+                                            });
+                                            
+                                            // Make email addresses clickable
+                                            formattedDescription = formattedDescription.replace(emailRegex, (match, email) => 
+                                              `Email: <a href="mailto:${email}" class="text-purple-600 hover:text-purple-800 underline">${email}</a>`
+                                            );
+                                            
+                                            return formattedDescription;
+                                          };
+
                                           return (
                                             <div key={index} className={`p-3 ${cardColor} rounded-lg shadow-sm border`}>
-                                              <div className="flex items-center justify-between">
-                                                <div className="flex-1">
-                                                  <h5 className="font-semibold text-gray-900 mb-1">
-                                                    <a 
-                                                      href={nonprofit.url}
-                                                      target="_blank"
-                                                      rel="noopener noreferrer"
-                                                      className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
-                                                    >
-                                                      {nonprofit.name}
-                                                    </a>
-                                                  </h5>
-                                                  <p className="text-sm text-gray-600">{nonprofit.description}</p>
-                                                </div>
-                                                <div className="flex items-center space-x-2 ml-4">
-                                                  <a
-                                                    href={nonprofit.url}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm hover:bg-purple-200 transition-colors"
-                                                  >
-                                                    <i className="fas fa-external-link-alt mr-1"></i>
-                                                    Visit
-                                                  </a>
-                                                </div>
+                                              <div className="flex-1">
+                                                <h5 className="font-semibold text-gray-900 mb-1">{nonprofit.name}</h5>
+                                                <p 
+                                                  className="text-sm text-gray-600"
+                                                  dangerouslySetInnerHTML={{ __html: formatDescriptionWithLinks(nonprofit.description) }}
+                                                />
                                               </div>
                                             </div>
                                           );
