@@ -990,6 +990,56 @@ const torontoNonProfitsData = {
       name: "Faith in Action Food Bank – Malvern Methodist Church",
       url: "https://malvernmethodistchurch.org/",
       description: "Operates a volunteer-led food bank in partnership with local faith and community groups. Address: 2 Morningview Trail, Scarborough, ON M1B 5A2. Phone: (416) 281-5097. Email: malvernmethodist@rogers.com"
+    },
+    {
+      name: "St. James Food Basket",
+      url: "https://stjamesfoodbasket.com/",
+      description: "Volunteer-run food bank supporting low-income residents in Toronto's west end. Address: 4020 Dundas St W, Toronto, ON M6S 4W6 (St. James Anglican Church). Phone: (416) 767-6451. Email: info@stjamesfoodbasket.com"
+    },
+    {
+      name: "Native Canadian Centre of Toronto – Food Security Support",
+      url: "https://ncct.on.ca/",
+      description: "Provides food hampers and cultural meals to Indigenous community members. Address: 16 Spadina Rd, Toronto, ON M5R 2S7. Phone: (416) 964-9087. Email: info@ncct.on.ca"
+    },
+    {
+      name: "Moss Park Consumption and Treatment Service – Food Access Support",
+      url: "https://ctsmosspark.ca/",
+      description: "Distributes snacks, food, and harm reduction supplies to clients accessing supervised consumption services. Address: 134 Sherbourne St, Toronto, ON M5A 2R6. Phone: (647) 588-3059. Email: info@ctsmosspark.ca"
+    },
+    {
+      name: "Canadian Muslim Women's Institute – Community Food Hampers",
+      url: "https://cmwi.ca/",
+      description: "Offers culturally relevant food security supports and hampers for Muslim women and families. Address: 1320 Islington Ave, Etobicoke, ON M9A 5C6. Phone: (416) 901-8500. Email: info@cmwi.ca"
+    },
+    {
+      name: "Seeds of Hope Foundation – 6 St. Joseph House",
+      url: "https://seedsofhope.ca/",
+      description: "Distributes daily meals, groceries, and hygiene kits to unhoused and low-income individuals. Address: 6 St. Joseph St, Toronto, ON M4Y 1J7. Phone: (416) 923-8836. Email: info@seedsofhope.ca"
+    },
+    {
+      name: "Good Shepherd Ministries",
+      url: "https://goodshepherd.ca/",
+      description: "Daily hot meals, emergency shelter, and health services for homeless and vulnerable populations. Address: 412 Queen St E, Toronto, ON M5A 1T3. Phone: (416) 869-3619. Email: info@goodshepherd.ca"
+    },
+    {
+      name: "The Neighbourhood Group – Community Food Programs",
+      url: "https://tngcs.org/",
+      description: "Delivers hot meals and groceries to isolated seniors and low-income households. Address: 349 Ontario St, Toronto, ON M5A 2V8. Phone: (416) 925-4363. Email: info@tngcs.org"
+    },
+    {
+      name: "Loaves and Fishes – Church of the Redeemer",
+      url: "https://theredeemer.ca/",
+      description: "Weekly meal program offering hot food to people experiencing homelessness in the Annex. Address: 162 Bloor St W, Toronto, ON M5S 1M4. Phone: (416) 922-4948. Email: office@theredeemer.ca"
+    },
+    {
+      name: "Room to Grow – Urban Farming & Food Literacy",
+      url: "https://roomtogrow.ca/",
+      description: "Promotes food education and school-based gardening programs in Toronto. Operates citywide from Green Thumbs Growing Kids & partners. Email: info@roomtogrow.ca"
+    },
+    {
+      name: "North York Women's Shelter – Food & Basic Needs Program",
+      url: "https://nyws.ca/",
+      description: "Provides emergency shelter, food, and basic supplies to women and children fleeing violence. Confidential location (North York). Phone: (416) 638-7335. Email: info@nyws.ca"
     }
   ],
   "Environment & Sustainability": [
