@@ -1040,6 +1040,56 @@ const torontoNonProfitsData = {
       name: "North York Women's Shelter – Food & Basic Needs Program",
       url: "https://nyws.ca/",
       description: "Provides emergency shelter, food, and basic supplies to women and children fleeing violence. Confidential location (North York). Phone: (416) 638-7335. Email: info@nyws.ca"
+    },
+    {
+      name: "Afri-Can FoodBasket",
+      url: "https://africanfoodbasket.ca/",
+      description: "Supports Black food sovereignty through urban farming, youth education, and culturally relevant food access. Address: 455 Cosburn Ave, Toronto, ON M4J 2N2. Phone: (416) 832-5639. Email: info@africanfoodbasket.ca"
+    },
+    {
+      name: "Greenest City",
+      url: "https://greenestcity.ca/",
+      description: "Community gardens and environmental education in Parkdale, focused on newcomer and low-income communities. Address: 201 Cowan Ave, Toronto, ON M6K 2N5. Phone: (647) 438-0038. Email: info@greenestcity.ca"
+    },
+    {
+      name: "Fort York Food Bank",
+      url: "https://fyfb.com/",
+      description: "Emergency groceries and meals for people in downtown Toronto. Address: 380 College St, Lower Level, Toronto, ON M5T 1S6. Phone: (416) 203-3011. Email: info@fyfb.com"
+    },
+    {
+      name: "South Riverdale Community Health Centre – Food Programs",
+      url: "https://srchc.ca/",
+      description: "Nutrition and food programs including markets, gardens, and cooking classes. Address: 955 Queen St E, Toronto, ON M4M 3P3. Phone: (416) 461-1925. Email: info@srchc.com"
+    },
+    {
+      name: "Eastview Neighbourhood Community Centre – Food Bank",
+      url: "https://eastviewcentre.com/",
+      description: "Food bank, meal programs, and support for low-income families and seniors. Address: 86 Blake St, Toronto, ON M4J 3C9. Phone: (416) 392-1750. Email: info@eastviewcentre.com"
+    },
+    {
+      name: "St. Felix Centre – Meal Programs",
+      url: "https://stfelixcentre.org/",
+      description: "Drop-in meals and nutrition support for people experiencing homelessness or crisis. Address: 25 Augusta Ave, Toronto, ON M5T 2K7. Phone: (416) 203-1624. Email: info@stfelixcentre.org"
+    },
+    {
+      name: "Holy Trinity Church – The Common Table",
+      url: "https://holytrinity.to/",
+      description: "Daily hot meals and community-building with a focus on people who are unhoused. Address: 19 Trinity Square, Toronto, ON M5G 1B1. Phone: (416) 598-4521. Email: info@holytrinity.to"
+    },
+    {
+      name: "Jane/Finch Community and Family Centre – Food Access",
+      url: "https://janefinchcentre.org/",
+      description: "Emergency food bank, urban agriculture, and nutrition support for low-income families. Address: 4400 Jane St, Toronto, ON M3N 2K4. Phone: (416) 663-2733. Email: info@janefinchcentre.org"
+    },
+    {
+      name: "Scarborough Food Security Initiative",
+      url: "https://sfsinitiative.ca/",
+      description: "Collaborates with community orgs to deliver culturally relevant food hampers across Scarborough. Address: 5800 Ambler Dr, Mississauga, ON (distribution site; multiple partners in Scarborough). Email: admin@sfsinitiative.ca"
+    },
+    {
+      name: "Weston King Neighbourhood Centre",
+      url: "https://wknc.ca/",
+      description: "Serves hot meals and groceries to residents in Weston and Mount Dennis neighborhoods. Address: 2017 Weston Rd, Toronto, ON M9N 1X2. Phone: (416) 241-9898. Email: info@wknc.ca"
     }
   ],
   "Environment & Sustainability": [
