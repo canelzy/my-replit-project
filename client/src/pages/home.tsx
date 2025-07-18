@@ -2755,8 +2755,10 @@ export default function Home() {
   };
 
   const toggleTorontoNonprofitCategory = (category: string) => {
+    console.log('Toronto accordion clicked:', category);
     setExpandedTorontoNonprofitCategories(prev => {
       const isCurrentlyExpanded = prev.includes(category);
+      console.log('Currently expanded:', prev, 'Is expanded:', isCurrentlyExpanded);
       if (isCurrentlyExpanded) {
         return []; // Close the current category
       } else {
@@ -2936,7 +2938,9 @@ export default function Home() {
 
                           {/* Toronto Non-Profits - Interactive Accordion */}
                           <div className="space-y-4">
+                            {console.log('Toronto data:', torontoNonProfitsData)}
                             {Object.entries(torontoNonProfitsData).map(([nonprofitCategory, organizations]) => {
+                              console.log('Processing category:', nonprofitCategory, 'with', organizations.length, 'organizations');
                               const categoryStyle = torontoNonprofitCategoryColors[nonprofitCategory] || {
                                 header: 'bg-gray-600 hover:bg-gray-700',
                                 background: 'bg-gray-50',
