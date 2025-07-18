@@ -242,6 +242,13 @@ const ontarioNonProfits = {
 };
 
 const linksData: Record<string, LinkItem[]> = {
+  "Toronto Non-Profits": [
+    { title: "United Way Greater Toronto", description: "Leading funder of social services in the Greater Toronto Area", url: "https://www.unitedwaygt.org/", icon: "fas fa-hands-helping" },
+    { title: "Toronto Foundation", description: "Community foundation supporting charitable causes in Toronto", url: "https://www.torontofoundation.ca/", icon: "fas fa-donate" },
+    { title: "Centre for Addiction and Mental Health (CAMH)", description: "Canada's largest mental health and addiction hospital", url: "https://www.camh.ca/", icon: "fas fa-brain" },
+    { title: "SickKids Foundation", description: "Supporting The Hospital for Sick Children in Toronto", url: "https://www.sickkidsfoundation.com/", icon: "fas fa-child" },
+    { title: "Toronto Public Library Foundation", description: "Supporting library services and programs across Toronto", url: "https://www.torontopubliclibrary.ca/", icon: "fas fa-book" }
+  ],
   "Taxes & Benefits": [
     { title: "CRA MyAccount", description: "Manage taxes online", url: "https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html", icon: "fas fa-user-circle" },
     { title: "Canada Child Benefit", description: "Child benefit info", url: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview.html", icon: "fas fa-baby" },
@@ -352,13 +359,6 @@ const linksData: Record<string, LinkItem[]> = {
     { title: "BC Ferries", description: "Ferry services in British Columbia", url: "https://www.bcferries.com/", icon: "fas fa-ship" }
   ],
 
-  "Toronto Non-Profits": [
-    { title: "United Way Greater Toronto", description: "Leading funder of social services in the Greater Toronto Area", url: "https://www.unitedwaygt.org/", icon: "fas fa-hands-helping" },
-    { title: "Toronto Foundation", description: "Community foundation supporting charitable causes in Toronto", url: "https://www.torontofoundation.ca/", icon: "fas fa-donate" },
-    { title: "Centre for Addiction and Mental Health (CAMH)", description: "Canada's largest mental health and addiction hospital", url: "https://www.camh.ca/", icon: "fas fa-brain" },
-    { title: "SickKids Foundation", description: "Supporting The Hospital for Sick Children in Toronto", url: "https://www.sickkidsfoundation.com/", icon: "fas fa-child" },
-    { title: "Toronto Public Library Foundation", description: "Supporting library services and programs across Toronto", url: "https://www.torontopubliclibrary.ca/", icon: "fas fa-book" }
-  ],
 
 };
 
