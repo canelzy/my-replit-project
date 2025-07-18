@@ -148,12 +148,7 @@ export default function OrgAccordion({ categories }: { categories: Category[] })
                 {selectedTags.length} tag{selectedTags.length !== 1 ? 's' : ''} selected
               </span>
               <button
-                onClick={() => {
-                  setSelectedTags([]);
-                  categories.forEach(cat => {
-                    setVisibleCounts(prev => ({ ...prev, [cat.title]: 20 }));
-                  });
-                }}
+                onClick={() => setSelectedTags([])}
                 className="text-sm text-purple-600 hover:text-purple-800 underline"
               >
                 Clear all
