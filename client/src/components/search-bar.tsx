@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Input } from "@/components/ui/input";
 
 interface SearchBarProps {
@@ -7,29 +7,6 @@ interface SearchBarProps {
 
 export default function SearchBar({ onSearch }: SearchBarProps) {
   const [searchTerm, setSearchTerm] = useState("");
-  const searchInputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    // Focus search input when component mounts
-    if (searchInputRef.current) {
-      searchInputRef.current.focus();
-    }
-
-    // Add keyboard shortcut for search (Ctrl+K or Cmd+K)
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-        e.preventDefault();
-        if (searchInputRef.current) {
-          searchInputRef.current.focus();
-        }
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -44,11 +21,10 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
           <div className="relative">
             <i className="fas fa-search absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm sm:text-base"></i>
             <Input
-              ref={searchInputRef}
               type="text"
               value={searchTerm}
               onChange={handleInputChange}
-              placeholder="Search services... (Ctrl+K)"
+              placeholder="Search services..."
               className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-gray-700 text-sm sm:text-base"
             />
           </div>

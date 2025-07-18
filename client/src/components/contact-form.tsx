@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,7 +15,6 @@ export default function ContactForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const nameInputRef = useRef<HTMLInputElement>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -50,18 +49,13 @@ export default function ContactForm() {
           description: data.message,
         });
 
-        // Reset form and focus first input
+        // Reset form
         setFormData({
           name: "",
           email: "",
           subject: "",
           message: ""
         });
-        
-        // Focus the first input after successful submission
-        if (nameInputRef.current) {
-          nameInputRef.current.focus();
-        }
       } else {
         toast({
           title: "Error sending message",
@@ -96,7 +90,6 @@ export default function ContactForm() {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
                 <Input
-                  ref={nameInputRef}
                   type="text"
                   name="name"
                   value={formData.name}
