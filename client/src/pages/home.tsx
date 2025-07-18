@@ -4421,19 +4421,19 @@ export default function Home() {
         <div className="container mx-auto px-4 py-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
-              <h4 className="font-semibold mb-2">About Canada Access Hub</h4>
-              <p className="text-gray-300 text-sm">Your one-stop directory for accessing official Government of Canada services and resources.</p>
+              <h4 className="font-semibold mb-2 text-white">About Canada Access Hub</h4>
+              <p className="text-white text-sm">Your one-stop directory for accessing official Government of Canada services and resources.</p>
             </div>
             <div>
-              <h4 className="font-semibold mb-2">Official Links</h4>
-              <ul className="text-gray-300 text-sm space-y-1">
-                <li><a href="https://www.canada.ca" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Canada.ca</a></li>
-                <li><a href="https://www.canada.ca/en/services.html" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">All Services</a></li>
+              <h4 className="font-semibold mb-2 text-white">Official Links</h4>
+              <ul className="text-white text-sm space-y-1">
+                <li><a href="https://www.canada.ca" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition-colors">Canada.ca</a></li>
+                <li><a href="https://www.canada.ca/en/services.html" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition-colors">All Services</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-2">Privacy & Contact</h4>
-              <ul className="text-gray-300 text-sm space-y-1">
+              <h4 className="font-semibold mb-2 text-white">Privacy & Contact</h4>
+              <ul className="text-white text-sm space-y-1">
                 <li>
                   <a 
                     href="http://intel.giolynx.org/important-disclaimer/" 
@@ -4449,8 +4449,8 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-700 pt-4 mt-6 text-center">
-            <p className="text-gray-400 text-sm mb-2">&copy; 2025 Canada Access Hub</p>
-            <p className="text-gray-400 text-sm">Independent directory - Not affiliated with Government of Canada</p>
+            <p className="text-white text-sm mb-2">&copy; 2025 Canada Access Hub</p>
+            <p className="text-white text-sm">Independent directory - Not affiliated with Government of Canada</p>
             
             {/* Blue Semi-Transparent Bars */}
             <div className="mt-6 h-4 bg-blue-600 bg-opacity-5 w-full"></div>
