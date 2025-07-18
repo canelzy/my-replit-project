@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.2em;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 1.8em;
+    }
+    p, li {
+      margin: 0.5em 0;
+    }
+    blockquote {
+      background-color: #f9f9f9;
+      border-left: 4px solid #ccc;
+      padding: 1em;
+      margin: 1em 0;
+      font-style: italic;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <p><strong>Effective Date:</strong> July 18, 2025<br>
+  <strong>Last Updated:</strong> July 18, 2025</p>
+
+  <p>This privacy policy explains how this app (“we”, “our”, or “the app”) handles user data. We are committed to protecting your privacy and being transparent about how any data is used.</p>
+
+  <blockquote>
+    <strong>Disclaimer:</strong> This app is <strong>not affiliated with or endorsed by any government agency</strong>. It provides publicly available information for informational purposes only.
+  </blockquote>
+
+  <h2>1. Who We Are</h2>
+  <p>This app is an independent directory and resource platform that displays information about nonprofit organizations, community services, and public programs. It is not operated by a government body.</p>
+
+  <h2>2. Information We Collect</h2>
+  <p>We do <strong>not collect any personal data</strong>, such as:</p>
+  <ul>
+    <li>Names</li>
+    <li>Email addresses</li>
+    <li>Phone numbers</li>
+    <li>Government ID numbers</li>
+    <li>Home or work addresses</li>
+  </ul>
+  <p>We also do <strong>not require user registration</strong> or login of any kind.</p>
+
+  <h2>3. Automatically Collected Data (Non-Personal)</h2>
+  <p>To improve the app's performance and ensure functionality, we may collect limited technical data such as:</p>
+  <ul>
+    <li>Device type and OS version</li>
+    <li>App version and usage patterns</li>
+    <li>Anonymous crash reports</li>
+  </ul>
+  <p><strong>This data is non-identifiable and anonymous.</strong> It is used strictly for debugging, improving performance, and analytics.</p>
+
+  <h2>4. No Email Collection or Contact Access</h2>
+  <p>We explicitly confirm that:</p>
+  <ul>
+    <li>The app does <strong>not request, collect, or store your email address</strong>.</li>
+    <li>We do not access your contact list or allow any user-to-user messaging.</li>
+    <li>There are no email subscription features in the app.</li>
+  </ul>
+
+  <h2>5. How We Use the Information We Collect</h2>
+  <p>Any non-personal data collected is used only to:</p>
+  <ul>
+    <li>Analyze app performance</li>
+    <li>Detect and fix crashes</li>
+    <li>Improve content delivery</li>
+  </ul>
+  <p>We do <strong>not share, sell, or rent any data</strong> to third parties for marketing or profiling purposes.</p>
+
+  <h2>6. Third-Party Services</h2>
+  <p>This app may use external services for analytics or performance monitoring. These services may collect non-personal data under their own privacy policies:</p>
+  <ul>
+    <li><a href="https://policies.google.com/privacy" target="_blank">Google Play Services</a></li>
+    <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Crashlytics</a></li>
+  </ul>
+
+  <h2>7. Links to External Content</h2>
+  <p>This app provides links to third-party websites, including:</p>
+  <ul>
+    <li>Nonprofit organization websites</li>
+    <li>Government portals and open data sources</li>
+    <li>Cultural, community, and settlement resources</li>
+  </ul>
+  <p>These external sites are not under our control. When you click a link:</p>
+  <ul>
+    <li>You are subject to that site's privacy policy and terms</li>
+    <li>We are not responsible for how those sites collect, store, or use your data</li>
+  </ul>
+  <p>We recommend reviewing their policies before engaging with their services.</p>
+
+  <h2>8. Data Retention</h2>
+  <p>We do not store or retain any personal information. Any anonymous crash or analytics data is retained only for the minimum period necessary to diagnose issues and improve functionality.</p>
+
+  <h2>9. Children’s Privacy</h2>
+  <p>This app is intended for general audiences and <strong>does not knowingly collect information from children under 13</strong>. If you believe that personal data was provided inadvertently, please contact us and we will delete it immediately.</p>
+
+  <h2>10. Data Security</h2>
+  <p>We implement reasonable technical measures to protect the app against unauthorized access and vulnerabilities. These include:</p>
+  <ul>
+    <li>Secure app builds</li>
+    <li>No data storage on-device or remotely</li>
+    <li>HTTPS encryption for any external data sources</li>
+  </ul>
+
+  <h2>11. Policy Updates</h2>
+  <p>We may update this policy from time to time. Changes will be posted within the app and reflected by an updated "Last Updated" date at the top of this page.</p>
+
+  <h2>12. Contact Us</h2>
+  <p>If you have any questions or concerns about this Privacy Policy or the app’s data handling practices, please contact us at:</p>
+  <ul>
+    <li><strong>Email:</strong> <a href="mailto:your-support-email@example.com">your-support-email@example.com</a></li>
+    <li><strong>Developer:</strong> Your Organization or Developer Name</li>
+    <li><strong>Location:</strong> Canada</li>
+  </ul>
+</body>
+</html>

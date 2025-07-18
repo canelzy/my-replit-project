@@ -33,39 +33,60 @@ export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
           </CardHeader>
           
           <CardContent className="p-8 space-y-6">
+            <div className="bg-red-50 p-4 rounded-lg border border-red-200 mb-6">
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="h-6 w-6 text-red-600 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2 text-red-800">Important Disclaimer</h3>
+                  <p className="text-red-700 leading-relaxed">
+                    This app is <strong>not affiliated with or endorsed by any government agency</strong>. It provides publicly available information for informational purposes only.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="flex items-start gap-3">
-              <AlertTriangle className="h-6 w-6 text-amber-500 mt-1 flex-shrink-0" />
+              <Shield className="h-6 w-6 text-blue-500 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-lg mb-2">Third-Party Service Directory</h3>
+                <h3 className="font-semibold text-lg mb-2">Who We Are</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  This website is an <strong>independent directory</strong> that provides links to official Canadian government services and resources. We are not affiliated with, endorsed by, or sponsored by the Government of Canada or any of its agencies.
+                  This app is an independent directory and resource platform that displays information about nonprofit organizations, community services, and public programs. It is not operated by a government body.
                 </p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <FileText className="h-6 w-6 text-blue-500 mt-1 flex-shrink-0" />
+              <FileText className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-lg mb-2">Information Accuracy</h3>
+                <h3 className="font-semibold text-lg mb-2">Privacy & Data Collection</h3>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  We do <strong>not collect any personal data</strong> such as names, email addresses, phone numbers, or government ID numbers. We also do not require user registration or login of any kind.
+                </p>
                 <p className="text-gray-700 leading-relaxed">
-                  While we strive to maintain accurate and up-to-date information, links and service details may change without notice. Always verify information directly with official government sources before taking action.
+                  We may collect limited anonymous technical data (device type, app version, crash reports) strictly for debugging and performance improvement.
                 </p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <ExternalLink className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+              <ExternalLink className="h-6 w-6 text-purple-500 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-lg mb-2">External Links</h3>
+                <h3 className="font-semibold text-lg mb-2">External Links & Third-Party Sites</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  This directory contains links to external websites. We are not responsible for the content, privacy policies, or practices of these external sites. Use at your own discretion.
+                  This app provides links to third-party websites including nonprofit organizations, government portals, and community resources. These external sites are not under our control, and we are not responsible for their content, privacy policies, or practices.
                 </p>
               </div>
             </div>
 
             <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-              <p className="text-sm text-blue-800 font-medium">
-                By clicking "Accept & Continue", you acknowledge that you have read and understood this disclaimer and agree to use this directory at your own risk.
+              <p className="text-sm text-blue-800 font-medium mb-2">
+                <strong>Effective Date:</strong> July 18, 2025
+              </p>
+              <p className="text-sm text-blue-800 mb-2">
+                For questions about this privacy policy or data handling practices, contact us at: <strong>canelzy@yahoo.com</strong>
+              </p>
+              <p className="text-sm text-blue-800">
+                By clicking "Accept & Continue", you acknowledge that you have read and understood this disclaimer and privacy information, and agree to use this directory at your own risk.
               </p>
             </div>
 
