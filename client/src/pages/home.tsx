@@ -2548,6 +2548,7 @@ export default function Home() {
   const [isOfficialDirectoriesExpanded, setIsOfficialDirectoriesExpanded] = useState<boolean>(false);
   const [expandedNonprofitCategories, setExpandedNonprofitCategories] = useState<string[]>([]);
   const [expandedTorontoNonprofitCategories, setExpandedTorontoNonprofitCategories] = useState<string[]>([]);
+  const [selectedTorontoNonprofitFilter, setSelectedTorontoNonprofitFilter] = useState<string>("all");
 
 
   // Convert Toronto Non-Profits data to SimpleOrgAccordion format
@@ -2932,11 +2933,36 @@ export default function Home() {
                             </div>
                           </div>
 
-
+                          {/* Filter Dropdown */}
+                          <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                            <div className="flex items-center space-x-3">
+                              <i className="fas fa-filter text-purple-600"></i>
+                              <label htmlFor="toronto-nonprofit-filter" className="text-sm font-medium text-gray-700">
+                                Filter by Category:
+                              </label>
+                              <Select value={selectedTorontoNonprofitFilter} onValueChange={setSelectedTorontoNonprofitFilter}>
+                                <SelectTrigger className="w-64">
+                                  <SelectValue placeholder="Select category..." />
+                                </SelectTrigger>
+                                <SelectContent>
+                                  <SelectItem value="all">All Categories</SelectItem>
+                                  {Object.keys(torontoNonProfitsData).map((categoryName) => (
+                                    <SelectItem key={categoryName} value={categoryName}>
+                                      {categoryName}
+                                    </SelectItem>
+                                  ))}
+                                </SelectContent>
+                              </Select>
+                            </div>
+                          </div>
 
                           {/* Toronto Non-Profits - Interactive Accordion */}
                           <div className="space-y-4">
-                            {Object.entries(torontoNonProfitsData).map(([nonprofitCategory, organizations]) => {
+                            {Object.entries(torontoNonProfitsData)
+                              .filter(([nonprofitCategory]) => 
+                                selectedTorontoNonprofitFilter === "all" || nonprofitCategory === selectedTorontoNonprofitFilter
+                              )
+                              .map(([nonprofitCategory, organizations]) => {
                               const categoryStyle = torontoNonprofitCategoryColors[nonprofitCategory] || {
                                 header: 'bg-gray-600 hover:bg-gray-700',
                                 background: 'bg-gray-50',
