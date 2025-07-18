@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { MapPin, Phone, Mail, Globe, ChevronDown, ChevronUp, Search, Filter, CheckCircle } from "lucide-react";
 
 type Organization = {
