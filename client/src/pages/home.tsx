@@ -2758,12 +2758,8 @@ export default function Home() {
     setExpandedTorontoNonprofitCategories(prev => {
       const isCurrentlyExpanded = prev.includes(category);
       if (isCurrentlyExpanded) {
-        // Reset visible count when closing
-        resetVisibleCount(category);
         return []; // Close the current category
       } else {
-        // Reset visible counts for all categories when opening a new one
-        Object.keys(torontoNonProfitsData).forEach(cat => resetVisibleCount(cat));
         return [category]; // Open only this category, close all others
       }
     });
@@ -2938,33 +2934,90 @@ export default function Home() {
 
 
 
-                          {/* Toronto Non-Profits - Simple Accordion */}
+                          {/* Toronto Non-Profits - Interactive Accordion */}
                           <div className="space-y-4">
-                            {Object.entries(torontoNonProfitsData).map(([category, organizations]) => (
-                              <div key={category} className="border border-gray-200 rounded-lg shadow-md overflow-hidden">
-                                <div className="bg-purple-600 text-white px-4 py-3 font-semibold">
-                                  {category} ({organizations.length} organizations)
-                                </div>
-                                <div className="bg-white p-4 space-y-3">
-                                  {organizations.slice(0, 3).map((org, idx) => (
-                                    <div key={idx} className="border-b border-gray-200 pb-2 last:border-b-0">
-                                      <h4 className="font-medium text-gray-900">{org.name}</h4>
-                                      <p className="text-sm text-gray-600">{org.description}</p>
-                                      {org.url && (
-                                        <a href={org.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 text-sm underline">
-                                          Visit Website
-                                        </a>
-                                      )}
+                            {Object.entries(torontoNonProfitsData).map(([nonprofitCategory, organizations]) => {
+                              const categoryStyle = torontoNonprofitCategoryColors[nonprofitCategory] || {
+                                header: 'bg-gray-600 hover:bg-gray-700',
+                                background: 'bg-gray-50',
+                                border: 'border-gray-300',
+                                icon: 'fas fa-building'
+                              };
+                              
+                              const isExpanded = isTorontoNonprofitCategoryExpanded(nonprofitCategory);
+                              
+                              return (
+                                <div key={nonprofitCategory} className={`rounded-lg shadow-lg overflow-hidden transition-all duration-300 ${categoryStyle.background} ${categoryStyle.border} border-2`}>
+                                  <button
+                                    onClick={() => toggleTorontoNonprofitCategory(nonprofitCategory)}
+                                    className={`w-full flex items-center justify-between px-6 py-4 text-white font-bold text-lg transition-all duration-300 ${categoryStyle.header}`}
+                                    aria-expanded={isExpanded}
+                                  >
+                                    <div className="flex items-center space-x-4">
+                                      <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                        <i className={`${categoryStyle.icon} text-lg`}></i>
+                                      </div>
+                                      <span>{nonprofitCategory}</span>
                                     </div>
-                                  ))}
-                                  {organizations.length > 3 && (
-                                    <p className="text-sm text-gray-500 italic">
-                                      ...and {organizations.length - 3} more organizations
-                                    </p>
+                                    <div className="flex items-center space-x-3">
+                                      <span className="text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full font-medium">
+                                        {organizations.length} organizations
+                                      </span>
+                                      <i className={`fas fa-chevron-${isExpanded ? 'up' : 'down'} text-lg transition-transform duration-200`}></i>
+                                    </div>
+                                  </button>
+                                  
+                                  {isExpanded && (
+                                    <div className="bg-white dark:bg-zinc-900 p-6">
+                                      <div className="space-y-4">
+                                        {organizations.map((org, idx) => (
+                                          <div key={idx} className="border-l-4 border-purple-500 pl-4 py-3 bg-gray-50 dark:bg-zinc-800 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors">
+                                            <div className="flex items-start justify-between">
+                                              <div className="flex-1">
+                                                <div className="flex items-center space-x-3 mb-2">
+                                                  {org.url ? (
+                                                    <a 
+                                                      href={org.url} 
+                                                      target="_blank" 
+                                                      rel="noopener noreferrer"
+                                                      className="font-semibold text-purple-600 hover:text-purple-800 transition-colors"
+                                                    >
+                                                      {org.name}
+                                                      <i className="fas fa-external-link-alt ml-2 text-xs"></i>
+                                                    </a>
+                                                  ) : (
+                                                    <h4 className="font-semibold text-gray-900 dark:text-white">{org.name}</h4>
+                                                  )}
+                                                </div>
+                                                <p className="text-gray-600 dark:text-gray-300 text-sm">{org.description}</p>
+                                                {org.phone && (
+                                                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                                    <i className="fas fa-phone mr-1"></i>
+                                                    <a href={`tel:${org.phone}`} className="hover:text-purple-600">{org.phone}</a>
+                                                  </p>
+                                                )}
+                                                {org.email && (
+                                                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                                    <i className="fas fa-envelope mr-1"></i>
+                                                    <a href={`mailto:${org.email}`} className="hover:text-purple-600">{org.email}</a>
+                                                  </p>
+                                                )}
+                                                {org.address && (
+                                                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                                    <i className="fas fa-map-marker-alt mr-1"></i>
+                                                    {org.address}
+                                                  </p>
+                                                )}
+                                              </div>
+                                            </div>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </div>
                                   )}
                                 </div>
-                              </div>
-                            ))}
+                              );
+                            })}
                           </div>
                         </div>
                       ) : category === "Major Transportation" ? (
