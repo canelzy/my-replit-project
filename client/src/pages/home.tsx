@@ -2550,6 +2550,46 @@ export default function Home() {
   const [expandedTorontoNonprofitCategories, setExpandedTorontoNonprofitCategories] = useState<string[]>([]);
   const [selectedTorontoNonprofitFilter, setSelectedTorontoNonprofitFilter] = useState<string>("all");
 
+  // Helper function to parse contact information from description
+  const parseContactInfo = (description: string) => {
+    const phoneRegex = /Phone:\s*([^.]+?)(?:\.|$|\s+Email)/gi;
+    const emailRegex = /Email:\s*([^\s.]+@[^\s.]+)/gi;
+    const addressRegex = /Address:\s*([^.]+?)(?:\.|$|\s+Phone|\s+Email)/gi;
+    
+    const phoneMatches = Array.from(description.matchAll(phoneRegex));
+    const emailMatches = Array.from(description.matchAll(emailRegex));
+    const addressMatches = Array.from(description.matchAll(addressRegex));
+    
+    const phones = phoneMatches.map(match => match[1].trim());
+    const emails = emailMatches.map(match => match[1].trim());
+    const addresses = addressMatches.map(match => match[1].trim());
+    
+    // Clean description by removing parsed contact info
+    let cleanDescription = description;
+    phoneMatches.forEach(match => {
+      cleanDescription = cleanDescription.replace(match[0], '');
+    });
+    emailMatches.forEach(match => {
+      cleanDescription = cleanDescription.replace(match[0], '');
+    });
+    addressMatches.forEach(match => {
+      cleanDescription = cleanDescription.replace(match[0], '');
+    });
+    
+    // Clean up extra spaces and dots
+    cleanDescription = cleanDescription
+      .replace(/\s+/g, ' ')
+      .replace(/\.\s*\./g, '.')
+      .replace(/\s*\.\s*$/, '')
+      .trim();
+    
+    return {
+      cleanDescription,
+      phones,
+      emails,
+      addresses
+    };
+  };
 
   // Convert Toronto Non-Profits data to SimpleOrgAccordion format
   const convertToAccordionFormat = () => {
@@ -2996,48 +3036,74 @@ export default function Home() {
                                   {isExpanded && (
                                     <div className="bg-white dark:bg-zinc-900 p-6">
                                       <div className="space-y-4">
-                                        {organizations.map((org, idx) => (
-                                          <div key={idx} className="border-l-4 border-purple-500 pl-4 py-3 bg-gray-50 dark:bg-zinc-800 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors">
-                                            <div className="flex items-start justify-between">
-                                              <div className="flex-1">
-                                                <div className="flex items-center space-x-3 mb-2">
-                                                  {org.url ? (
-                                                    <a 
-                                                      href={org.url} 
-                                                      target="_blank" 
-                                                      rel="noopener noreferrer"
-                                                      className="font-semibold text-purple-600 hover:text-purple-800 transition-colors"
-                                                    >
-                                                      {org.name}
-                                                      <i className="fas fa-external-link-alt ml-2 text-xs"></i>
-                                                    </a>
-                                                  ) : (
-                                                    <h4 className="font-semibold text-gray-900 dark:text-white">{org.name}</h4>
-                                                  )}
+                                        {organizations.map((org, idx) => {
+                                          const contactInfo = parseContactInfo(org.description);
+                                          
+                                          return (
+                                            <div key={idx} className="border-l-4 border-purple-500 pl-4 py-3 bg-gray-50 dark:bg-zinc-800 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors">
+                                              <div className="flex items-start justify-between">
+                                                <div className="flex-1">
+                                                  <div className="flex items-center space-x-3 mb-2">
+                                                    {org.url ? (
+                                                      <a 
+                                                        href={org.url} 
+                                                        target="_blank" 
+                                                        rel="noopener noreferrer"
+                                                        className="font-semibold text-purple-600 hover:text-purple-800 transition-colors"
+                                                      >
+                                                        {org.name}
+                                                        <i className="fas fa-external-link-alt ml-2 text-xs"></i>
+                                                      </a>
+                                                    ) : (
+                                                      <h4 className="font-semibold text-gray-900 dark:text-white">{org.name}</h4>
+                                                    )}
+                                                  </div>
+                                                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{contactInfo.cleanDescription}</p>
+                                                  
+                                                  {/* Contact Information */}
+                                                  <div className="space-y-2">
+                                                    {contactInfo.phones.map((phone, phoneIdx) => (
+                                                      <p key={phoneIdx} className="text-sm text-gray-500 dark:text-gray-400">
+                                                        <i className="fas fa-phone mr-2 text-purple-500"></i>
+                                                        <a 
+                                                          href={`tel:${phone.replace(/[^\d+()-]/g, '')}`} 
+                                                          className="text-purple-600 hover:text-purple-800 hover:underline transition-colors"
+                                                        >
+                                                          {phone}
+                                                        </a>
+                                                      </p>
+                                                    ))}
+                                                    {contactInfo.emails.map((email, emailIdx) => (
+                                                      <p key={emailIdx} className="text-sm text-gray-500 dark:text-gray-400">
+                                                        <i className="fas fa-envelope mr-2 text-purple-500"></i>
+                                                        <a 
+                                                          href={`mailto:${email}`} 
+                                                          className="text-purple-600 hover:text-purple-800 hover:underline transition-colors"
+                                                        >
+                                                          {email}
+                                                        </a>
+                                                      </p>
+                                                    ))}
+                                                    {contactInfo.addresses.map((address, addressIdx) => (
+                                                      <p key={addressIdx} className="text-sm text-gray-500 dark:text-gray-400">
+                                                        <i className="fas fa-map-marker-alt mr-2 text-purple-500"></i>
+                                                        <a 
+                                                          href={`https://maps.google.com/?q=${encodeURIComponent(address)}`}
+                                                          target="_blank"
+                                                          rel="noopener noreferrer"
+                                                          className="text-purple-600 hover:text-purple-800 hover:underline transition-colors"
+                                                        >
+                                                          {address}
+                                                          <i className="fas fa-external-link-alt ml-1 text-xs"></i>
+                                                        </a>
+                                                      </p>
+                                                    ))}
+                                                  </div>
                                                 </div>
-                                                <p className="text-gray-600 dark:text-gray-300 text-sm">{org.description}</p>
-                                                {org.phone && (
-                                                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                                                    <i className="fas fa-phone mr-1"></i>
-                                                    <a href={`tel:${org.phone}`} className="hover:text-purple-600">{org.phone}</a>
-                                                  </p>
-                                                )}
-                                                {org.email && (
-                                                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                                                    <i className="fas fa-envelope mr-1"></i>
-                                                    <a href={`mailto:${org.email}`} className="hover:text-purple-600">{org.email}</a>
-                                                  </p>
-                                                )}
-                                                {org.address && (
-                                                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                                                    <i className="fas fa-map-marker-alt mr-1"></i>
-                                                    {org.address}
-                                                  </p>
-                                                )}
                                               </div>
                                             </div>
-                                          </div>
-                                        ))}
+                                          );
+                                        })}
                                       </div>
                                     </div>
                                   )}
