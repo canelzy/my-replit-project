@@ -4432,18 +4432,26 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-2">Contact</h4>
-              <p className="text-gray-300 text-sm">For official government inquiries, visit the <a href="https://www.canada.ca/en/contact.html" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">Contact Government page</a>.</p>
+              <h4 className="font-semibold mb-2">Settings</h4>
+              <ul className="text-gray-300 text-sm space-y-1">
+                <li><a href="/privacy.html" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      localStorage.removeItem('canada-access-hub-disclaimer-accepted');
+                      window.location.reload();
+                    }}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Reset Disclaimer
+                  </button>
+                </li>
+              </ul>
             </div>
           </div>
           <div className="border-t border-gray-700 pt-4 mt-6 text-center">
             <p className="text-gray-400 text-sm mb-2">&copy; 2025 Canada Access Hub</p>
-            <a 
-              href="/privacy.html" 
-              className="text-blue-400 hover:text-blue-300 transition-colors text-sm"
-            >
-              Privacy Policy
-            </a>
+            <p className="text-gray-400 text-sm">Independent directory - Not affiliated with Government of Canada</p>
             
             {/* Blue Semi-Transparent Bars */}
             <div className="mt-6 h-4 bg-blue-600 bg-opacity-5 w-full"></div>
