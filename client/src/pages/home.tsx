@@ -4438,7 +4438,8 @@ export default function Home() {
                 <li>
                   <button 
                     onClick={() => {
-                      localStorage.removeItem('canada-access-hub-disclaimer-accepted');
+                      localStorage.clear();
+                      sessionStorage.clear();
                       window.location.reload();
                     }}
                     className="hover:text-white transition-colors text-left"
