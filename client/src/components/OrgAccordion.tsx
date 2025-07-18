@@ -72,16 +72,9 @@ export default function OrgAccordion({ categories }: { categories: Category[] })
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [searchTerms, setSearchTerms] = useState<{[key: string]: string}>({});
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [visibleCounts, setVisibleCounts] = useState<{[key: string]: number}>({});
-  const [isLoading, setIsLoading] = useState<{[key: string]: boolean}>({});
 
   const toggleIndex = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
-    // Reset visible count when opening/closing
-    if (openIndex !== index) {
-      const categoryTitle = categories[index].title;
-      setVisibleCounts(prev => ({ ...prev, [categoryTitle]: 20 }));
-    }
   };
 
   const extractTags = (description: string): string[] => {
@@ -103,32 +96,13 @@ export default function OrgAccordion({ categories }: { categories: Category[] })
         ? prev.filter(t => t !== tag)
         : [...prev, tag]
     );
-    // Reset visible counts when tags change
-    categories.forEach(cat => {
-      setVisibleCounts(prev => ({ ...prev, [cat.title]: 20 }));
-    });
   };
 
   const updateSearchTerm = (category: string, term: string) => {
     setSearchTerms(prev => ({ ...prev, [category]: term }));
-    setVisibleCounts(prev => ({ ...prev, [category]: 20 }));
   };
 
-  const getVisibleCount = (category: string) => {
-    return visibleCounts[category] || 20;
-  };
 
-  const loadMoreOrganizations = (category: string, totalCount: number) => {
-    setIsLoading(prev => ({ ...prev, [category]: true }));
-    
-    setTimeout(() => {
-      setVisibleCounts(prev => ({
-        ...prev,
-        [category]: Math.min((prev[category] || 20) + 20, totalCount)
-      }));
-      setIsLoading(prev => ({ ...prev, [category]: false }));
-    }, 300);
-  };
 
   const parseContactInfo = (description: string) => {
     const addressMatch = description.match(/Address:\s*([^.]+)/);
@@ -275,7 +249,7 @@ export default function OrgAccordion({ categories }: { categories: Category[] })
 
                 {/* Organizations List */}
                 <div className="space-y-4">
-                  {filteredOrganizations.slice(0, getVisibleCount(cat.title)).map((org, idx) => {
+                  {filteredOrganizations.map((org, idx) => {
                     const organizationTags = extractTags(org.description);
                     const contact = parseContactInfo(org.description);
                     
@@ -345,41 +319,6 @@ export default function OrgAccordion({ categories }: { categories: Category[] })
                       </div>
                     );
                   })}
-                  
-                  {/* Load More Button */}
-                  {filteredOrganizations.length > getVisibleCount(cat.title) && (
-                    <div className="flex justify-center mt-8">
-                      <button
-                        onClick={() => loadMoreOrganizations(cat.title, filteredOrganizations.length)}
-                        disabled={isLoading[cat.title]}
-                        className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-8 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        {isLoading[cat.title] ? (
-                          <div className="flex items-center space-x-2">
-                            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                            <span>Loading...</span>
-                          </div>
-                        ) : (
-                          <div className="flex items-center space-x-2">
-                            <span>Load More</span>
-                            <span className="bg-white bg-opacity-20 px-2 py-1 rounded-full text-sm">
-                              {filteredOrganizations.length - getVisibleCount(cat.title)} remaining
-                            </span>
-                          </div>
-                        )}
-                      </button>
-                    </div>
-                  )}
-                  
-                  {/* All Results Loaded Message */}
-                  {filteredOrganizations.length > 20 && getVisibleCount(cat.title) >= filteredOrganizations.length && (
-                    <div className="flex justify-center mt-8">
-                      <div className="bg-green-50 dark:bg-green-900 text-green-700 dark:text-green-300 px-4 py-2 rounded-lg flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4" />
-                        <span>All {filteredOrganizations.length} organizations loaded</span>
-                      </div>
-                    </div>
-                  )}
                 </div>
               </div>
             )}
