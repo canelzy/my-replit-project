@@ -4432,8 +4432,20 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-2">Contact</h4>
-              <p className="text-gray-300 text-sm">For official government inquiries, visit the <a href="https://www.canada.ca/en/contact.html" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">Contact Government page</a>.</p>
+              <h4 className="font-semibold mb-2">Privacy & Contact</h4>
+              <ul className="text-gray-300 text-sm space-y-1">
+                <li>
+                  <a 
+                    href="http://intel.giolynx.org/important-disclaimer/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    View Privacy Policy
+                  </a>
+                </li>
+                <li>Contact: <a href="mailto:Apps@Giolynx.org" className="text-blue-400 hover:text-blue-300 transition-colors">Apps@Giolynx.org</a></li>
+              </ul>
             </div>
           </div>
           <div className="border-t border-gray-700 pt-4 mt-6 text-center">
