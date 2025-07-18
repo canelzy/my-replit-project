@@ -58,12 +58,12 @@ export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
             <div className="flex items-start gap-3">
               <FileText className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-lg mb-2">Privacy & Data Collection</h3>
+                <h3 className="font-semibold text-lg mb-2">Information We Collect</h3>
                 <p className="text-gray-700 leading-relaxed mb-3">
-                  We do <strong>not collect any personal data</strong> such as names, email addresses, phone numbers, or government ID numbers. We also do not require user registration or login of any kind.
+                  We do <strong>not collect any personal data</strong> such as names, email addresses, phone numbers, government ID numbers, or home/work addresses. We also do not require user registration or login of any kind.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  We may collect limited anonymous technical data (device type, app version, crash reports) strictly for debugging and performance improvement.
+                  We may collect limited anonymous technical data (device type, OS version, app usage patterns, crash reports) strictly for debugging, improving performance, and analytics. This data is non-identifiable and anonymous.
                 </p>
               </div>
             </div>
@@ -71,19 +71,22 @@ export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
             <div className="flex items-start gap-3">
               <ExternalLink className="h-6 w-6 text-purple-500 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-lg mb-2">External Links & Third-Party Sites</h3>
+                <h3 className="font-semibold text-lg mb-2">External Links & Data Security</h3>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  This app provides links to third-party websites including nonprofit organizations, government portals, and community resources. These external sites are not under our control - you are subject to their privacy policies and terms.
+                </p>
                 <p className="text-gray-700 leading-relaxed">
-                  This app provides links to third-party websites including nonprofit organizations, government portals, and community resources. These external sites are not under our control, and we are not responsible for their content, privacy policies, or practices.
+                  We implement secure app builds, no personal data storage, and HTTPS encryption for external data sources. We do not share, sell, or rent any data to third parties.
                 </p>
               </div>
             </div>
 
             <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
               <p className="text-sm text-blue-800 font-medium mb-2">
-                <strong>Effective Date:</strong> July 18, 2025
+                <strong>Effective Date:</strong> July 18, 2025 | <strong>Developer:</strong> GIOLYNXAPPS
               </p>
               <p className="text-sm text-blue-800 mb-2">
-                For questions about this privacy policy or data handling practices, contact us at: <strong>canelzy@yahoo.com</strong>
+                For questions about this privacy policy or data handling practices, contact us at: <strong>Apps@Giolynx.org</strong>
               </p>
               <p className="text-sm text-blue-800">
                 By clicking "Accept & Continue", you acknowledge that you have read and understood this disclaimer and privacy information, and agree to use this directory at your own risk.

@@ -53,7 +53,7 @@ Message: ${data.message}
   try {
     const mailOptions = {
       from: `"Canada Access Hub" <${process.env.GMAIL_USER}>`,
-      to: 'canelzy@yahoo.com',
+      to: 'Apps@Giolynx.org',
       subject: `Contact Form: ${data.subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
