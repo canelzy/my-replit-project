@@ -2,23 +2,60 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
-createRoot(document.getElementById("root")!).render(<App />);
-
-// Register service worker for PWA functionality
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(() => console.log('Service Worker registered!'))
-    .catch(error => console.log('Service Worker registration failed:', error));
+// Edge browser compatibility polyfills
+if (!Array.prototype.includes) {
+  Array.prototype.includes = function(searchElement, fromIndex) {
+    return this.indexOf(searchElement, fromIndex) !== -1;
+  };
 }
 
-// Detect Edge side panel context
+if (!String.prototype.includes) {
+  String.prototype.includes = function(search, start) {
+    if (typeof start !== 'number') {
+      start = 0;
+    }
+    if (start + search.length > this.length) {
+      return false;
+    } else {
+      return this.indexOf(search, start) !== -1;
+    }
+  };
+}
+
+// Safe DOM element access for Edge
+const rootElement = document.getElementById("root");
+if (rootElement) {
+  createRoot(rootElement).render(<App />);
+}
+
+// Register service worker for PWA functionality (Edge compatible)
+if ('serviceWorker' in navigator && navigator.serviceWorker) {
+  try {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(function(registration) {
+        console.log('Service Worker registered!');
+      })
+      .catch(function(error) {
+        console.log('Service Worker registration failed:', error);
+      });
+  } catch (error) {
+    console.log('Service Worker not supported in this browser');
+  }
+}
+
+// Detect Edge side panel context (Edge compatible)
 function detectEdgeSidePanel() {
-  const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
-  const isNarrowWidth = window.innerWidth <= 500;
-  
-  if (isStandalone && isNarrowWidth) {
-    document.body.classList.add('edge-side-panel');
-    console.log('Running in Edge side panel mode');
+  try {
+    const isStandalone = window.matchMedia && window.matchMedia('(display-mode: standalone)').matches;
+    const isNarrowWidth = window.innerWidth <= 500;
+    
+    if (isStandalone && isNarrowWidth) {
+      document.body.classList.add('edge-side-panel');
+      console.log('Running in Edge side panel mode');
+    }
+  } catch (error) {
+    // Fallback for older browsers
+    console.log('matchMedia not supported');
   }
 }
 
@@ -26,22 +63,27 @@ function detectEdgeSidePanel() {
 window.addEventListener('load', detectEdgeSidePanel);
 window.addEventListener('resize', detectEdgeSidePanel);
 
-// Handle file opening when app is launched as file handler
+// Handle file opening when app is launched as file handler (Edge compatible)
 function handleFileHandlerLaunch() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const handler = urlParams.get('handler');
-  
-  if (handler) {
-    console.log(`Launched as file handler: ${handler}`);
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const handler = urlParams.get('handler');
     
-    // Handle different file types
-    if (handler === 'tax-form') {
-      // Show tax-related resources
-      showTaxResources();
-    } else if (handler === 'government-doc') {
-      // Show general government document resources
-      showGovernmentDocResources();
+    if (handler) {
+      console.log('Launched as file handler: ' + handler);
+      
+      // Handle different file types
+      if (handler === 'tax-form') {
+        // Show tax-related resources
+        showTaxResources();
+      } else if (handler === 'government-doc') {
+        // Show general government document resources
+        showGovernmentDocResources();
+      }
     }
+  } catch (error) {
+    // Fallback for browsers without URLSearchParams support
+    console.log('URLSearchParams not supported');
   }
 }
 
