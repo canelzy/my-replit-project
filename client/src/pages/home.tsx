@@ -4432,22 +4432,8 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-2">Settings</h4>
-              <ul className="text-gray-300 text-sm space-y-1">
-                <li><a href="/privacy.html" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li>
-                  <button 
-                    onClick={() => {
-                      localStorage.clear();
-                      sessionStorage.clear();
-                      window.location.reload();
-                    }}
-                    className="hover:text-white transition-colors text-left"
-                  >
-                    Reset Disclaimer
-                  </button>
-                </li>
-              </ul>
+              <h4 className="font-semibold mb-2">Contact</h4>
+              <p className="text-gray-300 text-sm">For official government inquiries, visit the <a href="https://www.canada.ca/en/contact.html" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">Contact Government page</a>.</p>
             </div>
           </div>
           <div className="border-t border-gray-700 pt-4 mt-6 text-center">

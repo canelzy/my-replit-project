@@ -20,15 +20,12 @@ function Router() {
 }
 
 function App() {
-  const [showDisclaimer, setShowDisclaimer] = useState(false);
+  const [showDisclaimer, setShowDisclaimer] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check if disclaimer has been accepted
-    const disclaimerAccepted = localStorage.getItem('canada-access-hub-disclaimer-accepted');
-    if (!disclaimerAccepted) {
-      setShowDisclaimer(true);
-    }
+    // Always show disclaimer on every visit
+    setShowDisclaimer(true);
     setIsLoading(false);
   }, []);
 

@@ -9,7 +9,7 @@ interface DisclaimerModalProps {
 
 export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
   const handleAccept = () => {
-    localStorage.setItem('canada-access-hub-disclaimer-accepted', 'true');
+    // Don't store acceptance in localStorage since we want it to show every visit
     onAccept();
   };
 
