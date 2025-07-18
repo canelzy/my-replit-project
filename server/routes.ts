@@ -12,6 +12,11 @@ const contactFormSchema = z.object({
 });
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Health check endpoint
+  app.get("/api/test", (req, res) => {
+    res.json({ status: "ok", message: "Server is working", timestamp: new Date().toISOString() });
+  });
+
   // Contact form submission endpoint
   app.post("/api/contact", async (req, res) => {
     try {

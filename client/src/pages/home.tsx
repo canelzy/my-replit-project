@@ -3,7 +3,6 @@ import SearchBar from "@/components/search-bar";
 import CategoryCard from "@/components/category-card";
 import ContactForm from "@/components/contact-form";
 import ShareButton from "@/components/share-button";
-import SimpleOrgAccordion from "@/components/SimpleOrgAccordion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
