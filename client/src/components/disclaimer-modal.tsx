@@ -9,7 +9,9 @@ interface DisclaimerModalProps {
 
 export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
   const handleAccept = () => {
-    // Don't store acceptance in localStorage since we want it to show every visit
+    // Track visit count and show every other time
+    const visitCount = parseInt(localStorage.getItem('visitCount') || '0', 10);
+    localStorage.setItem('visitCount', String(visitCount + 1));
     onAccept();
   };
 
