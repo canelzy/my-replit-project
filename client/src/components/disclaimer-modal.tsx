@@ -104,7 +104,19 @@ export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
               </div>
 
               <div>
-                <h4 className="font-semibold text-gray-900 mb-2">6. Links to External Content</h4>
+                <h4 className="font-semibold text-gray-900 mb-2">6. Third-Party Services</h4>
+                <p className="text-gray-700 leading-relaxed mb-2">This app may use external services for analytics or performance monitoring. These services may collect non-personal data under their own privacy policies:</p>
+                <ul className="text-gray-700 list-disc list-inside ml-4 space-y-1">
+                  <li>Google Play Services</li>
+                  <li>Firebase Crashlytics</li>
+                </ul>
+                <p className="text-gray-700 leading-relaxed mt-2">
+                  We do not control how these services collect or use data, but we aim to minimize their data footprint.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-2">7. Links to External Content</h4>
                 <p className="text-gray-700 leading-relaxed mb-2">This app provides links to third-party websites, including:</p>
                 <ul className="text-gray-700 list-disc list-inside ml-4 space-y-1">
                   <li>Nonprofit organization websites</li>
@@ -112,12 +124,26 @@ export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
                   <li>Cultural, community, and settlement resources</li>
                 </ul>
                 <p className="text-gray-700 leading-relaxed mt-2">
-                  These external sites are not under our control. When you click a link, you are subject to that site's privacy policy and terms.
+                  These external sites are not under our control. When you click a link, you are subject to that site's privacy policy and terms. We are not responsible for how those sites collect, store, or use your data.
                 </p>
               </div>
 
               <div>
-                <h4 className="font-semibold text-gray-900 mb-2">7. Data Security</h4>
+                <h4 className="font-semibold text-gray-900 mb-2">8. Data Retention</h4>
+                <p className="text-gray-700 leading-relaxed">
+                  We do not store or retain any personal information. Any anonymous crash or analytics data is retained only for the minimum period necessary to diagnose issues and improve functionality.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-2">9. Children's Privacy</h4>
+                <p className="text-gray-700 leading-relaxed">
+                  This app is intended for general audiences and does not knowingly collect information from children under 13. If you believe that personal data was provided inadvertently, please contact us and we will delete it immediately.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-2">10. Data Security</h4>
                 <p className="text-gray-700 leading-relaxed mb-2">We implement reasonable technical measures to protect the app against unauthorized access and vulnerabilities. These include:</p>
                 <ul className="text-gray-700 list-disc list-inside ml-4 space-y-1">
                   <li>Secure app builds</li>
@@ -125,17 +151,31 @@ export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
                   <li>HTTPS encryption for any external data sources</li>
                 </ul>
               </div>
+
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-2">11. Policy Updates</h4>
+                <p className="text-gray-700 leading-relaxed">
+                  We may update this policy from time to time. Changes will be posted within the app and reflected by an updated "Last Updated" date at the top of this page.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-2">12. Contact Us</h4>
+                <p className="text-gray-700 leading-relaxed mb-2">If you have any questions or concerns about this Privacy Policy or the app's data handling practices, please contact us at:</p>
+                <ul className="text-gray-700 list-disc list-inside ml-4 space-y-1">
+                  <li><strong>Email:</strong> Apps@Giolynx.org</li>
+                  <li><strong>Developer:</strong> GIOLYNXAPPS</li>
+                  <li><strong>Location:</strong> Canada</li>
+                </ul>
+              </div>
             </div>
 
             <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 mt-6">
               <p className="text-xs text-blue-800 font-medium mb-2">
-                <strong>Effective Date:</strong> July 18, 2025 | <strong>Developer:</strong> GIOLYNXAPPS | <strong>Location:</strong> Canada
-              </p>
-              <p className="text-xs text-blue-800 mb-2">
-                For questions about this privacy policy, contact us at: <strong>Apps@Giolynx.org</strong>
+                <strong>Effective Date:</strong> July 18, 2025 | <strong>Last Updated:</strong> July 18, 2025
               </p>
               <p className="text-xs text-blue-800">
-                By clicking "Accept & Continue", you acknowledge that you have read and understood this privacy policy and agree to use this directory at your own risk.
+                By clicking "Accept & Continue", you acknowledge that you have read and understood this complete privacy policy and agree to use this directory at your own risk.
               </p>
             </div>
 
