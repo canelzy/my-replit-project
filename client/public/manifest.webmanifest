@@ -11,6 +11,13 @@
   "categories": ["government", "utilities", "reference"],
   "lang": "en-CA",
   "dir": "ltr",
+  "id": "/canada-access-hub/",
+  "protocol_handlers": [
+    {
+      "protocol": "web+gov",
+      "url": "/?handler=%s"
+    }
+  ],
   "icons": [
     {
       "src": "./icons/icon-192x192.png",

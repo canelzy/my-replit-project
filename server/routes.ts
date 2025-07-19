@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { sendContactEmail } from "./email";
+import { generateAppToken, getSigningKey } from "./signing";
 import { z } from "zod";
 
 const contactFormSchema = z.object({
@@ -15,6 +16,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Health check endpoint
   app.get("/api/test", (req, res) => {
     res.json({ status: "ok", message: "Server is working", timestamp: new Date().toISOString() });
+  });
+
+  // App signing key endpoint
+  app.get("/api/app-token", (req, res) => {
+    try {
+      const signingKey = getSigningKey();
+      const token = generateAppToken("canada-access-hub");
+      
+      res.json({
+        token,
+        keyId: signingKey.id,
+        algorithm: signingKey.algorithm,
+        timestamp: new Date().toISOString()
+      });
+    } catch (error) {
+      console.error('App token generation error:', error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to generate app token" 
+      });
+    }
   });
 
   // Contact form submission endpoint
