@@ -20,13 +20,18 @@ export function signWithCertificate(data: string, fingerprint: string): string {
   return signature;
 }
 
-// Generate certificate-based JWT
+// Generate certificate-based JWT with Google Play Store validation
 export function generateCertificateToken(appId: string, fingerprint: string): string {
+  const expectedCert = '3A:4C:AE:AE:46:E5:1A:40:BE:47:8B:E8:D4:B1:BE:C4:1A:F0:2D:9F';
+  const currentCert = '39:42:B1:26:C0:34:0C:2F:13:C3:A9:04:4D:D1:85:D0:F9:4C:D3:AB';
+  
   const header = {
     alg: 'HS256',
     typ: 'JWT',
     kid: fingerprint.replace(/:/g, '').substring(0, 16), // Use first 16 chars as key ID
-    cert: fingerprint
+    cert: fingerprint,
+    expected_cert: expectedCert,
+    cert_status: fingerprint === expectedCert ? 'valid' : 'mismatch'
   };
 
   const payload = {
@@ -35,6 +40,10 @@ export function generateCertificateToken(appId: string, fingerprint: string): st
     iat: Math.floor(Date.now() / 1000),
     exp: Math.floor(Date.now() / 1000) + (24 * 60 * 60), // 24 hours
     cert_fingerprint: fingerprint,
+    expected_cert: expectedCert,
+    current_cert: currentCert,
+    cert_match: fingerprint === expectedCert,
+    play_store_ready: fingerprint === expectedCert,
     signed_with_cert: true
   };
 

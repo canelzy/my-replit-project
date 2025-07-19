@@ -65,6 +65,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Certificate validation endpoint for Google Play Store
+  app.get("/api/cert-validation", (req, res) => {
+    const expectedCert = "3A:4C:AE:AE:46:E5:1A:40:BE:47:8B:E8:D4:B1:BE:C4:1A:F0:2D:9F";
+    const currentCert = "39:42:B1:26:C0:34:0C:2F:13:C3:A9:04:4D:D1:85:D0:F9:4C:D3:AB";
+    
+    res.json({
+      play_store_status: "certificate_mismatch",
+      expected_certificate: expectedCert,
+      current_certificate: currentCert,
+      certificates_match: false,
+      action_required: "Re-sign App Bundle with correct certificate",
+      instructions: [
+        "1. Generate keystore with expected certificate fingerprint",
+        "2. Sign App Bundle using the correct keystore",
+        "3. Upload the correctly signed App Bundle to Google Play Store"
+      ],
+      timestamp: new Date().toISOString()
+    });
+  });
+
   // Token verification endpoint
   app.post("/api/verify-token", (req, res) => {
     try {
