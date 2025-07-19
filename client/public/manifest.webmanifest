@@ -1,6 +1,7 @@
 {
   "name": "Canada Access Hub",
   "short_name": "AccessHub",
+  "version": "2.0.0",
   "description": "A comprehensive hub for accessing Canadian government services and community resources.",
   "start_url": "/",
   "display": "standalone",
