@@ -2549,6 +2549,47 @@ export default function Home() {
   const [expandedNonprofitCategories, setExpandedNonprofitCategories] = useState<string[]>([]);
   const [expandedTorontoNonprofitCategories, setExpandedTorontoNonprofitCategories] = useState<string[]>([]);
   const [selectedTorontoNonprofitFilter, setSelectedTorontoNonprofitFilter] = useState<string>("all");
+  const [subcategoryFilters, setSubcategoryFilters] = useState<{[key: string]: string}>({});
+
+  // Helper function to generate tags for organizations
+  const generateTags = (name: string, description: string): string[] => {
+    const tags: string[] = [];
+    const text = (name + ' ' + description).toLowerCase();
+    
+    // Service type tags
+    if (text.includes('employment') || text.includes('job') || text.includes('career') || text.includes('work')) tags.push('Employment');
+    if (text.includes('settlement') || text.includes('newcomer') || text.includes('immigrant') || text.includes('refugee')) tags.push('Settlement');
+    if (text.includes('language') || text.includes('english') || text.includes('esl') || text.includes('linc')) tags.push('Language');
+    if (text.includes('youth') || text.includes('young') || text.includes('children')) tags.push('Youth');
+    if (text.includes('lgbtq') || text.includes('lgbt') || text.includes('gay') || text.includes('lesbian') || text.includes('trans') || text.includes('queer')) tags.push('LGBTQ+');
+    if (text.includes('women') || text.includes('woman') || text.includes('female')) tags.push('Women');
+    if (text.includes('mental health') || text.includes('counselling') || text.includes('therapy')) tags.push('Mental Health');
+    if (text.includes('housing') || text.includes('shelter') || text.includes('homeless')) tags.push('Housing');
+    if (text.includes('food') || text.includes('meal') || text.includes('kitchen') || text.includes('nutrition')) tags.push('Food');
+    if (text.includes('health') || text.includes('medical') || text.includes('clinic')) tags.push('Health');
+    if (text.includes('training') || text.includes('education') || text.includes('skill')) tags.push('Training');
+    if (text.includes('community') || text.includes('social')) tags.push('Community');
+    if (text.includes('legal') || text.includes('law') || text.includes('advocacy')) tags.push('Legal');
+    if (text.includes('senior') || text.includes('elderly') || text.includes('older')) tags.push('Seniors');
+    if (text.includes('disability') || text.includes('disabled') || text.includes('accessible')) tags.push('Disability');
+    if (text.includes('family') || text.includes('parent') || text.includes('child')) tags.push('Family');
+    if (text.includes('cultural') || text.includes('culture') || text.includes('ethnic')) tags.push('Cultural');
+    if (text.includes('art') || text.includes('creative') || text.includes('music') || text.includes('theatre')) tags.push('Arts');
+    if (text.includes('environment') || text.includes('green') || text.includes('sustainability')) tags.push('Environment');
+    
+    // Community-specific tags
+    if (text.includes('african') || text.includes('black') || text.includes('caribbean')) tags.push('African/Black');
+    if (text.includes('asian') || text.includes('chinese') || text.includes('korean') || text.includes('vietnamese')) tags.push('Asian');
+    if (text.includes('indigenous') || text.includes('native') || text.includes('first nation')) tags.push('Indigenous');
+    if (text.includes('latin') || text.includes('hispanic') || text.includes('spanish')) tags.push('Latino/Hispanic');
+    if (text.includes('arab') || text.includes('middle east') || text.includes('muslim')) tags.push('Arab/Middle Eastern');
+    if (text.includes('french') || text.includes('francophone')) tags.push('Francophone');
+    if (text.includes('ghanaian') || text.includes('ghana')) tags.push('Ghanaian');
+    if (text.includes('ukrainian') || text.includes('ukraine')) tags.push('Ukrainian');
+    if (text.includes('afghan') || text.includes('afghanistan')) tags.push('Afghan');
+    
+    return tags.length > 0 ? tags : ['General'];
+  };
 
   // Helper function to parse contact information from description
   const parseContactInfo = (description: string) => {
@@ -3035,9 +3076,49 @@ export default function Home() {
                                   
                                   {isExpanded && (
                                     <div className="bg-white dark:bg-zinc-900 p-6">
+                                      {/* Subcategory Filter */}
+                                      <div className="mb-6 bg-gray-50 dark:bg-zinc-800 p-4 rounded-lg border">
+                                        <div className="flex items-center space-x-3 mb-3">
+                                          <i className="fas fa-tags text-purple-600"></i>
+                                          <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                            Filter by Service Type:
+                                          </label>
+                                        </div>
+                                        <Select 
+                                          value={subcategoryFilters[nonprofitCategory] || "all"} 
+                                          onValueChange={(value) => {
+                                            setSubcategoryFilters(prev => ({
+                                              ...prev,
+                                              [nonprofitCategory]: value
+                                            }));
+                                          }}
+                                        >
+                                          <SelectTrigger className="w-full max-w-xs">
+                                            <SelectValue placeholder="All Services" />
+                                          </SelectTrigger>
+                                          <SelectContent>
+                                            <SelectItem value="all">All Services</SelectItem>
+                                            {Array.from(new Set(
+                                              organizations.flatMap(org => generateTags(org.name, org.description))
+                                            )).sort().map((tag) => (
+                                              <SelectItem key={tag} value={tag}>
+                                                {tag}
+                                              </SelectItem>
+                                            ))}
+                                          </SelectContent>
+                                        </Select>
+                                      </div>
+
                                       <div className="space-y-4">
-                                        {organizations.map((org, idx) => {
+                                        {organizations
+                                          .filter(org => {
+                                            const selectedTag = subcategoryFilters[nonprofitCategory];
+                                            if (!selectedTag || selectedTag === "all") return true;
+                                            return generateTags(org.name, org.description).includes(selectedTag);
+                                          })
+                                          .map((org, idx) => {
                                           const contactInfo = parseContactInfo(org.description);
+                                          const orgTags = generateTags(org.name, org.description);
                                           
                                           return (
                                             <div key={idx} className="border-l-4 border-purple-500 pl-4 py-3 bg-gray-50 dark:bg-zinc-800 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors">
@@ -3059,6 +3140,19 @@ export default function Home() {
                                                     )}
                                                   </div>
                                                   <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{contactInfo.cleanDescription}</p>
+                                                  
+                                                  {/* Service Tags */}
+                                                  <div className="flex flex-wrap gap-2 mb-3">
+                                                    {orgTags.map((tag, tagIdx) => (
+                                                      <span 
+                                                        key={tagIdx}
+                                                        className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
+                                                      >
+                                                        <i className="fas fa-tag mr-1 text-xs"></i>
+                                                        {tag}
+                                                      </span>
+                                                    ))}
+                                                  </div>
                                                   
                                                   {/* Contact Information */}
                                                   <div className="space-y-2">
