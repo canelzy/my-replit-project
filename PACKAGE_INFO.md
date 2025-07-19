@@ -1,7 +1,7 @@
 # Android Package Configuration - Canada Services Hub
 
 ## New Package Name
-**Package Name**: `ca.giolynx.canadaserviceshub`
+**Package Name**: `ca.canelzy.govservices` (Updated)
 
 ## Package Details
 - **Domain**: ca.giolynx (Canadian domain, GIOLYNX organization)

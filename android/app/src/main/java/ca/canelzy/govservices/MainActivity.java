@@ -1,4 +1,4 @@
-package ca.giolynx.canadaserviceshub;
+package ca.canelzy.govservices;
 
 import android.app.Activity;
 import android.content.Intent;
