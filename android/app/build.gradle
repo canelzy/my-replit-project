@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'ca.giolynxapps.canadaaccesshub'
+    namespace 'ca.giolynx.canadaserviceshub'
     compileSdk 34
 
     defaultConfig {
-        applicationId "ca.giolynxapps.canadaaccesshub"
+        applicationId "ca.giolynx.canadaserviceshub"
         minSdk 24
         targetSdk 34
         versionCode 2
