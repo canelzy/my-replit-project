@@ -71,13 +71,14 @@ export function verifySignature(token: string): any {
   }
 }
 
-// Generate app integrity token
-export function generateAppToken(appId: string): string {
+// Generate app integrity token with certificate fingerprint
+export function generateAppToken(appId: string, certFingerprint?: string): string {
   const payload = {
     app_id: appId,
     iss: 'canada-access-hub',
     iat: Math.floor(Date.now() / 1000),
-    exp: Math.floor(Date.now() / 1000) + (24 * 60 * 60) // 24 hours
+    exp: Math.floor(Date.now() / 1000) + (24 * 60 * 60), // 24 hours
+    cert_fingerprint: certFingerprint || process.env.APP_CERT_FINGERPRINT || '3A:4C:AE:AE:46:E5:1A:40:BE:47:8B:E8:D4:B1:BE:C4:1A:F0:2D:9F'
   };
 
   return signPayload(payload);

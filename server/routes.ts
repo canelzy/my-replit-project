@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { sendContactEmail } from "./email";
 import { generateAppToken, getSigningKey } from "./signing";
+import { generateCertificateToken, verifyCertificateToken } from "./cert-signing";
 import { z } from "zod";
 
 const contactFormSchema = z.object({
@@ -22,12 +23,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/app-token", (req, res) => {
     try {
       const signingKey = getSigningKey();
-      const token = generateAppToken("canada-access-hub");
+      const certFingerprint = "3A:4C:AE:AE:46:E5:1A:40:BE:47:8B:E8:D4:B1:BE:C4:1A:F0:2D:9F";
+      const token = generateAppToken("canada-access-hub", certFingerprint);
       
       res.json({
         token,
         keyId: signingKey.id,
         algorithm: signingKey.algorithm,
+        certFingerprint: certFingerprint,
         timestamp: new Date().toISOString()
       });
     } catch (error) {
@@ -35,6 +38,60 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ 
         success: false, 
         message: "Failed to generate app token" 
+      });
+    }
+  });
+
+  // Certificate-based signing endpoint
+  app.get("/api/cert-token", (req, res) => {
+    try {
+      const certFingerprint = "3A:4C:AE:AE:46:E5:1A:40:BE:47:8B:E8:D4:B1:BE:C4:1A:F0:2D:9F";
+      const certToken = generateCertificateToken("canada-access-hub", certFingerprint);
+      
+      res.json({
+        token: certToken,
+        certFingerprint: certFingerprint,
+        keyId: certFingerprint.replace(/:/g, '').substring(0, 16),
+        algorithm: 'HS256-CERT',
+        signedWithCertificate: true,
+        timestamp: new Date().toISOString()
+      });
+    } catch (error) {
+      console.error('Certificate token generation error:', error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to generate certificate token" 
+      });
+    }
+  });
+
+  // Token verification endpoint
+  app.post("/api/verify-token", (req, res) => {
+    try {
+      const { token, type } = req.body;
+      
+      if (type === 'certificate') {
+        const certFingerprint = "3A:4C:AE:AE:46:E5:1A:40:BE:47:8B:E8:D4:B1:BE:C4:1A:F0:2D:9F";
+        const payload = verifyCertificateToken(token, certFingerprint);
+        
+        res.json({
+          valid: true,
+          payload,
+          verifiedWith: 'certificate',
+          timestamp: new Date().toISOString()
+        });
+      } else {
+        res.status(400).json({
+          valid: false,
+          message: "Unsupported token type"
+        });
+      }
+    } catch (error) {
+      console.error('Token verification error:', error);
+      res.json({
+        valid: false,
+        message: "Token verification failed",
+        error: error.message
       });
     }
   });
