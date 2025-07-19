@@ -14,16 +14,9 @@ function Router() {
   const [location, setLocation] = useLocation();
   
   useEffect(() => {
-    // Check if user has seen landing page
-    const hasSeenLanding = localStorage.getItem('hasSeenLanding');
-    
-    // If on root path and hasn't seen landing, redirect to landing
-    if (location === '/' && !hasSeenLanding) {
+    // Always redirect to landing page when on root path
+    if (location === '/') {
       setLocation('/landing');
-    }
-    // If on root path and has seen landing, redirect to home
-    else if (location === '/' && hasSeenLanding) {
-      setLocation('/home');
     }
   }, [location, setLocation]);
 

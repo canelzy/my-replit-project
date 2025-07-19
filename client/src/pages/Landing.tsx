@@ -49,7 +49,6 @@ export default function Landing() {
     }, 1000); // Delay to ensure page is fully loaded
 
     const timeout = setTimeout(() => {
-      localStorage.setItem("hasSeenLanding", "true");
       setLocation("/home");
     }, 10000); // 10 seconds
 
@@ -61,7 +60,6 @@ export default function Landing() {
   }, [setLocation]);
 
   const handleContinue = () => {
-    localStorage.setItem("hasSeenLanding", "true");
     setLocation("/home");
   };
 
