@@ -9,15 +9,7 @@ interface DisclaimerModalProps {
 
 export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
   const handleAccept = () => {
-    // Only increment visit count if not already incremented this session
-    const countIncrementedThisSession = sessionStorage.getItem('countIncrementedThisSession');
-    
-    if (!countIncrementedThisSession) {
-      const visitCount = parseInt(localStorage.getItem('visitCount') || '0', 10);
-      localStorage.setItem('visitCount', String(visitCount + 1));
-      sessionStorage.setItem('countIncrementedThisSession', 'true');
-    }
-    
+    // Simply close the disclaimer without tracking visit counts
     onAccept();
   };
 

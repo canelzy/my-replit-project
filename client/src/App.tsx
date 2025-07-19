@@ -23,23 +23,8 @@ function App() {
   const [showDisclaimer, setShowDisclaimer] = useState(false);
 
   useEffect(() => {
-    // Use a more robust approach to detect refresh vs new visit
-    const disclaimerShownThisSession = sessionStorage.getItem('disclaimerShownThisSession');
-    
-    if (!disclaimerShownThisSession) {
-      // This is the first load in this session (new visit, not refresh)
-      const visitCount = parseInt(localStorage.getItem('visitCount') || '0', 10);
-      
-      // Show disclaimer every other visit (on even visit numbers: 0, 2, 4, etc.)
-      if (visitCount % 2 === 0) {
-        setShowDisclaimer(true);
-        sessionStorage.setItem('disclaimerShownThisSession', 'true');
-      } else {
-        // Even if we don't show disclaimer, mark session as visited
-        sessionStorage.setItem('disclaimerShownThisSession', 'true');
-      }
-    }
-    // If disclaimerShownThisSession exists, don't show disclaimer again this session
+    // Show disclaimer every time the app opens or refreshes
+    setShowDisclaimer(true);
   }, []);
 
   const handleDisclaimerAccept = () => {
