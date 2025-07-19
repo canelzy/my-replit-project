@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canada Services Hub - Icon Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .icon-preview { margin: 20px 0; text-align: center; }
+        .icon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin: 20px 0; }
+        .icon-item { background: white; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        canvas { border: 1px solid #ddd; margin: 10px; }
+        .download-btn { background: #1E40AF; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin: 5px; }
+        .download-btn:hover { background: #1E3A8A; }
+    </style>
+</head>
+<body>
+    <h1>Canada Services Hub - App Icon Generator</h1>
+    
+    <div class="icon-preview">
+        <h2>Custom App Icon</h2>
+        <canvas id="icon512" width="512" height="512"></canvas>
+        <canvas id="icon192" width="192" height="192"></canvas>
+        <canvas id="icon72" width="72" height="72"></canvas>
+    </div>
+    
+    <div class="icon-grid">
+        <div class="icon-item">
+            <h3>512x512 (High Resolution)</h3>
+            <canvas id="preview512" width="100" height="100"></canvas>
+            <br>
+            <button class="download-btn" onclick="downloadIcon(512)">Download 512x512</button>
+        </div>
+        
+        <div class="icon-item">
+            <h3>192x192 (Standard)</h3>
+            <canvas id="preview192" width="100" height="100"></canvas>
+            <br>
+            <button class="download-btn" onclick="downloadIcon(192)">Download 192x192</button>
+        </div>
+        
+        <div class="icon-item">
+            <h3>72x72 (Small)</h3>
+            <canvas id="preview72" width="100" height="100"></canvas>
+            <br>
+            <button class="download-btn" onclick="downloadIcon(72)">Download 72x72</button>
+        </div>
+    </div>
+    
+    <div style="margin-top: 40px; background: white; padding: 20px; border-radius: 8px;">
+        <h3>Icon Design Elements</h3>
+        <ul>
+            <li><strong>Red Circle Background</strong> - Canadian flag red color</li>
+            <li><strong>White Inner Circle</strong> - Clean, professional appearance</li>
+            <li><strong>Maple Leaf</strong> - Iconic Canadian symbol</li>
+            <li><strong>Government Building</strong> - Represents government services</li>
+            <li><strong>Service Icons</strong> - Health, education, employment, immigration</li>
+            <li><strong>Blue Color Scheme</strong> - Trust and authority</li>
+            <li><strong>"CANADA SERVICES" Text</strong> - Clear identification</li>
+        </ul>
+    </div>
+
+    <script>
+        function drawIcon(canvas, size) {
+            const ctx = canvas.getContext('2d');
+            const scale = size / 512;
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+            
+            // Background circle (Canadian red)
+            ctx.fillStyle = '#FF0000';
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size/2, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Inner white circle
+            ctx.fillStyle = '#FFFFFF';
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size * 0.43, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Maple leaf (simplified)
+            ctx.fillStyle = '#FF0000';
+            ctx.beginPath();
+            ctx.moveTo(size/2, size * 0.16);
+            ctx.lineTo(size * 0.55, size * 0.24);
+            ctx.lineTo(size * 0.62, size * 0.20);
+            ctx.lineTo(size * 0.58, size * 0.28);
+            ctx.lineTo(size * 0.66, size * 0.32);
+            ctx.lineTo(size * 0.58, size * 0.36);
+            ctx.lineTo(size * 0.62, size * 0.44);
+            ctx.lineTo(size * 0.55, size * 0.40);
+            ctx.lineTo(size/2, size * 0.48);
+            ctx.lineTo(size * 0.45, size * 0.40);
+            ctx.lineTo(size * 0.38, size * 0.44);
+            ctx.lineTo(size * 0.42, size * 0.36);
+            ctx.lineTo(size * 0.34, size * 0.32);
+            ctx.lineTo(size * 0.42, size * 0.28);
+            ctx.lineTo(size * 0.38, size * 0.20);
+            ctx.lineTo(size * 0.45, size * 0.24);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Government building
+            ctx.fillStyle = '#1E40AF';
+            ctx.fillRect(size * 0.39, size * 0.55, size * 0.22, size * 0.16);
+            
+            // Building columns
+            ctx.fillStyle = '#FFFFFF';
+            for (let i = 0; i < 5; i++) {
+                ctx.fillRect(size * (0.41 + i * 0.036), size * 0.57, size * 0.016, size * 0.12);
+            }
+            
+            // Roof
+            ctx.fillStyle = '#1E40AF';
+            ctx.beginPath();
+            ctx.moveTo(size * 0.36, size * 0.55);
+            ctx.lineTo(size/2, size * 0.47);
+            ctx.lineTo(size * 0.64, size * 0.55);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Text (only for larger sizes)
+            if (size >= 192) {
+                ctx.fillStyle = '#1E40AF';
+                ctx.fillRect(size * 0.15, size * 0.74, size * 0.7, size * 0.08);
+                
+                ctx.fillStyle = '#FFFFFF';
+                ctx.font = `bold ${size * 0.035}px Arial`;
+                ctx.textAlign = 'center';
+                ctx.fillText('CANADA SERVICES', size/2, size * 0.79);
+            }
+        }
+        
+        function downloadIcon(size) {
+            const canvas = document.getElementById(`icon${size}`);
+            const link = document.createElement('a');
+            link.download = `canada-services-hub-icon-${size}x${size}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Generate all icons
+        window.onload = function() {
+            // Main display icons
+            drawIcon(document.getElementById('icon512'), 512);
+            drawIcon(document.getElementById('icon192'), 192);
+            drawIcon(document.getElementById('icon72'), 72);
+            
+            // Preview icons
+            drawIcon(document.getElementById('preview512'), 100);
+            drawIcon(document.getElementById('preview192'), 100);
+            drawIcon(document.getElementById('preview72'), 100);
+        };
+    </script>
+</body>
+</html>
