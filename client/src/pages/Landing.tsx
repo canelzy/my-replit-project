@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useLocation } from "wouter";
 
 export default function Landing() {
   const [, setLocation] = useLocation();
   const [isNarrating, setIsNarrating] = useState(false);
+  const autoRedirectTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const narrateText = () => {
     if ('speechSynthesis' in window) {
@@ -27,9 +28,26 @@ export default function Landing() {
       utterance.pitch = 1;
       utterance.volume = 0.8;
       
-      utterance.onstart = () => setIsNarrating(true);
-      utterance.onend = () => setIsNarrating(false);
-      utterance.onerror = () => setIsNarrating(false);
+      utterance.onstart = () => {
+        setIsNarrating(true);
+        // Clear any existing auto-redirect timeout when narration starts
+        if (autoRedirectTimeoutRef.current) {
+          clearTimeout(autoRedirectTimeoutRef.current);
+          autoRedirectTimeoutRef.current = null;
+        }
+      };
+      
+      utterance.onend = () => {
+        setIsNarrating(false);
+        // Navigate to home when narration ends
+        setLocation("/home");
+      };
+      
+      utterance.onerror = () => {
+        setIsNarrating(false);
+        // If speech fails, navigate to home
+        setLocation("/home");
+      };
       
       window.speechSynthesis.speak(utterance);
     }
@@ -48,13 +66,16 @@ export default function Landing() {
       narrateText();
     }, 1000); // Delay to ensure page is fully loaded
 
-    const timeout = setTimeout(() => {
+    // Fallback timeout in case speech synthesis is not available
+    autoRedirectTimeoutRef.current = setTimeout(() => {
       setLocation("/home");
-    }, 10000); // 10 seconds
+    }, 10000); // 10 seconds fallback
 
     return () => {
       clearTimeout(narrationTimeout);
-      clearTimeout(timeout);
+      if (autoRedirectTimeoutRef.current) {
+        clearTimeout(autoRedirectTimeoutRef.current);
+      }
       stopNarration();
     };
   }, [setLocation]);
@@ -126,7 +147,7 @@ export default function Landing() {
       </section>
 
       <p className="text-sm text-gray-400 text-center">
-        Automatically continuing in 10 seconds...
+        {isNarrating ? "Continuing after narration ends..." : "Automatically continuing after narration..."}
       </p>
     </main>
   );
