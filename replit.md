@@ -9,6 +9,8 @@ This is a React-based web application called "Canada Access Hub" that serves as 
 
 **Recent Enhancement**: Transitioned to modular component architecture with standalone OrgAccordion component using JSON data structure for better reusability and maintainability.
 
+**Domain Update**: Changed primary domain to `canada-services-hub-canelzy.replit.app` with updated references in privacy policy and Android configuration.
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.

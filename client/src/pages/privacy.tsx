@@ -93,7 +93,7 @@ export default function Privacy() {
                   Email: <a href="mailto:support@giolynx.org" className="text-blue-600 hover:text-blue-800">support@giolynx.org</a>
                 </p>
                 <p className="text-gray-700">
-                  Website: <a href="https://canadaaccesshub.giolynx.org" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">canadaaccesshub.giolynx.org</a>
+                  Website: <a href="https://canada-services-hub-canelzy.replit.app" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">canada-services-hub-canelzy.replit.app</a>
                 </p>
               </div>
             </div>
