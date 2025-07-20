@@ -1,19 +1,12 @@
 {
   "name": "Canada Services Hub",
   "short_name": "CanadaHub",
-  "version": "2.0.0",
   "description": "Comprehensive directory for Canadian government services and community resources.",
-  "start_url": "/?source=pwa",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#FF0000",
   "scope": "/",
-  "prefer_related_applications": false,
-  "orientation": "portrait-primary",
-  "display_override": ["standalone"],
-  "categories": ["government", "utilities", "reference"],
-  "lang": "en-CA",
-  "dir": "ltr",
   "id": "ca.govhub.services2025",
   "icons": [
     {
