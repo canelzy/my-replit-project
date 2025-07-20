@@ -1,4 +1,4 @@
-package ca.canelzy.govservices;
+package ca.govhub.services2025;
 
 import android.app.Activity;
 import android.content.Intent;

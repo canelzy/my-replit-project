@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'ca.canelzy.govservices'
+    namespace 'ca.govhub.services2025'
     compileSdk 34
 
     defaultConfig {
-        applicationId "ca.canelzy.govservices"
+        applicationId "ca.govhub.services2025"
         minSdk 24
         targetSdk 34
         versionCode 2

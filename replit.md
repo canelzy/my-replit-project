@@ -11,7 +11,7 @@ This is a React-based web application called "Canada Access Hub" that serves as 
 
 **Domain Update**: Changed primary domain to `canada-services-hub-canelzy.replit.app` with updated references in privacy policy and Android configuration.
 
-**PWA Package**: PWABuilder detects TWA package as `app.replit.canadian_service_hub_canelzy.twa` for Google Play Store deployment.
+**PWA Package**: Updated to unique package identifier `ca.govhub.services2025` to resolve naming conflicts for Google Play Store deployment.
 
 ## User Preferences
 
