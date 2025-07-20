@@ -2,7 +2,7 @@
   "name": "Canada Services Hub",
   "short_name": "CanadaHub",
   "description": "Comprehensive directory for Canadian government services and community resources.",
-  "start_url": "/",
+  "start_url": "/?utm_source=pwa&utm_medium=homescreen",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#FF0000",
