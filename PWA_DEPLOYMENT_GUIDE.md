@@ -3,13 +3,13 @@
 
 ### Your PWA Package
 **Detected Package**: `app.replit.canadian_service_hub_canelzy.twa`
-**App URL**: `https://canada-services-hub-canelzy.replit.app`
+**App URL**: `https://canadian-service-hub-canelzy.replit.app`
 
 ### Step-by-Step PWABuilder Process
 
 #### 1. Visit PWABuilder
 - Go to: https://www.pwabuilder.com/
-- Enter your app URL: `https://canada-services-hub-canelzy.replit.app`
+- Enter your app URL: `https://canadian-service-hub-canelzy.replit.app`
 - Click "Start"
 
 #### 2. PWA Analysis
