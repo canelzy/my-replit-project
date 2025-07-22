@@ -1,4 +1,4 @@
-const CACHE_NAME = 'canada-access-hub-v2';
+const CACHE_NAME = 'canada-access-hub-v3-no-disclaimer';
 const urlsToCache = [
   '/',
   '/manifest.json',

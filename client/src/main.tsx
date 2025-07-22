@@ -28,16 +28,24 @@ if (rootElement) {
   createRoot(rootElement).render(<App />);
 }
 
-// Register service worker for PWA functionality (Edge compatible)
+// Clear any existing service workers and register new one
 if ('serviceWorker' in navigator && navigator.serviceWorker) {
   try {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(function(registration) {
-        console.log('Service Worker registered!');
-      })
-      .catch(function(error) {
-        console.log('Service Worker registration failed:', error);
-      });
+    // Unregister all existing service workers first
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+      for(let registration of registrations) {
+        registration.unregister();
+      }
+    }).then(() => {
+      // Register new service worker
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(function(registration) {
+          console.log('Service Worker registered!');
+        })
+        .catch(function(error) {
+          console.log('Service Worker registration failed:', error);
+        });
+    });
   } catch (error) {
     console.log('Service Worker not supported in this browser');
   }

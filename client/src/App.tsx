@@ -21,12 +21,22 @@ function Router() {
 }
 
 function App() {
-  // Force cache invalidation and clear any disclaimer state
+  // Force complete cache invalidation
   React.useEffect(() => {
+    // Clear all storage
     localStorage.clear();
     sessionStorage.clear();
-    // Add a timestamp to force app refresh
-    console.log('App loaded at:', new Date().toISOString());
+    
+    // Clear service worker cache
+    if ('serviceWorker' in navigator && 'caches' in window) {
+      caches.keys().then(cacheNames => {
+        cacheNames.forEach(cacheName => {
+          caches.delete(cacheName);
+        });
+      });
+    }
+    
+    console.log('All caches cleared, app loaded at:', new Date().toISOString());
   }, []);
 
   return (
