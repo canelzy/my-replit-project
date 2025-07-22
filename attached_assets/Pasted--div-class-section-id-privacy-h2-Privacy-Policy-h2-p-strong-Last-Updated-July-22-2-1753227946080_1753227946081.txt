@@ -1,0 +1,45 @@
+<div class="section" id="privacy">
+  <h2>Privacy Policy</h2>
+  <p><strong>Last Updated: July 22, 2025</strong></p>
+
+  <h3>Introduction</h3>
+  <p>Welcome to Canada Access Hub, a Progressive Web App developed by GiolynxApps. This privacy policy outlines how we handle your data to ensure compliance with Google Play Developer Program Policies, particularly the Misleading Claims and Personal and Sensitive User Data policies. We are committed to protecting your privacy and providing a transparent experience.</p>
+
+  <h3>Disclaimer</h3>
+  <p>Canada Access Hub is not affiliated with, endorsed by, or representing any government entity, including the Government of Canada. It is a convenience tool designed to provide information sourced from official government websites. For official government services, please visit authorized sites such as canada.ca. Use of this app is at your own discretion, and we are not responsible for any inaccuracies or consequences arising from its use.</p>
+
+  <h3>Data Collection and Usage</h3>
+  <p>This app does not collect, store, or share any personal data, including names, addresses, or phone numbers. We do not require login credentials or access to personally identifiable information (PII). No location tracking occurs, and no data is collected from users under 13, ensuring safety for children. Contact form data, if submitted, is used solely to respond to inquiries and is not stored or shared beyond that purpose.</p>
+
+  <h3>Data Security</h3>
+  <p>All connections use HTTPS encryption to secure data transmission. We do not sell, trade, or transfer any user data to outside parties. Data handling is limited to operational needs, with strict access controls in place to prevent unauthorized access.</p>
+
+  <h3>Analytics and Tracking</h3>
+  <p>We do not use third-party analytics tools, cookies, or tracking technologies. Your browsing behavior is not monitored, ensuring a no-tracking experience.</p>
+
+  <h3>Sources of Information</h3>
+  <p>Government-related information in this app is sourced from the following official Canadian government websites:
+  <ul>
+    <li>Canada Revenue Agency: canada.ca/en/revenue-agency</li>
+    <li>Employment and Social Development Canada: canada.ca/en/employment-social-development</li>
+    <li>Immigration, Refugees and Citizenship Canada: canada.ca/en/immigration-refugees-citizenship</li>
+    <li>Department of Justice: canada.ca/en/department-justice</li>
+    <li>Public Health Agency of Canada: canada.ca/en/public-health</li>
+    <li>Elections Canada: elections.ca</li>
+    <li>Global Affairs Canada: canada.ca/en/global-affairs</li>
+    <li>Public Safety Canada: canada.ca/en/public-safety</li>
+    <li>National Defence: canada.ca/en/department-national-defence</li>
+    <li>Correctional Service of Canada: canada.ca/en/correctional-service</li>
+    <li>Transport Canada: canada.ca/en/transport</li>
+    <li>General Government: canada.ca</li>
+  </ul></p>
+
+  <h3>External Links</h3>
+  <p>Links to external government sites are provided for convenience. These sites have their own privacy policies, and we encourage users to review them. All external connections are secured with HTTPS encryption.</p>
+
+  <h3>Policy Availability</h3>
+  <p>This privacy policy is accessible via a valid, active URL within the app and on the Google Play Store listing page. It is non-editable and complies with Google Play requirements.</p>
+
+  <h3>User Rights and Contact</h3>
+  <p>For any privacy-related questions, contact us at Apps@Giolynx.org. We will respond promptly to address your concerns.</p>
+</div>
