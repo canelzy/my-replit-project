@@ -27,11 +27,20 @@
   </head>
 
   <body>
-    <div style="font-weight: 500; color: #dc2626; padding: 12px 16px; background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%); border-bottom: 3px solid #f87171; text-align: center; position: relative; z-index: 1000; width: 100%; box-sizing: border-box; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-      <p style="margin: 0 0 8px 0; font-size: 14px; font-weight: 600; letter-spacing: 0.5px;">⚠️ IMPORTANT DISCLAIMER</p>
-      <p style="margin: 0; font-size: 13px; line-height: 1.4; max-width: 900px; margin: 0 auto;">This app is not affiliated with any government entity. It's an independent convenience tool providing information and links to official sources. For official services, visit canada.ca</p>
+    <div id="disclaimer" style="position: fixed; top: 0; left: 0; width: 100%; background-color: rgba(255, 0, 0, 0.8); color: #fff; padding: 15px; text-align: center; z-index: 1000; font-size: 16px;">
+      <p><strong>Disclaimer</strong></p>
+      <p>This app, Canada Access Hub, is not affiliated with, endorsed by, or representing any government entity, including the Government of Canada. It is a convenience tool designed to provide information and services to users. The content may include references to government sources (e.g., canada.ca) for informational purposes only. For official government services, please visit authorized websites such as canada.ca. Use of this app is at your own discretion, and we are not responsible for any inaccuracies or consequences arising from its use.</p>
+      <button onclick="document.getElementById('disclaimer').style.display='none';" style="background: white; color: red; border: none; padding: 5px 10px; margin-top: 10px; cursor: pointer; border-radius: 3px;">Close</button>
     </div>
+    <nav style="margin-top: 80px; padding: 10px; background-color: #f0f0f0;">
+      <a href="/important-disclaimer.html" style="color: #0066cc; text-decoration: none; font-weight: bold;">Read More (Privacy Policy & Disclaimer)</a>
+    </nav>
     <div id="root"></div>
+    <script>
+      window.onload = function() {
+        document.getElementById('disclaimer').style.display = 'block';
+      };
+    </script>
     <script type="module" src="/src/main.tsx"></script>
     <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
     <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
