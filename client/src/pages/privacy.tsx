@@ -82,18 +82,18 @@ export default function Privacy() {
                 Government-related information in this app is sourced from the following official Canadian government websites:
               </p>
               <ul className="list-disc pl-6 space-y-1 text-gray-700 text-sm">
-                <li>Canada Revenue Agency: <a href="https://canada.ca/en/revenue-agency" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/revenue-agency</a></li>
-                <li>Employment and Social Development Canada: <a href="https://canada.ca/en/employment-social-development" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/employment-social-development</a></li>
-                <li>Immigration, Refugees and Citizenship Canada: <a href="https://canada.ca/en/immigration-refugees-citizenship" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/immigration-refugees-citizenship</a></li>
-                <li>Department of Justice: <a href="https://canada.ca/en/department-justice" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/department-justice</a></li>
-                <li>Public Health Agency of Canada: <a href="https://canada.ca/en/public-health" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/public-health</a></li>
-                <li>Elections Canada: <a href="https://elections.ca" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">elections.ca</a></li>
-                <li>Global Affairs Canada: <a href="https://canada.ca/en/global-affairs" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/global-affairs</a></li>
-                <li>Public Safety Canada: <a href="https://canada.ca/en/public-safety" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/public-safety</a></li>
-                <li>National Defence: <a href="https://canada.ca/en/department-national-defence" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/department-national-defence</a></li>
-                <li>Correctional Service of Canada: <a href="https://canada.ca/en/correctional-service" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/correctional-service</a></li>
-                <li>Transport Canada: <a href="https://canada.ca/en/transport" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/transport</a></li>
-                <li>General Government: <a href="https://canada.ca" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca</a></li>
+                <li>Canada Revenue Agency: canada.ca/en/revenue-agency</li>
+                <li>Employment and Social Development Canada: canada.ca/en/employment-social-development</li>
+                <li>Immigration, Refugees and Citizenship Canada: canada.ca/en/immigration-refugees-citizenship</li>
+                <li>Department of Justice: canada.ca/en/department-justice</li>
+                <li>Public Health Agency of Canada: canada.ca/en/public-health</li>
+                <li>Elections Canada: elections.ca</li>
+                <li>Global Affairs Canada: canada.ca/en/global-affairs</li>
+                <li>Public Safety Canada: canada.ca/en/public-safety</li>
+                <li>National Defence: canada.ca/en/department-national-defence</li>
+                <li>Correctional Service of Canada: canada.ca/en/correctional-service</li>
+                <li>Transport Canada: canada.ca/en/transport</li>
+                <li>General Government: canada.ca</li>
               </ul>
             </div>
 
