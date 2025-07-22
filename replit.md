@@ -13,7 +13,7 @@ This is a React-based web application called "Canada Access Hub" that serves as 
 
 **PWA Package**: Updated to unique package identifier `ca.govhub.services2025` to resolve naming conflicts for Google Play Store deployment.
 
-**Policy Compliance**: Created separate disclaimer and privacy policy page at `/important-disclaimer.html` with comprehensive legal coverage for Google Play Store compliance.
+**Policy Compliance**: Created separate disclaimer and privacy policy page at `/important-disclaimer.html` with comprehensive legal coverage for Google Play Store compliance. Removed all disclaimer popups and footer links for clean user experience.
 
 ## User Preferences
 
