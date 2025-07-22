@@ -1,47 +1,48 @@
-const CACHE_NAME = 'canada-access-hub-v3-no-disclaimer';
+// Service Worker for Canada Access Hub
+const CACHE_NAME = 'canada-access-hub-v2.0.0';
 const urlsToCache = [
   '/',
-  '/manifest.json',
+  '/manifest.webmanifest',
   '/icons/icon-192x192.png',
   '/icons/icon-512x512.png'
 ];
 
-// Force HTTPS in service worker
-self.addEventListener('fetch', function(event) {
-  // Redirect HTTP to HTTPS in production
-  if (event.request.url.startsWith('http://') && !event.request.url.includes('localhost')) {
-    const httpsUrl = event.request.url.replace('http://', 'https://');
-    event.respondWith(Response.redirect(httpsUrl, 301));
-    return;
-  }
-
-  event.respondWith(
-    caches.match(event.request)
-      .then(function(response) {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      })
-      .catch(function() {
-        // Fallback for offline
-        if (event.request.destination === 'document') {
-          return caches.match('/');
-        }
-      })
-  );
-});
-
+// Install event
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(function(cache) {
+        console.log('Opened cache');
         return cache.addAll(urlsToCache);
       })
   );
-  self.skipWaiting();
 });
 
+// Fetch event - Network first for SPA routing
+self.addEventListener('fetch', function(event) {
+  // Always try network first for HTML requests to support React routing
+  if (event.request.headers.get('accept').includes('text/html')) {
+    event.respondWith(
+      fetch(event.request)
+        .catch(function() {
+          return caches.match('/');
+        })
+    );
+    return;
+  }
+
+  // Cache first for static assets
+  event.respondWith(
+    caches.match(event.request)
+      .then(function(response) {
+        // Return cached version or fetch from network
+        return response || fetch(event.request);
+      }
+    )
+  );
+});
+
+// Activate event
 self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
@@ -54,5 +55,4 @@ self.addEventListener('activate', function(event) {
       );
     })
   );
-  self.clients.claim();
 });
