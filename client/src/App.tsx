@@ -21,25 +21,11 @@ function Router() {
 }
 
 function App() {
-  const [showDisclaimer, setShowDisclaimer] = useState(false);
-
-  useEffect(() => {
-    // Show disclaimer every time the app opens or refreshes
-    setShowDisclaimer(true);
-  }, []);
-
-  const handleDisclaimerAccept = () => {
-    setShowDisclaimer(false);
-  };
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        {showDisclaimer && <DisclaimerModal onAccept={handleDisclaimerAccept} />}
-        <div className={showDisclaimer ? "blur-sm pointer-events-none" : ""}>
-          <Router />
-        </div>
+        <Router />
       </TooltipProvider>
     </QueryClientProvider>
   );
