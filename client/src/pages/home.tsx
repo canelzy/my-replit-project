@@ -4671,18 +4671,8 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-2 text-white">Privacy & Contact</h4>
+              <h4 className="font-semibold mb-2 text-white">Contact</h4>
               <ul className="text-white text-sm space-y-1">
-                <li>
-                  <a 
-                    href="/important-disclaimer.html" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 transition-colors"
-                  >
-                    View Privacy Policy
-                  </a>
-                </li>
                 <li>Contact: <a href="mailto:Apps@Giolynx.org" className="text-blue-400 hover:text-blue-300 transition-colors">Apps@Giolynx.org</a></li>
               </ul>
             </div>
