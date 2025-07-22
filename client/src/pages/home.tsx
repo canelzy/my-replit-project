@@ -4675,7 +4675,7 @@ export default function Home() {
               <ul className="text-white text-sm space-y-1">
                 <li>
                   <a 
-                    href="http://intel.giolynx.org/important-disclaimer/" 
+                    href="/important-disclaimer.html" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-blue-400 hover:text-blue-300 transition-colors"
