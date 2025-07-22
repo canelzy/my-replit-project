@@ -1,0 +1,100 @@
+Update the privacy policy file in the project to reflect the detailed policy below, which includes the sources of information used in the Canada Access Hub app. Replace the existing privacy-policy.html file (or create it if it doesn’t exist) in the project root with the following content. Ensure the file is accessible at https://canadian-service-portal-canelzy.replit.app/privacy-policy and uses the provided HTML structure with the specified sources.
+
+html
+
+Preview
+
+Collapse
+
+Wrap
+
+Copy
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - Canada Access Hub</title>
+    <link rel="stylesheet" href="/assets/index-BUrc-C7X.css" />
+  </head>
+  <body>
+    <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+      <h1>Privacy Policy</h1>
+      <p><strong>Last Updated: July 22, 2025</strong></p>
+      <p><strong>Disclaimer</strong>: Canada Access Hub is not affiliated with, endorsed by, or authorized by any Canadian government entity. All information is sourced from publicly available resources, such as <a href="https://www.canada.ca" target="_blank" rel="noopener">Canada.ca</a>, <a href="https://www.cra-arc.gc.ca" target="_blank" rel="noopener">Canada Revenue Agency</a>, and <a href="https://www.cic.gc.ca" target="_blank" rel="noopener">Immigration, Refugees and Citizenship Canada</a>, for informational purposes only.</p>
+      <h2>1. Who We Are</h2>
+      <p>Canada Access Hub is an independent directory and resource platform that provides information about nonprofit organizations, community services, and public programs in Canada. It is developed and operated by GIOLYNXAPPS, a private entity, and is not affiliated with any government body.</p>
+      <h2>2. Information We Collect</h2>
+      <p>We do not collect personal data, including but not limited to:</p>
+      <ul>
+        <li>Names</li>
+        <li>Email addresses</li>
+        <li>Phone numbers</li>
+        <li>Government identification numbers</li>
+        <li>Home or work addresses</li>
+      </ul>
+      <p>No user registration or login is required to use the app.</p>
+      <h2>3. Automatically Collected Data (Non-Personal)</h2>
+      <p>To improve app performance and functionality, we may collect limited, non-identifiable technical data, such as:</p>
+      <ul>
+        <li>Device type and operating system version</li>
+        <li>App version and usage patterns</li>
+        <li>Anonymous crash reports</li>
+      </ul>
+      <p>This data is used solely for debugging, performance optimization, and analytics and cannot be linked to an individual user.</p>
+      <h2>4. No Email Collection or Contact Access</h2>
+      <p>We confirm that:</p>
+      <ul>
+        <li>The app does not request, collect, or store email addresses.</li>
+        <li>We do not access your contact list or enable user-to-user messaging.</li>
+        <li>There are no email subscription features in the app.</li>
+      </ul>
+      <h2>5. How We Use the Information We Collect</h2>
+      <p>Non-personal data is used only to:</p>
+      <ul>
+        <li>Analyze and improve app performance</li>
+        <li>Detect and resolve crashes</li>
+        <li>Enhance content delivery</li>
+      </ul>
+      <p>We do not share, sell, or rent any data to third parties for marketing or profiling purposes.</p>
+      <h2>6. Third-Party Services</h2>
+      <p>The app may use the following third-party services for analytics and performance monitoring:</p>
+      <ul>
+        <li><strong>Google Play Services</strong>: For app distribution and analytics.</li>
+        <li><strong>Firebase Crashlytics</strong>: For crash reporting and diagnostics.</li>
+      </ul>
+      <p>These services may collect non-personal data under their own privacy policies, which we do not control. We minimize their data collection to the extent possible.</p>
+      <h2>7. Links to External Content</h2>
+      <p>The app provides links to third-party websites, including:</p>
+      <ul>
+        <li>Nonprofit organization websites</li>
+        <li>Government portals and open data sources (e.g., <a href="https://www.canada.ca" target="_blank" rel="noopener">Canada.ca</a>)</li>
+        <li>Cultural, community, and settlement resources</li>
+      </ul>
+      <p>These external sites are not under our control. When you access them, you are subject to their privacy policies and terms. We are not responsible for their data practices.</p>
+      <h2>8. Data Retention</h2>
+      <p>We do not store or retain personal information. Anonymous crash and analytics data is retained only for the minimum period necessary to diagnose issues and improve functionality, typically no longer than 30 days.</p>
+      <h2>9. Children’s Privacy</h2>
+      <p>The app is intended for general audiences and does not knowingly collect information from children under 13. If we become aware of such data, we will delete it immediately. Contact us if you believe such data was provided inadvertently.</p>
+      <h2>10. Data Security</h2>
+      <p>We implement reasonable technical measures to protect the app, including:</p>
+      <ul>
+        <li>Secure app builds</li>
+        <li>No on-device or remote storage of personal data</li>
+        <li>HTTPS encryption for external data sources</li>
+      </ul>
+      <p>While we strive to maintain security, no system is completely secure, and we cannot guarantee absolute protection.</p>
+      <h2>11. Policy Updates</h2>
+      <p>We may update this Privacy Policy periodically. Changes will be posted within the app and on our website at <a href="https://canadian-service-portal-canelzy.replit.app/privacy-policy" target="_blank" rel="noopener">https://canadian-service-portal-canelzy.replit.app/privacy-policy</a>, with an updated “Last Updated” date.</p>
+      <h2>12. Contact Us</h2>
+      <p>For questions or concerns about this Privacy Policy or our data practices, contact us at:</p>
+      <ul>
+        <li><strong>Email</strong>: Apps@Giolynx.org</li>
+        <li><strong>Developer</strong>: GIOLYNXAPPS</li>
+        <li><strong>Location</strong>: Canada</li>
+      </ul>
+      <p><strong>Effective Date</strong>: July 22, 2025</p>
+      <p>By using Canada Access Hub, you acknowledge that you have read and understood this Privacy Policy and agree to use the app at your own risk.</p>
+    </div>
+  </body>
+</html>
