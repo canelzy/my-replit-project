@@ -2945,6 +2945,18 @@ export default function Home() {
               <i className="fas fa-envelope text-sm"></i>
               <span className="text-sm font-medium">Contact</span>
             </button>
+
+            <button
+              onClick={() => setActiveTab('privacy')}
+              className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
+                activeTab === 'privacy' 
+                  ? 'bg-gradient-to-r from-red-500 to-red-700 text-white shadow-lg' 
+                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+              }`}
+            >
+              <i className="fas fa-shield-alt text-sm"></i>
+              <span className="text-sm font-medium">Privacy</span>
+            </button>
           </div>
         </div>
 
@@ -4640,6 +4652,156 @@ export default function Home() {
                       Report it so we can keep the directory accurate and up-to-date.
                     </p>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Privacy Content */}
+        {activeTab === 'privacy' && (
+          <div className="space-y-6">
+            {/* Privacy Header */}
+            <div className="bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 text-white p-8 rounded-2xl shadow-xl">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-white bg-opacity-20 rounded-full mb-4">
+                  <i className="fas fa-shield-alt text-3xl"></i>
+                </div>
+                <h2 className="text-3xl font-bold mb-3">Privacy & Data Protection</h2>
+                <p className="text-lg opacity-90 max-w-2xl mx-auto">
+                  Your privacy is important to us. Learn how we protect your information and what data we collect.
+                </p>
+              </div>
+            </div>
+
+            {/* Privacy Features */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-xl">
+                <div className="flex items-center">
+                  <div className="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                    <i className="fas fa-user-shield text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">No Personal Data</h3>
+                    <p className="text-sm opacity-90">We don't collect personal info</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-xl">
+                <div className="flex items-center">
+                  <div className="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                    <i className="fas fa-lock text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">Secure Links</h3>
+                    <p className="text-sm opacity-90">All connections are encrypted</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-purple-400 to-purple-600 text-white p-6 rounded-xl">
+                <div className="flex items-center">
+                  <div className="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                    <i className="fas fa-eye-slash text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">No Tracking</h3>
+                    <p className="text-sm opacity-90">No cookies or analytics</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Privacy Policy Card */}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+              <div className="bg-gradient-to-r from-red-50 to-pink-50 p-6 border-b border-gray-200">
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                  <i className="fas fa-file-contract text-red-600 mr-3"></i>
+                  Privacy Policy Summary
+                </h3>
+                <p className="text-gray-600">Last updated: July 22, 2025</p>
+              </div>
+              
+              <div className="p-6 space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <div className="bg-green-100 p-2 rounded-full mt-1">
+                        <i className="fas fa-check text-green-600 text-sm"></i>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-800">No Account Required</h4>
+                        <p className="text-sm text-gray-600">Use our app without signing up or providing personal information.</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-3">
+                      <div className="bg-green-100 p-2 rounded-full mt-1">
+                        <i className="fas fa-check text-green-600 text-sm"></i>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-800">No Location Tracking</h4>
+                        <p className="text-sm text-gray-600">We don't access or store your location data.</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-3">
+                      <div className="bg-green-100 p-2 rounded-full mt-1">
+                        <i className="fas fa-check text-green-600 text-sm"></i>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-800">Safe for Children</h4>
+                        <p className="text-sm text-gray-600">No data collection from users under 13.</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <div className="bg-blue-100 p-2 rounded-full mt-1">
+                        <i className="fas fa-link text-blue-600 text-sm"></i>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-800">External Links</h4>
+                        <p className="text-sm text-gray-600">Links to government sites have their own privacy policies.</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-3">
+                      <div className="bg-blue-100 p-2 rounded-full mt-1">
+                        <i className="fas fa-shield-alt text-blue-600 text-sm"></i>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-800">Secure Connections</h4>
+                        <p className="text-sm text-gray-600">All links use HTTPS encryption for your security.</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-3">
+                      <div className="bg-blue-100 p-2 rounded-full mt-1">
+                        <i className="fas fa-envelope text-blue-600 text-sm"></i>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-800">Contact Privacy</h4>
+                        <p className="text-sm text-gray-600">Contact form data only used to respond to your message.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 mb-2">Questions About Privacy?</h4>
+                  <p className="text-sm text-gray-600 mb-3">
+                    If you have any questions about our privacy practices, please contact us.
+                  </p>
+                  <a 
+                    href="mailto:Apps@Giolynx.org" 
+                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm"
+                  >
+                    <i className="fas fa-envelope mr-2"></i>
+                    Apps@Giolynx.org
+                  </a>
                 </div>
               </div>
             </div>
