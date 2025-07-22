@@ -39,156 +39,87 @@ export default function Privacy() {
             <p className="text-gray-600">
               <strong>Last Updated:</strong> July 22, 2025
             </p>
-            <p className="text-gray-700 bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded">
-              <strong>Disclaimer:</strong> Canada Access Hub is not affiliated with, endorsed by, or authorized by any Canadian government entity. All information is sourced from publicly available resources, such as{" "}
-              <a href="https://www.canada.ca" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">Canada.ca</a>,{" "}
-              <a href="https://www.cra-arc.gc.ca" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">Canada Revenue Agency</a>, and{" "}
-              <a href="https://www.cic.gc.ca" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">Immigration, Refugees and Citizens Canada</a>.
-            </p>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-red-600">1. Who We Are</h2>
+              <h2 className="text-xl font-semibold text-red-600">Introduction</h2>
               <p className="text-gray-700">
-                Canada Access Hub is an independent directory and resource platform that provides information about nonprofit organizations, community services, and public programs in Canada. It is developed and operated by GIOLYNXAPPS, a private entity, and is not affiliated with any government body.
+                Welcome to Canada Access Hub, a Progressive Web App developed by GiolynxApps. This privacy policy outlines how we handle your data to ensure compliance with Google Play Developer Program Policies, particularly the Misleading Claims and Personal and Sensitive User Data policies. We are committed to protecting your privacy and providing a transparent experience.
               </p>
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-red-600">2. Information We Collect</h2>
-              <p className="text-gray-700">
-                We do not collect personal data, including but not limited to:
+              <h2 className="text-xl font-semibold text-red-600">Disclaimer</h2>
+              <p className="text-gray-700 bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded">
+                Canada Access Hub is not affiliated with, endorsed by, or representing any government entity, including the Government of Canada. It is a convenience tool designed to provide information sourced from official government websites. For official government services, please visit authorized sites such as canada.ca. Use of this app is at your own discretion, and we are not responsible for any inaccuracies or consequences arising from its use.
               </p>
-              <ul className="list-disc pl-6 space-y-1 text-gray-700">
-                <li>Names</li>
-                <li>Email addresses</li>
-                <li>Phone numbers</li>
-                <li>Government identification numbers</li>
-                <li>Home or work addresses</li>
+            </div>
+
+            <div className="space-y-4">
+              <h2 className="text-xl font-semibold text-red-600">Data Collection and Usage</h2>
+              <p className="text-gray-700">
+                This app does not collect, store, or share any personal data, including names, addresses, or phone numbers. We do not require login credentials or access to personally identifiable information (PII). No location tracking occurs, and no data is collected from users under 13, ensuring safety for children. Contact form data, if submitted, is used solely to respond to inquiries and is not stored or shared beyond that purpose.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h2 className="text-xl font-semibold text-red-600">Data Security</h2>
+              <p className="text-gray-700">
+                All connections use HTTPS encryption to secure data transmission. We do not sell, trade, or transfer any user data to outside parties. Data handling is limited to operational needs, with strict access controls in place to prevent unauthorized access.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h2 className="text-xl font-semibold text-red-600">Analytics and Tracking</h2>
+              <p className="text-gray-700">
+                We do not use third-party analytics tools, cookies, or tracking technologies. Your browsing behavior is not monitored, ensuring a no-tracking experience.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h2 className="text-xl font-semibold text-red-600">Sources of Information</h2>
+              <p className="text-gray-700">
+                Government-related information in this app is sourced from the following official Canadian government websites:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 text-sm">
+                <li>Canada Revenue Agency: <a href="https://canada.ca/en/revenue-agency" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/revenue-agency</a></li>
+                <li>Employment and Social Development Canada: <a href="https://canada.ca/en/employment-social-development" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/employment-social-development</a></li>
+                <li>Immigration, Refugees and Citizenship Canada: <a href="https://canada.ca/en/immigration-refugees-citizenship" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/immigration-refugees-citizenship</a></li>
+                <li>Department of Justice: <a href="https://canada.ca/en/department-justice" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/department-justice</a></li>
+                <li>Public Health Agency of Canada: <a href="https://canada.ca/en/public-health" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/public-health</a></li>
+                <li>Elections Canada: <a href="https://elections.ca" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">elections.ca</a></li>
+                <li>Global Affairs Canada: <a href="https://canada.ca/en/global-affairs" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/global-affairs</a></li>
+                <li>Public Safety Canada: <a href="https://canada.ca/en/public-safety" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/public-safety</a></li>
+                <li>National Defence: <a href="https://canada.ca/en/department-national-defence" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/department-national-defence</a></li>
+                <li>Correctional Service of Canada: <a href="https://canada.ca/en/correctional-service" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/correctional-service</a></li>
+                <li>Transport Canada: <a href="https://canada.ca/en/transport" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca/en/transport</a></li>
+                <li>General Government: <a href="https://canada.ca" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">canada.ca</a></li>
               </ul>
-              <p className="text-gray-700">No user registration or login is required to use the app.</p>
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-red-600">3. Automatically Collected Data (Non-Personal)</h2>
+              <h2 className="text-xl font-semibold text-red-600">External Links</h2>
               <p className="text-gray-700">
-                To improve app performance and functionality, we may collect limited, non-identifiable technical data, such as:
-              </p>
-              <ul className="list-disc pl-6 space-y-1 text-gray-700">
-                <li>Device type and operating system version</li>
-                <li>App version and usage patterns</li>
-                <li>Anonymous crash reports</li>
-              </ul>
-              <p className="text-gray-700">
-                This data is used solely for debugging, performance optimization, and analytics and cannot be linked to an individual user.
+                Links to external government sites are provided for convenience. These sites have their own privacy policies, and we encourage users to review them. All external connections are secured with HTTPS encryption.
               </p>
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-red-600">4. No Email Collection or Contact Access</h2>
-              <p className="text-gray-700">We confirm that:</p>
-              <ul className="list-disc pl-6 space-y-1 text-gray-700">
-                <li>The app does not request, collect, or store email addresses.</li>
-                <li>We do not access your contact list or enable user-to-user messaging.</li>
-                <li>There are no email subscription features in the app.</li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-red-600">5. How We Use the Information We Collect</h2>
-              <p className="text-gray-700">Non-personal data is used only to:</p>
-              <ul className="list-disc pl-6 space-y-1 text-gray-700">
-                <li>Analyze and improve app performance</li>
-                <li>Detect and resolve crashes</li>
-                <li>Enhance content delivery</li>
-              </ul>
+              <h2 className="text-xl font-semibold text-red-600">Policy Availability</h2>
               <p className="text-gray-700">
-                We do not share, sell, or rent any data to third parties for marketing or profiling purposes.
+                This privacy policy is accessible via a valid, active URL within the app and on the Google Play Store listing page. It is non-editable and complies with Google Play requirements.
               </p>
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-red-600">6. Third-Party Services</h2>
+              <h2 className="text-xl font-semibold text-red-600">User Rights and Contact</h2>
               <p className="text-gray-700">
-                The app may use the following third-party services for analytics and performance monitoring:
-              </p>
-              <ul className="list-disc pl-6 space-y-1 text-gray-700">
-                <li><strong>Google Play Services:</strong> For app distribution and analytics.</li>
-                <li><strong>Firebase Crashlytics:</strong> For crash reporting and diagnostics.</li>
-              </ul>
-              <p className="text-gray-700">
-                These services may collect non-personal data under their own privacy policies, which we do not control. We minimize their data collection to the extent possible.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-red-600">7. Links to External Content</h2>
-              <p className="text-gray-700">The app provides links to third-party websites, including:</p>
-              <ul className="list-disc pl-6 space-y-1 text-gray-700">
-                <li>Nonprofit organization websites</li>
-                <li>Government portals and open data sources (e.g., <a href="https://www.canada.ca" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">Canada.ca</a>)</li>
-                <li>Cultural, community, and settlement resources</li>
-              </ul>
-              <p className="text-gray-700">
-                These external sites are not under our control. When you access them, you are subject to their privacy policies and terms. We are not responsible for their data practices.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-red-600">8. Data Retention</h2>
-              <p className="text-gray-700">
-                We do not store or retain personal information. Anonymous crash and analytics data is retained only for the minimum period necessary to diagnose issues and improve functionality, typically no longer than 30 days.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-red-600">9. Children's Privacy</h2>
-              <p className="text-gray-700">
-                The app is intended for general audiences and does not knowingly collect information from children under 13. If we become aware of such data, we will delete it immediately. Contact us if you believe such data was provided inadvertently.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-red-600">10. Data Security</h2>
-              <p className="text-gray-700">We implement reasonable technical measures to protect the app, including:</p>
-              <ul className="list-disc pl-6 space-y-1 text-gray-700">
-                <li>Secure app builds</li>
-                <li>No on-device or remote storage of personal data</li>
-                <li>HTTPS encryption for external data sources</li>
-              </ul>
-              <p className="text-gray-700">
-                While we strive to maintain security, no system is completely secure, and we cannot guarantee absolute protection.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-red-600">11. Policy Updates</h2>
-              <p className="text-gray-700">
-                We may update this Privacy Policy periodically. Changes will be posted within the app and on our website at{" "}
-                <a href="https://canadian-service-hub-canelzy.replit.app/privacy-policy.html" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-800">
-                  https://canadian-service-hub-canelzy.replit.app/privacy-policy.html
-                </a>, with an updated "Last Updated" date.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-red-600">12. Contact Us</h2>
-              <p className="text-gray-700">For questions or concerns about this Privacy Policy or our data practices, contact us at:</p>
-              <ul className="list-disc pl-6 space-y-1 text-gray-700">
-                <li><strong>Email:</strong> <a href="mailto:Apps@Giolynx.org" className="text-blue-600 hover:text-blue-800">Apps@Giolynx.org</a></li>
-                <li><strong>Developer:</strong> GIOLYNXAPPS</li>
-                <li><strong>Location:</strong> Canada</li>
-              </ul>
-              <p className="text-gray-700 mt-4">
-                <strong>Effective Date:</strong> July 22, 2025
-              </p>
-              <p className="text-gray-700">
-                By using Canada Access Hub, you acknowledge that you have read and understood this Privacy Policy and agree to use the app at your own risk.
+                For any privacy-related questions, contact us at <a href="mailto:Apps@Giolynx.org" className="text-blue-600 hover:text-blue-800">Apps@Giolynx.org</a>. We will respond promptly to address your concerns.
               </p>
             </div>
 
             <div className="mt-8 pt-6 border-t border-gray-200 text-center text-gray-500 text-sm">
-              &copy; 2025 Canada Access Hub | GIOLYNXAPPS
+              &copy; 2025 Canada Access Hub | GiolynxApps
             </div>
           </CardContent>
         </Card>
