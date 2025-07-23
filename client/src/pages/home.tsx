@@ -4661,6 +4661,59 @@ export default function Home() {
         {/* Privacy Content */}
         {activeTab === 'privacy' && (
           <div className="space-y-6">
+            {/* Privacy Header */}
+            <div className="bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 text-white p-8 rounded-2xl shadow-xl">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-white bg-opacity-20 rounded-full mb-4">
+                  <i className="fas fa-shield-alt text-3xl"></i>
+                </div>
+                <h2 className="text-3xl font-bold mb-3">Privacy & Data Protection</h2>
+                <p className="text-lg opacity-90 max-w-2xl mx-auto">
+                  Your privacy is important to us. Learn how we protect your information and what data we collect.
+                </p>
+              </div>
+            </div>
+
+            {/* Privacy Features */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-xl">
+                <div className="flex items-center">
+                  <div className="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                    <i className="fas fa-user-shield text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">No Personal Data</h3>
+                    <p className="text-sm opacity-90">We don't collect personal info</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-xl">
+                <div className="flex items-center">
+                  <div className="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                    <i className="fas fa-lock text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">Secure Links</h3>
+                    <p className="text-sm opacity-90">All connections are encrypted</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-purple-400 to-purple-600 text-white p-6 rounded-xl">
+                <div className="flex items-center">
+                  <div className="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                    <i className="fas fa-eye-slash text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">No Tracking</h3>
+                    <p className="text-sm opacity-90">No cookies or analytics</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Detailed Privacy Policy Text */}
             <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
               <div className="bg-gradient-to-r from-red-50 to-pink-50 p-6 border-b border-gray-200">
                 <h3 className="text-2xl font-bold text-gray-800 mb-2">
