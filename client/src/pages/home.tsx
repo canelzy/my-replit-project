@@ -2945,14 +2945,15 @@ export default function Home() {
 
             <button
               onClick={() => setActiveTab('privacy')}
-              className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max ${
+              className={`flex items-center space-x-3 px-6 py-4 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max border-2 ${
                 activeTab === 'privacy' 
-                  ? 'bg-gradient-to-r from-red-500 to-red-700 text-white shadow-lg' 
-                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+                  ? 'bg-gradient-to-r from-red-500 to-red-700 text-white shadow-2xl border-red-400 transform scale-105' 
+                  : 'bg-white text-gray-700 border-red-300 hover:bg-red-50 hover:border-red-400 shadow-lg'
               }`}
             >
-              <i className="fas fa-shield-alt text-sm"></i>
-              <span className="text-sm font-medium">Privacy</span>
+              <i className="fas fa-shield-alt text-lg"></i>
+              <span className="text-base font-bold">Privacy Policy</span>
+              <i className="fas fa-exclamation-triangle text-sm text-yellow-300"></i>
             </button>
           </div>
         </div>
