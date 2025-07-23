@@ -1,11 +1,11 @@
-# Canada Access Hub - Government Services Directory
+# Information Access Hub - Government Services Directory
 
 ## Version
 2.0.0
 
 ## Overview
 
-This is a React-based web application called "Canada Access Hub" that serves as a comprehensive directory for Canadian government services and Ontario non-profit organizations. The application provides an organized interface for users to access various government services categorized into nine main areas: Taxes & Benefits, Pensions & Retirement, Employment & Social Development, Immigration & Citizenship, Health & Disability, Legal/Identification, Banking & Financial Services, Non-Profits, and General Government. Additionally, it features a dedicated Non-Profits tab with official directories and categorized Ontario non-profit organizations. Built with modern web technologies, it offers a responsive design with search functionality, favorites management, category filtering, and user feedback capabilities.
+This is a React-based web application called "Information Access Hub" that serves as a comprehensive directory for Canadian government services and Ontario non-profit organizations. The application provides an organized interface for users to access various government services categorized into nine main areas: Taxes & Benefits, Pensions & Retirement, Employment & Social Development, Immigration & Citizenship, Health & Disability, Legal/Identification, Banking & Financial Services, Non-Profits, and General Government. Additionally, it features a dedicated Non-Profits tab with official directories and categorized Ontario non-profit organizations. Built with modern web technologies, it offers a responsive design with search functionality, favorites management, category filtering, and user feedback capabilities.
 
 **Recent Enhancement**: Transitioned to modular component architecture with standalone OrgAccordion component using JSON data structure for better reusability and maintainability.
 
@@ -14,6 +14,8 @@ This is a React-based web application called "Canada Access Hub" that serves as 
 **PWA Package**: Updated to unique package identifier `ca.govhub.services2025` to resolve naming conflicts for Google Play Store deployment.
 
 **Policy Compliance**: Added prominent disclaimer banner to main page and comprehensive disclaimer/privacy policy page at `/important-disclaimer.html` for full Google Play Store compliance with Misleading Claims policy. Banner clearly states non-government affiliation.
+
+**Title Update**: Changed application title from "Canada Access Hub" to "Information Access Hub" across all files including main headers, privacy policy text, HTML title, and PWA manifest.
 
 ## User Preferences
 
