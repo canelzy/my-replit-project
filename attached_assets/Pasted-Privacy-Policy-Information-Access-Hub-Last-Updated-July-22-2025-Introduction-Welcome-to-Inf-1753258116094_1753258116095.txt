@@ -1,0 +1,82 @@
+Privacy Policy - Information Access Hub
+Last Updated: July 22, 2025
+
+Introduction
+Welcome to Information Access Hub, a Progressive Web App developed by GiolynxApps ("we," "us," or "our"). This Privacy Policy outlines how we collect, use, disclose, and protect your information when you use our app. We are committed to safeguarding your privacy and complying with applicable laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA) in Canada, the General Data Protection Regulation (GDPR) for users in the European Economic Area (EEA), the California Consumer Privacy Act (CCPA) for California residents, and Google Play Developer Program Policies, particularly regarding Misleading Claims and Personal and Sensitive User Data.
+
+Disclaimer
+Information Access Hub is not affiliated with, endorsed by, or representing any government entity, including the Government of Canada. It is a convenience tool designed to provide information sourced from official government websites (e.g., canada.ca). Use of this app is at your own discretion, and we are not responsible for any inaccuracies or consequences arising from its use. For official government services, please visit authorized sites such as canada.ca.
+
+Information We Collect
+We do not intentionally collect personal data such as names, addresses, email addresses, or phone numbers. The app may collect the following non-personal information to enhance functionality and user experience:
+
+Device Information: Device type, operating system, browser type, and IP address (anonymized where possible).
+Usage Data: Pages visited, session duration, and interaction data (e.g., button clicks), collected anonymously.
+Local Storage Data: Cached data for offline access via service workers, stored locally on your device.
+Additionally, no login credentials, personally identifiable information (PII), or location tracking occurs. We do not collect data from users under 13, ensuring child safety. Contact form data, if submitted, is used solely to respond to inquiries and is not stored or shared beyond that purpose.
+
+How We Use Your Information
+We use the collected information to:
+
+Provide, maintain, and improve the app's functionality and user experience.
+Analyze usage patterns and optimize performance (e.g., fixing bugs, enhancing features).
+Ensure compliance with legal obligations and protect against fraud or security threats.
+We do not use your information for advertising or marketing purposes.
+
+Sharing and Disclosure of Information
+We do not sell, trade, rent, or transfer your personal information to third parties. We may share non-personal, aggregated data with:
+
+Service Providers: Third-party analytics tools (currently none in use) to process usage data, contractually bound to maintain confidentiality and use data only for our purposes.
+Legal Requirements: We may disclose information if required by law, regulation, or to protect our rights, property, or safety, or that of others.
+We do not engage in cross-app tracking or share data with ad networks.
+
+Data Security
+All connections use HTTPS encryption to secure data transmission. We implement industry-standard security measures, including secure storage for any collected data and strict access controls to prevent unauthorized access. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security. In case of a data breach, we will notify affected users and authorities as required by law.
+
+Analytics and Tracking
+We do not use third-party analytics tools, cookies, or tracking technologies. Your browsing behavior is not monitored, ensuring a no-tracking experience.
+
+Sources of Information
+Government-related information in this app is sourced from the following official Canadian government websites:
+
+Canada Revenue Agency: canada.ca/en/revenue-agency
+Employment and Social Development Canada: canada.ca/en/employment-social-development
+Immigration, Refugees and Citizenship Canada: canada.ca/en/immigration-refugees-citizenship
+Department of Justice: canada.ca/en/department-justice
+Public Health Agency of Canada: canada.ca/en/public-health
+Elections Canada: elections.ca
+Global Affairs Canada: canada.ca/en/global-affairs
+Public Safety Canada: canada.ca/en/public-safety
+National Defence: canada.ca/en/department-national-defence
+Correctional Service of Canada: canada.ca/en/correctional-service
+Transport Canada: canada.ca/en/transport
+General Government: canada.ca
+External Links
+Links to external government sites are provided for convenience. These sites have their own privacy policies, and we encourage users to review them. All external connections are secured with HTTPS encryption.
+
+User Rights and Choices
+You have the following rights regarding your information:
+
+Access: Request details of any data we hold about you (if any).
+Correction: Request correction of inaccurate data.
+Deletion: Request deletion of data, subject to legal retention periods.
+Opt-Out: Disable analytics collection if supported by the app (e.g., via settings, if implemented).
+For any privacy-related questions or to exercise these rights, contact us at Apps@Giolynx.org. We will respond promptly to address your concerns. For EEA users, you may also contact our Data Protection Officer at the same email or lodge a complaint with your local data protection authority.
+
+International Data Transfers
+If you are located outside Canada or the EEA, your data may be processed in Canada or the United States by our service providers. We ensure compliance with applicable data protection laws, including GDPR for EEA users, through standard contractual clauses where necessary.
+
+Children's Privacy
+Information Access Hub is not directed to children under 13. We do not knowingly collect data from children. If we become aware of such collection, we will delete the data and terminate the account (if applicable). Parents or guardians should contact us to report any concerns.
+
+Policy Availability
+This privacy policy is accessible via a valid, active URL within the app and on the Google Play Store listing page. It is non-editable and complies with Google Play requirements.
+
+Changes to This Privacy Policy
+We may update this policy to reflect changes in our practices or legal requirements. The "Last Updated" date will be revised, and we will notify you of significant changes via the app or email (if contact information is provided). Continued use of the app after updates constitutes acceptance of the new policy.
+
+Compliance with Laws
+We comply with PIPEDA in Canada, GDPR for EEA users, CCPA for California residents, and Google Play Developer Program Policies, ensuring transparency, consent (where required), and data minimization.
+
+Contact Us
+For questions, concerns, or to exercise your rights, please contact us at Apps@Giolynx.org. You may also write to us at GiolynxApps, Toronto, ON, Canada.
