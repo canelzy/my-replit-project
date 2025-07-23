@@ -4672,44 +4672,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Privacy Features */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-xl">
-                <div className="flex items-center">
-                  <div className="bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                    <i className="fas fa-user-shield text-xl"></i>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg">No Personal Data</h3>
-                    <p className="text-sm opacity-90">We don't collect personal info</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-xl">
-                <div className="flex items-center">
-                  <div className="bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                    <i className="fas fa-lock text-xl"></i>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg">Secure Links</h3>
-                    <p className="text-sm opacity-90">All connections are encrypted</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-gradient-to-br from-purple-400 to-purple-600 text-white p-6 rounded-xl">
-                <div className="flex items-center">
-                  <div className="bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                    <i className="fas fa-eye-slash text-xl"></i>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg">No Tracking</h3>
-                    <p className="text-sm opacity-90">No cookies or analytics</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+
 
             {/* Detailed Privacy Policy Text */}
             <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
