@@ -2896,10 +2896,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center space-x-2 sm:space-x-4">
-              <div className="hidden lg:flex items-center space-x-4">
-                <span className="text-sm">🇨🇦</span>
-                <span className="text-sm font-medium">Official Government Portal</span>
-              </div>
+
               <ShareButton />
             </div>
           </div>
