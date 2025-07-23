@@ -2906,6 +2906,23 @@ export default function Home() {
       {/* Header Spacer */}
       <div className="h-20 sm:h-24 lg:h-28"></div>
 
+      {/* Information Text Box */}
+      <div className="max-w-screen-lg mx-auto px-4 mb-4">
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4 shadow-sm">
+          <div className="flex items-start space-x-3">
+            <div className="bg-blue-100 p-2 rounded-full mt-1">
+              <i className="fas fa-info-circle text-blue-600 text-sm"></i>
+            </div>
+            <div className="flex-1">
+              <h3 className="font-semibold text-blue-800 text-sm mb-1">Welcome to Information Access Hub</h3>
+              <p className="text-blue-700 text-sm leading-relaxed">
+                Find comprehensive information about Canadian government services, non-profit organizations, and community support resources. Use the search bar below to quickly locate specific services or browse through our organized categories.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Search Section */}
       <SearchBar onSearch={handleSearch} />
 
