@@ -2970,8 +2970,8 @@ export default function Home() {
               onClick={() => setActiveTab('privacy')}
               className={`flex items-center space-x-3 px-6 py-4 rounded-xl transition-all duration-200 hover:bg-opacity-90 active:scale-95 min-w-max border-2 ${
                 activeTab === 'privacy' 
-                  ? 'bg-gradient-to-r from-rose-400 to-rose-600 text-white shadow-xl border-rose-300 transform scale-105' 
-                  : 'bg-white text-gray-700 border-rose-200 hover:bg-rose-50 hover:border-rose-300 shadow-lg'
+                  ? 'bg-gradient-to-r from-black to-gray-800 text-white shadow-xl border-gray-600 transform scale-105' 
+                  : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50 hover:border-gray-400 shadow-lg'
               }`}
             >
               <i className="fas fa-shield-alt text-lg"></i>
