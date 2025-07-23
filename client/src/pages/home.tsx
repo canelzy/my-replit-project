@@ -2892,7 +2892,7 @@ export default function Home() {
               <i className="fas fa-maple-leaf text-red-400 text-lg sm:text-xl lg:text-2xl drop-shadow-sm"></i>
               <div>
                 <h1 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold leading-tight">Information Access Hub</h1>
-                <p className="text-blue-50 mt-0.5 sm:mt-1 text-xs sm:text-sm lg:text-base">All your government links in one place.</p>
+                <p className="text-blue-50 mt-0.5 sm:mt-1 text-xs sm:text-sm lg:text-base">Information about Non-Profits and Community Supports</p>
               </div>
             </div>
             <div className="flex items-center space-x-2 sm:space-x-4">
