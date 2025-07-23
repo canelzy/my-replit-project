@@ -2921,7 +2921,7 @@ export default function Home() {
               <div className="bg-yellow-100 border border-yellow-300 rounded-lg p-3">
                 <p className="text-yellow-800 text-sm font-medium">
                   <i className="fas fa-shield-alt text-yellow-600 mr-2"></i>
-                  Please click on the <button onClick={() => setActiveTab('privacy')} className="font-bold text-red-600 underline hover:text-red-800 cursor-pointer bg-transparent border-none p-0">Privacy Policy</button> tab above to read our complete privacy policy and data handling practices.
+                  Please click on the <a href="/important-disclaimer.html" className="font-bold text-red-600 underline hover:text-red-800">Privacy Policy</a> link to read our complete privacy policy and data handling practices.
                 </p>
               </div>
             </div>
