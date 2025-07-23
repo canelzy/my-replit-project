@@ -4724,14 +4724,14 @@ export default function Home() {
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold text-red-600">Introduction</h3>
                   <p className="text-gray-700 text-base leading-relaxed">
-                    Welcome to Information Access Hub, a Progressive Web App developed by GiolynxApps. This privacy policy outlines how we handle your data to ensure compliance with Google Play Developer Program Policies, particularly the Misleading Claims and Personal and Sensitive User Data policies. We are committed to protecting your privacy and providing a transparent experience.
+                    Welcome to <strong>Information Access Hub</strong>, a Progressive Web App developed by GiolynxApps. This privacy policy outlines how we handle your data to ensure compliance with Google Play Developer Program Policies, particularly the Misleading Claims and Personal and Sensitive User Data policies. We are committed to protecting your privacy and providing a transparent experience.
                   </p>
                 </div>
 
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold text-red-600">Disclaimer</h3>
                   <p className="text-gray-700 text-base leading-relaxed bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded">
-                    Information Access Hub is not affiliated with, endorsed by, or representing any government entity, including the Government of Canada. It is a convenience tool designed to provide information sourced from official government websites. For official government services, please visit authorized sites such as <a href="https://canada.ca" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline font-medium">canada.ca</a>. Use of this app is at your own discretion, and we are not responsible for any inaccuracies or consequences arising from its use.
+                    <strong>Information Access Hub</strong> is not affiliated with, endorsed by, or representing any government entity, including the Government of Canada. It is a convenience tool designed to provide information sourced from official government websites. For official government services, please visit authorized sites such as <a href="https://canada.ca" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline font-medium">canada.ca</a>. Use of this app is at your own discretion, and we are not responsible for any inaccuracies or consequences arising from its use.
                   </p>
                 </div>
 
@@ -4809,10 +4809,10 @@ export default function Home() {
                     <div className="flex-1">
                       <h4 className="font-semibold text-gray-800 text-base mb-2">Important Notice</h4>
                       <p className="text-gray-600 text-sm leading-relaxed">
-                        This privacy policy is effective as of July 22, 2025, and governs the use of Information Access Hub. By using this application, you acknowledge that you have read, understood, and agree to be bound by this privacy policy. This policy may be updated periodically, and continued use of the app constitutes acceptance of any changes.
+                        This privacy policy is effective as of July 22, 2025, and governs the use of <strong>Information Access Hub</strong>. By using this application, you acknowledge that you have read, understood, and agree to be bound by this privacy policy. This policy may be updated periodically, and continued use of the app constitutes acceptance of any changes.
                       </p>
                       <div className="mt-3 text-center">
-                        <span className="text-sm text-gray-500">&copy; 2025 Information Access Hub | GiolynxApps</span>
+                        <span className="text-sm text-gray-500">&copy; 2025 <strong>Information Access Hub</strong> | GiolynxApps</span>
                       </div>
                     </div>
                   </div>
