@@ -4661,59 +4661,114 @@ export default function Home() {
         {/* Privacy Content */}
         {activeTab === 'privacy' && (
           <div className="space-y-6">
-            {/* Privacy Header */}
-            <div className="bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 text-white p-8 rounded-2xl shadow-xl">
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-white bg-opacity-20 rounded-full mb-4">
-                  <i className="fas fa-shield-alt text-3xl"></i>
-                </div>
-                <h2 className="text-3xl font-bold mb-3">Privacy & Data Protection</h2>
-                <p className="text-lg opacity-90 max-w-2xl mx-auto">
-                  Your privacy is important to us. Learn how we protect your information and what data we collect.
-                </p>
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+              <div className="bg-gradient-to-r from-red-50 to-pink-50 p-6 border-b border-gray-200">
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                  <i className="fas fa-shield-alt text-red-600 mr-3"></i>
+                  Privacy Policy
+                </h3>
+                <p className="text-gray-600">Last Updated: July 22, 2025</p>
               </div>
-            </div>
+              
+              <div className="p-6 space-y-6 max-h-96 overflow-y-auto">
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-red-600">Introduction</h3>
+                  <p className="text-gray-700 text-sm">
+                    Welcome to Canada Access Hub, a Progressive Web App developed by GiolynxApps. This privacy policy outlines how we handle your data to ensure compliance with Google Play Developer Program Policies, particularly the Misleading Claims and Personal and Sensitive User Data policies. We are committed to protecting your privacy and providing a transparent experience.
+                  </p>
+                </div>
 
-            {/* Privacy Features */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-xl">
-                <div className="flex items-center">
-                  <div className="bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                    <i className="fas fa-user-shield text-xl"></i>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg">No Personal Data</h3>
-                    <p className="text-sm opacity-90">We don't collect personal info</p>
-                  </div>
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-red-600">Disclaimer</h3>
+                  <p className="text-gray-700 text-sm bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded">
+                    Canada Access Hub is not affiliated with, endorsed by, or representing any government entity, including the Government of Canada. It is a convenience tool designed to provide information sourced from official government websites. For official government services, please visit authorized sites such as canada.ca. Use of this app is at your own discretion, and we are not responsible for any inaccuracies or consequences arising from its use.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-red-600">Data Collection and Usage</h3>
+                  <p className="text-gray-700 text-sm">
+                    This app does not collect, store, or share any personal data, including names, addresses, or phone numbers. We do not require login credentials or access to personally identifiable information (PII). No location tracking occurs, and no data is collected from users under 13, ensuring safety for children. Contact form data, if submitted, is used solely to respond to inquiries and is not stored or shared beyond that purpose.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-red-600">Data Security</h3>
+                  <p className="text-gray-700 text-sm">
+                    All connections use HTTPS encryption to secure data transmission. We do not sell, trade, or transfer any user data to outside parties. Data handling is limited to operational needs, with strict access controls in place to prevent unauthorized access.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-red-600">Analytics and Tracking</h3>
+                  <p className="text-gray-700 text-sm">
+                    We do not use third-party analytics tools, cookies, or tracking technologies. Your browsing behavior is not monitored, ensuring a no-tracking experience.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-red-600">Sources of Information</h3>
+                  <p className="text-gray-700 text-sm">
+                    Government-related information in this app is sourced from the following official Canadian government websites:
+                  </p>
+                  <ul className="list-disc pl-6 space-y-1 text-gray-700 text-xs">
+                    <li>Canada Revenue Agency: canada.ca/en/revenue-agency</li>
+                    <li>Employment and Social Development Canada: canada.ca/en/employment-social-development</li>
+                    <li>Immigration, Refugees and Citizenship Canada: canada.ca/en/immigration-refugees-citizenship</li>
+                    <li>Department of Justice: canada.ca/en/department-justice</li>
+                    <li>Public Health Agency of Canada: canada.ca/en/public-health</li>
+                    <li>Elections Canada: elections.ca</li>
+                    <li>Global Affairs Canada: canada.ca/en/global-affairs</li>
+                    <li>Public Safety Canada: canada.ca/en/public-safety</li>
+                    <li>National Defence: canada.ca/en/department-national-defence</li>
+                    <li>Correctional Service of Canada: canada.ca/en/correctional-service</li>
+                    <li>Transport Canada: canada.ca/en/transport</li>
+                    <li>General Government: canada.ca</li>
+                  </ul>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-red-600">External Links</h3>
+                  <p className="text-gray-700 text-sm">
+                    Links to external government sites are provided for convenience. These sites have their own privacy policies, and we encourage users to review them. All external connections are secured with HTTPS encryption.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-red-600">Policy Availability</h3>
+                  <p className="text-gray-700 text-sm">
+                    This privacy policy is accessible via a valid, active URL within the app and on the Google Play Store listing page. It is non-editable and complies with Google Play requirements.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-red-600">User Rights and Contact</h3>
+                  <p className="text-gray-700 text-sm">
+                    For any privacy-related questions, contact us at Apps@Giolynx.org. We will respond promptly to address your concerns.
+                  </p>
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-xl">
-                <div className="flex items-center">
-                  <div className="bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                    <i className="fas fa-lock text-xl"></i>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg">Secure Links</h3>
-                    <p className="text-sm opacity-90">All connections are encrypted</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-gradient-to-br from-purple-400 to-purple-600 text-white p-6 rounded-xl">
-                <div className="flex items-center">
-                  <div className="bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                    <i className="fas fa-eye-slash text-xl"></i>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg">No Tracking</h3>
-                    <p className="text-sm opacity-90">No cookies or analytics</p>
+              {/* Text Box at Bottom */}
+              <div className="p-6 border-t border-gray-200 bg-gray-50">
+                <div className="bg-white border border-gray-300 rounded-lg p-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-blue-100 p-2 rounded-full mt-1">
+                      <i className="fas fa-info-circle text-blue-600 text-sm"></i>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-gray-800 text-sm mb-2">Important Notice</h4>
+                      <p className="text-gray-600 text-xs leading-relaxed">
+                        This privacy policy is effective as of July 22, 2025, and governs the use of Canada Access Hub. By using this application, you acknowledge that you have read, understood, and agree to be bound by this privacy policy. This policy may be updated periodically, and continued use of the app constitutes acceptance of any changes.
+                      </p>
+                      <div className="mt-3 text-center">
+                        <span className="text-xs text-gray-500">&copy; 2025 Canada Access Hub | GiolynxApps</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-
           </div>
         )}
 
