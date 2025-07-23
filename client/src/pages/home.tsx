@@ -2908,20 +2908,20 @@ export default function Home() {
 
       {/* Disclaimer Text Box */}
       <div className="max-w-screen-lg mx-auto px-4 mb-4">
-        <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-300 rounded-lg p-4 shadow-sm">
+        <div className="bg-gradient-to-r from-black to-gray-800 border border-gray-600 rounded-lg p-4 shadow-sm">
           <div className="flex items-start space-x-3">
-            <div className="bg-yellow-100 p-2 rounded-full mt-1">
-              <i className="fas fa-exclamation-triangle text-yellow-600 text-sm"></i>
+            <div className="bg-gray-700 p-2 rounded-full mt-1">
+              <i className="fas fa-exclamation-triangle text-white text-sm"></i>
             </div>
             <div className="flex-1">
-              <h3 className="font-semibold text-yellow-800 text-sm mb-1">Important Disclaimer</h3>
-              <p className="text-yellow-700 text-sm leading-relaxed mb-3">
-                <strong>Information Access Hub</strong> is not affiliated with, endorsed by, or representing any government entity, including the Government of Canada. It is a convenience tool designed to provide information sourced from official government websites. For official government services, please visit authorized sites such as <a href="https://canada.ca" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline font-medium">canada.ca</a>. Use of this app is at your own discretion, and we are not responsible for any inaccuracies or consequences arising from its use.
+              <h3 className="font-semibold text-white text-sm mb-1">Important Disclaimer</h3>
+              <p className="text-gray-200 text-sm leading-relaxed mb-3">
+                <strong>Information Access Hub</strong> is not affiliated with, endorsed by, or representing any government entity, including the Government of Canada. It is a convenience tool designed to provide information sourced from official government websites. For official government services, please visit authorized sites such as <a href="https://canada.ca" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline font-medium">canada.ca</a>. Use of this app is at your own discretion, and we are not responsible for any inaccuracies or consequences arising from its use.
               </p>
-              <div className="bg-yellow-100 border border-yellow-300 rounded-lg p-3">
-                <p className="text-yellow-800 text-sm font-medium">
-                  <i className="fas fa-shield-alt text-yellow-600 mr-2"></i>
-                  Please click on the <a href="/important-disclaimer.html" className="font-bold text-black underline hover:text-gray-700">Privacy Policy</a> link to read our complete privacy policy and data handling practices.
+              <div className="bg-gray-700 border border-gray-500 rounded-lg p-3">
+                <p className="text-gray-200 text-sm font-medium">
+                  <i className="fas fa-shield-alt text-white mr-2"></i>
+                  Please click on the <a href="/important-disclaimer.html" className="font-bold text-white underline hover:text-gray-300">Privacy Policy</a> link to read our complete privacy policy and data handling practices.
                 </p>
               </div>
             </div>
