@@ -4734,7 +4734,7 @@ export default function Home() {
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold text-red-600">Disclaimer</h3>
                   <p className="text-gray-700 text-base leading-relaxed bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded">
-                    Canada Access Hub is not affiliated with, endorsed by, or representing any government entity, including the Government of Canada. It is a convenience tool designed to provide information sourced from official government websites. For official government services, please visit authorized sites such as canada.ca. Use of this app is at your own discretion, and we are not responsible for any inaccuracies or consequences arising from its use.
+                    Canada Access Hub is not affiliated with, endorsed by, or representing any government entity, including the Government of Canada. It is a convenience tool designed to provide information sourced from official government websites. For official government services, please visit authorized sites such as <a href="https://canada.ca" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline font-medium">canada.ca</a>. Use of this app is at your own discretion, and we are not responsible for any inaccuracies or consequences arising from its use.
                   </p>
                 </div>
 
@@ -4765,18 +4765,18 @@ export default function Home() {
                     Government-related information in this app is sourced from the following official Canadian government websites:
                   </p>
                   <ul className="list-disc pl-6 space-y-1 text-gray-700 text-sm leading-relaxed">
-                    <li>Canada Revenue Agency: canada.ca/en/revenue-agency</li>
-                    <li>Employment and Social Development Canada: canada.ca/en/employment-social-development</li>
-                    <li>Immigration, Refugees and Citizenship Canada: canada.ca/en/immigration-refugees-citizenship</li>
-                    <li>Department of Justice: canada.ca/en/department-justice</li>
-                    <li>Public Health Agency of Canada: canada.ca/en/public-health</li>
-                    <li>Elections Canada: elections.ca</li>
-                    <li>Global Affairs Canada: canada.ca/en/global-affairs</li>
-                    <li>Public Safety Canada: canada.ca/en/public-safety</li>
-                    <li>National Defence: canada.ca/en/department-national-defence</li>
-                    <li>Correctional Service of Canada: canada.ca/en/correctional-service</li>
-                    <li>Transport Canada: canada.ca/en/transport</li>
-                    <li>General Government: canada.ca</li>
+                    <li>Canada Revenue Agency: <a href="https://canada.ca/en/revenue-agency" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">canada.ca/en/revenue-agency</a></li>
+                    <li>Employment and Social Development Canada: <a href="https://canada.ca/en/employment-social-development" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">canada.ca/en/employment-social-development</a></li>
+                    <li>Immigration, Refugees and Citizenship Canada: <a href="https://canada.ca/en/immigration-refugees-citizenship" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">canada.ca/en/immigration-refugees-citizenship</a></li>
+                    <li>Department of Justice: <a href="https://canada.ca/en/department-justice" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">canada.ca/en/department-justice</a></li>
+                    <li>Public Health Agency of Canada: <a href="https://canada.ca/en/public-health" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">canada.ca/en/public-health</a></li>
+                    <li>Elections Canada: <a href="https://elections.ca" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">elections.ca</a></li>
+                    <li>Global Affairs Canada: <a href="https://canada.ca/en/global-affairs" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">canada.ca/en/global-affairs</a></li>
+                    <li>Public Safety Canada: <a href="https://canada.ca/en/public-safety" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">canada.ca/en/public-safety</a></li>
+                    <li>National Defence: <a href="https://canada.ca/en/department-national-defence" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">canada.ca/en/department-national-defence</a></li>
+                    <li>Correctional Service of Canada: <a href="https://canada.ca/en/correctional-service" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">canada.ca/en/correctional-service</a></li>
+                    <li>Transport Canada: <a href="https://canada.ca/en/transport" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">canada.ca/en/transport</a></li>
+                    <li>General Government: <a href="https://canada.ca" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">canada.ca</a></li>
                   </ul>
                 </div>
 
@@ -4797,7 +4797,7 @@ export default function Home() {
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold text-red-600">User Rights and Contact</h3>
                   <p className="text-gray-700 text-base leading-relaxed">
-                    For any privacy-related questions, contact us at Apps@Giolynx.org. We will respond promptly to address your concerns.
+                    For any privacy-related questions, contact us at <a href="mailto:Apps@Giolynx.org" className="text-blue-600 hover:text-blue-800 underline font-medium">Apps@Giolynx.org</a>. We will respond promptly to address your concerns.
                   </p>
                 </div>
               </div>
