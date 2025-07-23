@@ -2915,9 +2915,15 @@ export default function Home() {
             </div>
             <div className="flex-1">
               <h3 className="font-semibold text-yellow-800 text-sm mb-1">Important Disclaimer</h3>
-              <p className="text-yellow-700 text-sm leading-relaxed">
+              <p className="text-yellow-700 text-sm leading-relaxed mb-3">
                 <strong>Information Access Hub</strong> is not affiliated with, endorsed by, or representing any government entity, including the Government of Canada. It is a convenience tool designed to provide information sourced from official government websites. For official government services, please visit authorized sites such as <a href="https://canada.ca" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline font-medium">canada.ca</a>. Use of this app is at your own discretion, and we are not responsible for any inaccuracies or consequences arising from its use.
               </p>
+              <div className="bg-yellow-100 border border-yellow-300 rounded-lg p-3">
+                <p className="text-yellow-800 text-sm font-medium">
+                  <i className="fas fa-shield-alt text-yellow-600 mr-2"></i>
+                  Please click on the <span className="font-bold text-red-600">Privacy Policy</span> tab above to read our complete privacy policy and data handling practices.
+                </p>
+              </div>
             </div>
           </div>
         </div>
