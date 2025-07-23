@@ -2906,17 +2906,17 @@ export default function Home() {
       {/* Header Spacer */}
       <div className="h-20 sm:h-24 lg:h-28"></div>
 
-      {/* Information Text Box */}
+      {/* Disclaimer Text Box */}
       <div className="max-w-screen-lg mx-auto px-4 mb-4">
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4 shadow-sm">
+        <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-300 rounded-lg p-4 shadow-sm">
           <div className="flex items-start space-x-3">
-            <div className="bg-blue-100 p-2 rounded-full mt-1">
-              <i className="fas fa-info-circle text-blue-600 text-sm"></i>
+            <div className="bg-yellow-100 p-2 rounded-full mt-1">
+              <i className="fas fa-exclamation-triangle text-yellow-600 text-sm"></i>
             </div>
             <div className="flex-1">
-              <h3 className="font-semibold text-blue-800 text-sm mb-1">Welcome to Information Access Hub</h3>
-              <p className="text-blue-700 text-sm leading-relaxed">
-                Find comprehensive information about Canadian government services, non-profit organizations, and community support resources. Use the search bar below to quickly locate specific services or browse through our organized categories.
+              <h3 className="font-semibold text-yellow-800 text-sm mb-1">Important Disclaimer</h3>
+              <p className="text-yellow-700 text-sm leading-relaxed">
+                <strong>Information Access Hub</strong> is not affiliated with, endorsed by, or representing any government entity, including the Government of Canada. It is a convenience tool designed to provide information sourced from official government websites. For official government services, please visit authorized sites such as <a href="https://canada.ca" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline font-medium">canada.ca</a>. Use of this app is at your own discretion, and we are not responsible for any inaccuracies or consequences arising from its use.
               </p>
             </div>
           </div>
