@@ -4725,46 +4725,46 @@ export default function Home() {
               
               <div className="p-6 space-y-6 max-h-96 overflow-y-auto">
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-red-600">Introduction</h3>
-                  <p className="text-gray-700 text-sm">
+                  <h3 className="text-xl font-semibold text-red-600">Introduction</h3>
+                  <p className="text-gray-700 text-base leading-relaxed">
                     Welcome to Canada Access Hub, a Progressive Web App developed by GiolynxApps. This privacy policy outlines how we handle your data to ensure compliance with Google Play Developer Program Policies, particularly the Misleading Claims and Personal and Sensitive User Data policies. We are committed to protecting your privacy and providing a transparent experience.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-red-600">Disclaimer</h3>
-                  <p className="text-gray-700 text-sm bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded">
+                  <h3 className="text-xl font-semibold text-red-600">Disclaimer</h3>
+                  <p className="text-gray-700 text-base leading-relaxed bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded">
                     Canada Access Hub is not affiliated with, endorsed by, or representing any government entity, including the Government of Canada. It is a convenience tool designed to provide information sourced from official government websites. For official government services, please visit authorized sites such as canada.ca. Use of this app is at your own discretion, and we are not responsible for any inaccuracies or consequences arising from its use.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-red-600">Data Collection and Usage</h3>
-                  <p className="text-gray-700 text-sm">
+                  <h3 className="text-xl font-semibold text-red-600">Data Collection and Usage</h3>
+                  <p className="text-gray-700 text-base leading-relaxed">
                     This app does not collect, store, or share any personal data, including names, addresses, or phone numbers. We do not require login credentials or access to personally identifiable information (PII). No location tracking occurs, and no data is collected from users under 13, ensuring safety for children. Contact form data, if submitted, is used solely to respond to inquiries and is not stored or shared beyond that purpose.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-red-600">Data Security</h3>
-                  <p className="text-gray-700 text-sm">
+                  <h3 className="text-xl font-semibold text-red-600">Data Security</h3>
+                  <p className="text-gray-700 text-base leading-relaxed">
                     All connections use HTTPS encryption to secure data transmission. We do not sell, trade, or transfer any user data to outside parties. Data handling is limited to operational needs, with strict access controls in place to prevent unauthorized access.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-red-600">Analytics and Tracking</h3>
-                  <p className="text-gray-700 text-sm">
+                  <h3 className="text-xl font-semibold text-red-600">Analytics and Tracking</h3>
+                  <p className="text-gray-700 text-base leading-relaxed">
                     We do not use third-party analytics tools, cookies, or tracking technologies. Your browsing behavior is not monitored, ensuring a no-tracking experience.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-red-600">Sources of Information</h3>
-                  <p className="text-gray-700 text-sm">
+                  <h3 className="text-xl font-semibold text-red-600">Sources of Information</h3>
+                  <p className="text-gray-700 text-base leading-relaxed">
                     Government-related information in this app is sourced from the following official Canadian government websites:
                   </p>
-                  <ul className="list-disc pl-6 space-y-1 text-gray-700 text-xs">
+                  <ul className="list-disc pl-6 space-y-1 text-gray-700 text-sm leading-relaxed">
                     <li>Canada Revenue Agency: canada.ca/en/revenue-agency</li>
                     <li>Employment and Social Development Canada: canada.ca/en/employment-social-development</li>
                     <li>Immigration, Refugees and Citizenship Canada: canada.ca/en/immigration-refugees-citizenship</li>
@@ -4781,22 +4781,22 @@ export default function Home() {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-red-600">External Links</h3>
-                  <p className="text-gray-700 text-sm">
+                  <h3 className="text-xl font-semibold text-red-600">External Links</h3>
+                  <p className="text-gray-700 text-base leading-relaxed">
                     Links to external government sites are provided for convenience. These sites have their own privacy policies, and we encourage users to review them. All external connections are secured with HTTPS encryption.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-red-600">Policy Availability</h3>
-                  <p className="text-gray-700 text-sm">
+                  <h3 className="text-xl font-semibold text-red-600">Policy Availability</h3>
+                  <p className="text-gray-700 text-base leading-relaxed">
                     This privacy policy is accessible via a valid, active URL within the app and on the Google Play Store listing page. It is non-editable and complies with Google Play requirements.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-red-600">User Rights and Contact</h3>
-                  <p className="text-gray-700 text-sm">
+                  <h3 className="text-xl font-semibold text-red-600">User Rights and Contact</h3>
+                  <p className="text-gray-700 text-base leading-relaxed">
                     For any privacy-related questions, contact us at Apps@Giolynx.org. We will respond promptly to address your concerns.
                   </p>
                 </div>
@@ -4807,15 +4807,15 @@ export default function Home() {
                 <div className="bg-white border border-gray-300 rounded-lg p-4">
                   <div className="flex items-start space-x-3">
                     <div className="bg-blue-100 p-2 rounded-full mt-1">
-                      <i className="fas fa-info-circle text-blue-600 text-sm"></i>
+                      <i className="fas fa-info-circle text-blue-600 text-base"></i>
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-800 text-sm mb-2">Important Notice</h4>
-                      <p className="text-gray-600 text-xs leading-relaxed">
+                      <h4 className="font-semibold text-gray-800 text-base mb-2">Important Notice</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed">
                         This privacy policy is effective as of July 22, 2025, and governs the use of Canada Access Hub. By using this application, you acknowledge that you have read, understood, and agree to be bound by this privacy policy. This policy may be updated periodically, and continued use of the app constitutes acceptance of any changes.
                       </p>
                       <div className="mt-3 text-center">
-                        <span className="text-xs text-gray-500">&copy; 2025 Canada Access Hub | GiolynxApps</span>
+                        <span className="text-sm text-gray-500">&copy; 2025 Canada Access Hub | GiolynxApps</span>
                       </div>
                     </div>
                   </div>
