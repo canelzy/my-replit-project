@@ -3,12 +3,12 @@
 ## Fixed Web Manifest Issues
 
 ### Changes Made:
-1. **Updated App Name**: Changed from "Canada Access Hub" to "Canada Services Hub"
+1. **Updated App Name**: Changed from "Canada Access Hub" to "Information Access Hub"
 2. **Fixed Icon Paths**: Updated to absolute paths (`/icons/...`) instead of relative
 3. **Corrected Theme Colors**: 
    - Background: #000000 (black)
    - Theme: #FF0000 (Canadian red)
-4. **Simplified ID**: Changed from `/canada-access-hub/` to `canada-services-hub`
+4. **Simplified ID**: Changed from `/canada-access-hub/` to `info-access-hub`
 5. **Removed Protocol Handlers**: Cleaned up unnecessary PWA features that might cause detection issues
 
 ### Web Manifest Location:
