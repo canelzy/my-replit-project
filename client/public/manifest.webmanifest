@@ -1,6 +1,7 @@
 {
   "name": "Information Access Hub",
   "short_name": "InfoHub",
+  "version": "2.0.0",
   "description": "Comprehensive directory for Canadian government services and community resources.",
   "start_url": "/?utm_source=pwa&utm_medium=homescreen",
   "display": "standalone",
